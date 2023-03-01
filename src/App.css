@@ -1,38 +1,86 @@
 .App {
-  text-align: center;
+  padding: 0 10vw 0 10vw;
+  height: 100vh;
 }
 
 .App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  height: 10vh;
+  width: auto;
 }
 
 .App-link {
-  color: #61dafb;
+  font-family: 'Hanken Grotesk', sans-serif;
+  font-weight: 300;
+  font-size: 0.9rem;
+  letter-spacing: 0.1rem;
+  color: #464648;
+  text-decoration: none;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 10vw 0 10vw;
 }
+
+.section {
+  margin: 50vh 0;
+}
+
+.hero-section {
+  background-color: transparent;
+  background-size: cover;
+  padding: 0 10vw 0 10vw;
+  height: 100vh;
+}
+
+h1, header {
+  font-family: 'Spectral', serif;
+  font-size: 2rem;
+}
+
+h2 {
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.5rem;
+  line-height: 3rem;
+  color: #000000;
+}
+
+h3 {
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.2rem;
+  line-height: 1.6rem;
+  color: #000000;
+}
+
+h4 {
+  font-family: 'Roboto', sans-serif;
+  font-size: 0.9rem;
+  line-height: 1.3rem;
+  color: #000000;
+}
+
+h5 {
+  font-family: 'Roboto', sans-serif;
+  font-size: 0.7rem;
+  line-height: 0.9rem;
+  color: #000000;
+}
+
+h6 {
+  font-family: 'Roboto', sans-serif;
+  font-size: 0.5rem;
+  line-height: 0.8rem;
+  letter-spacing: 1rem;
+  color: #000000;
+}
+
+.footer {
+  height: '32px';
+  border-right: 1px solid #000;
+  border-bottom: 1px solid #000;
+  border-left: 1px solid #000;
+  background-color: #000;
+}
+
+
