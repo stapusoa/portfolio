@@ -16,18 +16,21 @@
 }
   
 .navbar-left > * + * {
-    margin: 0 3vw;
+    margin: 0 2vw;
 }
 
 .navbar-left img {
     height: 2.5vh;
     align-items: center;
+    vertical-align: middle;
+    padding-bottom: 0.5vh;
 }
   
 .navbar-left a {
     font-size: 0.9rem;
     color: #000000;
     text-decoration: none;
+    vertical-align: middle;
 }
   
 .navbar-right {
