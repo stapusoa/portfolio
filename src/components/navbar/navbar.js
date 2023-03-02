@@ -29,7 +29,7 @@ export default function Navbar() {
                             </a>
                         </div>
                         <div className="App-link">
-                            <a href="../../public/stapusoa-resume-2023.pdf" download="stapusoa-resume-2023.pdf">RESUME</a>
+                            <a href={process.env.PUBLIC_URL + '/stapusoa-resume-2023.pdf'} download="stapusoa-resume-2023.pdf">RESUME</a>
                         </div>
                     </div>
                     <div className="navbar-right">
@@ -44,7 +44,7 @@ export default function Navbar() {
                             >
                             <MenuIcon />
                         </IconButton>
-                        <Menu
+                        <Menu sx={{ borderRadius: '32px', boxShadow: '255 255 255 0.5'}}
                             id="menu-appbar"
                             anchorEl={anchorEl}
                             anchorOrigin={{
