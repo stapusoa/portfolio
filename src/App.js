@@ -1,10 +1,10 @@
 import './App.css';
-import Navbar from './components/Navbar';
-import Home from './pages/Home';
-import About from './pages/About';
-import Proj1 from './pages/Proj1';
-import Proj2 from './pages/Proj2';
-import Proj3 from './pages/Proj3';
+import Navbar from './components/navbar/navbar.js';
+import Home from './pages/home.js';
+import About from './pages/about.js';
+import Proj1 from './pages/proj1.js';
+import Proj2 from './pages/proj2.js';
+import Proj3 from './pages/proj3.js';
 
 
 
