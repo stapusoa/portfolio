@@ -1,6 +1,7 @@
 import '../App.css';
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
+import Button from '@mui/material/Button';
 
 
 
@@ -33,6 +34,9 @@ function Home() {
                     Designing for people, not just pixels.<br />Providing simple and intuitive solutions to user needs through research and design sprint methods.
                 </h3>
             </Box>
+            <Box sx={{ marginTop: '10vh', paddingLeft: '1vw' }}>
+              <Button variant="text" sx={{ padding: '2vh 4vw', color: 'white', backgroundColor: 'black', borderRadius: '30px' }}>Download Resume</Button>
+            </Box>
             <Box sx={{ marginTop: '20vh', marginLeft: '0', paddingRight: '4vw' }}>
               <Grid container spacing={2}  sx={{ marginRight: '4vw' }}>
                 <Grid item xs={12} sm={6} md={4} sx={{ padding: '0', margin: '0' }} >               
@@ -46,19 +50,22 @@ function Home() {
                 </Grid>
               </Grid>
             </Box>
-            <Box sx={{ marginTop: '20vh', marginLeft: '0', paddingRight: '4vw', float: 'right', paddingRight: '5vw', paddingBottom: '20vh' }}>
+        </div>
+        <div className="Container" sx={{ backgroundColor: 'white'}}>
+            <Box sx={{ marginTop: '20vh', marginLeft: '0', paddingRight: '4vw', float: 'right', paddingRight: '5vw', paddingBottom: '20vh', backgroundColor: 'grey' }}>
                 <div class="card2">
-                    <img src={process.env.PUBLIC_URL + '/fishbowl.png'} class="card2-img" />
+                    <img src={process.env.PUBLIC_URL + '/img/fishbowl.png'} class="card2-img" />
                     <div class="card2-body">
                         <h5 class="card2-title">Card Title</h5>
                         <p class="card2-text">Some quick example text to build on the card.</p>
-                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                        <Box sx={{ marginTop: '10vh', paddingLeft: '1vw' }}>
+                          <Button variant="text" sx={{ padding: '2vh 4vw', color: 'white', backgroundColor: 'black', borderRadius: '30px' }}>Download Resume</Button>
+                        </Box>
                     </div>
                 </div>
             </Box>
-
+          </div>
         </div>
-    </div>
   );
 }
 
