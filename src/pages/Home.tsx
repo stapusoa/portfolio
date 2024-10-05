@@ -1,5 +1,6 @@
 import { Helmet } from 'react-helmet-async'
 import { Navbar } from '../components/Navbar/Navbar';
+import '../App.css'
 
 const Home = () => {
   console.log('Home component is rendering');
@@ -14,7 +15,7 @@ const Home = () => {
       </Helmet>
       <Navbar />
     <div>
-      <h1>Home Page</h1>
+      <h1 className='font-gilroy'>Home Page</h1>
       <p>Welcome to my portfolio!</p>
     </div>
     </>
