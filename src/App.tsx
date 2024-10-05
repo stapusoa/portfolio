@@ -1,4 +1,5 @@
 import React from 'react';
+import { HelmetProvider } from 'react-helmet-async';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from './pages/Home';
 import About from './pages/About';
@@ -10,22 +11,22 @@ import Project4 from './pages/projects/Project4';
 
 const App: React.FC = () => {
   return (
-    <Router>
-      {/* Optionally include a navigation bar */}
-      <div>
-        <Routes>
-          {/* Route definitions */}
-          <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/contact" element={<Contact />} />
-          {/* Project routes */}
-          <Route path="/projects/project1" element={<Project1 />} />
-          <Route path="/projects/project2" element={<Project2 />} />
-          <Route path="/projects/project3" element={<Project3 />} />
-          <Route path="/projects/project4" element={<Project4 />} />
-        </Routes>
-      </div>
-    </Router>
+    <HelmetProvider> {/* Wrap the entire app with HelmetProvider */}
+      <Router>
+        <div>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/contact" element={<Contact />} />
+            {/* Project routes */}
+            <Route path="/projects/project1" element={<Project1 />} />
+            <Route path="/projects/project2" element={<Project2 />} />
+            <Route path="/projects/project3" element={<Project3 />} />
+            <Route path="/projects/project4" element={<Project4 />} />
+          </Routes>
+        </div>
+      </Router>
+    </HelmetProvider>
   );
 };
 
