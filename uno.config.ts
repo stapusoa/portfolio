@@ -1,14 +1,15 @@
-import { defineConfig } from 'unocss'
+import type { Theme } from '@unocss/preset-mini'
+import { defineConfig, presetUno } from 'unocss'
+import { unoShortcuts, unoTheme } from './src/theme'
 
 export default defineConfig({
-  // Add any UnoCSS presets or customizations
-  theme: {
-    colors: {
-      primary: '#1E90FF',
-      secondary: '#FF6347',
+  content: {
+    pipeline: {
+      include: ['./**/*.{js,jsx,ts,tsx}'],
     },
   },
-  shortcuts: {
-    'btn': 'px-4 py-2 rounded bg-primary text-white hover:bg-primary-700',
-  },
+  presets: [presetUno()],
+  shortcuts: [unoShortcuts],
+  theme: unoTheme as Theme,
 })
+

@@ -1,0 +1,1 @@
+export { MyLogo } from './MyLogo'
