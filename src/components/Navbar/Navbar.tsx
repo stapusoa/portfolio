@@ -1,97 +1,95 @@
+import { useState } from 'react';
+import { Dialog, DialogPanel } from '@headlessui/react'
 
+const navigation = [
+  { name: 'work', href: '#' },
+  { name: 'about', href: '#' },
+  { name: 'contact', href: '#' },
+]
 
+export const Navbar = () => {
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  return (
+    <>
+      <header className="sticky inset-x-0 top-0 z-50 bg-transparent">
+        <nav aria-label="Global" className="flex items-center justify-between p-6 lg:px-8">
+          <div className="flex lg:flex-1">
+            <a href="#" className="-m-1.5 p-1.5">
+              <span className="sr-only">Your Company</span>
+              <img
+                alt=""
+                src='/images/logo-primary.webp'
+                className="h-5 w-auto"
+              />
+            </a>
 
-export const Navbar = () => (
-  <div className="navbar bg-base-100">
-    <div className="mx-auto page py-2">
-      <div className="flex h-16 justify-between">
-        <div className="flex">
-          <div className="flex flex-shrink-0 items-center">
-            <button className="decoration-none border-0 bg-transparent">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 200 24"
-                className="inline-block h-6 w-50 fill-[#3D405B]">
-                <path d="M10 0L4.02778 6H0V4.02778C0 1.8033 1.8033 0 4.02778 0H10Z" fill="${fill-current}" />
-                <path d="M18 5.90594H13.3306V15.8077C13.3306 16.6328 13.5096 17.2358 13.8678 17.6167C14.2259 17.9975 14.7493 18.2197 15.438 18.2831C16.1267 18.3149 16.9807 18.299 18 18.2355V23.8053C14.3361 24.2813 11.7466 23.8846 10.2314 22.6151C8.7438 21.3457 8 19.0765 8 15.8077V5.90594V5.91106L13.3285 0L13.3306 0.00297365H18V5.90594Z" fill="${fill-current}" />
-                <path d="M30.9614 8.05714C30.9614 8.4381 31.209 8.75238 31.7043 9C32.2186 9.22857 32.8376 9.4381 33.5614 9.62857C34.2852 9.8 35.009 10.0286 35.7329 10.3143C36.4567 10.581 37.0662 11.0381 37.5614 11.6857C38.0757 12.3333 38.3329 13.1429 38.3329 14.1143C38.3329 15.581 37.7805 16.7143 36.6757 17.5143C35.59 18.2952 34.2281 18.6857 32.59 18.6857C29.6567 18.6857 27.6567 17.5524 26.59 15.2857L29.79 13.4857C30.209 14.7238 31.1424 15.3429 32.59 15.3429C33.9043 15.3429 34.5614 14.9333 34.5614 14.1143C34.5614 13.7333 34.3043 13.4286 33.79 13.2C33.2948 12.9524 32.6852 12.7333 31.9614 12.5429C31.2376 12.3524 30.5138 12.1143 29.79 11.8286C29.0662 11.5429 28.4471 11.0952 27.9329 10.4857C27.4376 9.85714 27.19 9.07619 27.19 8.14286C27.19 6.73333 27.7043 5.62857 28.7329 4.82857C29.7805 4.00952 31.0757 3.6 32.6186 3.6C33.7805 3.6 34.8376 3.86667 35.79 4.4C36.7424 4.91429 37.4948 5.65714 38.0471 6.62857L34.9043 8.34286C34.4471 7.37143 33.6852 6.88572 32.6186 6.88572C32.1424 6.88572 31.7424 6.99048 31.4186 7.2C31.1138 7.40953 30.9614 7.69524 30.9614 8.05714Z" fill="${fill-current}" />
-                <path d="M51.365 4H55.0507V18.2857H51.365V16.6C50.2602 17.9905 48.7079 18.6857 46.7079 18.6857C44.8031 18.6857 43.165 17.9619 41.7936 16.5143C40.4412 15.0476 39.765 13.2571 39.765 11.1429C39.765 9.02857 40.4412 7.24762 41.7936 5.8C43.165 4.33333 44.8031 3.6 46.7079 3.6C48.7079 3.6 50.2602 4.29524 51.365 5.68572V4ZM44.565 14.0571C45.3079 14.8 46.2507 15.1714 47.3936 15.1714C48.5364 15.1714 49.4793 14.8 50.2221 14.0571C50.984 13.2952 51.365 12.3238 51.365 11.1429C51.365 9.96191 50.984 9 50.2221 8.25714C49.4793 7.49524 48.5364 7.11429 47.3936 7.11429C46.2507 7.11429 45.3079 7.49524 44.565 8.25714C43.8221 9 43.4507 9.96191 43.4507 11.1429C43.4507 12.3238 43.8221 13.2952 44.565 14.0571Z" fill="${fill-current}" />
-                <path d="M62.0786 6.45714C62.4215 5.54286 62.9834 4.85714 63.7643 4.4C64.5643 3.94286 65.45 3.71429 66.4215 3.71429V7.82857C65.2977 7.69524 64.2881 7.92381 63.3929 8.51429C62.5167 9.10476 62.0786 10.0857 62.0786 11.4571V18.2857H58.3929V4H62.0786V6.45714Z" fill="${fill-current}" />
-                <path d="M78.9041 4H82.5898V18.2857H78.9041V16.6C77.7993 17.9905 76.2469 18.6857 74.2469 18.6857C72.3422 18.6857 70.7041 17.9619 69.3326 16.5143C67.9803 15.0476 67.3041 13.2571 67.3041 11.1429C67.3041 9.02857 67.9803 7.24762 69.3326 5.8C70.7041 4.33333 72.3422 3.6 74.2469 3.6C76.2469 3.6 77.7993 4.29524 78.9041 5.68572V4ZM72.1041 14.0571C72.8469 14.8 73.7898 15.1714 74.9326 15.1714C76.0755 15.1714 77.0184 14.8 77.7612 14.0571C78.5231 13.2952 78.9041 12.3238 78.9041 11.1429C78.9041 9.96191 78.5231 9 77.7612 8.25714C77.0184 7.49524 76.0755 7.11429 74.9326 7.11429C73.7898 7.11429 72.8469 7.49524 72.1041 8.25714C71.3612 9 70.9898 9.96191 70.9898 11.1429C70.9898 12.3238 71.3612 13.2952 72.1041 14.0571Z" fill="${fill-current}" />
-                <path d="M101.246 7.54286H98.0177V13.4857C98.0177 13.981 98.1415 14.3429 98.3891 14.5714C98.6367 14.8 98.9986 14.9333 99.4748 14.9714C99.951 14.9905 100.541 14.981 101.246 14.9429V18.2857C98.7129 18.5714 96.9224 18.3333 95.8748 17.5714C94.8462 16.8095 94.332 15.4476 94.332 13.4857V7.54286H91.8463V4H94.332V1.11429L98.0177 0V4H101.246V7.54286Z" fill="${fill-current}" />
-                <path d="M114.256 4H117.941V18.2857H114.256V16.6C113.151 17.9905 111.598 18.6857 109.598 18.6857C107.694 18.6857 106.056 17.9619 104.684 16.5143C103.332 15.0476 102.656 13.2571 102.656 11.1429C102.656 9.02857 103.332 7.24762 104.684 5.8C106.056 4.33333 107.694 3.6 109.598 3.6C111.598 3.6 113.151 4.29524 114.256 5.68572V4ZM107.456 14.0571C108.198 14.8 109.141 15.1714 110.284 15.1714C111.427 15.1714 112.37 14.8 113.113 14.0571C113.875 13.2952 114.256 12.3238 114.256 11.1429C114.256 9.96191 113.875 9 113.113 8.25714C112.37 7.49524 111.427 7.11429 110.284 7.11429C109.141 7.11429 108.198 7.49524 107.456 8.25714C106.713 9 106.341 9.96191 106.341 11.1429C106.341 12.3238 106.713 13.2952 107.456 14.0571Z" fill="${fill-current}" />
-                <path d="M129.598 3.6C131.522 3.6 133.16 4.33333 134.512 5.8C135.884 7.24762 136.569 9.02857 136.569 11.1429C136.569 13.2571 135.884 15.0476 134.512 16.5143C133.16 17.9619 131.522 18.6857 129.598 18.6857C127.598 18.6857 126.055 17.9905 124.969 16.6V24H121.284V4H124.969V5.68572C126.055 4.29524 127.598 3.6 129.598 3.6ZM126.084 14.0571C126.826 14.8 127.769 15.1714 128.912 15.1714C130.055 15.1714 130.998 14.8 131.741 14.0571C132.503 13.2952 132.884 12.3238 132.884 11.1429C132.884 9.96191 132.503 9 131.741 8.25714C130.998 7.49524 130.055 7.11429 128.912 7.11429C127.769 7.11429 126.826 7.49524 126.084 8.25714C125.341 9 124.969 9.96191 124.969 11.1429C124.969 12.3238 125.341 13.2952 126.084 14.0571Z" fill="${fill-current}" />
-                <path d="M148.597 4H152.283V18.2857H148.597V16.6857C147.702 18.0191 146.283 18.6857 144.34 18.6857C142.778 18.6857 141.483 18.1619 140.454 17.1143C139.445 16.0667 138.94 14.619 138.94 12.7714V4H142.626V12.3143C142.626 13.2667 142.883 14 143.397 14.5143C143.911 15.0095 144.597 15.2571 145.454 15.2571C146.407 15.2571 147.169 14.9619 147.74 14.3714C148.311 13.781 148.597 12.8952 148.597 11.7143V4Z" fill="${fill-current}" />
-                <path d="M158.947 8.05714C158.947 8.4381 159.195 8.75238 159.69 9C160.204 9.22857 160.823 9.4381 161.547 9.62857C162.271 9.8 162.995 10.0286 163.718 10.3143C164.442 10.581 165.052 11.0381 165.547 11.6857C166.061 12.3333 166.318 13.1429 166.318 14.1143C166.318 15.581 165.766 16.7143 164.661 17.5143C163.575 18.2952 162.214 18.6857 160.576 18.6857C157.642 18.6857 155.642 17.5524 154.575 15.2857L157.775 13.4857C158.195 14.7238 159.128 15.3429 160.576 15.3429C161.89 15.3429 162.547 14.9333 162.547 14.1143C162.547 13.7333 162.29 13.4286 161.775 13.2C161.28 12.9524 160.671 12.7333 159.947 12.5429C159.223 12.3524 158.499 12.1143 157.775 11.8286C157.052 11.5429 156.433 11.0952 155.918 10.4857C155.423 9.85714 155.175 9.07619 155.175 8.14286C155.175 6.73333 155.69 5.62857 156.718 4.82857C157.766 4.00952 159.061 3.6 160.604 3.6C161.766 3.6 162.823 3.86667 163.775 4.4C164.728 4.91429 165.48 5.65714 166.033 6.62857L162.89 8.34286C162.433 7.37143 161.671 6.88572 160.604 6.88572C160.128 6.88572 159.728 6.99048 159.404 7.2C159.099 7.40953 158.947 7.69524 158.947 8.05714Z" fill="${fill-current}" />
-                <path d="M180.665 16.5143C179.198 17.9619 177.408 18.6857 175.293 18.6857C173.179 18.6857 171.389 17.9619 169.922 16.5143C168.474 15.0476 167.751 13.2571 167.751 11.1429C167.751 9.02857 168.474 7.24762 169.922 5.8C171.389 4.33333 173.179 3.6 175.293 3.6C177.408 3.6 179.198 4.33333 180.665 5.8C182.131 7.24762 182.865 9.02857 182.865 11.1429C182.865 13.2571 182.131 15.0476 180.665 16.5143ZM172.522 13.9714C173.265 14.7143 174.189 15.0857 175.293 15.0857C176.398 15.0857 177.322 14.7143 178.065 13.9714C178.808 13.2286 179.179 12.2857 179.179 11.1429C179.179 10 178.808 9.05714 178.065 8.31429C177.322 7.57143 176.398 7.2 175.293 7.2C174.189 7.2 173.265 7.57143 172.522 8.31429C171.798 9.05714 171.436 10 171.436 11.1429C171.436 12.2857 171.798 13.2286 172.522 13.9714Z" fill="${fill-current}" />
-                <path d="M196.315 4H200V18.2857H196.315V16.6C195.21 17.9905 193.658 18.6857 191.658 18.6857C189.753 18.6857 188.115 17.9619 186.743 16.5143C185.391 15.0476 184.715 13.2571 184.715 11.1429C184.715 9.02857 185.391 7.24762 186.743 5.8C188.115 4.33333 189.753 3.6 191.658 3.6C193.658 3.6 195.21 4.29524 196.315 5.68572V4ZM189.515 14.0571C190.258 14.8 191.2 15.1714 192.343 15.1714C193.486 15.1714 194.429 14.8 195.172 14.0571C195.934 13.2952 196.315 12.3238 196.315 11.1429C196.315 9.96191 195.934 9 195.172 8.25714C194.429 7.49524 193.486 7.11429 192.343 7.11429C191.2 7.11429 190.258 7.49524 189.515 8.25714C188.772 9 188.4 9.96191 188.4 11.1429C188.4 12.3238 188.772 13.2952 189.515 14.0571Z" fill="${fill-current}" />
-              </svg>
+          </div>
+          <div className="flex lg:hidden">
+            <button
+              type="button"
+              onClick={() => setMobileMenuOpen(true)}
+              className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700"
+            >
+              <span className="sr-only">Open main menu</span>
+              <i aria-hidden="true" className="h-6 w-6" />
             </button>
           </div>
-        </div>
-        <div className="hidden gap-16 sm:ml-6 sm:flex sm:items-center">
-          <div className="hidden sm:ml-6 sm:flex sm:space-x-8">
-            <a
-              href="#"
-              className="inline-flex items-center border-b-2 border-indigo-500 px-1 pt-1 text-sm font-medium text-gray-900"
-            >Explore</a>
-            <a
-              href="#"
-              className="inline-flex items-center border-b-2 border-transparent px-1 pt-1 text-sm font-medium text-gray-500 hover:border-gray-300 hover:text-gray-700"
-            >Plan</a>
-            <a
-              href="#"
-              className="inline-flex items-center border-b-2 border-transparent px-1 pt-1 text-sm font-medium text-gray-500 hover:border-gray-300 hover:text-gray-700"
-            >Book</a>
+          <div className="hidden lg:flex lg:gap-x-12">
+            {navigation.map((item) => (
+              <a key={item.name} href={item.href} className="navlink">
+                {item.name}
+              </a>
+            ))}
           </div>
 
-          <div className="relative ml-3">
-            <div>
+        </nav>
+        <Dialog open={mobileMenuOpen} onClose={setMobileMenuOpen} className="lg:hidden">
+          <div className="fixed inset-0 z-50" />
+          <DialogPanel className="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
+            <div className="flex items-center justify-between">
+              <a href="#" className="-m-1.5 p-1.5">
+                <span className="sr-only">Your Company</span>
+                <img
+                  alt=""
+                  src="https://tailwindui.com/plus/img/logos/mark.svg?color=indigo&shade=600"
+                  className="h-8 w-auto"
+                />
+              </a>
               <button
                 type="button"
-                className="relative flex rounded-full border b-gray-300 text-gray-800 p-1.5 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
-                id="user-menu-button"
-                aria-expanded="false"
-                aria-haspopup="true"
+                onClick={() => setMobileMenuOpen(false)}
+                className="-m-2.5 rounded-md p-2.5 text-gray-700"
               >
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h7"></path></svg>
+                <span className="sr-only">Close menu</span>
+                <i aria-hidden="true" className="h-6 w-6" />
               </button>
             </div>
-
-
-            <div
-              className="absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none"
-              role="menu"
-              aria-orientation="vertical"
-              aria-labelledby="user-menu-button"
-              >
-              <a
-                href="#"
-                className="block px-4 py-2 text-sm text-gray-700"
-                role="menuitem"
-               
-                id="user-menu-item-0"
-              >Your Profile</a>
-              <a
-                href="#"
-                className="block px-4 py-2 text-sm text-gray-700"
-                role="menuitem"
-               
-                id="user-menu-item-1"
-              >Settings</a>
-              <a
-                href="#"
-                className="block px-4 py-2 text-sm text-gray-700"
-                role="menuitem"
-          
-                id="user-menu-item-2"
-              >Sign out</a>
+            <div className="mt-6 flow-root">
+              <div className="-my-6 divide-y divide-gray-500/10">
+                <div className="space-y-2 py-6">
+                  {navigation.map((item) => (
+                    <a
+                      key={item.name}
+                      href={item.href}
+                      className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+                    >
+                      {item.name}
+                    </a>
+                  ))}
+                </div>
+                <div className="py-6">
+                  <a
+                    href="#"
+                    className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+                  >
+                    Log in
+                  </a>
+                </div>
+              </div>
             </div>
-          </div>
-        </div>
-        <div className="-mr-2 flex items-center sm:hidden"></div>
-      </div>
-    </div>
-  </div>
-)
+          </DialogPanel>
+        </Dialog>
+      </header>
+    </>
+  )
+}
