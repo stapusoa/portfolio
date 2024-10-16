@@ -2,9 +2,9 @@ import { useState } from 'react';
 import { Dialog, DialogPanel } from '@headlessui/react'
 
 const navigation = [
-  { name: 'work', href: '#' },
-  { name: 'about', href: '#' },
-  { name: 'contact', href: '#' },
+  { name: 'work', href: '/' },
+  { name: 'about', href: '/about' },
+  { name: 'contact', href: '/contact' },
 ]
 
 export const Navbar = () => {
@@ -14,7 +14,7 @@ export const Navbar = () => {
       <header className="sticky inset-x-0 top-0 z-50 bg-transparent">
         <nav aria-label="Global" className="flex items-center justify-between p-6 lg:px-8">
           <div className="flex lg:flex-1">
-            <a href="#" className="-m-1.5 p-1.5">
+            <a href="/" className="-m-1.5 p-1.5">
               <span className="sr-only">Your Company</span>
               <img
                 alt=""

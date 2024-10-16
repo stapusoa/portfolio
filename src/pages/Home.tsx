@@ -14,7 +14,7 @@ const Home = () => {
       setCurrentRole((prevRole) => (prevRole + 1) % roles.length);
     }, 3000);
     return () => clearInterval(interval);
-   }, []);
+  }, []);
   return (
     <>
       <Helmet>
@@ -32,13 +32,13 @@ const Home = () => {
         />
         <div className="relative isolate px-6 pt-14 pb-32 lg:px-8">
           <div className="left max-w-2xl px-32 py-28 sm:py-36 lg:py-48">
-            
+
             <div className="text-left">
               <h1 className="mb-0 hover:drop-shadow-sm relative text-balance font-gilroy text-8 font-400 tracking-tight text-green">
                 product{' '}
-                  <span className="transition-opacity duration-500 ease opacity-100">
-                    {roles[currentRole]}
-                  </span>
+                <span className="transition-opacity duration-500 ease opacity-100">
+                  {roles[currentRole]}
+                </span>
               </h1>
               <h1 className="mt-0 mb-8 text-16 font-gilroy font-700 leading-16 text-blue">
                 designing for users, <br />
@@ -57,15 +57,23 @@ const Home = () => {
               </div>
             </div>
           </div>
-          </div>
-          <div className="w-full">
-            <img
-            alt='Background pattern for content'
+        </div>
+        <div className="relative w-full h-screen mt-16">
+          <img
             src='/images/background-texture-dots.png'
-            className='w-full h-min-[100vh] bg-no-repeat bg-fixed bg-cover'
-            />
-            <div className='pt-2'>
-            <div className="mt-10 grid gap-4 sm:mt-16 lg:grid-cols-3 lg:grid-rows-2">
+            alt='Background pattern for content'
+            className="absolute inset-0 w-full h-full object-cover z-[1]"
+          />
+          <div className="relative z-10 pt-32 flex h-screen items-center justify-center">
+            
+
+          <div className="bg-transparent py-24 sm:py-32">
+      <div className="mx-auto max-w-2xl px-6 lg:max-w-7xl lg:px-8">
+        <h2 className="text-center text-base/7 font-semibold text-indigo-600">Deploy faster</h2>
+        <p className="mx-auto mt-2 max-w-lg text-pretty text-center text-4xl font-medium tracking-tight text-gray-950 sm:text-5xl">
+          Everything you need to deploy your app.
+        </p>
+        <div className="mt-10 grid gap-4 sm:mt-16 lg:grid-cols-3 lg:grid-rows-2">
           <div className="relative lg:row-span-2">
             <div className="absolute inset-px rounded-lg bg-white lg:rounded-l-[2rem]"></div>
             <div className="relative flex h-full flex-col overflow-hidden rounded-[calc(theme(borderRadius.lg)+1px)] lg:rounded-l-[calc(2rem+1px)]">
@@ -157,24 +165,17 @@ const Home = () => {
             <div className="pointer-events-none absolute inset-px rounded-lg shadow ring-1 ring-black/5 max-lg:rounded-b-[2rem] lg:rounded-r-[2rem]"></div>
           </div>
         </div>
-      
-            </div>
+      </div>
+    </div>
+
+
+
 
           </div>
-          <div
-            aria-hidden="true"
-            className="absolute inset-x-0 top-[calc(100%-13rem)] -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[calc(100%-30rem)]"
-          >
-            <div
-              style={{
-                clipPath:
-                  'polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)',
-              }}
-              className="relative left-[calc(50%+3rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 bg-gradient-to-tr from-[#ff80b5] to-[#9089fc] opacity-30 sm:left-[calc(50%+36rem)] sm:w-[72.1875rem]"
-            />
-          </div>
         </div>
-      
+
+      </div>
+
 
 
     </>
