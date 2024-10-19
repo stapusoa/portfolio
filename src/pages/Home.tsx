@@ -62,7 +62,7 @@ const Home = () => {
           <img
             src='/images/background-texture-dots.png'
             alt='Background pattern for content'
-            className="absolute inset-0 w-full h-full object-cover z-[1]"
+            className="absolute inset-0 w-full h-450 object-cover z-[1]"
           />
           <div className="relative z-10 pt-32 flex h-screen items-center justify-center">
             
