@@ -8,12 +8,14 @@ import Project1 from './pages/projects/Project1';
 import Project2 from './pages/projects/Project2';
 import Project3 from './pages/projects/Project3';
 import Project4 from './pages/projects/Project4';
+import { Navbar } from './components/Navbar/Navbar';
 
 const App: React.FC = () => {
   return (
     <HelmetProvider> {/* Wrap the entire app with HelmetProvider */}
       <Router>
         <div>
+          <Navbar />
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
