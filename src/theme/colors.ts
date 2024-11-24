@@ -60,28 +60,17 @@ const accentColors = {
   redDark: '#7C0000',
 } as const
 
-const allGreys = {
-  grey100: '#F7F7FC',
-  grey200: '#EFF0F6',
-  grey300: '#E4E5EE',
-  grey400: '#DADCE2',
-  grey500: '#C7C7CC',
-  grey600: '#B0B1B7',
-  grey700: '#8B8C95',
-  grey800: '#636366',
-  grey900: '#35343C',
-} as const
 
 const greys = {
-  100: '#F7F7FC',
-  200: '#EFF0F6',
-  300: '#E4E5EE',
-  400: '#DADCE2',
-  500: '#C7C7CC',
-  600: '#B0B1B7',
-  700: '#8B8C95',
-  800: '#636366',
-  900: '#35343C',
+  100: '#F1F5F9',
+  200: '#E4E4E7',
+  300: '#D4D4D4',
+  400: '#A6AAB1',
+  500: '#6B7280',
+  600: '#52525B',
+  700: '#3F3F46',
+  800: '#353535',
+  900: '#18181B',
 } as const
 
 const colors = {
@@ -89,7 +78,6 @@ const colors = {
   ...buttonHoverColors,
   ...accentColors,
   ...mainColors,
-  ...allGreys,
   grey: { ...greys },
   body: 'rgba(70, 70, 72, 1)',
   white: '#FFFFFF',

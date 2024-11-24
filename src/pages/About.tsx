@@ -1,9 +1,6 @@
 
-import { Helmet } from 'react-helmet-async'
-import { useState, useEffect } from 'react';
 import '../App.css'
 
-const roles = ['designer', 'engineer', 'architect'];
 const socialMediaLinks = [
   {
     name: 'Codepen',
@@ -60,39 +57,26 @@ const socialMediaLinks = [
 
 const About = () => {
   console.log('Home component is rendering');
-  const [currentRole, setCurrentRole] = useState(0);
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentRole((prevRole) => (prevRole + 1) % roles.length);
-    }, 3000);
-    return () => clearInterval(interval);
-  }, []);
   return (
     <>
-      <Helmet>
-        <title>Sara Tapusoa | UX Portfolio</title>
-        <meta property="og:title" content="Jane Doe | Web Developer Portfolio" />
-        <meta property="og:description" content="Explore my web development projects and skills in front-end and back-end technologies." />
-        <meta property="og:image" content="https://your-portfolio.com/images/portfolio-thumbnail.jpg" />
-        <link rel="canonical" href="https://www.saratapusoa.com" />
-      </Helmet>
+   
       <div className="relative w-full h-screen">
-      <img
-    alt="Background image for About page"
-    src="/images/lg_bg-about-hero.jpg" // Default (large screen)
-    className="w-full h-full object-cover object-center-right fixed p-0 m-0 z-[-1] inset-0 hidden lg:block"
-  />
-  <img
-    alt="Background image for About page - tablet"
-    src="/images/md_bg-about-hero.jpg" // Tablet
-    className="w-full h-full object-cover object-top-right fixed p-0 m-0 z-[-1] inset-0 hidden md:block lg:hidden"
-  />
-  <img
-    alt="Background image for About page - mobile"
-    src="/images/sm_bg-about-hero.jpg" // Mobile
-    className="w-full h-full object-cover object-top-right  fixed p-0 m-0 z-[-1] inset-0 block md:hidden"
-  />
+        <img
+          alt="Background image for About page"
+          src="/images/lg_bg-about-hero.jpg" // Default (large screen)
+          className="w-full h-full object-cover object-center-right fixed p-0 m-0 z-[-1] inset-0 hidden lg:block"
+        />
+        <img
+          alt="Background image for About page - tablet"
+          src="/images/md_bg-about-hero.jpg" // Tablet
+          className="w-full h-full object-cover object-top-right fixed p-0 m-0 z-[-1] inset-0 hidden md:block lg:hidden"
+        />
+        <img
+          alt="Background image for About page - mobile"
+          src="/images/sm_bg-about-hero.jpg" // Mobile
+          className="w-full h-full object-cover object-top-right  fixed p-0 m-0 z-[-1] inset-0 block md:hidden"
+        />
         <div className="relative isolate px-6 pt-14 lg:px-8 h-screen">
           <div className="left max-w-2xl px-32 py-28 sm:py-36 lg:py-48">
 
@@ -101,7 +85,7 @@ const About = () => {
                 about me
               </h1>
               <h1 className="mt-0 mb-8 text-16 font-gilroy font-700 leading-16 text-blue">
-              Combining design, research, and frontend to build impactful, user-driven systems
+                Combining design, research, and frontend to build impactful, user-driven systems
               </h1>
               <div className="flex items-left justify-left gap-x-4">
                 <a
@@ -117,114 +101,147 @@ const About = () => {
             </div>
           </div>
         </div>
-        <div className="relative w-full h-screen">
-          <img
-            src='/images/background-texture-dots.png'
-            alt='Background pattern for content'
-            className="absolute inset-0 w-full h-800 object-cover z-[1]"
-          />
-          <div className="relative z-10 flex flex-col items-center justify-center">
-            <div className="bg-transparent pt-28 pb-16 px-32 items-center justify-center gap-16 flex flex-row">
-              <div className="flex flex-col items-center gap-14">
-                <div className="h-39 w-39 flex items-end justify-center">
-                  <img
-                    src='/images/role-product-illustration.webp'
-                    alt='Illustration for product design'
-                    className="h-33"
-                  />
+        <div className="relative bg-white w-full h-screen">
+          <div className="relative z-10 flex flex-col w-full">
+            <div className="bg-white pt-28 pb-16 px-32 flex flex-col items-start gap-8">
+              <div className="flex flex-col items-start gap-2 w-full">
+                <div className="py-2 text-left">
+                  <h6 className="m-0 font-gilroy font-300 text-8 text-grey-800 tracking-wide">skills</h6>
                 </div>
-                <div className='gap-2'>
-                  <div className='py-2'>
-                    <h6 className="font-gilroy font-300 tracking-wide text-grey-800 text-7 m-0">product design</h6>
-                  </div>
-                  <div className='py-2'>
-                    <h6 className='font-gilroy font-500 text-8 text-center text-grey-900 leading-tight m-0'>Creating intuitive and engaging experiences that focus on user problems and meet business goals</h6>
-                  </div>
-                </div>
-              </div>
-              <div className="flex flex-col items-center gap-14">
-                <div className="h-39 w-39 flex items-end justify-center">
-                  <img
-                    src='/images/role-research-illustration.webp'
-                    alt='Illustration for product design'
-                    className="h-33"
-                  />
-                </div>
-                <div className='gap-2'>
-                  <div className='py-2'>
-                    <h6 className="font-gilroy font-300 tracking-wide text-grey-800 text-7 m-0">user research</h6>
-                  </div>
-                  <div className='py-2'>
-                    <h6 className='font-gilroy font-500 text-8 text-center text-grey-900 leading-tight m-0'>Gathering insights to inform design decisions and ensure solutions are user-centered and effective</h6>
-                  </div>
-                </div>
-              </div>
-              <div className="flex flex-col items-center gap-14">
-                <div className="h-39 w-39 flex items-start justify-center">
-                  <img
-                    src='/images/role-uxd-illustration.webp'
-                    alt='Illustration for product design'
-                    className="h-33"
-                  />
-                </div>
-                <div className='gap-2'>
-                  <div className='py-2'>
-                    <h6 className="font-gilroy font-300 tracking-wide text-grey-800 text-7 m-0">design systems</h6>
-                  </div>
-                  <div className='py-2'>
-                    <h6 className='font-gilroy font-500 text-8 text-center text-grey-900 leading-tight m-0'>Building scalable design systems that ensure consistency, efficiency, and cohesive experiences.</h6>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className='bg-transparent py-16 px-32 flex flex-row items-center'>
-              <img
-                alt='Case Study 1 Image: Fishbowl Go for Tablet and iPad'
-                src='/images/fbprod-project-image.jpg'
-                className='w-1/2 h-150 object-cover rounded-3xl border-solid border-3 border-grey-300'
-              />
-              <div className='flex flex-col gap-2 pl-16 pr-32 w-auto'>
-                <div className='py-2'>
-                  <h6 className='font-gilroy font-300 text-7 text-left text-grey-800 m-0 tracking-wide'>fishbowl go</h6>
-                </div>
-                <div className='py-2'>
-                  <h6 className='font-gilroy font-500 text-10 text-left text-grey-900 m-0 tracking-cozy'>simplifying inventory management in the warehouse and in the office.</h6>
-                </div>
-              </div>
-            </div>
-            <div className='bg-transparent py-16 px-32 flex flex-row items-center'>
 
-              <div className='flex flex-col gap-2 pl-16 pr-32 w-auto'>
-                <div className='py-2'>
-                  <h6 className='font-gilroy font-300 text-7 text-left text-grey-800 m-0 tracking-wide'>fishbowl go</h6>
-                </div>
-                <div className='py-2'>
-                  <h6 className='font-gilroy font-500 text-10 text-left text-grey-900 m-0 tracking-cozy'>simplifying inventory management in the warehouse and in the office.</h6>
-                </div>
-              </div>
-              <img
-                alt='Case Study 1 Image: Fishbowl Go for Tablet and iPad'
-                src='/images/fbprod-project-image.jpg'
-                className='w-1/2 h-150 object-cover rounded-3xl border-solid border-3 border-grey-300'
-              />
-            </div>
-            <div className='bg-transparent py-16 px-32 flex flex-row items-center'>
-              <img
-                alt='Case Study 1 Image: Fishbowl Go for Tablet and iPad'
-                src='/images/fbprod-project-image.jpg'
-                className='w-1/2 h-150 object-cover rounded-3xl border-solid border-3 border-grey-300'
-              />
-              <div className='flex flex-col gap-2 pl-16 pr-32 w-auto'>
-                <div className='py-2'>
-                  <h6 className='font-gilroy font-300 text-7 text-left text-grey-800 m-0 tracking-wide'>fishbowl go</h6>
-                </div>
-                <div className='py-2'>
-                  <h6 className='font-gilroy font-500 text-10 text-left text-grey-900 m-0 tracking-cozy'>simplifying inventory management in the warehouse and in the office.</h6>
-                </div>
-              </div>
-            </div>
+                {/* Skills List */}
+                <div className="flex flex-row items-start gap-8 text-left w-full">
+                  {/* Left Column Skills */}
+                  <ul className="p-0 list-disc list-inside space-y-2 w-1/2">
+                    <li className="text-grey-900 font-gilroy font-500 text-8 leading-tight">
+                      UX design principles & processes
+                    </li>
+                    <li className="text-grey-900 font-gilroy font-500 text-8 leading-tight">
+                      User research and statistics
+                    </li>
+                    <li className="text-grey-900 font-gilroy font-500 text-8 leading-tight">
+                      UI & graphic design
+                    </li>
+                    <li className="text-grey-900 font-gilroy font-500 text-8 leading-tight">
+                      Prototyping
+                    </li>
+                  </ul>
 
-            <div className='bg-transparent py-16 px-32 flex flex-row items-start'>
+                  {/* Right Column Skills */}
+                  <ul className="p-0 list-disc list-inside space-y-2 w-1/2">
+                    <li className="text-grey-900 font-gilroy font-500 text-8 leading-tight">
+                      Design systems
+                    </li>
+                    <li className="text-grey-900 font-gilroy font-500 text-8 leading-tight">
+                      Frontend engineering
+                    </li>
+                    <li className="text-grey-900 font-gilroy font-500 text-8 leading-tight">
+                      Frontend architecture
+                    </li>
+                    <li className="text-grey-900 font-gilroy font-500 text-8 leading-tight">
+                      Organization & processes
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div className="bg-white pt-28 pb-16 px-32 flex flex-col items-start gap-8">
+              <div className="flex flex-col items-start gap-2 w-full">
+                <div className="py-2 text-left">
+                  <h6 className="m-0 font-gilroy font-300 text-8 text-grey-800 tracking-wide">tools</h6>
+                </div>
+
+                {/* Skills List */}
+                <div className="flex flex-row items-start gap-8 text-left w-full">
+                  {/* Left Column Skills */}
+                  <ul className="p-0 list-disc list-inside space-y-2 w-1/2">
+                    <li className="text-grey-900 font-gilroy font-500 text-8 leading-tight">
+                      Figma
+                    </li>
+                    <li className="text-grey-900 font-gilroy font-500 text-8 leading-tight">
+                      Procreate for sketching
+                    </li>
+                    <li className="text-grey-900 font-gilroy font-500 text-8 leading-tight">
+                      Linear for tickets
+                    </li>
+                    <li className="text-grey-900 font-gilroy font-500 text-8 leading-tight">
+                      Google forms & excel for research
+                    </li>
+                  </ul>
+
+                  {/* Right Column Skills */}
+                  <ul className="p-0 list-disc list-inside space-y-2 w-1/2">
+                    <li className="text-grey-900 font-gilroy font-500 text-8 leading-tight">
+                      Google Analytics & Hotjar
+                    </li>
+                    <li className="text-grey-900 font-gilroy font-500 text-8 leading-tight">
+                      Git/Github for version control
+                    </li>
+                    <li className="text-grey-900 font-gilroy font-500 text-8 leading-tight">
+                      VS code & Xcode
+                    </li>
+                    <li className="text-grey-900 font-gilroy font-500 text-8 leading-tight">
+                      React and React Native
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div className="bg-white pt-28 pb-16 px-32 flex flex-col items-start gap-8">
+              <div className="flex flex-col items-start gap-8 w-full">
+                <div className="py-2 text-left">
+                  <h6 className="m-0 font-gilroy font-300 text-8 text-grey-800 tracking-wide">my approach to design</h6>
+                </div>
+
+                <div className="flex flex-col items-start gap-8 text-left w-full">
+                 <p className='m-0 font-gilroy font-500 text-8 leading-relaxed text-grey-900'>
+                 My approach to user-centered design begins with deep competitive research and a clear understanding of the problem. I start by identifying common pain points, formulating a problem statement, and then diving into the UX process—whether that’s a design sprint or another structured approach. Every UX journey, for me, centers on the user’s goals and challenges.
+                 </p>
+                 <p className='m-0 font-gilroy font-500 text-8 leading-relaxed text-grey-900'>
+                 Since UX is an ever-evolving, iterative process, research and testing are essential. Without these, we can’t truly understand what’s working (and what’s not) for our users, nor can we accurately define the problem. This clarity is the foundation of my work.
+                 </p>
+                 <p className='m-0 font-gilroy font-500 text-8 leading-relaxed text-grey-900'>
+                 In my design philosophy, aesthetics are important, but I’m pragmatic. My first priority is always: “Does this solution solve the problem?” Once I’m confident it does, I focus on refining the UI, but without altering core functionality. Too much focus on visual style can sometimes introduce new issues; after all, UI is often subjective.
+                 </p>
+                  
+                </div>
+              </div>
+            </div>
+            <div className="bg-white pt-28 pb-16 px-32 flex flex-col items-start gap-8">
+              <div className="flex flex-col items-start gap-8 w-full">
+                <div className="py-2 text-left">
+                  <h6 className="m-0 font-gilroy font-300 text-8 text-grey-800 tracking-wide">my journey</h6>
+                </div>
+
+                <div className="flex flex-col items-start gap-8 text-left w-full">
+                 <p className='m-0 font-gilroy font-500 text-8 leading-relaxed text-grey-900'>
+                 My journey into UX began, like many, with graphic design. But designing purely for aesthetics didn’t feel like enough of a challenge. I was drawn to UX for its focus on research, problem-solving, and iteration. Yet, even UX alone didn’t feel like the full picture—I wanted to complete the puzzle, and that’s what led me to learn to code and eventually discover my love for building design systems.                 </p>
+                 <p className='m-0 font-gilroy font-500 text-8 leading-relaxed text-grey-900'>
+                 Today, while I still enjoy UI, UX design, and research, my true passion lies in creating cohesive design systems. I’m dedicated to developing frameworks that empower teams to design with consistency and flexibility, making every user interaction meaningful and intentional.                 </p>
+                 <p className='m-0 font-gilroy font-500 text-8 leading-relaxed text-grey-900'>
+                 When balancing user needs with business goals, I keep the focus on impact. At the end of the day, it’s about aligning design decisions with both user value and business success—a balance I achieve through close collaboration with stakeholders.                 </p>
+                  
+                </div>
+              </div>
+            </div>
+            <div className="bg-white pt-28 pb-16 px-32 flex flex-col items-start gap-8">
+              <div className="flex flex-col items-start gap-8 w-full">
+                <div className="py-2 text-left">
+                  <h6 className="m-0 font-gilroy font-300 text-8 text-grey-800 tracking-wide">fun facts</h6>
+                </div>
+
+                <div className="flex flex-col items-start gap-8 text-left w-full">
+                 <p className='m-0 font-gilroy font-500 text-8 leading-relaxed text-grey-900'>
+                 Beyond design and development, I’m passionate about puzzles and problem-solving. This mindset fuels my approach to UX, but it’s also at the heart of other interests, like climbing—especially bouldering. Although I’ve taken a break since having two little ones, I’m motivated to get back into shape for climbing soon.                  </p>
+                 <p className='m-0 font-gilroy font-500 text-8 leading-relaxed text-grey-900'>
+                 I’m also a gamer at heart, whether it’s video games, board games, card games, or a round of poker or blackjack. In addition, I play a few instruments and enjoy watching anime (but I’m not a “weeaboo,” as friends joke!). I’m part Japanese, though you wouldn’t guess by looking at me—fun fact: my husband, daughters, and I are all the same amount of Japanese.                 </p>
+                 <p className='m-0 font-gilroy font-500 text-8 leading-relaxed text-grey-900'>
+                 I speak Malay and a bit of Japanese, though English is technically my native language, despite often misusing it! My friends once gave me the nickname “Goldfish” for my memory. Thankfully, technology, especially Apple and Google Maps, keeps me on track. Without them, I’d be getting lost all the time.                  </p>
+                  
+                </div>
+              </div>
+            </div>
+            <div className='bg-white py-16 px-32 flex flex-row items-start'>
               <form>
                 <div className='flex flex-col gap-2'>
                   <div className='py-2'>
