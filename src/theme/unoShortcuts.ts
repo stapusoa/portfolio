@@ -19,4 +19,28 @@ export const unoShortcuts = {
   'body-large': 'text-7 font-400',
   'body-2': 'body-base-styles text-5',
 
+    administration: "list-none p-0 m-0",
+    // Shortcut for director
+    director: "mx-auto w-1/2",
+    // Shortcut for department and its variations
+    department: "float-left w-[18%] ml-[2%] mb-6",
+    
+    // Shortcut for section
+    // Shortcut for hover transitions
+    hoverable: "transition-all hover:shadow-lg",
+    node: "bg-[#81B29A] text-white text-center font-bold rounded-lg py-2 px-4 shadow-md hover:shadow-lg transition",
+
+    // Section styles
+    section: "bg-white text-gray-700 text-center font-semibold rounded-lg py-2 px-4 shadow-md hover:shadow-lg transition",
+
+    // Department colors
+    "department-a": "bg-[#FFD600] text-gray-800",
+    "department-b": "bg-[#AAD4E7] text-gray-800",
+    "department-c": "bg-[#FDB0FD] text-gray-800",
+    "department-d": "bg-[#A3A2A2] text-gray-800",
+    "department-e": "bg-[#f0f0f0] text-gray-800",
+
+    // Connector line
+    connector: "absolute w-[2px] bg-white",
+    "subdirector-after": "relative after:content-[''] after:block after:w-0 after:h-[130px] after:bg-red-500 after:border-1-[4px] after:border-white after:left-[45.45%] after:relative"
 } as const
