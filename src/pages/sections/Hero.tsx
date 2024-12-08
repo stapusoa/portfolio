@@ -5,30 +5,11 @@ interface HeroProps {
   tagline: string;
   primary: string;
   secondary: string;
-  imageSM: string;
-  imageMD: string;
-  imageLG: string;
 }
 
-const Hero: React.FC<HeroProps> = ({ product, tagline, primary, secondary, imageSM, imageMD, imageLG }) => {
+const Hero: React.FC<HeroProps> = ({ product, tagline, primary, secondary }) => {
 
   return (
-    <>
-      <img
-        alt="Background image for page"
-        src={imageLG}
-        className="w-full h-full object-cover object-top-right fixed p-0 m-0 z-[-1] inset-0 hidden lg:block"
-      />
-      <img
-        alt="Background image for page - tablet"
-        src={imageMD}
-        className="w-full h-full object-cover object-top-right fixed p-0 m-0 z-[-1] inset-0 hidden md:block lg:hidden"
-      />
-      <img
-        alt="Background image for page - mobile"
-        src={imageSM}
-        className="w-full h-full object-cover object-top-right fixed p-0 m-0 z-[-1] inset-0 block md:hidden"
-      />
       <div className="relative isolate px-6 pt-14 lg:px-8 h-screen">
         <div className="left max-w-2xl px-32 py-28 sm:py-36 lg:py-48">
           <div className="text-left">
@@ -52,7 +33,6 @@ const Hero: React.FC<HeroProps> = ({ product, tagline, primary, secondary, image
           </div>
         </div>
       </div>
-    </>
   )
 }
 
