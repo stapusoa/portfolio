@@ -1,6 +1,6 @@
-
+import React from "react";
 import '../App.css'
-import HomeHero from './sections/HomeHero'
+import { BackgroundImages, CaseStudies, HomeHeroContent, Roles } from './sections/index'
 
 const socialMediaLinks = [
   {
@@ -56,145 +56,31 @@ const socialMediaLinks = [
   },
 ];
 
-const Home = () => {
-  console.log('Home component is rendering');
+const images = {
+  imageLG: '/portfolio/images/lg_bg-home-hero.webp',
+  imageMD: '/portfolio/images/md_bg-home-hero.webp',
+  imageSM: '/portfolio/images/sm_bg-home-hero.webp',
+};
+const roles = ['designer', 'engineer', 'architect'];
+const currentRole = 0;
 
+const Home: React.FC = () => {
   return (
     <>
       <div className="relative w-full h-screen">
-        <HomeHero />
-        <img
-          src='/portfolio/images/background-texture-dots.png'
-          alt='Background pattern for content'
-          className="absolute inset-0 w-full h-800 object-cover z-[1]"
-        />
-        <div className="relative z-10 flex flex-col items-center justify-center">
-          <div className="bg-transparent pt-28 pb-16 px-32 items-center justify-center gap-16 flex flex-row">
-            <div className="flex flex-col items-center gap-14">
-              <div className="h-39 w-39 flex items-end justify-center">
-                <img
-                  src='/portfolio/images/role-product-illustration.webp'
-                  alt='Illustration for product design'
-                  className="h-33"
-                />
-              </div>
-              <div className='gap-2'>
-                <div className='py-2'>
-                  <h6 className="font-gilroy font-300 tracking-wide text-grey-800 text-7 m-0">product design</h6>
-                </div>
-                <div className='py-2'>
-                  <h6 className='font-gilroy font-500 text-8 text-center text-grey-900 leading-tight m-0'>Creating intuitive and engaging experiences that focus on user problems and meet business goals</h6>
-                </div>
-              </div>
-            </div>
-            <div className="flex flex-col items-center gap-14">
-              <div className="h-39 w-39 flex items-end justify-center">
-                <img
-                  src='/portfolio/images/role-research-illustration.webp'
-                  alt='Illustration for product design'
-                  className="h-33"
-                />
-              </div>
-              <div className='gap-2'>
-                <div className='py-2'>
-                  <h6 className="font-gilroy font-300 tracking-wide text-grey-800 text-7 m-0">user research</h6>
-                </div>
-                <div className='py-2'>
-                  <h6 className='font-gilroy font-500 text-8 text-center text-grey-900 leading-tight m-0'>Gathering insights to inform design decisions and ensure solutions are user-centered and effective</h6>
-                </div>
-              </div>
-            </div>
-            <div className="flex flex-col items-center gap-14">
-              <div className="h-39 w-39 flex items-start justify-center">
-                <img
-                  src='/portfolio/images/role-uxd-illustration.webp'
-                  alt='Illustration for product design'
-                  className="h-33"
-                />
-              </div>
-              <div className='gap-2'>
-                <div className='py-2'>
-                  <h6 className="font-gilroy font-300 tracking-wide text-grey-800 text-7 m-0">design systems</h6>
-                </div>
-                <div className='py-2'>
-                  <h6 className='font-gilroy font-500 text-8 text-center text-grey-900 leading-tight m-0'>Building scalable design systems that ensure consistency, efficiency, and cohesive experiences.</h6>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className='bg-transparent py-16 px-32 flex flex-row items-center'>
-            <img
-              alt='Case Study 1 Image: Fishbowl Go for Tablet and iPad'
-              src='/portfolio/images/fbprod-project-image.jpg'
-              className='w-1/2 h-150 object-cover rounded-3xl border-solid border-3 border-grey-300'
-            />
-            <div className='flex flex-col gap-2 pl-16 pr-32 w-auto'>
-              <div className='py-2'>
-                <h6 className='font-gilroy font-300 text-7 text-left text-grey-800 m-0 tracking-wide'>fishbowl go</h6>
-              </div>
-              <div className='py-2'>
-                <h6 className='font-gilroy font-500 text-10 text-left text-grey-900 m-0 tracking-cozy'>simplifying inventory management in the warehouse and in the office.</h6>
-              </div>
-              <div className='py-2 flex flex-row gap-1.5 items-center'>
-                <a href="/portfolio/projects/project1" className="link">
-                  case study
-                </a>
-                <div className='py-2 h-full'>
-                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="https://www.w3.org/2000/svg">
-                    <path d="M4.91967 14.0067C5.24633 14.3334 5.773 14.3334 6.09967 14.0067L11.6397 8.4667C11.8997 8.2067 11.8997 7.7867 11.6397 7.5267L6.09967 1.9867C5.773 1.66003 5.24633 1.66003 4.91967 1.9867C4.593 2.31337 4.593 2.84003 4.91967 3.1667L9.74633 8.00003L4.913 12.8334C4.593 13.1534 4.593 13.6867 4.91967 14.0067V14.0067Z" fill="#81B29A" />
-                  </svg></div>
-              </div>
-            </div>
-          </div>
-          <div className='bg-transparent py-16 px-32 flex flex-row items-center'>
-            <div className='flex flex-col gap-2 pl-16 pr-32 w-auto'>
-              <div className='py-2'>
-                <h6 className='font-gilroy font-300 text-7 text-left text-grey-800 m-0 tracking-wide'>fishbowl go</h6>
-              </div>
-              <div className='py-2'>
-                <h6 className='font-gilroy font-500 text-10 text-left text-grey-900 m-0 tracking-cozy'>simplifying inventory management in the warehouse and in the office.</h6>
-              </div>
-              <div className='py-2 flex flex-row gap-1.5 items-center'>
-                <a href="/projects/project2" className="link">
-                  case study
-                </a>
-                <div className='py-2 h-full'>
-                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="https://www.w3.org/2000/svg">
-                    <path d="M4.91967 14.0067C5.24633 14.3334 5.773 14.3334 6.09967 14.0067L11.6397 8.4667C11.8997 8.2067 11.8997 7.7867 11.6397 7.5267L6.09967 1.9867C5.773 1.66003 5.24633 1.66003 4.91967 1.9867C4.593 2.31337 4.593 2.84003 4.91967 3.1667L9.74633 8.00003L4.913 12.8334C4.593 13.1534 4.593 13.6867 4.91967 14.0067V14.0067Z" fill="#81B29A" />
-                  </svg></div>
-              </div>
-            </div>
-            <img
-              alt='Case Study 1 Image: Fishbowl Go for Tablet and iPad'
-              src='/portfolio/images/fbprod-project-image.jpg'
-              className='w-1/2 h-150 object-cover rounded-3xl border-solid border-3 border-grey-300'
-            />
-          </div>
-          <div className='bg-transparent py-16 px-32 flex flex-row items-center'>
-            <img
-              alt='Case Study 1 Image: Fishbowl Go for Tablet and iPad'
-              src='/portfolio/images/fbprod-project-image.jpg'
-              className='w-1/2 h-150 object-cover rounded-3xl border-solid border-3 border-grey-300'
-            />
-            <div className='flex flex-col gap-2 pl-16 pr-32 w-auto'>
-              <div className='py-2'>
-                <h6 className='font-gilroy font-300 text-7 text-left text-grey-800 m-0 tracking-wide'>fishbowl go</h6>
-              </div>
-              <div className='py-2'>
-                <h6 className='font-gilroy font-500 text-10 text-left text-grey-900 m-0 tracking-cozy'>simplifying inventory management in the warehouse and in the office.</h6>
-              </div>
-              <div className='py-2 flex flex-row gap-1.5 items-center'>
-                <a href="/projects/project3" className="link">
-                  case study
-                </a>
-                <div className='py-2 h-full'>
-                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="https://www.w3.org/2000/svg">
-                    <path d="M4.91967 14.0067C5.24633 14.3334 5.773 14.3334 6.09967 14.0067L11.6397 8.4667C11.8997 8.2067 11.8997 7.7867 11.6397 7.5267L6.09967 1.9867C5.773 1.66003 5.24633 1.66003 4.91967 1.9867C4.593 2.31337 4.593 2.84003 4.91967 3.1667L9.74633 8.00003L4.913 12.8334C4.593 13.1534 4.593 13.6867 4.91967 14.0067V14.0067Z" fill="#81B29A" />
-                  </svg></div>
-              </div>
-            </div>
-          </div>
-          <div className='bg-transparent py-16 px-32 flex flex-row items-start'>
+        <BackgroundImages imageSM={images.imageSM}
+          imageMD={images.imageMD}
+          imageLG={images.imageLG} />
+        <HomeHeroContent roles={roles} currentRole={currentRole} />
+        <div className="relative z-20">
+          <img
+            src='/portfolio/images/background-texture-dots.png'
+            alt='Background pattern for content'
+            className="absolute inset-0 w-full h-800 object-cover z-26"
+          />
+          <Roles />
+          <CaseStudies />
+          <div className='bg-transparent relative z-35 py-16 px-32 flex flex-row items-center justify-center'>
             <form>
               <div className='flex flex-col gap-2'>
                 <div className='py-2'>
