@@ -11,3 +11,6 @@ export { default as Problem } from './Problem';
 export { default as Understand } from './Understand'
 export { default as PainPoints } from './PainPoints'
 export { default as Questions } from './Questions'
+export { default as Journey } from './Journey'
+export { default as SiteMap } from './SiteMap'
+export { default as Outcomes } from './Outcomes'
