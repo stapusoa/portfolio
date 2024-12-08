@@ -8,7 +8,7 @@ const navigation = [
   { name: 'contact', href: '/contact' },
 ]
 
-export const Navbar = () => {
+const Navbar = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   return (
     <>
@@ -23,7 +23,6 @@ export const Navbar = () => {
                 className="h-5 w-auto"
               />
             </Link>
-
           </div>
           <div className="flex lg:hidden">
             <button
@@ -42,7 +41,6 @@ export const Navbar = () => {
               </Link>
             ))}
           </div>
-
         </nav>
         <Dialog open={mobileMenuOpen} onClose={setMobileMenuOpen} className="lg:hidden">
           <div className="fixed inset-0 z-50" />
@@ -94,3 +92,5 @@ export const Navbar = () => {
     </>
   )
 }
+
+export default Navbar;

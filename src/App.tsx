@@ -6,7 +6,7 @@ import Contact from './pages/Contact';
 import Project1 from './pages/projects/Project1';
 import Project2 from './pages/projects/Project2';
 import Project3 from './pages/projects/Project3';
-import { Navbar } from './components/Navbar/Navbar';
+import { Navbar } from './components/index';
 
 const App: React.FC = () => {
 

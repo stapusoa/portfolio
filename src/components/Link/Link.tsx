@@ -22,7 +22,7 @@ type LinkButtonProps = BaseLinkProps &
 // if we make href required, then when href is provided we make it an anchor tag and not a button nor a router link
 type LinkAnchorProps = BaseLinkProps & NativeAnchor & { href: string }
 
-export const Link = ({
+const Link = ({
   children,
   endIcon,
   showUnderlineOnlyOnHover,
@@ -80,3 +80,5 @@ const hoverUnderlineClasses = 'hover:b-b-1 hover:b-b-solid'
 
 const baseLinkClasses =
   'type-link-desktop inline-flex flex-row gap-1 items-center fw-700 h-[22px] md:h-6 bg-transparent b-none c-forest box-border p-0 pb-1 decoration-none w-fit cursor-pointer disabled:cursor-default disabled:opacity-60 hover:c-newForest transition-all duration-200 focus:outline-1 focus:outline-offset-3 focus:outline-valley [&>*]:hover:b-newForest!'
+
+  export default Link;
