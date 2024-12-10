@@ -1,13 +1,8 @@
 export const WhenIcon = () => (
 
-  <svg className="w-8 h-8 group-hover:w-6 group-hover:h-6" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="https://www.w3.org/2000/svg">
-                    <g clip-path="url(#clip0_757_29716)">
-                      <path d="M12 5.9C12.7503 5.9 13.4435 6.30026 13.8187 6.95C14.1938 7.59974 14.1938 8.40026 13.8187 9.05C13.4435 9.69974 12.7503 10.1 12 10.1C10.8402 10.1 9.9 9.1598 9.9 8C9.9 6.8402 10.8402 5.9 12 5.9V5.9M12 14.9C14.97 14.9 18.1 16.36 18.1 17V18.1H5.9V17C5.9 16.36 9.03 14.9 12 14.9V14.9M12 4C9.79 4 8 5.79 8 8C8 10.21 9.79 12 12 12C14.21 12 16 10.21 16 8C16 5.79 14.21 4 12 4M12 13C9.33 13 4 14.34 4 17V20H20V17C20 14.34 14.67 13 12 13" fill="#81B29A" />
-                    </g>
-                    <defs>
-                      <clipPath id="clip0_757_29716">
-                        <rect width="24" height="24" fill="white" />
-                      </clipPath>
-                    </defs>
-                  </svg>
+  <svg className="w-8 h-8 group-hover:w-6 group-hover:h-6" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M11.99 2C6.47 2 2 6.48 2 12C2 17.52 6.47 22 11.99 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 11.99 2ZM12 20C7.58 20 4 16.42 4 12C4 7.58 7.58 4 12 4C16.42 4 20 7.58 20 12C20 16.42 16.42 20 12 20Z" fill="#81B29A"/>
+  <path d="M12.5 7H11V13L16.25 16.15L17 14.92L12.5 12.25V7Z" fill="#81B29A"/>
+  </svg>
   )
+ 
