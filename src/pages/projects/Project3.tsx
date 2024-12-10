@@ -188,24 +188,28 @@ const Project3: React.FC = () => {
               <Questions
                 w="Who"
                 SvgComponent={WhoIcon}
+                illustrationKey="who"
                 question="Who is experiencing the problem?"
                 statement="Small to medium-sized businesses using inventory management systems, specifically clients of Fishbowl Inventory."
               />
               <Questions
                 w="When"
                 SvgComponent={WhenIcon}
+                illustrationKey="when"
                 question="When does the problem occur?"
                 statement="The problem arises when these businesses need to perform inventory management and administrative tasks remotely, such as when they are away from the office or do not have access to desktop systems."
               />
               <Questions
-                w="When"
+                w="Where"
                 SvgComponent={WhereIcon}
+                illustrationKey="where"
                 question="Where does the user experience the problem?"
                 statement="The problem occurs in environments where these businesses need to manage inventory and administrative tasks remotely or on-the-go, outside of a traditional desktop setup."
               />
               <Questions
-                w="When"
+                w="Why"
                 SvgComponent={WhyIcon}
+                illustrationKey="why"
                 question="Why does this pain point matter to the user?"
                 statement="Efficient inventory management is key to the success of small and medium-sized businesses. Poor mobile solutions limit their capability to manage inventory remotely, leading to issues in order management, data access, and business agility, thus affecting productivity and possibly revenue."
               />
