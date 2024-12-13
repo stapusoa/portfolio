@@ -101,7 +101,8 @@ const CaseStudies: React.FC = () => (
           </h6>
         </div>
         <div className='py-2 flex flex-row gap-1.5 items-center cursor-pointer group'>
-          <Link to="/projects/project3" className="link hover:text-blue hover:border-blue">
+          <Link to="/projects/project3" className="link hover:text-blue hover:border-blue"   onClick={() => console.log('Navigating to Project3')}
+          >
             case study
           </Link>
           <div className='py-2 h-full'>
