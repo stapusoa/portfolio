@@ -51,24 +51,24 @@ const Project3: React.FC = () => {
     },
   ];
   const images = {
-    imageSM: "/portfolio/images/sm_bg-proj1-hero.webp",
-    imageMD: "/portfolio/images/md_bg-proj1-hero.webp",
-    imageLG: "/portfolio/images/lg_bg-proj1-hero.webp",
+    imageSM: "/portfolio/images/sm_bg-proj3-hero.webp",
+    imageMD: "/portfolio/images/md_bg-proj3-hero.webp",
+    imageLG: "/portfolio/images/lg_bg-proj3-hero.webp",
   };
   const hero = {
-    product: "fishbowl go",
-    tagline: "simplifying inventory management in the warehouse and in the office.",
+    product: "travelpass",
+    tagline: "providing the explorer at heart unforgettable adventures",
     primary: "prototype",
     secondary: "website"
   }
   const overview = {
-    overview: "Fishbowl Go is an app designed for Fishbowl Inventory clients, tailored for warehouse tasks. It serves as a powerful tool to streamline sales orders, manufacture orders, and other tasks for inventory management.",
-    duration: "Originally, the project was roadmapped for a month reskinning of the mobile native app. Through research and brainstorming, the project specs changed. We worked on it from January 2021 to September 2021.",
-    product: "/portfolio/images/fishbowl.png",
-    role: ["Project Lead", "User Researcher", "User Experience Designer", "User Interface Designer", "Interaction Designer"],
-    deliverables: ["User surveys & user tests", "Personas", "User journeys & site maps", "High-fidelity prototype", "Usability tests & findings"
+    overview: "Travelpass is a website and app designed for travelers. It serves as a hub for creating and viewing destination guides, finding travel inspiration, and booking activities and hotels.",
+    duration: "I’ve been working on Travelpass since July 2021, starting as one of two designers handling design, research, and product management. As the team grew into a full Product department, my focus shifted to the native app and design systems, where I specialize in creating and documenting reusable components and collaborating with engineers to build and implement them in code.",
+        product: "/portfolio/images/fishbowl.png",
+    role: ["Project Lead, 7mos", "User Researcher", "User Experience Designer", "User Interface Designer", "Interaction Designer", "Design Systems Manager"],
+    deliverables: ["User surveys & user tests", "Personas", "User journeys & site maps", "High-fidelity prototype", "Usability tests & findings", "Storybook Design System Documentation"
     ],
-    specs: ["8 months", "Figma", "Userbrain", "Miro"]
+    specs: ["2+ years", "Figma", "Google Forms", "React & React Native", "Storybook", "TailwindCSS & UnoCSS"]
   }
   const insights = {
     description: "During the Fishbowl Go project, we identified a crucial user experience issue: several actions within the app were ambiguous regarding their completion status. Users frequently expressed uncertainty about whether their actions, such as inventory updates or order processing, were successfully executed. To enhance clarity and user confidence, we propose integrating more explicit feedback mechanisms into the app's workflow. This approach includes the implementation of toast messages and clear visual indicators to affirm that an action has been successfully completed. These additions are aimed at reducing user frustration and improving the overall efficiency and user satisfaction with the app.",

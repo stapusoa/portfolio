@@ -6,7 +6,7 @@ const CaseStudies: React.FC = () => (
         <img
           alt="Case Study Image"
           src="/portfolio/images/fbprod-project-image.jpg"
-          className="object-cover"
+          className="object-fill w-220"
         />
         {/* Inner Overlay */}
         <div className="absolute inset-3 p-3 border-solid border-3 border-green opacity-40 rounded-3xl"></div>
@@ -43,10 +43,10 @@ const CaseStudies: React.FC = () => (
     <div className="bg-transparent relative z-32 py-16 px-32 flex flex-row items-center">
       <div className='flex flex-col w-1/2 gap-2 pl-16 pr-32'>
         <div className='py-2'>
-          <h6 className='font-gilroy font-300 text-7 text-left text-grey-800 m-0 tracking-wide'>fishbowl go</h6>
+          <h6 className='font-gilroy font-300 text-7 text-left text-grey-800 m-0 tracking-wide'>haven massage</h6>
         </div>
         <div className='py-2'>
-          <h6 className='font-gilroy font-500 text-10 text-left text-grey-900 m-0 tracking-cozy'>simplifying inventory management in the warehouse and in the office.</h6>
+          <h6 className='font-gilroy font-500 text-10 text-left text-grey-900 m-0 tracking-cozy'>providing professional therapeutic services through easy booking.</h6>
         </div>
         <div className='py-2 flex flex-row gap-1.5 items-center cursor-pointer group'>
           <a href="/portfolio/projects/project2" className="link hover:text-blue hover:border-blue">
@@ -69,8 +69,8 @@ const CaseStudies: React.FC = () => (
         {/* Image */}
         <img
           alt="Case Study Image"
-          src="/portfolio/images/fbprod-project-image.jpg"
-          className="object-cover"
+          src="/portfolio/images/project-image-hm.jpg"
+          className="object-fill w-200"
         />
         {/* Inner Overlay */}
         <div className="absolute inset-3 p-3 border-solid border-3 border-green opacity-40 rounded-3xl"></div>
@@ -81,8 +81,8 @@ const CaseStudies: React.FC = () => (
         {/* Image */}
         <img
           alt="Case Study Image"
-          src="/portfolio/images/fbprod-project-image.jpg"
-          className="object-cover"
+          src="/portfolio/images/project-image-tpg.jpg"
+          className="object-fill w-200"
         />
         {/* Inner Overlay */}
         <div className="absolute inset-3 p-3 border-solid border-3 border-green opacity-40 rounded-3xl"></div>
@@ -90,16 +90,16 @@ const CaseStudies: React.FC = () => (
       <div className="flex flex-col w-1/2 gap-2 pl-16 pr-32">
         <div className="py-2">
           <h6 className="font-gilroy font-300 text-7 text-left text-grey-800 m-0 tracking-wide">
-            fishbowl go
+            travelpass
           </h6>
         </div>
         <div className="py-2">
           <h6 className="font-gilroy font-500 text-10 text-left text-grey-900 m-0 tracking-cozy">
-            simplifying inventory management in the warehouse and in the office.
+            providing the explorer at heart unforgettable adventures.
           </h6>
         </div>
         <div className='py-2 flex flex-row gap-1.5 items-center cursor-pointer group'>
-          <a href="/projects/project3" className="link hover:text-blue hover:border-blue">
+          <a href="/portfolio/projects/project3" className="link hover:text-blue hover:border-blue">
             case study
           </a>
           <div className='py-2 h-full'>
