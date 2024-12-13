@@ -11,7 +11,7 @@ import { Navbar } from './components/index';
 const App: React.FC = () => {
 
   return (
-    <Router basename="/portfolio">
+    <Router>
       <div>
         <Navbar />
         <Routes>
