@@ -9,9 +9,10 @@ import Project3 from './pages/projects/Project3';
 import { Navbar } from './components/index';
 
 const App: React.FC = () => {
+  const basename = window.location.hostname === "stapusoa.github.io" ? "/portfolio" : "";
 
   return (
-    <Router>
+    <Router basename={basename}>
       <div>
         <Navbar />
         <Routes>
