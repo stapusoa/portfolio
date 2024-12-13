@@ -5,19 +5,19 @@ const Roles: React.FC = () => (
         title: 'product design',
         description:
           'Creating intuitive and engaging experiences that focus on user problems and meet business goals',
-        image: '/portfolio/images/role-product-illustration.webp',
+        image: '/images/role-product-illustration.webp',
       },
       {
         title: 'user research',
         description:
           'Gathering insights to inform design decisions and ensure solutions are user-centered and effective',
-        image: '/portfolio/images/role-research-illustration.webp',
+        image: '/images/role-research-illustration.webp',
       },
       {
         title: 'design systems',
         description:
           'Building scalable design systems that ensure consistency, efficiency, and cohesive experiences.',
-        image: '/portfolio/images/role-uxd-illustration.webp',
+        image: '/images/role-uxd-illustration.webp',
       },
     ].map((role, index) => (
       <div key={index} className="flex flex-col items-center gap-14">

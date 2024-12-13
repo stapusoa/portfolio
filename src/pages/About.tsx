@@ -64,17 +64,17 @@ const About = () => {
       <div className="relative w-full h-screen">
         <img
           alt="Background image for About page"
-          src="/portfolio/images/lg_bg-about-hero.jpg" // Default (large screen)
+          src="/images/lg_bg-about-hero.jpg" // Default (large screen)
           className="w-full h-full object-cover object-center-right fixed p-0 m-0 z-[-1] inset-0 hidden lg:block"
         />
         <img
           alt="Background image for About page - tablet"
-          src="/portfolio/images/md_bg-about-hero.jpg" // Tablet
+          src="/images/md_bg-about-hero.jpg" // Tablet
           className="w-full h-full object-cover object-top-right fixed p-0 m-0 z-[-1] inset-0 hidden md:block lg:hidden"
         />
         <img
           alt="Background image for About page - mobile"
-          src="/portfolio/images/sm_bg-about-hero.jpg" // Mobile
+          src="/images/sm_bg-about-hero.jpg" // Mobile
           className="w-full h-full object-cover object-top-right  fixed p-0 m-0 z-[-1] inset-0 block md:hidden"
         />
         <div className="relative isolate px-6 pt-14 lg:px-8 h-screen">

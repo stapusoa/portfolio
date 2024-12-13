@@ -19,7 +19,7 @@ const Navbar = () => {
               <span className="sr-only">Your Company</span>
               <img
                 alt=""
-                src='/portfolio/images/logo-primary.webp'
+                src='/images/logo-primary.webp'
                 className="h-5 w-auto"
               />
             </Link>

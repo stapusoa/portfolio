@@ -5,7 +5,7 @@ const CaseStudies: React.FC = () => (
         {/* Image */}
         <img
           alt="Case Study Image"
-          src="/portfolio/images/fbprod-project-image.jpg"
+          src="/images/fbprod-project-image.jpg"
           className="object-fill w-220"
         />
         {/* Inner Overlay */}
@@ -23,7 +23,7 @@ const CaseStudies: React.FC = () => (
           </h6>
         </div>
         <div className='py-2 flex flex-row gap-1.5 items-center cursor-pointer group'>
-          <a href="/portfolio/projects/project1" className="link hover:text-blue hover:border-blue">
+          <a href="/projects/project1" className="link hover:text-blue hover:border-blue">
             case study
           </a>
           <div className='py-2 h-full'>
@@ -49,7 +49,7 @@ const CaseStudies: React.FC = () => (
           <h6 className='font-gilroy font-500 text-10 text-left text-grey-900 m-0 tracking-cozy'>providing professional therapeutic services through easy booking.</h6>
         </div>
         <div className='py-2 flex flex-row gap-1.5 items-center cursor-pointer group'>
-          <a href="/portfolio/projects/project2" className="link hover:text-blue hover:border-blue">
+          <a href="/projects/project2" className="link hover:text-blue hover:border-blue">
             case study
           </a>
           <div className='py-2 h-full'>
@@ -69,7 +69,7 @@ const CaseStudies: React.FC = () => (
         {/* Image */}
         <img
           alt="Case Study Image"
-          src="/portfolio/images/project-image-hm.jpg"
+          src="/images/project-image-hm.jpg"
           className="object-fill w-200"
         />
         {/* Inner Overlay */}
@@ -81,7 +81,7 @@ const CaseStudies: React.FC = () => (
         {/* Image */}
         <img
           alt="Case Study Image"
-          src="/portfolio/images/project-image-tpg.jpg"
+          src="/images/project-image-tpg.jpg"
           className="object-fill w-200"
         />
         {/* Inner Overlay */}
@@ -99,7 +99,7 @@ const CaseStudies: React.FC = () => (
           </h6>
         </div>
         <div className='py-2 flex flex-row gap-1.5 items-center cursor-pointer group'>
-          <a href="/portfolio/projects/project3" className="link hover:text-blue hover:border-blue">
+          <a href="/projects/project3" className="link hover:text-blue hover:border-blue">
             case study
           </a>
           <div className='py-2 h-full'>
