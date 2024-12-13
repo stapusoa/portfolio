@@ -7,7 +7,7 @@ const Project1: React.FC = () => {
   const cards = [
     {
       image:
-        "/portfolio/images/cheyenne.webp",
+        "/images/cheyenne.webp",
       title: "Jennifer G",
       job: "Purchasing Manager",
       quote: "Efficiency is key!",
@@ -18,7 +18,7 @@ const Project1: React.FC = () => {
     },
     {
       image:
-        "/portfolio/images/ammon.webp",
+        "/images/ammon.webp",
       title: "Kai T",
       job: "Sales Rep",
       quote: "Efficiency is key!",
@@ -29,7 +29,7 @@ const Project1: React.FC = () => {
     },
     {
       image:
-        "/portfolio/images/ana.webp",
+        "/images/ana.webp",
       title: "Ana M",
       job: "Warehouse Worker",
       quote: "Efficiency is key!",
@@ -40,7 +40,7 @@ const Project1: React.FC = () => {
     },
     {
       image:
-        "/portfolio/images/tan.webp",
+        "/images/tan.webp",
       title: "Darien T",
       job: "Administrator",
       quote: "Efficiency is key!",
@@ -52,7 +52,7 @@ const Project1: React.FC = () => {
   ];
   const questionCards = [
     {
-      image: "/portfolio/images/whoCard.jpg",
+      image: "/images/whoCard.jpg",
       title: "Who is experiencing the problem?",
       job: "The average business owners",
       quote: "",
@@ -62,7 +62,7 @@ const Project1: React.FC = () => {
       motivations: ["Quality control at best prices", "Optimize inventory"]
     },
     {
-      image: "/portfolio/images/whereCard.jpg",
+      image: "/images/whereCard.jpg",
       title: "Where does the user experience the problem?",
       job: "Outside of the office",
       quote: "",
@@ -72,7 +72,7 @@ const Project1: React.FC = () => {
       motivations: ["Quality control at best prices", "Optimize inventory"]
     },
     {
-      image: "/portfolio/images/whenCard.jpg",
+      image: "/images/whenCard.jpg",
       title: "When does the problem occur?",
       job: "No access to a desktop and on-the-go",
       quote: "",
@@ -82,7 +82,7 @@ const Project1: React.FC = () => {
       motivations: ["Quality control at best prices", "Optimize inventory"]
     },
     {
-      image: "/portfolio/images/whyCard.jpg",
+      image: "/images/whyCard.jpg",
       title: "Why does the problem matter?",
       job: "Affects productivity and efficiency",
       quote: "",
@@ -93,9 +93,9 @@ const Project1: React.FC = () => {
     },
   ]
   const images = {
-    imageSM: "/portfolio/images/sm_bg-proj1-hero.webp",
-    imageMD: "/portfolio/images/md_bg-proj1-hero.webp",
-    imageLG: "/portfolio/images/lg_bg-proj1-hero.webp",
+    imageSM: "/images/sm_bg-proj1-hero.webp",
+    imageMD: "/images/md_bg-proj1-hero.webp",
+    imageLG: "/images/lg_bg-proj1-hero.webp",
   };
   const hero = {
     product: "fishbowl go",
@@ -106,7 +106,7 @@ const Project1: React.FC = () => {
   const overview = {
     overview: "Fishbowl Go is an app designed for inventory management. It streamlines processes like sales orders, manufacture orders, and other inventory tasks, helping workers complete jobs in the warehouse more efficiently. Many users switch from competitors like NetSuite or QuickBooks after finding those tools either too complex or unable to meet their needs.",
     duration: "Originally, the project was roadmapped for a month reskinning of the mobile native app. Through research and brainstorming, the project specs changed. We worked on it from January 2021 to September 2021.",
-    product: "/portfolio/images/fishbowl.png",
+    product: "/images/fishbowl.png",
     role: ["Project Lead", "User Researcher", "User Experience Designer", "User Interface Designer", "Interaction Designer"],
     deliverables: ["User surveys & user tests", "Personas", "User journeys & site maps", "High-fidelity prototype", "Usability tests & findings"
     ],
@@ -123,7 +123,7 @@ const Project1: React.FC = () => {
   }
   const blogData = [
     {
-      image: "/portfolio/images/md_bg-proj3-hero.jpg",
+      image: "/images/md_bg-proj3-hero.jpg",
       link: "/projects/Project3",
       product: "Travelpass",
       type: "booking",
@@ -132,7 +132,7 @@ const Project1: React.FC = () => {
         "A platform offering curated travel guides and tools to help users plan trips.",
     },
     {
-      image: "/portfolio/images/spectacle.jpg",
+      image: "/images/spectacle.jpg",
       link: "/projects/Project4",
       product: "Spectacle",
       type: "plugins",
@@ -141,7 +141,7 @@ const Project1: React.FC = () => {
         "A Figma plugin that streamlines design documentation, enhancing collaboration.",
     },
     {
-      image: "/portfolio/images/example.jpg", // Example placeholder image
+      image: "/images/example.jpg", // Example placeholder image
       link: "/projects/Project5",
       product: "New Product",
       type: "tooling",
@@ -253,9 +253,9 @@ const Project1: React.FC = () => {
             <Overview {...overview} />
             <Problem problem="Through competitor analysis and usability evaluation, we identified an industry-wide struggle to adapt inventory management tools for mobile use. Many business owners rely on desktop-only software, which creates inefficiencies when managing tasks remotely. Existing mobile apps primarily focus on warehouse activities, leaving a gap for administrative tasks like reviewing inventory, managing orders, and accessing data." />
             <div className="bg-white py-12 px-32">
-              <img className="w-full rounded-lg sm:hidden lg:block" src="/portfolio/images/fbgo-sprint-lg.jpg" />
-              <img className="w-full rounded-lg sm:hidden md:block lg:hidden" src="/portfolio/images/fbgo-sprint-md.jpg" />
-              <img className="w-full rounded-lg sm:block md:hidden" src="/portfolio/images/fbgo-sprint-sm.jpg" />
+              <img className="w-full rounded-lg sm:hidden lg:block" src="/images/fbgo-sprint-lg.jpg" />
+              <img className="w-full rounded-lg sm:hidden md:block lg:hidden" src="/images/fbgo-sprint-md.jpg" />
+              <img className="w-full rounded-lg sm:block md:hidden" src="/images/fbgo-sprint-sm.jpg" />
             </div>
             <div className="bg-white py-12 px-32 flex flex-row gap-12">
               <p className="m-0 p-0 font-gilroy text-grey-600 col-start-5 col-span-4 text-left font-300 text-6 leading-relaxed">
@@ -370,12 +370,12 @@ const Project1: React.FC = () => {
             <Goal
               statement="To successfully launch Fishbowl Go, a user-friendly iPad/tablet app, designed to bridge the gap in mobile inventory management for small to medium-sized businesses. Our aim was to simplify administrative tasks, making inventory management as efficient on tablets as it is on desktops. The goal was to enhance operational efficiency by at least 20% and improve user satisfaction, targeting a 15% increase in Fishbowl Inventory's client base within the first six months after launch."
               image={[
-                "/portfolio/images/fbgo-sticky1.png",
-                "/portfolio/images/fbgo-sticky2.png",
-                "/portfolio/images/fbgo-sticky3.png",
-                "/portfolio/images/fbgo-sticky4.png",
-                "/portfolio/images/fbgo-sticky5.png",
-                "/portfolio/images/fbgo-sticky6.png",
+                "/images/fbgo-sticky1.png",
+                "/images/fbgo-sticky2.png",
+                "/images/fbgo-sticky3.png",
+                "/images/fbgo-sticky4.png",
+                "/images/fbgo-sticky5.png",
+                "/images/fbgo-sticky6.png",
               ]}
             />
 
@@ -393,7 +393,7 @@ const Project1: React.FC = () => {
             <div className="bg-white pt-12 pb-16 px-32 grid grid-cols-8 grid-flow-row items-start">
               <img
                 alt=""
-                src="/portfolio/images/fbgo-sketches-long.jpg"
+                src="/images/fbgo-sketches-long.jpg"
                 className="col-start-1 col-span-8 w-full"
               />
             </div>
@@ -402,14 +402,14 @@ const Project1: React.FC = () => {
               <h6 className="col-start-1 col-span-4 row-start-1 row-span-1 m-0 font-gilroy font-300 text-8 text-grey-800 tracking-wide">digital wireframes</h6>
               <img
                 alt="Digital wireframe for Case Study"
-                src="/portfolio/images/wireframe-fb.webp" // Default (large screen)
+                src="/images/wireframe-fb.webp" // Default (large screen)
                 className="w-full col-start-1 col-span-2 row-start-2 row-span-2"
               />
               <div className='col-start-3 col-span-2 row-start-2 row-span-1 m-0 p-0 text-left font-gilroy font-300 text-7 leading-relaxed'>
                 Navigation, quick actions and searching through inventory were essential features we needed to refine.
               </div>
               <img
-                src="/portfolio/images/wireframe-fb-2.webp"
+                src="/images/wireframe-fb-2.webp"
                 className="w-full col-start-3 col-span-2 row-start-3 row-span-1" />
 
 
@@ -424,7 +424,7 @@ const Project1: React.FC = () => {
             <div className="bg-white pt-12 pb-16 px-32 grid grid-cols-8 grid-flow-row items-start">
               <img
                 alt=""
-                src="/portfolio/images/mockup-fb.webp"
+                src="/images/mockup-fb.webp"
                 className="col-start-1 col-span-8 w-full"
               />
             </div>

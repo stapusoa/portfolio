@@ -51,9 +51,9 @@ const Project3: React.FC = () => {
     },
   ];
   const images = {
-    imageSM: "/portfolio/images/sm_bg-proj3-hero.webp",
-    imageMD: "/portfolio/images/md_bg-proj3-hero.webp",
-    imageLG: "/portfolio/images/lg_bg-proj3-hero.webp",
+    imageSM: "/images/sm_bg-proj3-hero.webp",
+    imageMD: "/images/md_bg-proj3-hero.webp",
+    imageLG: "/images/lg_bg-proj3-hero.webp",
   };
   const hero = {
     product: "travelpass",
@@ -64,7 +64,7 @@ const Project3: React.FC = () => {
   const overview = {
     overview: "Travelpass is a website and app designed for travelers. It serves as a hub for creating and viewing destination guides, finding travel inspiration, and booking activities and hotels.",
     duration: "I’ve been working on Travelpass since July 2021, starting as one of two designers handling design, research, and product management. As the team grew into a full Product department, my focus shifted to the native app and design systems, where I specialize in creating and documenting reusable components and collaborating with engineers to build and implement them in code.",
-        product: "/portfolio/images/fishbowl.png",
+        product: "/images/fishbowl.png",
     role: ["Project Lead, 7mos", "User Researcher", "User Experience Designer", "User Interface Designer", "Interaction Designer", "Design Systems Manager"],
     deliverables: ["User surveys & user tests", "Personas", "User journeys & site maps", "High-fidelity prototype", "Usability tests & findings", "Storybook Design System Documentation"
     ],
@@ -81,7 +81,7 @@ const Project3: React.FC = () => {
   }
   const blogData = [
     {
-      image: "/portfolio/images/md_bg-proj3-hero.jpg",
+      image: "/images/md_bg-proj3-hero.jpg",
       link: "/projects/Project3",
       product: "Travelpass",
       type: "booking",
@@ -90,7 +90,7 @@ const Project3: React.FC = () => {
         "A platform offering curated travel guides and tools to help users plan trips.",
     },
     {
-      image: "/portfolio/images/spectacle.jpg",
+      image: "/images/spectacle.jpg",
       link: "/projects/Project4",
       product: "Spectacle",
       type: "plugins",
@@ -99,7 +99,7 @@ const Project3: React.FC = () => {
         "A Figma plugin that streamlines design documentation, enhancing collaboration.",
     },
     {
-      image: "/portfolio/images/example.jpg", // Example placeholder image
+      image: "/images/example.jpg", // Example placeholder image
       link: "/projects/Project5",
       product: "New Product",
       type: "tooling",
@@ -274,7 +274,7 @@ const Project3: React.FC = () => {
             <div className="bg-white pt-12 pb-16 px-32 grid grid-cols-8 grid-flow-row items-start">
               <img
                 alt=""
-                src="/portfolio/images/fbgo-sketches-long.jpg"
+                src="/images/fbgo-sketches-long.jpg"
                 className="col-start-1 col-span-8 w-full"
               />
             </div>
@@ -283,14 +283,14 @@ const Project3: React.FC = () => {
               <h6 className="col-start-1 col-span-4 row-start-1 row-span-1 m-0 font-gilroy font-300 text-8 text-grey-800 tracking-wide">digital wireframes</h6>
               <img
                 alt="Digital wireframe for Case Study"
-                src="/portfolio/images/wireframe-fb.webp" // Default (large screen)
+                src="/images/wireframe-fb.webp" // Default (large screen)
                 className="w-full col-start-1 col-span-2 row-start-2 row-span-2"
               />
               <div className='col-start-3 col-span-2 row-start-2 row-span-1 m-0 p-0 text-left font-gilroy font-300 text-7 leading-relaxed'>
                 Navigation, quick actions and searching through inventory were essential features we needed to refine.
               </div>
               <img
-                src="/portfolio/images/wireframe-fb-2.webp"
+                src="/images/wireframe-fb-2.webp"
                 className="w-full col-start-3 col-span-2 row-start-3 row-span-1" />
 
 
@@ -305,7 +305,7 @@ const Project3: React.FC = () => {
             <div className="bg-white pt-12 pb-16 px-32 grid grid-cols-8 grid-flow-row items-start">
               <img
                 alt=""
-                src="/portfolio/images/mockup-fb.webp"
+                src="/images/mockup-fb.webp"
                 className="col-start-1 col-span-8 w-full"
               />
             </div>
