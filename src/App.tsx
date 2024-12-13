@@ -19,7 +19,6 @@ const App: React.FC = () => {
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
-          {/* Project routes */}
           <Route path="/projects/project1" element={<Project1 />} />
           <Route path="/projects/project2" element={<Project2 />} />
           <Route path="/projects/project3" element={<Project3 />} />
