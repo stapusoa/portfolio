@@ -3,10 +3,6 @@ import { Theme } from '@unocss/preset-mini';
 import { colors as themeColors } from './colors'
 
 const colors = { ...themeColors }
-// prevents `text-body` from being generated
-// devs should ensure to use `type-body-1` or `type-body-2`
-// @ts-ignore - Sometimes we have to do this??
-delete colors.body
 
 export const unoTheme: Theme = {
   colors,
