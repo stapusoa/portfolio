@@ -11,17 +11,17 @@ const BackgroundImages: React.FC<BackgroundImagesProps> = ({ imageSM, imageMD, i
     <img
       alt="Background image for large screens"
       src={imageLG}
-      className="w-full h-full object-cover object-top-right fixed p-0 m-0 z-0 inset-0 hidden lg:block"
+      className="hidden lg:block w-full h-full object-cover object-top-right z-0 fixed inset-0"
     />
     <img
       alt="Background image for tablets"
       src={imageMD}
-      className="w-full h-full object-cover object-top-right fixed p-0 m-0 z-0 inset-0 hidden md:block lg:hidden"
+      className="hidden md:block lg:hidden w-full h-full object-cover object-top-right z-0 fixed inset-0"
     />
     <img
       alt="Background image for mobile"
       src={imageSM}
-      className="w-full h-full object-cover object-top-right fixed p-0 m-0 z-0 block md:hidden"
+      className="block md:hidden w-full h-full object-cover object-top-right z-0 fixed inset-0"
     />
   </>
 );
