@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 
 const CaseStudies: React.FC = () => (
   <>
-    <div className="bg-transparent relative z-32 py-16 px-32 flex flex-row items-center">
+    <div className="bg-transparent relative z-32 py-16 sm:px-6 md:px-14 lg:px-32 flex flex-row items-center">
       <div className="relative w-1/2 h-150 overflow-hidden rounded-3xl shadow-md">
         {/* Image */}
         <img
@@ -42,7 +42,7 @@ const CaseStudies: React.FC = () => (
         </div>
       </div>
     </div>
-    <div className="bg-transparent relative z-32 py-16 px-32 flex flex-row items-center">
+    <div className="bg-transparent relative z-32 py-16 sm:px-6 md:px-14 lg:px-32 flex flex-row items-center">
       <div className='flex flex-col w-1/2 gap-2 pl-16 pr-32'>
         <div className='py-2'>
           <h6 className='font-gilroy font-300 text-7 text-left text-grey-800 m-0 tracking-wide'>haven massage</h6>
@@ -78,7 +78,7 @@ const CaseStudies: React.FC = () => (
         <div className="absolute inset-3 p-3 border-solid border-3 border-green opacity-40 rounded-3xl"></div>
       </div>
     </div>
-    <div className="bg-transparent relative z-32 py-16 px-32 flex flex-row items-center">
+    <div className="bg-transparent relative z-32 py-16 sm:px-6 md:px-14 lg:px-32 flex flex-row items-center">
     <div className="relative w-1/2 h-150 overflow-hidden rounded-3xl shadow-md">
         {/* Image */}
         <img

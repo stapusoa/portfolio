@@ -4,11 +4,11 @@ interface CardProps {
   image: string;
   title: string;
   job: string;
-  age: string;
-  quote: string;
-  bio: string;
-  frustrations: string[];
-  motivations: string[];
+  age?: string;
+  quote?: string;
+  bio?: string;
+  frustrations?: string[];
+  motivations?: string[];
 
 }
 
@@ -43,6 +43,7 @@ const Card: React.FC<CardProps> = ({ image, title, job, age, quote, bio, frustra
   const rX = (mousePos.x / dimensions.width) * 30 || 0;
   const rY = (mousePos.y / dimensions.height) * -30 || 0;
 
+  const hasHoverContent = Boolean(age || bio || (frustrations && frustrations.length) || (motivations && motivations.length));
 
 
   return (
@@ -59,36 +60,58 @@ const Card: React.FC<CardProps> = ({ image, title, job, age, quote, bio, frustra
         }}
       >
         <div className="relative h-full overflow-hidden rounded-lg border-1.5 border-solid border-green">
+        {hasHoverContent && (
+
           <div
-            className="relative z-20 top-0 left-0 p-4 transition-all duration-1000 transform -translate-y-32 group-hover:translate-y-0">
+          className={`relative z-20 top-0 left-0 p-4 transition-all duration-1000 transform ${
+            hasHoverContent ? "-translate-y-32 group-hover:translate-y-0" : ""
+          }`}>
+              {age && (
             <h1 className="m-0 pb-4 items-start text-left font-gilroy font-600 text-grey-800 tracking-wide leading-cozy hidden group-hover:block text-4">{age}</h1>
+          )}
+          {quote && (
             <h1 className="m-0 pb-4 items-start text-left font-gilroy italic font-300 text-grey-700 tracking-wide leading-cozy hidden group-hover:block text-4">{quote}</h1>
+          )}
+          {bio && (
             <h1 className="m-0 pb-4 items-start text-left font-gilroy font-300 text-grey-700 tracking-wide leading-cozy hidden group-hover:block text-4">{bio}</h1>
-            {frustrations.map((frustrations, index) => (
-            <div key={index} className="relative flex justify-start gap-3 items-start">
-              <svg className="w-5 h-5" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="https://www.w3.org/2000/svg">
-                <path d="M13.5 9C14.3284 9 15 8.32843 15 7.5C15 6.67157 14.3284 6 13.5 6C12.6716 6 12 6.67157 12 7.5C12 8.32843 12.6716 9 13.5 9Z" fill="#DE5B3E" />
-                <path d="M6.5 9C7.32843 9 8 8.32843 8 7.5C8 6.67157 7.32843 6 6.5 6C5.67157 6 5 6.67157 5 7.5C5 8.32843 5.67157 9 6.5 9Z" fill="#DE5B3E" />
-                <path d="M9.99 0C4.47 0 0 4.48 0 10C0 15.52 4.47 20 9.99 20C15.52 20 20 15.52 20 10C20 4.48 15.52 0 9.99 0ZM10 18C5.58 18 2 14.42 2 10C2 5.58 5.58 2 10 2C14.42 2 18 5.58 18 10C18 14.42 14.42 18 10 18ZM10 12C7.67 12 5.68 13.45 4.88 15.5H6.55C7.24 14.31 8.52 13.5 10 13.5C11.48 13.5 12.75 14.31 13.45 15.5H15.12C14.32 13.45 12.33 12 10 12Z" fill="#DE5B3E" />
-              </svg>
-              <h1 className="m-0 w-full pb-4 pt-0.5 items-start text-left font-gilroy font-300 text-grey-700 tracking-wide leading-cozy hidden group-hover:block text-4">{frustrations}</h1>
-            </div>
-            ))}
-           {motivations.map((motivations, index) => (
-            <div key={index} className="relative flex justify-start gap-3 items-start">
-              <svg className="w-5 h-5" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="https://www.w3.org/2000/svg">
-                <path d="M13.5 9C14.3284 9 15 8.32843 15 7.5C15 6.67157 14.3284 6 13.5 6C12.6716 6 12 6.67157 12 7.5C12 8.32843 12.6716 9 13.5 9Z" fill="#81B29A" />
-                <path d="M6.5 9C7.32843 9 8 8.32843 8 7.5C8 6.67157 7.32843 6 6.5 6C5.67157 6 5 6.67157 5 7.5C5 8.32843 5.67157 9 6.5 9Z" fill="#81B29A" />
-                <path d="M13.5 9C14.3284 9 15 8.32843 15 7.5C15 6.67157 14.3284 6 13.5 6C12.6716 6 12 6.67157 12 7.5C12 8.32843 12.6716 9 13.5 9Z" fill="#81B29A" />
-                <path d="M6.5 9C7.32843 9 8 8.32843 8 7.5C8 6.67157 7.32843 6 6.5 6C5.67157 6 5 6.67157 5 7.5C5 8.32843 5.67157 9 6.5 9Z" fill="#81B29A" />
-                <path d="M9.99 0C4.47 0 0 4.48 0 10C0 15.52 4.47 20 9.99 20C15.52 20 20 15.52 20 10C20 4.48 15.52 0 9.99 0ZM10 18C5.58 18 2 14.42 2 10C2 5.58 5.58 2 10 2C14.42 2 18 5.58 18 10C18 14.42 14.42 18 10 18ZM10 15.5C12.33 15.5 14.32 14.05 15.12 12H13.45C12.76 13.19 11.48 14 10 14C8.52 14 7.25 13.19 6.55 12H4.88C5.68 14.05 7.67 15.5 10 15.5Z" fill="#81B29A" />
-              </svg>
-              <h1 className="m-0 w-full pb-4 pt-0.5 items-start text-left font-gilroy font-300 text-grey-700 tracking-wide leading-cozy hidden group-hover:block text-4">{motivations}</h1>
-            </div>
-           ))}
-            
+          )}
+
+            {frustrations && frustrations.length > 0 && (
+              <>
+                {frustrations.map((frustrations, index) => (
+                  <div key={index} className="relative flex justify-start gap-3 items-start">
+                    <svg className="w-5 h-5" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="https://www.w3.org/2000/svg">
+                      <path d="M13.5 9C14.3284 9 15 8.32843 15 7.5C15 6.67157 14.3284 6 13.5 6C12.6716 6 12 6.67157 12 7.5C12 8.32843 12.6716 9 13.5 9Z" fill="#DE5B3E" />
+                      <path d="M6.5 9C7.32843 9 8 8.32843 8 7.5C8 6.67157 7.32843 6 6.5 6C5.67157 6 5 6.67157 5 7.5C5 8.32843 5.67157 9 6.5 9Z" fill="#DE5B3E" />
+                      <path d="M9.99 0C4.47 0 0 4.48 0 10C0 15.52 4.47 20 9.99 20C15.52 20 20 15.52 20 10C20 4.48 15.52 0 9.99 0ZM10 18C5.58 18 2 14.42 2 10C2 5.58 5.58 2 10 2C14.42 2 18 5.58 18 10C18 14.42 14.42 18 10 18ZM10 12C7.67 12 5.68 13.45 4.88 15.5H6.55C7.24 14.31 8.52 13.5 10 13.5C11.48 13.5 12.75 14.31 13.45 15.5H15.12C14.32 13.45 12.33 12 10 12Z" fill="#DE5B3E" />
+                    </svg>
+                    <h1 className="m-0 w-full pb-4 pt-0.5 items-start text-left font-gilroy font-300 text-grey-700 tracking-wide leading-cozy hidden group-hover:block text-4">{frustrations}</h1>
+                  </div>
+                ))}
+              </>
+            )}
+
+            {motivations && motivations.length > 0 && (
+              <>
+                {motivations.map((motivations, index) => (
+                  <div key={index} className="relative flex justify-start gap-3 items-start">
+                    <svg className="w-5 h-5" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="https://www.w3.org/2000/svg">
+                      <path d="M13.5 9C14.3284 9 15 8.32843 15 7.5C15 6.67157 14.3284 6 13.5 6C12.6716 6 12 6.67157 12 7.5C12 8.32843 12.6716 9 13.5 9Z" fill="#81B29A" />
+                      <path d="M6.5 9C7.32843 9 8 8.32843 8 7.5C8 6.67157 7.32843 6 6.5 6C5.67157 6 5 6.67157 5 7.5C5 8.32843 5.67157 9 6.5 9Z" fill="#81B29A" />
+                      <path d="M13.5 9C14.3284 9 15 8.32843 15 7.5C15 6.67157 14.3284 6 13.5 6C12.6716 6 12 6.67157 12 7.5C12 8.32843 12.6716 9 13.5 9Z" fill="#81B29A" />
+                      <path d="M6.5 9C7.32843 9 8 8.32843 8 7.5C8 6.67157 7.32843 6 6.5 6C5.67157 6 5 6.67157 5 7.5C5 8.32843 5.67157 9 6.5 9Z" fill="#81B29A" />
+                      <path d="M9.99 0C4.47 0 0 4.48 0 10C0 15.52 4.47 20 9.99 20C15.52 20 20 15.52 20 10C20 4.48 15.52 0 9.99 0ZM10 18C5.58 18 2 14.42 2 10C2 5.58 5.58 2 10 2C14.42 2 18 5.58 18 10C18 14.42 14.42 18 10 18ZM10 15.5C12.33 15.5 14.32 14.05 15.12 12H13.45C12.76 13.19 11.48 14 10 14C8.52 14 7.25 13.19 6.55 12H4.88C5.68 14.05 7.67 15.5 10 15.5Z" fill="#81B29A" />
+                    </svg>
+                    <h1 className="m-0 w-full pb-4 pt-0.5 items-start text-left font-gilroy font-300 text-grey-700 tracking-wide leading-cozy hidden group-hover:block text-4">{motivations}</h1>
+                  </div>
+                ))}
+              </>
+            )}
           </div>
-          <div className="absolute z-20 top-0 left-0 p-4 transition-all duration-1000 transform  group-hover:translate-y-100 ">
+        )}
+          <div className={`absolute z-20 top-0 left-0 p-4 transition-all duration-1000 transform ${
+              hasHoverContent ? "group-hover:translate-y-100" : ""
+            }`}>
 
             <h1 className="m-0 pb-2  items-start text-left text-black font-gilroy font-500 text-green tracking-wide leading-cozy text-6">{title}</h1>
             <p className="m-0  text-grey-500 font-gilroy text-left text-4.5 font-300">

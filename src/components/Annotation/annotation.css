@@ -1,0 +1,112 @@
+body {
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  background-color: #f5f5f5;
+}
+
+.container {
+  position: relative;
+  overflow: visible;
+}
+
+.hand-drawn-circle {
+  width: 200px; /* Scaled size */
+  height: auto;
+  overflow: visible;
+  position: absolute;
+  top: -70%;
+  left: -60px;
+}
+
+.path {
+  stroke-dasharray: 300; /* Path length */
+  stroke-dashoffset: 300; /* Fully hidden */
+  animation: draw 2.5s ease forwards; 
+  /* Drawing animation */
+}
+
+@keyframes draw {
+  to {
+    stroke-dashoffset: 0; /* Fully drawn */
+  }
+}
+
+.target-element {
+  width: 100px;
+  height: 100px;
+  background-color: #3498db;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 8px;
+  position: relative;
+  align-self: center;
+  justify-self: center;
+}
+
+@keyframes drawCircle {
+  0% {
+    border-color: transparent;
+    stroke-dasharray: 0 400;
+  }
+  100% {
+    border-color: #e74c3c;
+  }
+}
+
+.annotation {
+  position: absolute;
+  top: 4px;
+  left: 350px;
+  opacity: 0;
+  transform: translateX(10px);
+  transition: opacity 0.5s, transform 0.5s;
+  background: #FCECEA;
+  padding: 20px;
+  border: 4px solid #EA4335;
+  border-radius: 16px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
+}
+
+.annotation p {
+  margin: 0;
+}
+
+.arrow {
+  position: absolute;
+  width: 200px; /* Scaled size */
+  height: auto;
+  overflow: visible;
+}
+
+.draw-arrow {
+ animation: draw 1200ms 1000ms ease-out 1 forwards;
+}
+
+.tail-1 {
+ animation-delay: 1400ms;
+ animation-timing-function: linear;
+}
+.tail-2 {
+ animation-delay: 1800ms;
+ animation-timing-function: linear;
+}
+
+@keyframes draw {
+ 0% {
+  stroke-dashoffset: 400;
+ }
+ 100% {
+  stroke-dashoffset: 0;
+ }
+}
+
+.show-annotation {
+  opacity: 1;
+  transform: translateX(0);
+}

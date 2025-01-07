@@ -13,7 +13,7 @@ const Overview: React.FC<OverviewProps> = ({ overview, duration, product, role, 
 
   return (
     <>
-      <div className="bg-white pt-28 pb-12 px-32 z-32 flex flex-col items-start gap-8">
+      <div className="bg-white pt-28 pb-12 sm:px-6 md:px-14 lg:px-32 z-32 flex flex-col items-start gap-8">
         <div className="flex flex-col items-start gap-2 w-full">
           <div className="py-2 text-left">
             <h5 className="h3 pb-8 font-600 tracking-wide">overview</h5>
@@ -49,7 +49,7 @@ const Overview: React.FC<OverviewProps> = ({ overview, duration, product, role, 
           </div>
         </div>
       </div>
-      <div className="bg-white pt-12 pb-16 px-32 z-32 flex flex-row items-start gap-8">
+      <div className="bg-white pt-12 pb-16 sm:px-6 md:px-14 lg:px-32 z-32 flex flex-row items-start gap-8">
         <div className="flex flex-col items-start gap-1 w-full">
           <div className="p-0 text-left">
             <h6 className="m-0 font-gilroy font-300 text-6 text-grey-600 tracking-wide">role</h6>

@@ -7,7 +7,7 @@ interface GoalProps {
 }
 const Goal: React.FC<GoalProps> = ({ image, statement }) => {
   return (
-    <div className="bg-white py-16 px-32 flex flex-col items-start gap-8">
+    <div className="bg-white py-16 sm:px-6 md:px-14 lg:px-32 flex flex-col items-start gap-8">
       <div className="flex flex-col items-start gap-2 w-full">
         <div className="py-2 text-left">
           <h5 className="h3 pb-8 font-600 tracking-wide">Goal</h5>

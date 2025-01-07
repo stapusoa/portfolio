@@ -1,6 +1,7 @@
 import React from "react";
-import { Card, WhoIcon, WhenIcon, WhereIcon, WhyIcon } from '../../components/index';
-import { BackgroundImages, Hero, Goal, Overview, BlogCard, Problem, Insights, Understand, PainPoints, Questions, Journey, SiteMap, Outcomes } from "../sections/index";
+import { Card } from '../../components/index';
+import { BackgroundImages, Hero, Goal, Overview, BlogCard, Problem, Insights, Understand, PainPoints, Journey, SiteMap, Outcomes, SprintImg } from "../sections/index";
+import '../../components/Data/BarChart.css'
 
 const Project3: React.FC = () => {
   console.log('Home component is rendering');
@@ -50,25 +51,64 @@ const Project3: React.FC = () => {
       motivations: ["Quality control at best prices", "Optimize inventory"]
     },
   ];
+  const questionCards = [
+    {
+      image: "/images/whoCard.jpg",
+      title: "Who is experiencing the problem?",
+      job: "The average business owners",},
+    {
+      image: "/images/whereCard.jpg",
+      title: "Where does the user experience the problem?",
+      job: "Outside of the office",
+    },
+    {
+      image: "/images/whenCard.jpg",
+      title: "When does the problem occur?",
+      job: "No access to a desktop and on-the-go",},
+    {
+      image: "/images/whyCard.jpg",
+      title: "Why does the problem matter?",
+      job: "Affects productivity and efficiency",},
+  ]
   const images = {
     imageSM: "/images/sm_bg-proj3-hero.webp",
     imageMD: "/images/md_bg-proj3-hero.webp",
     imageLG: "/images/lg_bg-proj3-hero.webp",
   };
+  const sprint = {
+    imageSM: "/images/fbgo-sprint-sm.jpg",
+    imageMD: "/images/fbgo-sprint-md.jpg",
+    imageLG: "/images/fbgo-sprint-lg.jpg",
+    problem: "Fishbowl Inventory clients specifically need a tablet-compatible solution that integrates seamlessly with their existing systems. This would enable them to manage tasks efficiently while on the go. Competitor solutions, while informative, often appeared over-engineered and introduced complexity that alienates non-technical users.",
+    approach: "Our approach prioritized simplicity and alignment with the desktop client’s functionality, ensuring users could manage tasks intuitively while still benefiting from automation features. This focus aimed to empower users without overwhelming them, creating a solution that bridges the gap between desktop and mobile inventory management."
+  };
+  const chartData = {
+    data: [
+      { id: "1", label: "fishbowl", height: 312, color: "#5E89DC" },
+      { id: "2", label: "quickbooks", height: 481, color: "#E8AB91" },
+      { id: "3", label: "netsuite", height: 137, color: "#81B29A" },
+    ],
+    caption: "# of pain points",
+    legend: [
+      { label: "fishbowl", color: "#5E89DC" },
+      { label: "quickbooks", color: "#E8AB91" },
+      { label: "netsuite", color: "#81B29A" },
+    ],
+  };
   const hero = {
     product: "travelpass",
-    tagline: "providing the explorer at heart unforgettable adventures",
+    tagline: "providing the explorer at heart unforgettable adventures.",
     primary: "prototype",
     secondary: "website"
   }
   const overview = {
-    overview: "Travelpass is a website and app designed for travelers. It serves as a hub for creating and viewing destination guides, finding travel inspiration, and booking activities and hotels.",
-    duration: "I’ve been working on Travelpass since July 2021, starting as one of two designers handling design, research, and product management. As the team grew into a full Product department, my focus shifted to the native app and design systems, where I specialize in creating and documenting reusable components and collaborating with engineers to build and implement them in code.",
-        product: "/images/fishbowl.png",
-    role: ["Project Lead, 7mos", "User Researcher", "User Experience Designer", "User Interface Designer", "Interaction Designer", "Design Systems Manager"],
-    deliverables: ["User surveys & user tests", "Personas", "User journeys & site maps", "High-fidelity prototype", "Usability tests & findings", "Storybook Design System Documentation"
+    overview: "Fishbowl Go is an app designed for inventory management. It streamlines processes like sales orders, manufacture orders, and other inventory tasks, helping workers complete jobs in the warehouse more efficiently. Many users switch from competitors like NetSuite or QuickBooks after finding those tools either too complex or unable to meet their needs.",
+    duration: "Originally, the project was roadmapped for a month reskinning of the mobile native app. Through research and brainstorming, the project specs changed. We worked on it from January 2021 to September 2021.",
+    product: "/images/fishbowl.png",
+    role: ["Project Lead", "User Researcher", "User Experience Designer", "User Interface Designer", "Interaction Designer"],
+    deliverables: ["User surveys & user tests", "Personas", "User journeys & site maps", "High-fidelity prototype", "Usability tests & findings"
     ],
-    specs: ["2+ years", "Figma", "Google Forms", "React & React Native", "Storybook", "TailwindCSS & UnoCSS"]
+    specs: ["8 months", "Figma", "Userbrain", "Miro"]
   }
   const insights = {
     description: "During the Fishbowl Go project, we identified a crucial user experience issue: several actions within the app were ambiguous regarding their completion status. Users frequently expressed uncertainty about whether their actions, such as inventory updates or order processing, were successfully executed. To enhance clarity and user confidence, we propose integrating more explicit feedback mechanisms into the app's workflow. This approach includes the implementation of toast messages and clear visual indicators to affirm that an action has been successfully completed. These additions are aimed at reducing user frustration and improving the overall efficiency and user satisfaction with the app.",
@@ -81,7 +121,7 @@ const Project3: React.FC = () => {
   }
   const blogData = [
     {
-      image: "/images/md_bg-proj3-hero.jpg",
+      image: "/images/project-image-tpg.jpg",
       link: "/projects/Project3",
       product: "Travelpass",
       type: "booking",
@@ -99,9 +139,9 @@ const Project3: React.FC = () => {
         "A Figma plugin that streamlines design documentation, enhancing collaboration.",
     },
     {
-      image: "/images/example.jpg", // Example placeholder image
-      link: "/projects/Project5",
-      product: "New Product",
+      image: "/images/project-image-hm.jpg", // Example placeholder image
+      link: "/projects/Project2",
+      product: "Haven Massage",
       type: "tooling",
       date: "August 15, 2024",
       description: "An exciting new tool for improving team productivity.",
@@ -144,24 +184,52 @@ const Project3: React.FC = () => {
     {
       page: "Home",
       sections: [
-        { section: "Overview", details: ["Introduction", "Features", "Pricing"] },
-        { section: "About", details: ["Team", "Mission", "Contact"] },
+        { section: "Overview", details: ["Introduction", "Modules", "Settings", "Stats/info of company"] },
+        { section: "Notifications", details: ["Updates", "Messages", "Calendar events"] },
+        { section: "Settings", details: ["Preferences", "Permissions", "Module settings"],}
       ],
     },
     {
-      page: "Products",
+      page: "Inventory",
       sections: [
-        { section: "Categories", details: ["Electronics", "Furniture", "Clothing"] },
-        { section: "Details", details: ["Shipping", "Returns"] },
+        { section: "Parts", details: ["Add/edit parts", "View/edit general info", "Add to inventory"] },
+        { section: "Inventory", details: ["Add/edit inventory", "View/edit general info", "View/edit inventory details (tracking, BOM, etc", "Inventory event actions (add, scrap, cycle, move"] },
       ],
     },
+    {
+      page: "Manufacturing",
+      sections: [
+        { section: "Manufacture Order", details: ["Create new MO", "Issue/unissue orders", "Mo to PO", "Quick Build/Fulfill", "Editable general info: number, date scheduled, location group, class"]},
+        { section: "Work Order", details: ["Creat new WO", "Issue/unissue orders", "WO to Pick", "WO to MO", "Quick Build/Fulfill", "Editable general info: scheduled start/finish, class, priority, category, location, customer/job"]},
+        { section: "Bill of Materials", details: ["View scheduling, details, assigned users, and notes of each WO item", "View/edit instructions"]}
+      ]
+    },
+    {
+      page: "Sales",
+      sections: [
+        { section: "Sales Order", details: ["Add new sales order", "View/edit sales order", "Change status of SO", "Change date scheduled", "Change customer or shipping address", "Change carrier/service", "View totals", "View Tax info", "View SO items"]},
+        { section: "Customers", details: ["View list of customers", "Add/edit customers", "Search customers by status, name, account number, location, contact, salesrep", "Edit general info (name, status, address, date created/last changed, user ID, contact info)"]},
+        { section: "Picking", details: ["Add/delete items", "Add item by type", "Quick add product to item list", "Start, finish, void, commit, group orders"]},
+        { section: "Packing", details: ["Add/delete items", "Add item by type", "Quick add product to item list", "Start, finish, void, commit, group orders"]},
+        { section: "Shipping", details: ["Send to ship"]},
+        { section: "Delivery", details: ["Signature"]}
+      ]
+    },
+    {
+      page: "Purchasing",
+      sections: [
+        { section: "Purchase Order", details: ["Add new purchase order", "View/edit PO", "Change date scheduled"]},
+        { section: "Vendor", details: ["Change customer or shipping address", "Change carrier/service", "View list of vendors", "Search vendor by status, name, account number, location", "Edit general info (name, status, address, date entered/last changed, userID, contact info"]},
+        { section: "Receiving", details: ["Receive, void, reconcile, fulfill orders"]}
+      ]
+    }
   ]
   const outcomes = [
     {
       description: "Usability testing of the Fishbowl Go prototype was a pivotal phase in our project, yielding crucial insights. The testing showed that our redesigned prototype markedly enhanced the existing app, significantly improving user-friendliness and efficiency, thereby addressing key user challenges. However, as we were preparing for the development phase, unforeseen organizational changes occurred. The acquisition of Fishbowl Inventory by another company led to a realignment of priorities and the eventual departure of our development team. This resulted in the project being shelved, despite the prototype&#39s demonstrated potential to meet and exceed user needs.",
       link: "",
       linkLabel: "prototype",
-      image: "",
+      image: "/images/fishbowl.png",
       points: [
         { label: "process and development", details: "Over the course of the project, our team worked diligently to understand and integrate user feedback into a comprehensive redesign of the Fishbowl Go app. My role involved closely collaborating with the development team, the Head of Product, and the UX Director to ensure that the new design addressed user needs effectively." },
         { label: "impact", details: "Though the redesigned Fishbowl Go app did not see the light of day in its intended form, the project left an indelible mark. It demonstrated the value of listening to user feedback and the need for continuous evolution in software design to meet changing user requirements. The insights gained from this project can serve as a valuable reference for future endeavors in similar domains." },
@@ -181,52 +249,17 @@ const Project3: React.FC = () => {
         <div className="relative z-20 bg-white w-full h-screen">
           <div className="relative z-21 flex flex-col w-full">
             <Overview {...overview} />
-            <Problem problem="Businesses face difficulties in managing inventory efficiently due to desktop-only software limitations. This issue intensifies when they need to manage tasks remotely. Current mobile apps focus mainly on warehouse activities, creating a need for a mobile-friendly inventory management tool for administrative tasks. Fishbowl Inventory clients specifically need a tablet-compatible solution that integrates with their existing systems for effective inventory, order, and data management outside the office." />            <div className="bg-white pt-16 pb-12 px-32 grid grid-cols-8 grid-flow-row items-start gap-8">
-            </div>
-            {/* Who, When, What, Why */}
-            <div className="bg-white h-2xl pt-12 pb-16 px-32 grid grid-cols-2 grid-flow-row items-start gap-8">
-              <Questions
-                w="Who"
-                SvgComponent={WhoIcon}
-                illustrationKey="who"
-                question="Who is experiencing the problem?"
-                statement="Small to medium-sized businesses using inventory management systems, specifically clients of Fishbowl Inventory."
-              />
-              <Questions
-                w="When"
-                SvgComponent={WhenIcon}
-                illustrationKey="when"
-                question="When does the problem occur?"
-                statement="The problem arises when these businesses need to perform inventory management and administrative tasks remotely, such as when they are away from the office or do not have access to desktop systems."
-              />
-              <Questions
-                w="Where"
-                SvgComponent={WhereIcon}
-                illustrationKey="where"
-                question="Where does the user experience the problem?"
-                statement="The problem occurs in environments where these businesses need to manage inventory and administrative tasks remotely or on-the-go, outside of a traditional desktop setup."
-              />
-              <Questions
-                w="Why"
-                SvgComponent={WhyIcon}
-                illustrationKey="why"
-                question="Why does this pain point matter to the user?"
-                statement="Efficient inventory management is key to the success of small and medium-sized businesses. Poor mobile solutions limit their capability to manage inventory remotely, leading to issues in order management, data access, and business agility, thus affecting productivity and possibly revenue."
-              />
-            </div>
-            <Goal
-              statement="To successfully launch Fishbowl Go, a user-friendly iPad/tablet app, designed to bridge the gap in mobile inventory management for small to medium-sized businesses. Our aim was to simplify administrative tasks, making inventory management as efficient on tablets as it is on desktops. The goal was to enhance operational efficiency by at least 20% and improve user satisfaction, targeting a 15% increase in Fishbowl Inventory's client base within the first six months after launch."
-              image={[
-                "/images/fbgo-sticky1.png",
-                "/images/fbgo-sticky2.png",
-                "/images/fbgo-sticky3.png",
-                "/images/fbgo-sticky4.png",
-                "/images/fbgo-sticky5.png",
-                "/images/fbgo-sticky6.png",
-              ]}
+            <Problem problem="Through competitor analysis and usability evaluation, we identified an industry-wide struggle to adapt inventory management tools for mobile use. Many business owners rely on desktop-only software, which creates inefficiencies when managing tasks remotely. Existing mobile apps primarily focus on warehouse activities, leaving a gap for administrative tasks like reviewing inventory, managing orders, and accessing data." />
+            <SprintImg
+              imageSM={sprint.imageSM}
+              imageMD={sprint.imageMD}
+              imageLG={sprint.imageLG}
+              problem={sprint.problem}
+              approach={sprint.approach}
+              chartData={chartData}
+    
             />
-            <Understand user="User research revealed that accountants and business owners primarily depend on traditional, often manual methods for inventory management, such as desktop software, spreadsheets, and paper records. This reliance leads to several pain points:" />
-            <div className="bg-white h-70 py-12 px-32 grid grid-cols-4 grid-flow-row items-start gap-8">
+            <div className="bg-white h-80 pt-12 pb-16 px-32 grid grid-cols-4 grid-flow-row items-start gap-8">
               {painPoints.map((point, index) => (
                 <PainPoints
                   key={index}
@@ -236,8 +269,9 @@ const Project3: React.FC = () => {
                 />
               ))}
             </div>
+            <Understand user="User research revealed that accountants and business owners primarily depend on traditional, often manual methods for inventory management, such as desktop software, spreadsheets, and paper records. This reliance leads to several pain points:" />
             {/* Meet Users */}
-            <div className="bg-white h-70 pt-12 pb-92 px-32 grid grid-cols-8 grid-flow-row items-start gap-8">
+            <div className="bg-white py-12 px-32 grid grid-cols-8 grid-flow-row items-start gap-8">
               <div className="col-start-1 col-span-8 py-2 text-left">
                 <h6 className="m-0 font-gilroy font-300 text-8 text-grey-800 tracking-wide">meet these users</h6>
               </div>
@@ -259,8 +293,46 @@ const Project3: React.FC = () => {
             </div>
             {/* User Journey */}
             {journey.map((journey, index) => (
-  <Journey key={index} {...journey} />
-))}
+              <Journey key={index} {...journey} />
+            ))}
+            {/* Who, When, What, Why */}
+            <div className="bg-white pt-12 pb-16 px-32 grid grid-cols-2 grid-flow-row items-start gap-32">
+
+              <div className="grid grid-cols-2 auto-cols-max grid-flow-row items-start justify-start gap-20">
+                {questionCards.map((card, index) => (
+                  <Card
+                    key={index}
+                    image={card.image}
+                    title={card.title}
+                    job={card.job}
+                  />
+                ))}
+              </div>
+              <div className="grid grid-cols-1 grid-flow-row items-start gap-8">
+                <p className="m-0 p-0 text-left font-gilroy font-300 text-6 text-grey-800 tracking-wide">user story</p>
+                <p className="m-0 p-0 text-left font-gilroy font-300 text-6 text-grey-900 leading-relaxed">
+                  As a business owner who often works outside of the office, I need a way to easily review detailed inventory information on my phone or tablet so that I can make timely decisions without having to wait until I return to my desk, avoiding costly delays and frustration.
+                </p>
+                <p className="m-0 p-0 text-left font-gilroy font-300 text-6 text-grey-800 tracking-wide">hypothesis</p>
+                <p className="m-0 p-0 text-left font-gilroy font-300 text-6 text-grey-900 leading-relaxed">
+                  We believe enhancing mobile inventory management will help business owners when they are on-the-go.
+                </p>
+              </div>
+
+            </div>
+            <Goal
+              statement="To successfully launch Fishbowl Go, a user-friendly iPad/tablet app, designed to bridge the gap in mobile inventory management for small to medium-sized businesses. Our aim was to simplify administrative tasks, making inventory management as efficient on tablets as it is on desktops. The goal was to enhance operational efficiency by at least 20% and improve user satisfaction, targeting a 15% increase in Fishbowl Inventory's client base within the first six months after launch."
+              image={[
+                "/images/fbgo-sticky1.png",
+                "/images/fbgo-sticky2.png",
+                "/images/fbgo-sticky3.png",
+                "/images/fbgo-sticky4.png",
+                "/images/fbgo-sticky5.png",
+                "/images/fbgo-sticky6.png",
+              ]}
+            />
+
+
             <Insights {...insights} />
             <div className="bg-white pt-16 pb-12 px-32 grid grid-cols-8 grid-flow-row items-start gap-8">
               <div className="py-2 text-left col-start-1 col-span-4 items-start gap-2">
@@ -278,7 +350,7 @@ const Project3: React.FC = () => {
                 className="col-start-1 col-span-8 w-full"
               />
             </div>
-              <SiteMap pages={sitemap} />
+            <SiteMap pages={sitemap} />
             <div className="bg-white  pt-12 pb-16 px-32 grid grid-cols-4 grid-flow-row items-start gap-8 text-left">
               <h6 className="col-start-1 col-span-4 row-start-1 row-span-1 m-0 font-gilroy font-300 text-8 text-grey-800 tracking-wide">digital wireframes</h6>
               <img

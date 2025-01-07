@@ -1,5 +1,5 @@
 const Roles: React.FC = () => (
-  <div className="bg-transparent relative z-30 pt-28 pb-16 px-32 items-center justify-center gap-16 flex flex-row">
+  <div className="bg-transparent relative z-30 pt-28 pb-16 sm:px-6 md:px-14 lg:px-32 items-center justify-center gap-16 flex flex-row">
     {[
       {
         title: 'product design',
