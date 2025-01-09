@@ -66,21 +66,20 @@ const currentRole = 0;
 
 const Home: React.FC = () => {
   return (
-    <>
       <div className="relative w-full h-screen">
         <BackgroundImages imageSM={images.imageSM}
           imageMD={images.imageMD}
           imageLG={images.imageLG} />
         <HomeHeroContent roles={roles} currentRole={currentRole} />
-        <div className="relative z-20">
+        <div className="relative w-full z-20">
           <img
             src='/images/background-texture-dots.png'
             alt='Background pattern for content'
-            className="absolute inset-0 w-full h-800 object-cover z-26"
+            className="absolute inset-0 bg-cover bg-fixed w-full h-800"
           />
           <Roles />
           <CaseStudies />
-          <div className='bg-transparent relative z-35 py-16 px-32 flex flex-row items-center justify-center'>
+          <div className='bg-transparent relative z-35 py-16 mx-auto max-w-300 py-16 px-6 sm:px-6 md:px-14 lg:px-32flex flex-row items-center justify-center'>
             <form>
               <div className='flex flex-col gap-2'>
                 <div className='py-2'>
@@ -114,7 +113,6 @@ const Home: React.FC = () => {
           </div>
         </div>
       </div>
-    </>
   );
 };
 

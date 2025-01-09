@@ -5,3 +5,4 @@ export { default as Card } from './Card/card';
 export { default as Button } from './Button/Button'
 export { WhenIcon, WhereIcon, WhoIcon, WhyIcon } from './icons/index'
 export { default as BarChart } from './Data/BarChart'
+export { default as Annotation } from './Annotation/Annotation'

@@ -7,7 +7,7 @@ interface PainPointsProps {
 }
 
 const PainPoints: React.FC<PainPointsProps> = ({ problem, description, number }) => (
-  <div className="relative h-full rounded-lg bg-white shadow group">
+  <div className="bg-transparent mx-auto max-w-300 relative z-32 h-full rounded-lg shadow group">
     {/* Wrapper for overflow control */}
     <div className="relative overflow-hidden h-full rounded-lg">
       {/* Expanding overlay */}

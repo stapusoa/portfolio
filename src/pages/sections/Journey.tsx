@@ -10,7 +10,7 @@ interface JourneyProps {
 }
 
 const Journey: React.FC<JourneyProps> = ({ user, story, step, task, feeling, feedback }) => (
-  <div className="bg-white  pt-12 pb-16 sm:px-6 md:px-14 lg:px-32 grid grid-cols-8 grid-flow-row items-start gap-8">
+  <div className="bg-transparent mx-auto max-w-300 relative z-32 pt-12 pb-16 px-6 sm:px-6 md:px-14 lg:px-32 grid grid-cols-8 grid-flow-row items-start gap-8">
     <div className="col-start-1 col-span-8 py-2 text-left">
       <h6 className="m-0 font-gilroy font-300 text-8 text-grey-800 tracking-wide">user journey map</h6>
     </div>

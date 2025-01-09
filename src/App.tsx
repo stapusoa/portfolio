@@ -13,7 +13,7 @@ const App: React.FC = () => {
   return (
     <Router>
       <ScrollToTop />
-      <div>
+      <>
         <Navbar />
         <Routes>
           <Route path="/" element={<Home />} />
@@ -23,7 +23,7 @@ const App: React.FC = () => {
           <Route path="/projects/project2" element={<Project2 />} />
           <Route path="/projects/project3" element={<Project3 />} />
         </Routes>
-      </div>
+      </>
     </Router>
   );
 };

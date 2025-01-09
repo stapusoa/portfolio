@@ -1,168 +1,155 @@
-import React, { useEffect, useRef } from "react";
-import { gsap } from "gsap";
-import "./annotation.css";
+import React, { useState, useEffect, useRef } from "react";
 
-const ArrowAnimation: React.FC = () => {
-  const containerRef = useRef<HTMLDivElement | null>(null);
+interface AnnotationProps {
+  page: string;
+  image: string;
+  step: string;
+  explanation: string;
+  imgTranslateX: number; // Image translation X position
+  imgTranslateY: number; // Image translation Y position
+  imgScale: number; // Image scaling factor
+  svgContainerX: number;
+  svgContainerY: number;
+  ringWidth: number;
+  ringHeight: number;
+  svgWidth: number;
+  svgHeight: number;
+  svgPath: string;
+  delay: number;
+  isVisible: boolean;
+}
+
+const Annotation: React.FC<AnnotationProps> = ({
+  page,
+  image,
+  step,
+  explanation,
+  imgTranslateX,
+  imgTranslateY,
+  imgScale,
+  svgContainerX,
+  svgContainerY,
+  ringWidth,
+  ringHeight,
+  svgWidth,
+  svgHeight,
+  svgPath,
+  delay,
+  isVisible
+}) => {
+  const [isInView, setIsInView] = useState(false);
+  const containerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            triggerAnimation();
-            observer.disconnect(); // Disconnect after triggering once
-          }
-        });
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsInView(true);
+        }
       },
-      {
-        threshold: 0.5, // Trigger when 50% of the element is visible
-      }
+      { threshold: 0.5 }
     );
 
     if (containerRef.current) {
       observer.observe(containerRef.current);
     }
 
-    return () => observer.disconnect(); // Cleanup observer
+    return () => {
+      if (containerRef.current) {
+        observer.unobserve(containerRef.current);
+      }
+    };
   }, []);
 
-  const triggerAnimation = () => {
-    const targetElement = document.querySelector(".target-element");
-    const annotation = document.querySelector(".annotation");
-    const arrowPath = document.getElementById("arrow-path");
+  const shouldAnimate = isInView && isVisible;
 
-    if (targetElement && annotation && arrowPath) {
-      // Create and append the animated circle
-      const circle = document.createElement("div");
-      circle.classList.add("circle");
-      targetElement.appendChild(circle);
-
-      // Trigger the arrow animation
-      gsap.to(arrowPath, {
-        duration: 2,
-        ease: "power2.inOut",
-        onComplete: () => {
-          // Show annotation after arrow animation completes
-          annotation.classList.add("show-annotation");
-        },
-      });
-    }
-  };
 
   return (
-    <div ref={containerRef} className="container">
-      <div className="target-element">Target</div>
+    <div
+      ref={containerRef}
+      className={`relative bg-grey-300 border-solid border-4 border-grey-300 rounded-8 w-300 h-220 flex items-center justify-center delay-${delay} overflow-hidden`}
 
-      {/* Hand-Drawn Circle */}
-      <svg
-        className="hand-drawn-circle"
-        width="54"
-        height="57"
-        viewBox="-10 -10 64 67"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
+   >
+      <img
+        alt={`Wireframe: ${page}`}
+        src={image}
+        className="w-250 transition-transform duration-1000 delay-2000 ease-in-out"
+        style={{
+          transform: isInView
+            ? `translate(${imgTranslateX}px, ${imgTranslateY}px) scale(${imgScale / 100})`
+            : "translate(0px, 0px) scale(1)",
+        }}
+      />
+      
+      <div
+        className={`bg-white w-120 h-full top-0 p-16 flex flex-col gap-3 absolute -left-120 transition-transform duration-1000 ease-in-out ${
+          shouldAnimate ? "translate-x-120" : "-translate-x-[150px]"
+        }`}
       >
-        <g filter="url(#filter0_d_953_30306)">
-          <path
-            className="path"
-            d="M10.6938 28.158C8.02714 22.8247 5.62919 12.7504 11.1938 7.15802C17.9269 0.391296 43.8367 -3.19761 50.6928 19.158C57.5489 41.5137 42.6928 49.6582 32.1928 52.6577C32.1928 52.6577 10.6936 56.6582 3.69304 35.6577C3.69304 35.6577 1.19141 28.158 5.69286 20.6574C11.6939 10.6581 18.193 6.65862 21.193 7.15802"
-            stroke="#DE5B3E"
-            strokeWidth="3"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            shapeRendering="crispEdges"
-          />
-        </g>
-        <defs>
-          <filter
-            id="filter0_d_953_30306"
-            x="-10"
-            y="-10"
-            width="80"
-            height="80"
-            filterUnits="userSpaceOnUse"
-            colorInterpolationFilters="sRGB"
-          >
-            <feFlood floodOpacity="0" result="BackgroundImageFix" />
-            <feColorMatrix
-              in="SourceAlpha"
-              type="matrix"
-              values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
-              result="hardAlpha"
-            />
-            <feOffset dx="-1" dy="2.5" />
-            <feComposite in2="hardAlpha" operator="out" />
-            <feColorMatrix
-              type="matrix"
-              values="0 0 0 0 0.870588 0 0 0 0 0.356863 0 0 0 0 0.243137 0 0 0 1 0"
-            />
-            <feBlend
-              mode="normal"
-              in2="BackgroundImageFix"
-              result="effect1_dropShadow_953_30306"
-            />
-            <feBlend
-              mode="normal"
-              in="SourceGraphic"
-              in2="effect1_dropShadow_953_30306"
-              result="shape"
-            />
-          </filter>
-        </defs>
-      </svg>
+        <div className="font-gilroy font-300 text-green text-6 leading-relaxed">
+          {step}
+        </div>
+        <div className="font-gilroy font-300 text-grey-800 text-6 leading-relaxed">
+          {explanation}
 
-      {/* Arrow */}
-      <svg
-        className="arrow"
-        id="arrow"
-        xmlns="http://www.w3.org/2000/svg"
-        viewBox="0 0 133 22"
-        width="133"
-        height="22"
-        fill="none"
-      >
-        <path
-          id="arrow-path"
-          className="draw-arrow"
-          d="M131.5 11H2.5"
-          stroke="#DE5B3E"
-          strokeWidth="3"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          strokeDasharray="400"
-          strokeDashoffset="400"
-        />
-        <path
-          id="tail-1"
-          className="draw-arrow tail-1"
-          d="M11.5 1.5L2 11"
-          stroke="#DE5B3E"
-          strokeWidth="3"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          strokeDasharray="400"
-          strokeDashoffset="400"
-        />
-        <path
-          id="tail-2"
-          className="draw-arrow tail-2"
-          d="M2 11L11.5 20.5"
-          stroke="#DE5B3E"
-          strokeWidth="3"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          strokeDasharray="400"
-          strokeDashoffset="400"
-        />
-      </svg>
-
-      {/* Annotation */}
-      <div className="annotation">
-        <p>This is the annotation text.</p>
+        </div>
       </div>
+      
+      <div className="absolute right-0 top-0 overflow-visible"
+      style={{
+        paddingRight: `${svgContainerX}px`,
+        paddingTop: `${svgContainerY}px`,
+      }}>
+        <div className="flex items-center justify-center">
+          <div 
+          style={{
+            width: `${ringWidth}px`,
+            height: `${ringHeight}px` }}
+            className={`relative ring-green/50 ring-10 ring-offset-0 rounded-xl ${
+              shouldAnimate ? "opacity-100 scale-100 ring-pulse-animation" : "opacity-0 scale-0"
+            }`}
+             />
+          <svg
+            width={svgWidth}
+            height={svgHeight}
+            viewBox={`0 0 ${svgWidth} ${svgHeight}`}
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            className={`absolute bg-white rounded-2xl border-solid border-4 border-green duration-1000 ${
+              shouldAnimate ? "opacity-100 scale-100" : "opacity-0 scale-80"
+            }`}
+            dangerouslySetInnerHTML={{ __html: svgPath }}
+          />
+        </div>
+      </div>
+      {/* this div should animate in sliding from the left after a delay of 2s and pushes the image to the right */}
+      <style>
+        {`
+        @keyframes slideText {
+          0% {
+            transform: translateX(-100%);
+          }
+          100% {
+            transform: translateX(0%);
+          }
+        }
+
+        @keyframes slideImage {
+          0% {
+            transform: translateX(0%);
+          }
+          100% {
+            transform: translateX(100px);
+          }
+        }
+          .ring-pulse-animation {
+            animation: pulse 2s infinite;
+          }
+        `}
+      </style>
     </div>
+
   );
 };
 
-export default ArrowAnimation;
+export default Annotation;

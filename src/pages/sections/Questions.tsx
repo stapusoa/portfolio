@@ -26,7 +26,7 @@ const Questions: React.FC<QuestionsProps> = ({ w, SvgComponent, illustrationKey,
 
   return (
     <>
-      <div className="group relative h-full divide-y divide-green overflow-hidden rounded-lg bg-white shadow">
+      <div className="group bg-transparent mx-auto max-w-300 relative z-32 h-full divide-y divide-green overflow-hidden rounded-lg shadow">
         <div className="flex  flex-col-reverse gap-4 group-hover:gap-auto justify-end items-start  group-hover:flex-row  group-hover:justify-between px-4 pt-7 pb-3">
 
           <h6 className="m-0 p-0 font-gilroy font-300 text-gray-400 tracking-wider text-8 group-hover:text-5 group-hover:m-0">{w}</h6>

@@ -11,7 +11,7 @@ interface InsightsProps {
 }
 
 const Insights: React.FC<InsightsProps> = ({ description, point1, note1, point2, note2, point3, note3 }) => (
-  <div className="bg-white py-16 sm:px-6 md:px-14 lg:px-32 flex flex-col items-start gap-8">
+  <div className="bg-transparent mx-auto max-w-300 relative z-32 py-16 px-6 sm:px-6 md:px-14 lg:px-32 flex flex-col items-start gap-8">
     <div className="flex flex-col items-start gap-2 w-full">
       <div className="py-2 text-left">
         <h5 className="h3 pb-8 font-600 tracking-wide">insights</h5>

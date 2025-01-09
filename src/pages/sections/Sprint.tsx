@@ -22,8 +22,8 @@ interface SprintProps {
 
 const SprintImg: React.FC<SprintProps> = ({ imageSM, imageMD, imageLG, problem, approach, chartData,
 }) => (
-  <>
-    <div className="bg-white py-12 sm:px-6 md:px-14 lg:px-32">
+  <div className="bg-transparent mx-auto max-w-300 relative z-32 px-6 sm:px-6 md:px-14 lg:px-32">
+    <div className="py-12">
       <img
         alt="Image of team sprint for large screens"
         src={imageLG}
@@ -40,7 +40,7 @@ const SprintImg: React.FC<SprintProps> = ({ imageSM, imageMD, imageLG, problem, 
         className="w-full rounded-lg sm:block md:hidden"
       />
     </div>
-    <div className="bg-white py-12 px-32 flex flex-row gap-12">
+    <div className="py-12 flex flex-row gap-12">
       <p className="m-0 p-0 font-gilroy text-grey-600 col-start-5 col-span-4 text-left font-300 text-6 leading-relaxed">
         {problem}
       </p>
@@ -48,7 +48,7 @@ const SprintImg: React.FC<SprintProps> = ({ imageSM, imageMD, imageLG, problem, 
         {approach}
       </p>
     </div>
-    <div className="bg-white py-12 px-32 flex flex-row gap-12">
+    <div className="py-12 flex flex-row gap-12">
       {/* 
       <svg className="w-180" viewBox="0 0 478 400" fill="none" xmlns="http://www.w3.org/2000/svg">
         <rect x="0.5" y="0.5" width="477" height="399" rx="7.5" stroke="#E4E4E7" />
@@ -97,7 +97,7 @@ const SprintImg: React.FC<SprintProps> = ({ imageSM, imageMD, imageLG, problem, 
 
       </div>
     </div>
-  </>
+  </div>
 );
 
 export default SprintImg;
