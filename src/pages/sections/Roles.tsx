@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useCallback, useRef } from "react";
+import { useSwipeable } from "react-swipeable";
 
 const Roles: React.FC = () => {
   const roles = [
@@ -23,53 +24,102 @@ const Roles: React.FC = () => {
   ];
 
   const [currentSlide, setCurrentSlide] = useState(0);
+  const [isTransitioning, setIsTransitioning] = useState(false);
+  const slideInterval = useRef<NodeJS.Timeout | null>(null);
 
-  const nextSlide = () => {
-    setCurrentSlide((prev) => (prev + 1) % roles.length);
+  const changeSlide = useCallback(
+    (newIndex: number) => {
+      if (isTransitioning) return; // Prevent multiple state updates while transitioning
+      setIsTransitioning(true);
+
+      setTimeout(() => {
+        if (newIndex < 0) newIndex = roles.length - 1;
+        if (newIndex >= roles.length) newIndex = 0;
+        setCurrentSlide(newIndex);
+        setIsTransitioning(false); // Allow next transition
+      }, 400); // Matches CSS transition duration
+    },
+    [roles.length, isTransitioning]
+  );
+
+  const nextSlide = useCallback(() => {
+    changeSlide(currentSlide + 1);
+  }, [currentSlide, changeSlide]);
+
+  const prevSlide = useCallback(() => {
+    changeSlide(currentSlide - 1);
+  }, [currentSlide, changeSlide]);
+
+  // Swipe handlers
+  const handlers = useSwipeable({
+    onSwipedLeft: () => {
+      nextSlide();
+      resetTimer();
+    },
+    onSwipedRight: () => {
+      prevSlide();
+      resetTimer();
+    },
+    preventScrollOnSwipe: true,
+    trackMouse: true,
+  });
+
+  // Handle trackpad & mouse wheel horizontal scrolling
+  const handleWheel = (event: React.WheelEvent) => {
+    if (event.deltaX > 10) {
+      nextSlide();
+      resetTimer();
+    } else if (event.deltaX < -10) {
+      prevSlide();
+      resetTimer();
+    }
   };
 
-  const prevSlide = () => {
-    setCurrentSlide((prev) => (prev - 1 + roles.length) % roles.length);
+  // Auto-slide functionality
+  useEffect(() => {
+    startAutoSlide();
+    return () => stopAutoSlide();
+  }, [nextSlide]);
+
+  const startAutoSlide = () => {
+    stopAutoSlide();
+    slideInterval.current = setInterval(() => {
+      nextSlide();
+    }, 5000);
   };
+
+  const stopAutoSlide = () => {
+    if (slideInterval.current) {
+      clearInterval(slideInterval.current);
+      slideInterval.current = null;
+    }
+  };
+
+  const resetTimer = useCallback(() => {
+    stopAutoSlide();
+    startAutoSlide();
+  }, []);
 
   return (
-    <div className="bg-transparent mx-auto max-w-300 relative z-30 pt-28 pb-16 sm:px-6 md:px-14 lg:px-32">
-      {/* Desktop layout */}
-      <div className="hidden lg:flex items-center justify-center gap-16">
+    <div
+      {...handlers}
+      onWheel={handleWheel}
+      className="relative lg:max-w-300 mx-auto bg-transparent z-30 pt-28 pb-16 px-6 md:px-14 lg:px-32 overflow-hidden"
+    >
+      {/* Slide Container */}
+      <div className="relative h-150 md:h-96 flex items-center justify-center">
         {roles.map((role, index) => (
-          <div key={index} className="flex flex-col items-center gap-14">
-            <div className="h-39 w-39 flex items-end justify-center">
-              <img src={role.image} alt={role.title} className="h-33" />
-            </div>
-            <div className="gap-2 text-center">
-              <div className="py-2">
-                <h6 className="font-gilroy font-300 tracking-wide text-grey-800 text-7 m-0">
-                  {role.title}
-                </h6>
-              </div>
-              <div className="py-2">
-                <h6 className="font-gilroy font-500 text-8 text-grey-900 leading-tight m-0">
-                  {role.description}
-                </h6>
-              </div>
-            </div>
-          </div>
-        ))}
-      </div>
-
-      {/* Mobile Carousel */}
-      <div className="lg:hidden">
-        <div className="relative overflow-hidden">
-          {/* Slides */}
-          {roles.map((role, index) => (
-            <div
-              key={index}
-              className={`transition-transform duration-500 ease-in-out ${
-                index === currentSlide
-                  ? "translate-x-0 opacity-100"
-                  : "translate-x-full opacity-0"
-              } absolute top-0 left-0 w-full flex flex-col items-center gap-14`}
-            >
+          <div
+            key={index}
+            className={`absolute inset-0 transition-opacity duration-400 ease-in-out ${
+              index === currentSlide ? "opacity-100" : "opacity-0"
+            }`}
+            style={{
+              visibility: index === currentSlide ? "visible" : "hidden", // Prevents flashes
+              transitionDelay: index === currentSlide ? "0s" : "200ms", // Delays hiding old slide
+            }}
+          >
+            <div className="flex flex-col items-center gap-14">
               <div className="h-39 w-39 flex items-end justify-center">
                 <img src={role.image} alt={role.title} className="h-33" />
               </div>
@@ -80,41 +130,30 @@ const Roles: React.FC = () => {
                   </h6>
                 </div>
                 <div className="py-2">
-                  <h6 className="font-gilroy font-500 text-8 text-grey-900 leading-tight m-0">
+                  <h6 className="font-gilroy font-500 text-10 text-grey-900 leading-cozy m-0">
                     {role.description}
                   </h6>
                 </div>
               </div>
             </div>
-          ))}
+          </div>
+        ))}
+      </div>
 
-          {/* Navigation */}
+      {/* Indicators */}
+      <div className="flex justify-center mt-6 space-x-2">
+        {roles.map((_, index) => (
           <button
-            onClick={prevSlide}
-            className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-gray-700 text-white rounded-full p-2 focus:outline-none"
-          >
-            ◀
-          </button>
-          <button
-            onClick={nextSlide}
-            className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-gray-700 text-white rounded-full p-2 focus:outline-none"
-          >
-            ▶
-          </button>
-        </div>
-
-        {/* Indicators */}
-        <div className="flex justify-center mt-6 space-x-2">
-          {roles.map((_, index) => (
-            <button
-              key={index}
-              onClick={() => setCurrentSlide(index)}
-              className={`w-3 h-3 rounded-full ${
-                currentSlide === index ? "bg-gray-800" : "bg-gray-400"
-              }`}
-            />
-          ))}
-        </div>
+            key={index}
+            onClick={() => {
+              changeSlide(index);
+              resetTimer();
+            }}
+            className={`h-3 border-0 rounded-full transition-all duration-300 ease-in-out ${
+              currentSlide === index ? "border-0 bg-green w-10 rounded-full" : "border-0 w-3 bg-green/50 rounded-full"
+            }`}
+          />
+        ))}
       </div>
     </div>
   );

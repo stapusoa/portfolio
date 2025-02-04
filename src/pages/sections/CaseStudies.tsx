@@ -53,7 +53,7 @@ const CaseStudies: React.FC = () => {
                 </h6>
               </div>
               <div>
-                <h6 className="font-gilroy font-500 text-10 text-grey-900 m-0 tracking-cozy">
+                <h6 className="font-gilroy font-500 text-10 text-grey-900 m-0 leading-cozy">
                   {caseStudy.description}
                 </h6>
               </div>
