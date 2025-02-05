@@ -1,4 +1,5 @@
 import React from "react";
+import { useSwipeable } from "react-swipeable";
 
 interface OverviewProps {
   overview: string;
@@ -10,7 +11,26 @@ interface OverviewProps {
 }
 
 const Overview: React.FC<OverviewProps> = ({ overview, duration, product, role, deliverables, specs }) => {
+  const sliderRef = React.useRef<HTMLDivElement>(null);
 
+  // Swipe handling for mobile/tablet
+  const handlers = useSwipeable({
+    onSwipedLeft: () => scrollRight(),
+    onSwipedRight: () => scrollLeft(),
+    trackMouse: true,
+  });
+
+  const scrollRight = () => {
+    if (sliderRef.current) {
+      sliderRef.current.scrollBy({ left: 300, behavior: "smooth" });
+    }
+  };
+
+  const scrollLeft = () => {
+    if (sliderRef.current) {
+      sliderRef.current.scrollBy({ left: -300, behavior: "smooth" });
+    }
+  };
   return (
     <div className="bg-transparent mx-auto max-w-300 relative z-32 px-6 sm:px-6 md:px-14 lg:px-32 py-28 sm:py-36 lg:pt-58 lg:pb-20">
       <div className="pt-28 pb-12 z-32 flex flex-col items-start gap-8">
@@ -29,7 +49,7 @@ const Overview: React.FC<OverviewProps> = ({ overview, duration, product, role, 
             <div className='m-0 p-0 col-start-2 col-span-3 row-span-1 font-gilroy font-300 text-6 leading-relaxed text-grey-600'>
               <strong className='font-600'>The product - </strong>{overview}
             </div>
-            <div className='col-start-5 col-span-3 row-start-1 row-span-2'>
+            <div className='hidden md:block md:col-start-5 md:col-span-3 row-start-1 row-span-2'>
               <img
                 src={product}
                 className="w-full h-full relative -top-20"
@@ -49,48 +69,48 @@ const Overview: React.FC<OverviewProps> = ({ overview, duration, product, role, 
           </div>
         </div>
       </div>
-      <div className="pt-12 pb-16 z-32 flex flex-row items-start gap-8">
-        <div className="flex flex-col items-start gap-1 w-full">
+      <div 
+        {...handlers}
+        ref={sliderRef}
+        className="pt-12 pb-16 z-32 flex flex-row items-start gap-8 overflow-x-auto md:overflow-hidden snap-x snap-mandatory scroll-smooth no-scrollbar"
+      >
+        {/* Role Section */}
+        <div className="flex flex-col items-start gap-1 w-full min-w-[320px] snap-center">
           <div className="p-0 text-left">
             <h6 className="m-0 font-gilroy font-300 text-6 text-grey-600 tracking-wide">role</h6>
           </div>
           <ul className="p-0 list-disc text-left list-inside space-y-1">
-            {role.map((role, index) => (
-              <li
-                key={index}
-                className="text-grey-600 font-gilroy font-300 text-5 leading-tight"
-              >
-                {role}
+            {role.map((item, index) => (
+              <li key={index} className="text-grey-600 font-gilroy font-300 text-5 leading-tight">
+                {item}
               </li>
             ))}
           </ul>
         </div>
-        <div className="flex flex-col items-start gap-2 w-full">
+
+        {/* Deliverables Section */}
+        <div className="flex flex-col items-start gap-2 w-full min-w-[320px] snap-center">
           <div className="p-0 text-left">
             <h6 className="m-0 font-gilroy font-300 text-6 text-grey-600 tracking-wide">deliverables</h6>
           </div>
           <ul className="p-0 list-disc text-left list-inside space-y-1">
-            {deliverables.map((deliverables, index) => (
-              <li
-                key={index}
-                className="text-grey-600 font-gilroy font-300 text-5 leading-tight"
-              >
-                {deliverables}
+            {deliverables.map((item, index) => (
+              <li key={index} className="text-grey-600 font-gilroy font-300 text-5 leading-tight">
+                {item}
               </li>
             ))}
           </ul>
         </div>
-        <div className="flex flex-col items-start gap-2 w-full">
+
+        {/* Specifications Section */}
+        <div className="flex flex-col items-start gap-2 w-full min-w-[320px] snap-center">
           <div className="p-0 text-left">
             <h6 className="m-0 font-gilroy font-300 text-6 text-grey-600 tracking-wide">specifications</h6>
           </div>
           <ul className="p-0 list-disc text-left list-inside space-y-1">
-            {specs.map((specs, index) => (
-              <li
-                key={index}
-                className="text-grey-600 font-gilroy font-300 text-5 leading-tight"
-              >
-                {specs}
+            {specs.map((item, index) => (
+              <li key={index} className="text-grey-600 font-gilroy font-300 text-5 leading-tight">
+                {item}
               </li>
             ))}
           </ul>
