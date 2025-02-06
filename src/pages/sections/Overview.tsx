@@ -38,7 +38,7 @@ const Overview: React.FC<OverviewProps> = ({ overview, duration, product, role, 
           <div className="py-2 text-left">
             <h5 className="h3 pb-8 font-600 tracking-wide">overview</h5>
           </div>
-          <div className="grid grid-rows-2 grid-flow-row auto-rows-min gap-8 items-start text-left w-full">
+          <div className="grid grid-flow-row auto-rows-min gap-8 items-start text-left w-full">
             <div className='row-start-1 row-span-1 col-start-1 col-span-1 items-start'>
               <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="https://www.w3.org/2000/svg">
                 <rect width="40" height="40" rx="20" fill="#80B29B" />
@@ -55,7 +55,7 @@ const Overview: React.FC<OverviewProps> = ({ overview, duration, product, role, 
                 className="w-full h-full relative -top-20"
               />
             </div>
-            <div className='row-start-2 row-span-1 col-start-1 col-span-1 items-start'>
+            <div className='row-start-2 col-start-1 col-span-1 items-start'>
               <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="https://www.w3.org/2000/svg">
                 <rect width="40" height="40" rx="20" fill="#80B29B" />
                 <path d="M15.7546 21.1693C15.5417 21.1693 15.3605 21.0974 15.2109 20.9536C15.0671 20.8098 14.9952 20.6314 14.9952 20.4186C14.9952 20.2115 15.0671 20.036 15.2109 19.8922C15.3605 19.7484 15.5417 19.6765 15.7546 19.6765H19.2493V14.8961C19.2493 14.6832 19.3212 14.5049 19.465 14.3611C19.6088 14.2172 19.7843 14.1453 19.9914 14.1453C20.2042 14.1453 20.3826 14.2172 20.5264 14.3611C20.6702 14.5049 20.7421 14.6832 20.7421 14.8961V20.4186C20.7421 20.6314 20.6702 20.8098 20.5264 20.9536C20.3826 21.0974 20.2042 21.1693 19.9914 21.1693H15.7546ZM20 28.9958C18.7689 28.9958 17.6098 28.7599 16.5225 28.2882C15.4353 27.8222 14.4775 27.1751 13.6491 26.3467C12.8207 25.5183 12.1707 24.5634 11.6989 23.4819C11.233 22.3946 11 21.2326 11 19.9958C11 18.7647 11.233 17.6084 11.6989 16.5269C12.1707 15.4397 12.8178 14.4819 13.6405 13.6535C14.4688 12.8251 15.4267 12.1779 16.5139 11.712C17.6012 11.2403 18.7603 11.0044 19.9914 11.0044C21.2224 11.0044 22.3816 11.2403 23.4688 11.712C24.5618 12.1779 25.5197 12.8251 26.3423 13.6535C27.1707 14.4819 27.8207 15.4397 28.2924 16.5269C28.7641 17.6084 29 18.7647 29 19.9958C29 21.2326 28.7641 22.3946 28.2924 23.4819C27.8207 24.5634 27.1707 25.5183 26.3423 26.3467C25.5197 27.1751 24.5647 27.8222 23.4775 28.2882C22.3902 28.7599 21.2311 28.9958 20 28.9958ZM20 27.0197C20.9722 27.0197 21.8811 26.8385 22.7268 26.4761C23.5781 26.1137 24.326 25.6132 24.9703 24.9747C25.6146 24.3304 26.1179 23.5854 26.4803 22.7398C26.8428 21.8884 27.024 20.9737 27.024 19.9958C27.024 19.0236 26.8399 18.1147 26.4717 17.269C26.1093 16.4176 25.6059 15.6698 24.9616 15.0255C24.3231 14.3812 23.5781 13.8778 22.7268 13.5154C21.8811 13.153 20.9693 12.9718 19.9914 12.9718C19.0192 12.9718 18.1074 13.153 17.256 13.5154C16.4104 13.8778 15.6654 14.3812 15.0211 15.0255C14.3826 15.6698 13.8821 16.4176 13.5197 17.269C13.163 18.1147 12.9847 19.0236 12.9847 19.9958C12.9847 20.9737 13.163 21.8884 13.5197 22.7398C13.8821 23.5854 14.3854 24.3304 15.0297 24.9747C15.674 25.6132 16.419 26.1137 17.2646 26.4761C18.116 26.8385 19.0278 27.0197 20 27.0197Z" fill="white" />
@@ -63,7 +63,7 @@ const Overview: React.FC<OverviewProps> = ({ overview, duration, product, role, 
 
 
             </div>
-            <div className='col-start-2 col-span-3 row-span-1 font-gilroy font-300 text-6 leading-relaxed text-grey-600'>
+            <div className='col-start-2 col-span-3 font-gilroy font-300 text-6 leading-relaxed text-grey-600'>
               <strong className='font-600'>Project duration - </strong>{duration}
             </div>
           </div>
@@ -72,7 +72,7 @@ const Overview: React.FC<OverviewProps> = ({ overview, duration, product, role, 
       <div 
         {...handlers}
         ref={sliderRef}
-        className="pt-12 pb-16 z-32 flex flex-row items-start gap-8 overflow-x-auto md:overflow-hidden snap-x snap-mandatory scroll-smooth no-scrollbar"
+        className="pt-12 pb-0 z-32 flex flex-row items-start gap-8 overflow-x-auto md:overflow-hidden snap-x snap-mandatory scroll-smooth no-scrollbar"
       >
         {/* Role Section */}
         <div className="flex flex-col items-start gap-1 w-full min-w-[320px] snap-center">
