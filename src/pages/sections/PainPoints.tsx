@@ -7,11 +7,11 @@ interface PainPointsProps {
 }
 
 const PainPoints: React.FC<PainPointsProps> = ({ problem, description, number }) => (
-  <div className="bg-transparent mx-auto max-w-300 relative z-32 h-full rounded-lg shadow group">
+  <div className="relative w-full md:max-w-300 h-full md:min-h-40 bg-transparent z-32 rounded-lg shadow group">
     {/* Wrapper for overflow control */}
     <div className="relative overflow-hidden h-full rounded-lg">
       {/* Expanding overlay */}
-      <div className="absolute aspect-square -top-22 left-1/2 -translate-x-1/2 rounded-full inset-0 bg-green scale-0 transition-transform duration-800 group-hover:scale-[4] z-0"></div>
+      <div className="absolute aspect-square -top-22 left-1/2 -translate-x-1/2 rounded-full inset-0 bg-green scale-0 transition-transform duration-800 group-hover:scale-[6] z-0"></div>
       {/* Content */}
       <div className="relative z-10 px-4 pt-8 pb-3">
         <h6 className="m-0 text-center font-gilroy font-500 text-gray-700 group-hover:text-white tracking-wide leading-cozy text-5">
@@ -20,7 +20,8 @@ const PainPoints: React.FC<PainPointsProps> = ({ problem, description, number })
       </div>
       <div className="relative z-10 px-4 py-0">
         <p className="m-0 text-center font-gilroy font-300 tracking-wide leading-tight text-gray-600 group-hover:text-white text-4.5">
-          {description}                    </p>
+          {description}
+        </p>
       </div>
     </div>
 

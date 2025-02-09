@@ -11,7 +11,7 @@ interface BlogCardProps {
 
 const BlogCard: React.FC<BlogCardProps> = ({ image, link, product, type, date, description }) => (
   <>
-        <a href={link} className="decoration-none hover:rounded-3xl hover:shadow-md group p-3 col-span-2 items-start justify-between">
+        <a href={link} className="decoration-none hover:rounded-3xl hover:shadow-md group p-3 snap-start shrink-0 h-fit items-start justify-between">
           <div className="relative group overflow-hidden w-full">
             <img
               alt=""

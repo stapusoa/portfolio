@@ -27,28 +27,28 @@ const SprintImg: React.FC<SprintProps> = ({ imageSM, imageMD, imageLG, problem, 
       <img
         alt="Image of team sprint for large screens"
         src={imageLG}
-        className="w-full rounded-lg sm:hidden lg:block"
+        className="w-full rounded-lg hidden lg:block"
       />
       <img
         alt="Image of team sprint for tablets"
         src={imageMD}
-        className="w-full rounded-lg sm:hidden md:block lg:hidden"
+        className="w-full rounded-lg hidden md:block lg:hidden"
       />
       <img
         alt="Image of team sprint for mobile"
         src={imageSM}
-        className="w-full rounded-lg sm:block md:hidden"
+        className="w-full rounded-lg block md:hidden"
       />
     </div>
-    <div className="py-12 flex flex-row gap-12">
-      <p className="m-0 p-0 font-gilroy text-grey-600 col-start-5 col-span-4 text-left font-300 text-6 leading-relaxed">
+    <div className="py-12 grid grid-cols-8 grid-flow-row gap-12">
+      <p className="m-0 p-0 font-gilroy text-grey-600 col-start-1 col-span-8 md:col-span-4 text-left font-300 text-6 leading-relaxed">
         {problem}
       </p>
-      <p className="m-0 p-0 font-gilroy text-grey-600 col-start-5 col-span-4 text-left font-300 text-6 leading-relaxed">
+      <p className="m-0 p-0 font-gilroy text-grey-600 col-start-1 md:col-start-5 col-span-8 md:col-span-4 text-left font-300 text-6 leading-relaxed">
         {approach}
       </p>
     </div>
-    <div className="py-12 flex flex-row gap-12">
+    <div className="py-12 flex flex-wrap md:flex-nowrap md:flex-row gap-12">
       {/* 
       <svg className="w-180" viewBox="0 0 478 400" fill="none" xmlns="http://www.w3.org/2000/svg">
         <rect x="0.5" y="0.5" width="477" height="399" rx="7.5" stroke="#E4E4E7" />
@@ -71,7 +71,7 @@ const SprintImg: React.FC<SprintProps> = ({ imageSM, imageMD, imageLG, problem, 
         <path d="M362.246 326.5V318.772H363.156V320.256H363.184C363.8 319.052 364.808 318.548 365.914 318.548C367.286 318.548 368.728 319.318 368.728 321.656V326.5H367.79V322.076C367.79 320.144 366.796 319.416 365.662 319.416C364.08 319.416 363.184 320.816 363.184 322.188V326.5H362.246ZM374.311 326.738C372.127 326.738 370.503 325.1 370.503 322.65C370.503 320.242 372.085 318.548 374.297 318.548C375.767 318.548 377.825 319.332 377.825 322.426V322.86H371.511C371.553 324.722 372.729 325.87 374.353 325.87C375.683 325.87 376.607 325.002 377.041 323.924L377.937 324.246C377.349 325.828 375.977 326.738 374.311 326.738ZM371.567 321.908H376.803C376.761 320.074 375.445 319.444 374.269 319.444C372.799 319.444 371.777 320.466 371.567 321.908ZM382.03 326.738C380.14 326.738 380.14 325.086 380.14 324.176V319.612C379.622 319.612 379.118 319.612 378.6 319.612V318.772H380.14C380.14 318.016 380.14 317.232 380.14 316.476H381.078V318.772C381.876 318.772 382.66 318.772 383.444 318.772V319.612H381.078C381.078 321.054 381.078 322.482 381.078 323.91C381.078 324.778 381.078 325.884 382.184 325.884C382.534 325.884 382.968 325.772 383.444 325.464V326.36C383.052 326.612 382.52 326.738 382.03 326.738ZM387.417 326.738C385.891 326.738 384.659 325.87 384.239 324.568L385.121 324.288C385.513 325.268 386.479 325.926 387.431 325.926C388.075 325.926 389.181 325.604 389.181 324.526C389.181 323.644 388.383 323.378 387.557 323.154L386.815 322.944C386.087 322.734 384.603 322.272 384.603 320.704C384.603 319.234 385.947 318.548 387.151 318.548C388.481 318.548 389.545 319.388 389.895 320.438L388.985 320.746C388.733 320.018 388.075 319.36 387.067 319.36C386.199 319.36 385.555 319.85 385.555 320.62C385.555 321.6 386.605 321.95 387.347 322.174L388.075 322.384C388.915 322.622 390.175 323 390.175 324.4C390.175 325.716 389.055 326.738 387.417 326.738ZM394.615 326.738C393.243 326.738 391.843 325.954 391.843 323.616V318.772H392.781V323.252C392.781 325.226 393.831 325.87 394.853 325.87C396.407 325.87 397.247 324.414 397.247 323.14V318.772H398.185V324.078C398.185 325.38 398.283 325.898 398.437 326.5H397.485C397.345 325.94 397.289 325.478 397.289 325.072H397.261C396.687 326.234 395.735 326.738 394.615 326.738ZM400.691 326.5V318.772H401.629V326.5H400.691ZM400.383 316.014C400.383 315.594 400.719 315.244 401.181 315.244C401.615 315.244 401.951 315.594 401.951 316.014C401.951 316.462 401.615 316.812 401.181 316.812C400.719 316.812 400.383 316.462 400.383 316.014ZM406.475 326.738C404.585 326.738 404.585 325.086 404.585 324.176V319.612C404.067 319.612 403.563 319.612 403.045 319.612V318.772H404.585C404.585 318.016 404.585 317.232 404.585 316.476H405.523V318.772C406.321 318.772 407.105 318.772 407.889 318.772V319.612H405.523C405.523 321.054 405.523 322.482 405.523 323.91C405.523 324.778 405.523 325.884 406.629 325.884C406.979 325.884 407.413 325.772 407.889 325.464V326.36C407.497 326.612 406.965 326.738 406.475 326.738ZM412.565 326.738C410.381 326.738 408.757 325.1 408.757 322.65C408.757 320.242 410.339 318.548 412.551 318.548C414.021 318.548 416.079 319.332 416.079 322.426V322.86H409.765C409.807 324.722 410.983 325.87 412.607 325.87C413.937 325.87 414.861 325.002 415.295 323.924L416.191 324.246C415.603 325.828 414.231 326.738 412.565 326.738ZM409.821 321.908H415.057C415.015 320.074 413.699 319.444 412.523 319.444C411.053 319.444 410.031 320.466 409.821 321.908Z" fill="#616972" />
       </svg>
       */}
-           <div className="w-1/2">
+           <div className="w-full md:w-1/2">
            <BarChart
         data={chartData.data}
         caption={chartData.caption}
@@ -82,7 +82,7 @@ const SprintImg: React.FC<SprintProps> = ({ imageSM, imageMD, imageLG, problem, 
            
             
 
-      <div className="flex flex-col w-1/2 gap-12">
+      <div className="flex flex-col w-full md:w-1/2 gap-12">
         <p className="m-0 p-0 font-gilroy text-grey-600 col-start-5 col-span-4 text-left font-300 text-6 leading-relaxed">
           52.5% of users were satisfied with the app.
         </p>

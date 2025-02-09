@@ -48,13 +48,13 @@ const Card: React.FC<CardProps> = ({ image, title, job, age, quote, bio, frustra
 
   return (
     <div
-      className="relative w-60 h-80 perspective-800 group cursor-pointer"
+      className="relative w-60 h-90 perspective-800 group cursor-pointer"
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
       ref={cardRef}
     >
       <div
-        className="relative w-60 h-80 px-2 pt-2 pb-3  rounded-lg overflow-hidden shadow-lg transition-transform duration-1000"
+        className="relative w-60 h-80 px-2 pt-2 pb-3 rounded-lg overflow-hidden shadow-lg transition-transform duration-1000"
         style={{
           transform: `rotateY(${rX}deg) rotateX(${rY}deg)`,
         }}

@@ -405,17 +405,17 @@ const Project1: React.FC = () => {
   ]
 
   const [currentIndex, setCurrentIndex] = useState(0);
-  
-    useEffect(() => {
-      if (currentIndex < annotationAnimation.length - 1) {
-        const timer = setTimeout(() => {
-          setCurrentIndex((prev) => prev + 1);
-        }, annotationAnimation[currentIndex].delay);
-  
-        return () => clearTimeout(timer); // Cleanup timeout
-      }
-    }, [currentIndex, annotationAnimation]);
-  
+
+  useEffect(() => {
+    if (currentIndex < annotationAnimation.length - 1) {
+      const timer = setTimeout(() => {
+        setCurrentIndex((prev) => prev + 1);
+      }, annotationAnimation[currentIndex].delay);
+
+      return () => clearTimeout(timer); // Cleanup timeout
+    }
+  }, [currentIndex, annotationAnimation]);
+
 
   return (
     <>
@@ -447,7 +447,7 @@ const Project1: React.FC = () => {
             chartData={chartData}
 
           />
-          <div className="bg-transparent mx-auto max-w-300 relative z-32 h-80 pt-12 pb-16 px-6 sm:px-6 md:px-14 lg:px-32 grid grid-cols-4 grid-flow-row items-start gap-8">
+          <div className="bg-transparent mx-auto max-w-300 relative z-32 h-300 md:h-80 pt-12 pb-16 px-6 sm:px-6 md:px-14 lg:px-32 grid grid-cols-1 md:grid-cols-4 grid-flow-row items-start gap-8">
             {painPoints.map((point, index) => (
               <PainPoints
                 key={index}
@@ -459,23 +459,27 @@ const Project1: React.FC = () => {
           </div>
           <Understand user="User research revealed that accountants and business owners primarily depend on traditional, often manual methods for inventory management, such as desktop software, spreadsheets, and paper records. This reliance leads to several pain points:" />
           {/* Meet Users */}
-          <div className="bg-transparent mx-auto max-w-300 relative z-32 py-12 px-6 sm:px-6 md:px-14 lg:px-32 grid grid-cols-8 grid-flow-row items-start gap-8">
-            <div className="col-start-1 col-span-8 py-2 text-left">
-              <h6 className="m-0 font-gilroy font-300 text-8 text-grey-800 tracking-wide">meet these users</h6>
+          <div className="bg-transparent mx-auto max-w-300 h-fit overflow-visible relative z-32 py-12 pl-6 sm:pl-6 md:px-14 lg:px-32 grid grid-cols-8 grid-flow-row items-start gap-8">
+            <div className="col-start-1 col-span-full py-2 text-left">
+              <h6 className="m-0 font-gilroy font-300 text-8 text-grey-800 tracking-wide">
+                meet these users
+              </h6>
             </div>
-            <div className="flex gap-8">
+            {/* Horizontally Scrollable Grid */}
+            <div className="grid grid-flow-col gap-8 col-span-full md:col-span-8 h-fit overflow-x-auto snap-x snap-mandatory scrollbar-hide gap-8">
               {cards.map((card, index) => (
-                <Card
-                  key={index}
-                  image={card.image}
-                  title={card.title}
-                  job={card.job}
-                  age={card.age}
-                  quote={card.quote}
-                  bio={card.bio}
-                  frustrations={card.frustrations}
-                  motivations={card.motivations}
-                />
+                <div key={index} className="col-span-[1.5] md:col-span-2 snap-start shrink-0 h-fit">
+                  <Card
+                    image={card.image}
+                    title={card.title}
+                    job={card.job}
+                    age={card.age}
+                    quote={card.quote}
+                    bio={card.bio}
+                    frustrations={card.frustrations}
+                    motivations={card.motivations}
+                  />
+                </div>
               ))}
             </div>
           </div>
@@ -484,29 +488,31 @@ const Project1: React.FC = () => {
             <Journey key={index} {...journey} />
           ))}
           {/* Who, When, What, Why */}
-          <div className="bg-transparent mx-auto max-w-300 relative z-32 pt-12 pb-16 px-6 sm:px-6 md:px-14 lg:px-32 grid grid-cols-2 grid-flow-row items-start gap-32">
-
-            <div className="grid grid-cols-2 auto-cols-max grid-flow-row items-start justify-start gap-20">
-              {questionCards.map((card, index) => (
-                <Card
-                  key={index}
-                  image={card.image}
-                  title={card.title}
-                  job={card.job}
-                />
-              ))}
-            </div>
-            <div className="grid grid-cols-1 grid-flow-row items-start gap-8">
-              <p className="m-0 p-0 text-left font-gilroy font-300 text-6 text-grey-800 tracking-wide">user story</p>
-              <p className="m-0 p-0 text-left font-gilroy font-300 text-6 text-grey-900 leading-relaxed">
+          <div className="bg-transparent mx-auto max-w-300 h-fit overflow-visible relative z-32 pt-12 pb-16 pl-6 sm:pl-6 md:px-14 lg:px-32 grid grid-cols-1 md:grid-cols-8 gap-16">
+            {/* User Story & Hypothesis - Appears first on mobile */}
+            <div className="col-span-full md:col-span-4 gap-8 pr-6 sm:pr-6 order-1 md:order-3 grid grid-auto-flow-row h-fit">
+              <p className="m-0 p-0 w-full h-fit text-left font-gilroy font-300 text-6 text-grey-800 tracking-wide">user story</p>
+              <p className="m-0 p-0 w-full h-fit text-left font-gilroy font-300 text-6 text-grey-900 leading-relaxed">
                 As a business owner who often works outside of the office, I need a way to easily review detailed inventory information on my phone or tablet so that I can make timely decisions without having to wait until I return to my desk, avoiding costly delays and frustration.
               </p>
-              <p className="m-0 p-0 text-left font-gilroy font-300 text-6 text-grey-800 tracking-wide">hypothesis</p>
-              <p className="m-0 p-0 text-left font-gilroy font-300 text-6 text-grey-900 leading-relaxed">
+              <p className="m-0 p-0 w-full h-fit text-left font-gilroy font-300 text-6 text-grey-800 tracking-wide">hypothesis</p>
+              <p className="m-0 p-0 w-full h-fit text-left font-gilroy font-300 text-6 text-grey-900 leading-relaxed">
                 We believe enhancing mobile inventory management will help business owners when they are on-the-go.
               </p>
             </div>
-
+            {/* Horizontally Scrollable Cards - Moves below on mobile */}
+            <div className="grid grid-flow-col md:col-span-4 md:grid-cols-2 md:auto-flow-row order-1 md:order-2 h-fit overflow-x-auto md:overflow-visible snap-x snap-mandatory scrollbar-hide gap-8">
+              {questionCards.map((card, index) => (
+                <div key={index} className="snap-start shrink-0 md:col-span-1 w-3/4 md:w-full h-fit">
+                  <Card
+                    key={index}
+                    image={card.image}
+                    title={card.title}
+                    job={card.job}
+                  />
+                </div>
+              ))}
+            </div>
           </div>
           <Goal
             statement="To successfully launch Fishbowl Go, a user-friendly iPad/tablet app, designed to bridge the gap in mobile inventory management for small to medium-sized businesses. Our aim was to simplify administrative tasks, making inventory management as efficient on tablets as it is on desktops. The goal was to enhance operational efficiency by at least 20% and improve user satisfaction, targeting a 15% increase in Fishbowl Inventory's client base within the first six months after launch."
@@ -523,10 +529,10 @@ const Project1: React.FC = () => {
 
           <Insights {...insights} />
           <div className="bg-transparent mx-auto max-w-300 relative z-32 pt-16 pb-12 px-6 sm:px-6 md:px-14 lg:px-32 grid grid-cols-8 grid-flow-row items-start gap-8">
-            <div className="py-2 text-left col-start-1 col-span-4 items-start gap-2">
+            <div className="py-2 text-left col-start-1 col-span-8 md:col-span-4 items-start gap-2">
               <h5 className="h3 pb-8 font-600 tracking-wide">ideation</h5>
             </div>
-            <div className='m-0 p-0 font-gilroy text-grey-600 col-start-5 col-span-4 text-left font-300 text-6 leading-relaxed'>
+            <div className='m-0 p-0 font-gilroy text-grey-600 col-start-1 col-span-8 md:col-start-5 md:col-span-4 text-left font-300 text-6 leading-relaxed'>
               Through rapid, paper-based sketching, we honed in on simplifying core tasks in the Fishbowl Go app. This exercise was key in integrating effective design patterns and streamlining user navigation between screens, striking a balance between simplicity and functionality.
             </div>
           </div>
@@ -541,24 +547,24 @@ const Project1: React.FC = () => {
           <SiteMap pages={sitemap} />
           {/* Wireframes */}
           <div className="bg-transparent mx-auto max-w-300 relative z-32 pt-12 pb-16 px-6 sm:px-6 md:px-14 lg:px-32 grid grid-cols-4 grid-flow-row items-start gap-8 text-left">
-      <h6 className="col-start-1 col-span-4 row-start-1 row-span-1 m-0 font-gilroy font-300 text-8 text-grey-800 tracking-wide">digital wireframes</h6>
-      <div className='m-0 py-4 px-0 col-start-1 col-span-4 row-start-2 row-span-1 font-gilroy font-300 text-6 leading-relaxed'>
-          Hello there.
-      </div>
-      <div className='col-start-1 col-span-4 row-start-3 m-0 py-4'>
-        <Annotation {...annotationAnimation[currentIndex]} isVisible={true} />
+            <h6 className="col-start-1 col-span-4 row-start-1 row-span-1 m-0 font-gilroy font-300 text-8 text-grey-800 tracking-wide">digital wireframes</h6>
+            <div className='m-0 py-4 px-0 col-start-1 col-span-4 row-start-2 row-span-1 font-gilroy font-300 text-6 leading-relaxed'>
+              Hello there.
+            </div>
+            <div className='col-start-1 col-span-4 row-start-3 m-0 py-4'>
+              <Annotation {...annotationAnimation[currentIndex]} isVisible={true} />
 
 
-      </div>
-      
-    
-    </div >
+            </div>
+
+
+          </div >
 
           <div className="bg-transparent mx-auto max-w-300 relative z-32 pt-16 pb-12 px-6 sm:px-6 md:px-14 lg:px-32 grid grid-cols-8 grid-flow-row items-start gap-8">
-            <div className="py-2 text-left col-start-1 col-span-4 items-start gap-2">
+            <div className="py-2 text-left col-start-1 col-span-8 md:col-span-4 items-start gap-2">
               <h5 className="h3 pb-8 font-600 tracking-wide">key mockups</h5>
             </div>
-            <div className='m-0 p-0 font-gilroy text-grey-600 col-start-5 col-span-4 text-left font-300 text-6 leading-relaxed'>
+            <div className='m-0 p-0 font-gilroy text-grey-600 col-start-1 col-span-8 md:col-start-5 md:col-span-4 text-left font-300 text-6 leading-relaxed'>
               After several iterations of the scope of the project, layout, and features it was decided that we would focus on creating an iPad/tablet app geared toward administrative tasks - separate from the mobile app that is geared toward warehouse tasks.              </div>
           </div>
           <div className="bg-transparent mx-auto max-w-300 relative z-32 pt-12 pb-16 px-6 sm:px-6 md:px-14 lg:px-32 grid grid-cols-8 grid-flow-row items-start">
@@ -569,16 +575,16 @@ const Project1: React.FC = () => {
             />
           </div>
           <Outcomes sections={outcomes} />
-          <div className="bg-transparent mx-auto max-w-300 relative z-32 py-16 px-6 sm:px-6 md:px-14 lg:px-32 flex flex-col items-start gap-8">
-            <div className="flex flex-col items-start gap-2 w-full">
-              <div className="py-2 text-left">
-                <h5 className="h3 pb-8 font-600 tracking-wide">more work</h5>
-              </div>
-              <div className="grid grid-cols-8 grid-flow-row gap-6 -ml-3 items-start text-left w-full justify-content">
-                {blogData.map((blog, index) => (
-                  <BlogCard key={index} {...blog} />
-                ))}
-              </div></div></div>
+          <div className="bg-transparent mx-auto max-w-300 relative z-32 pt-16 pb-12 px-6 sm:px-6 md:px-14 lg:px-32 grid grid-cols-8 grid-flow-row items-start gap-8">
+            <div className="py-2 text-left col-start-1 col-span-8 md:col-span-4 items-start gap-2">
+              <h5 className="h3 pb-8 font-600 tracking-wide">more work</h5>
+            </div>
+            <div className="grid grid-flow-col gap-8 col-span-full col-span-[1.5] md:col-span-8 h-fit overflow-x-auto snap-x snap-mandatory scrollbar-hide gap-8">
+              {blogData.map((blog, index) => (
+                <BlogCard key={index} {...blog} />
+              ))}
+            </div>
+          </div>
         </div>
       </div>
     </>
