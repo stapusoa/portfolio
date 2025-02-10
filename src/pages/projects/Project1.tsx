@@ -406,12 +406,32 @@ const Project1: React.FC = () => {
 
   const animationSteps = [
     {
-      image: "/images/fb-w-inventory.png",
+      image: "/images/fb-wireframe-1.png",
       step: "1/5",
-      description: "This is a description",
+      description: "Navigation, quick actions and searching through inventory were essential features we needed to refine.",
+      zoomPosition: { x: "60%", y: "30%", scale: 1.5 },
     },
-
-  ]
+    {
+      image: "/images/fb-wireframe-1.png",
+      step: "2/5",
+      description: "Review part details (e.g. product image, product number, location, tracking info, status, etc).",
+      zoomPosition: { x: "18%", y: "30%", scale: 1.25 },    },
+    {
+      image: "/images/fb-wireframe-1.png",
+      step: "3/5",
+      description: "Part information is default view only. Tap on Edit to modify any editable details.",
+      zoomPosition: { x: "-20%", y: "30%", scale: 1.25 },    },
+    {
+      image: "/images/fb-wireframe-2.png",
+      step: "4/5",
+      description: "Initial view of module is of a table with all basic information. Back button is needed to view this table again.",
+      zoomPosition: { x: "60%", y: "30%", scale: 1.5 },    },
+    {
+      image: "/images/fb-wireframe-1.png",
+      step: "5/5",
+      description: "Tap on FAB to access actions (e.g. move part, delete, etc)",
+      zoomPosition: { x: "15%", y: "-30%", scale: 1.5 },    },
+  ];
 
   const [currentIndex, setCurrentIndex] = useState(0);
 
@@ -560,12 +580,13 @@ const Project1: React.FC = () => {
             <div className='m-0 py-4 px-0 col-start-1 col-span-4 row-start-2 row-span-1 font-gilroy font-300 text-6 leading-relaxed'>
               Hello there.
             </div>
+            {/* 
             <div className='col-start-1 col-span-4 row-start-3 m-0 py-4'>
               <Annotation {...annotationAnimation[currentIndex]} isVisible={true} />
 
 
             </div>
-
+*/}
         
           </div >
           <div className="min-h-screen flex items-center justify-center p-8">
