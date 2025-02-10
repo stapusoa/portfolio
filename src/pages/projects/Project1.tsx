@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Card, Annotation } from '../../components/index';
+import { Card, Annotation, AnimationSequence } from '../../components/index';
 import { BackgroundImages, Hero, Goal, Overview, BlogCard, Problem, Insights, Understand, PainPoints, Journey, SiteMap, Outcomes, SprintImg } from "../sections/index";
 import '../../components/Data/BarChart.css'
 
@@ -404,6 +404,15 @@ const Project1: React.FC = () => {
     },
   ]
 
+  const animationSteps = [
+    {
+      image: "/images/fb-w-inventory.png",
+      step: "1/5",
+      description: "This is a description",
+    },
+
+  ]
+
   const [currentIndex, setCurrentIndex] = useState(0);
 
   useEffect(() => {
@@ -557,8 +566,10 @@ const Project1: React.FC = () => {
 
             </div>
 
-
+        
           </div >
+          <div className="min-h-screen flex items-center justify-center p-8">
+          <AnimationSequence steps={animationSteps} />;    </div>
 
           <div className="bg-transparent mx-auto max-w-300 relative z-32 pt-16 pb-12 px-6 sm:px-6 md:px-14 lg:px-32 grid grid-cols-8 grid-flow-row items-start gap-8">
             <div className="py-2 text-left col-start-1 col-span-8 md:col-span-4 items-start gap-2">
@@ -575,11 +586,11 @@ const Project1: React.FC = () => {
             />
           </div>
           <Outcomes sections={outcomes} />
-          <div className="bg-transparent mx-auto max-w-300 relative z-32 pt-16 pb-12 px-6 sm:px-6 md:px-14 lg:px-32 grid grid-cols-8 grid-flow-row items-start gap-8">
+          <div className="bg-transparent mx-auto max-w-300 relative z-32 pt-16 pb-12 pl-6 sm:pl-6 md:px-14 lg:px-32 grid grid-cols-8 grid-flow-row items-start gap-8">
             <div className="py-2 text-left col-start-1 col-span-8 md:col-span-4 items-start gap-2">
               <h5 className="h3 pb-8 font-600 tracking-wide">more work</h5>
             </div>
-            <div className="grid grid-flow-col gap-8 col-span-full col-span-[1.5] md:col-span-8 h-fit overflow-x-auto snap-x snap-mandatory scrollbar-hide gap-8">
+            <div className="grid grid-flow-col gap-8 col-span-full col-span-[1.5] md:col-span-8 h-fit overflow-x-auto md:overflow-visible snap-x snap-mandatory scrollbar-hide gap-8">
               {blogData.map((blog, index) => (
                 <BlogCard key={index} {...blog} />
               ))}
