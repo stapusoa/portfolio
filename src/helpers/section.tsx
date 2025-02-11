@@ -19,6 +19,7 @@ interface ImageProps {
   isFull?: boolean;
   isGrid?: boolean;
   image?: string[];
+  columns?: number;
 }
 
 interface SectionProps {
@@ -45,20 +46,8 @@ const Section: React.FC<SectionProps> = ({
   title,
   text,
   image,
-  list,
   keynotes,
-  labels,
-  iconPoint,
-  highlight,
-  chart,
-  painPoints,
-  card,
-  questions,
-  map,
-  siteMap,
   button,
-  stickyNote,
-  animation
 }) => {
   // ✅ Change padding dynamically based on `isGrid`
   const containerPadding = image?.isGrid ? "pl-6" : "px-6";
@@ -106,7 +95,7 @@ const Section: React.FC<SectionProps> = ({
               </div>
             )}
 
-            
+
           </div>
 
           {/* ✅ Keynotes (On Right) */}
@@ -142,15 +131,26 @@ const Section: React.FC<SectionProps> = ({
             </div>
           )}
 
-          {image?.image && (
-            <div className={`col-span-8 ${image.isRight ? "md:col-start-5 md:col-span-4" : "col-start-1 md:col-span-4"} overflow-x-auto md:overflow-visible grid grid-flow-col auto-cols-[75%] sm:auto-cols-[45%] snap-x snap-mandatory scrollbar-hide`}>
-              {image.image.map((img, index) => (
-                <div key={index} className="snap-start flex items-start shrink-0 w-full">
-                  <img src={img} alt={`Section Image ${index}`} className="w-full h-auto rounded-lg" />
-                </div>
-              ))}
-            </div>
-          )}
+{image?.image && (
+  <div 
+    className={`col-span-8 
+      ${image.isRight ? `md:col-start-5 md:col-span-4` : "col-start-1 md:col-span-4"} 
+      overflow-x-auto md:overflow-visible 
+      grid gap-4 md:gap-6 
+      snap-x snap-mandatory scrollbar-hide`}
+    style={{
+      gridTemplateColumns: `repeat(${image.columns || 1}, minmax(150px, 1fr))`, // ✅ Dynamically setting grid columns
+    }}
+  >
+    {image.image.map((img, index) => (
+      <div key={index} className="snap-start flex items-start shrink-0 w-full md:w-auto">
+        <img src={img} alt={`Section Image ${index}`} className="w-full h-auto rounded-lg" />
+      </div>
+    ))}
+  </div>
+)}
+
+         
 
           {/* ✅ Button (Appears Below Text) */}
           {button && (

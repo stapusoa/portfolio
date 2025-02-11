@@ -4,9 +4,9 @@ import { Section } from "../../helpers/index";
 interface GoalProps {
   image: string[];
   statement: string;
-
+  columns?: number;
 }
-const Goal: React.FC<GoalProps> = ({ image, statement }) => {
+const Goal: React.FC<GoalProps> = ({ image, statement, columns }) => {
   return (
     <Section
       title={{
@@ -20,7 +20,8 @@ const Goal: React.FC<GoalProps> = ({ image, statement }) => {
       image={{
         isRight: true,
         isGrid: true,
-        image: image
+        columns: columns,
+        image: image,
       }}
     />
   );

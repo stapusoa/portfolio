@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Card, Annotation, AnimationSequence } from '../../components/index';
+import { Card, AnimationSequence } from '../../components/index';
 import { BackgroundImages, Hero, Goal, Overview, BlogCard, Problem, Insights, Understand, PainPoints, Journey, SiteMap, Outcomes, SprintImg } from "../sections/index";
 import '../../components/Data/BarChart.css'
 
@@ -553,6 +553,7 @@ const Project1: React.FC = () => {
               "/images/fbgo-sticky5.png",
               "/images/fbgo-sticky6.png",
             ]}
+            columns={3}
           />
 
 
