@@ -5,9 +5,11 @@ interface HeroProps {
   tagline: string;
   primary: string;
   secondary: string;
+  primaryHref: string;
+  secondaryHref: string;
 }
 
-const Hero: React.FC<HeroProps> = ({ product, tagline, primary, secondary }) => {
+const Hero: React.FC<HeroProps> = ({ product, tagline, primary, secondary, primaryHref, secondaryHref }) => {
 
   return (
       <div className="relative isolate pt-20 h-screen">
@@ -21,12 +23,12 @@ const Hero: React.FC<HeroProps> = ({ product, tagline, primary, secondary }) => 
             </h1>
             <div className="flex items-left justify-left gap-x-4">
               <a
-                href="#"
+                href={primaryHref}
                 className="btn-primary w-16"
               >
                 {primary}
               </a>
-              <a href="#" className="btn-outline w-16">
+              <a href={secondaryHref} className="btn-outline w-16">
                 {secondary}
               </a>
             </div>

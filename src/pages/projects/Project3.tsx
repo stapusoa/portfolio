@@ -102,7 +102,9 @@ const Project3: React.FC = () => {
     product: "travelpass",
     tagline: "providing the explorer at heart unforgettable adventures.",
     primary: "prototype",
-    secondary: "website"
+    secondary: "website",
+    primaryHref: "https://stapusoa.github.io/inventory/",
+    secondaryHref: "https://stapusoa.github.io/inventory/",
   }
   const overview = {
     overview: "Travelpass is a website and app designed for travelers. It serves as a hub for creating and viewing destination guides, finding travel inspiration, and booking activities and hotels.",

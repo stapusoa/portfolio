@@ -102,7 +102,9 @@ const Project2: React.FC = () => {
     product: "haven massage",
     tagline: "providing professional therapeutic services through easy booking.",
     primary: "prototype",
-    secondary: "website"
+    secondary: "website",
+    primaryHref: "https://stapusoa.github.io/inventory/",
+    secondaryHref: "https://stapusoa.github.io/inventory/",
   }
   const overview = {
     overview: "Haven Massage is a booking platform designed to streamline the scheduling process for massage therapists and clients. It simplifies appointment management, reduces no-shows, and enhances the client experience with an intuitive and user-friendly interface. The platform provides easy access to availability and automated reminders, ensuring a seamless booking process.",

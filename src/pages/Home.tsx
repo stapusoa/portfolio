@@ -57,9 +57,9 @@ const socialMediaLinks = [
 ];
 
 const images = {
-  imageLG: '/images/lg_bg-home-hero.webp',
-  imageMD: '/images/md_bg-home-hero.webp',
-  imageSM: '/images/sm_bg-home-hero.webp',
+  imageSM: '/images/bg-home-hero_sm.webp',
+  imageMD: '/images/bg-home-hero_md.webp',
+  imageLG: '/images/bg-home-hero_lg.webp',
 };
 const roles = ['designer', 'engineer', 'architect'];
 const currentRole = 0;
@@ -73,7 +73,7 @@ const Home: React.FC = () => {
         <HomeHeroContent roles={roles} currentRole={currentRole} />
         <div className="relative w-full z-20">
           <img
-            src='/images/background-texture-dots.png'
+            src='/images/bg-texture-dots.webp'
             alt='Background pattern for content'
             className="absolute inset-0 bg-cover bg-fixed w-full h-800"
           />
