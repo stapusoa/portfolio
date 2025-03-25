@@ -74,9 +74,9 @@ const Project2: React.FC = () => {
     },
   ]
   const images = {
-    imageSM: "/images/sm_bg-proj2-hero.webp",
-    imageMD: "/images/md_bg-proj2-hero.webp",
-    imageLG: "/images/lg_bg-proj2-hero.webp",
+    imageSM: "/images/bg-proj2-hero_sm.webp",
+    imageMD: "/images/bg-proj2-hero_md.webp",
+    imageLG: "/images/bg-proj2-hero_lg.webp",
   };
   const sprint = {
     imageSM: "/images/fbgo-sprint-sm.jpg",
@@ -461,7 +461,7 @@ const Project2: React.FC = () => {
           <div
             className="absolute inset-0 w-full bg-repeat-y bg-fixed"
             style={{
-              backgroundImage: "url('/images/background-texture-dots.png')",
+              backgroundImage: "url('/images/bg-texture-dots.webp')",
               backgroundSize: "auto", // Ensures image doesn't scale but repeats naturally
             }}
           ></div>
