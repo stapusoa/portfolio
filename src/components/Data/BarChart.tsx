@@ -4,7 +4,7 @@ import './BarChart.css'
 interface BarData {
   id: string;
   label: string;
-  height: number;
+  height: number; // Can be a percentage or raw value
   color: string;
 }
 
@@ -20,25 +20,41 @@ const BarChart: React.FC<BarChartProps> = ({ data, caption, legend }) => {
   useEffect(() => {
     const chart = chartRef.current;
 
+    const maxValue = Math.max(...data.map((bar) => bar.height));
+    const isPercentage = maxValue <= 100;
+
     const animateBars = () => {
       const bars = chart?.querySelectorAll<HTMLDivElement>(".bar");
 
       bars?.forEach((bar) => {
-        const height = parseInt(bar.getAttribute("data-height") || "0", 10);
+        const rawHeight = parseInt(bar.getAttribute("data-height") || "0", 10);
+        const scaledHeight = isPercentage
+          ? rawHeight
+          : (rawHeight / maxValue) * 100;
+
         const value = bar.querySelector(".bar-value");
 
+        // Animate bar height visually
+        setTimeout(() => {
+          bar.style.height = `${scaledHeight}%`;
+        }, 500);
+
+        // Display rawHeight as text, animated
         let currentValue = 0;
         const interval = setInterval(() => {
-          if (currentValue >= height) {
+          if (currentValue >= rawHeight) {
             clearInterval(interval);
           } else {
             currentValue++;
-            if (value) value.textContent = currentValue.toString();
+            if (value) value.textContent = isPercentage
+              ? `${currentValue}%`
+              : currentValue.toString();
           }
         }, 10);
 
+
         setTimeout(() => {
-          bar.style.height = `${height / 5}%`; // Adjust scale as needed
+          bar.style.height = `${scaledHeight}%`;
         }, 500);
       });
     };
@@ -50,12 +66,10 @@ const BarChart: React.FC<BarChartProps> = ({ data, caption, legend }) => {
           observer.disconnect(); // Stop observing after animation starts
         }
       },
-      { threshold: 0.5 } // Trigger animation when 50% of the chart is visible
+      { threshold: 0.5 }
     );
 
-    if (chart) {
-      observer.observe(chart);
-    }
+    if (chart) observer.observe(chart);
 
     return () => {
       if (chart) observer.unobserve(chart);

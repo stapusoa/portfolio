@@ -79,32 +79,31 @@ const Project2: React.FC = () => {
     imageLG: "/images/bg-proj2-hero_lg.webp",
   };
   const sprint = {
-    imageSM: "/images/fbgo-sprint-sm.jpg",
-    imageMD: "/images/fbgo-sprint-md.jpg",
-    imageLG: "/images/fbgo-sprint-lg.jpg",
-    problem: "Fishbowl Inventory clients specifically need a tablet-compatible solution that integrates seamlessly with their existing systems. This would enable them to manage tasks efficiently while on the go. Competitor solutions, while informative, often appeared over-engineered and introduced complexity that alienates non-technical users.",
-    approach: "Our approach prioritized simplicity and alignment with the desktop client’s functionality, ensuring users could manage tasks intuitively while still benefiting from automation features. This focus aimed to empower users without overwhelming them, creating a solution that bridges the gap between desktop and mobile inventory management."
+    imageSM: "/images/sprint-proj2.jpg",
+    imageMD: "/images/sprint-proj2.jpg",
+    imageLG: "/images/sprint-proj2.jpg",
+    problem: "The project followed an iterative and exploratory approach rather than strict agile sprints due to its nature as a side project. Here’s a simplified breakdown modeled on sprint structure:",
+    approach: "We started out with interviewing and surveying therapists and clients to understand their pain points and needs. This research phase helped us identify key areas for improvement and informed the design process. After mapping out key user flows and wireframing the platform, we conducted usability testing to gather feedback and refine the design.",
+    insights: "",
+    opportunity: [""]
   };
   const chartData = {
     data: [
-      { id: "1", label: "fishbowl", height: 312, color: "#5E89DC" },
-      { id: "2", label: "quickbooks", height: 481, color: "#E8AB91" },
-      { id: "3", label: "netsuite", height: 137, color: "#81B29A" },
+      { id: "1", label: "vagaro", height: 183, color: "#5E89DC" },
+      { id: "2", label: "booksy", height: 98, color: "#E8AB91" },
+      { id: "3", label: "fresha", height: 72, color: "#81B29A" },
     ],
     caption: "# of pain points",
     legend: [
-      { label: "fishbowl", color: "#5E89DC" },
-      { label: "quickbooks", color: "#E8AB91" },
-      { label: "netsuite", color: "#81B29A" },
+      { label: "vagaro", color: "#5E89DC" },
+      { label: "booksy", color: "#E8AB91" },
+      { label: "fresha", color: "#81B29A" },
     ],
   };
   const hero = {
     product: "haven massage",
     tagline: "providing professional therapeutic services through easy booking.",
-    primary: "prototype",
-    secondary: "website",
-    primaryHref: "https://stapusoa.github.io/inventory/",
-    secondaryHref: "https://stapusoa.github.io/inventory/",
+    wip: true
   }
   const overview = {
     overview: "Haven Massage is a booking platform designed to streamline the scheduling process for massage therapists and clients. It simplifies appointment management, reduces no-shows, and enhances the client experience with an intuitive and user-friendly interface. The platform provides easy access to availability and automated reminders, ensuring a seamless booking process.",
@@ -154,23 +153,23 @@ const Project2: React.FC = () => {
   ];
   const painPoints = [
     {
-      problem: "Errors",
-      description: "Manual methods and desktop-bound software contribute to data inaccuracies and operational inefficiencies, especially in real-time inventory tracking.",
+      problem: "Availability",
+      description: "Users get frustrated when they can’t see up-to-date appointment slots.",
       number: "1"
     },
     {
-      problem: "Limited Access",
-      description: "The inability to access and manage inventory data on the move hinders effective remote work, causing delays and decision-making challenges.",
+      problem: "Complicated",
+      description: "Multi-step forms, unclear navigation, and slow loading deter users.",
       number: "2"
     },
     {
-      problem: "Inaccuracy",
-      description: "Managing inventory across various locations is cumbersome with traditional methods, leading to issues in synchronization and record accuracy.",
+      problem: "Clarity",
+      description: "Vague or inconsistent info on services creates confusion and mistrust.",
       number: "3"
     },
     {
-      problem: "Simplicity",
-      description: "There's a significant demand for a user-friendly, mobile platform that integrates with existing systems, allowing efficient and flexible management of inventory tasks.",
+      problem: "No Shows",
+      description: "Missed appointments disrupt therapists’ income and schedules.",
       number: "4"
     }
 
@@ -468,7 +467,7 @@ const Project2: React.FC = () => {
           {/* Content */}
           <div className="relative z-30"></div>
           <Overview {...overview} />
-          <Problem problem="Through competitor analysis and usability evaluation, we identified an industry-wide struggle to adapt inventory management tools for mobile use. Many business owners rely on desktop-only software, which creates inefficiencies when managing tasks remotely. Existing mobile apps primarily focus on warehouse activities, leaving a gap for administrative tasks like reviewing inventory, managing orders, and accessing data." />
+          <Problem problem="Clients and therapists often face friction when booking massages due to outdated or disjointed systems. Common issues include lack of real-time availability, complex booking steps, and frequent no-shows. Haven Massage aims to provide a seamless, intuitive platform that makes scheduling efficient, reliable, and user-centric." />
           <SprintImg
             imageSM={sprint.imageSM}
             imageMD={sprint.imageMD}
@@ -476,7 +475,8 @@ const Project2: React.FC = () => {
             problem={sprint.problem}
             approach={sprint.approach}
             chartData={chartData}
-
+            insights={sprint.insights}
+            opportunity={sprint.opportunity}
           />
           <div className="bg-transparent mx-auto max-w-300 relative z-32 h-300 md:h-80 pt-12 pb-16 px-6 sm:px-6 md:px-14 lg:px-32 grid grid-cols-1 md:grid-cols-4 grid-flow-row items-start gap-8">
             {painPoints.map((point, index) => (
@@ -488,7 +488,7 @@ const Project2: React.FC = () => {
               />
             ))}
           </div>
-          <Understand user="User research revealed that accountants and business owners primarily depend on traditional, often manual methods for inventory management, such as desktop software, spreadsheets, and paper records. This reliance leads to several pain points:" />
+          <Understand user="Users value simplicity, transparency, and reliability. Interviews showed a preference for platforms that “just work”—with minimal clicks, clear communication, and confidence that their appointment is confirmed and remembered." />
           {/* Meet Users */}
           <div className="bg-transparent mx-auto max-w-300 h-fit overflow-visible relative z-32 py-12 pl-6 sm:pl-6 md:px-14 lg:px-32 grid grid-cols-8 grid-flow-row items-start gap-8">
             <div className="col-start-1 col-span-full py-2 text-left">
@@ -524,11 +524,11 @@ const Project2: React.FC = () => {
             <div className="col-span-full md:col-span-4 gap-8 pr-6 sm:pr-6 order-1 md:order-3 grid grid-auto-flow-row h-fit">
               <p className="m-0 p-0 w-full h-fit text-left font-gilroy font-300 text-6 text-grey-800 tracking-wide">user story</p>
               <p className="m-0 p-0 w-full h-fit text-left font-gilroy font-300 text-6 text-grey-900 leading-relaxed">
-                As a business owner who often works outside of the office, I need a way to easily review detailed inventory information on my phone or tablet so that I can make timely decisions without having to wait until I return to my desk, avoiding costly delays and frustration.
+              As a busy professional, I want to quickly find a massage therapist’s availability and book an appointment in under 2 minutes, so I can take care of my health without hassle.
               </p>
               <p className="m-0 p-0 w-full h-fit text-left font-gilroy font-300 text-6 text-grey-800 tracking-wide">hypothesis</p>
               <p className="m-0 p-0 w-full h-fit text-left font-gilroy font-300 text-6 text-grey-900 leading-relaxed">
-                We believe enhancing mobile inventory management will help business owners when they are on-the-go.
+              If we simplify the booking process and provide automated reminders, then users will be more likely to complete bookings and show up on time, leading to higher satisfaction and reduced therapist stress.
               </p>
             </div>
             {/* Horizontally Scrollable Cards - Moves below on mobile */}
@@ -546,7 +546,7 @@ const Project2: React.FC = () => {
             </div>
           </div>
           <Goal
-            statement="To successfully launch Fishbowl Go, a user-friendly iPad/tablet app, designed to bridge the gap in mobile inventory management for small to medium-sized businesses. Our aim was to simplify administrative tasks, making inventory management as efficient on tablets as it is on desktops. The goal was to enhance operational efficiency by at least 20% and improve user satisfaction, targeting a 15% increase in Fishbowl Inventory's client base within the first six months after launch."
+            statement="Design a streamlined, user-friendly platform for massage therapy bookings that benefits both clients and therapists by reducing friction, improving communication, and preventing missed appointments."
             image={[
               "/images/fbgo-sticky1.png",
               "/images/fbgo-sticky2.png",

@@ -31,7 +31,14 @@ const Project1: React.FC = () => {
     imageMD: "/images/sprint-proj1_md.webp",
     imageLG: "/images/sprint-proj1_lg.webp",
     problem: "Fishbowl Inventory clients specifically need a tablet-compatible solution that integrates seamlessly with their existing systems. This would enable them to manage tasks efficiently while on the go. Competitor solutions, while informative, often appeared over-engineered and introduced complexity that alienates non-technical users.",
-    approach: "Our approach prioritized simplicity and alignment with the desktop client’s functionality, ensuring users could manage tasks intuitively while still benefiting from automation features. This focus aimed to empower users without overwhelming them, creating a solution that bridges the gap between desktop and mobile inventory management."
+    approach: "Our approach prioritized simplicity and alignment with the desktop client’s functionality, ensuring users could manage tasks intuitively while still benefiting from automation features. This focus aimed to empower users without overwhelming them, creating a solution that bridges the gap between desktop and mobile inventory management.",
+    insights: "52.5% of users were satisfied with the app.",
+    opportunity: [
+      "The UI is difficult to navigate.",
+      "Difficult to sort through reports and inventory summaries.",
+      "Hard to fix problems without requesting support.",
+      "Not a lot of automation or bulk action capabilities."
+    ]
   };
   const chartData = {
     data: [
@@ -474,7 +481,8 @@ const Project1: React.FC = () => {
             problem={sprint.problem}
             approach={sprint.approach}
             chartData={chartData}
-
+            insights={sprint.insights}
+            opportunity={sprint.opportunity}
           />
           <div className="bg-transparent mx-auto max-w-300 relative z-32 h-300 md:h-80 pt-12 pb-16 px-6 sm:px-6 md:px-14 lg:px-32 grid grid-cols-1 md:grid-cols-4 grid-flow-row items-start gap-8">
             {painPoints.map((point, index) => (

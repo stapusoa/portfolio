@@ -74,37 +74,39 @@ const Project3: React.FC = () => {
     },
   ]
   const images = {
-    imageSM: "/images/sm_bg-proj2-hero.webp",
-    imageMD: "/images/md_bg-proj2-hero.webp",
-    imageLG: "/images/lg_bg-proj2-hero.webp",
+    imageSM: "/images/bg-proj3-hero_sm.webp",
+    imageMD: "/images/bg-proj3-hero_md.webp",
+    imageLG: "/images/bg-proj3-hero_lg.webp",
   };
   const sprint = {
-    imageSM: "/images/fbgo-sprint-sm.jpg",
-    imageMD: "/images/fbgo-sprint-md.jpg",
-    imageLG: "/images/fbgo-sprint-lg.jpg",
-    problem: "Fishbowl Inventory clients specifically need a tablet-compatible solution that integrates seamlessly with their existing systems. This would enable them to manage tasks efficiently while on the go. Competitor solutions, while informative, often appeared over-engineered and introduced complexity that alienates non-technical users.",
-    approach: "Our approach prioritized simplicity and alignment with the desktop client’s functionality, ensuring users could manage tasks intuitively while still benefiting from automation features. This focus aimed to empower users without overwhelming them, creating a solution that bridges the gap between desktop and mobile inventory management."
+    imageSM: "/images/sprint-proj3.jpg",
+    imageMD: "/images/sprint-proj3.jpg",
+    imageLG: "/images/sprint-proj3.jpg",
+    problem: "",
+    approach: "",
+    insights: "Users are overwhelmed when choosing where to go; our team saw an opportunity to inspire through curated guides.",
+    opportunity: ["46% want to spend more on travel.", "36% want better inspiration tools.", "Including guides in marketing emails increased engagement in guide creation and views."]
   };
   const chartData = {
     data: [
-      { id: "1", label: "fishbowl", height: 312, color: "#5E89DC" },
-      { id: "2", label: "quickbooks", height: 481, color: "#E8AB91" },
-      { id: "3", label: "netsuite", height: 137, color: "#81B29A" },
+      { id: "1", label: "add photo", height: 86, color: "#5E89DC" },
+      { id: "2", label: "add bio", height: 82, color: "#E8AB91" },
+      { id: "3", label: "add events", height: 69, color: "#81B29A" },
     ],
-    caption: "# of pain points",
+    caption: "% of engaged users",
     legend: [
-      { label: "fishbowl", color: "#5E89DC" },
-      { label: "quickbooks", color: "#E8AB91" },
-      { label: "netsuite", color: "#81B29A" },
+      { label: "add photo", color: "#5E89DC" },
+      { label: "add bio", color: "#E8AB91" },
+      { label: "add events", color: "#81B29A" },
     ],
   };
   const hero = {
     product: "travelpass",
     tagline: "providing the explorer at heart unforgettable adventures.",
-    primary: "prototype",
+    primary: "app",
     secondary: "website",
-    primaryHref: "https://stapusoa.github.io/inventory/",
-    secondaryHref: "https://stapusoa.github.io/inventory/",
+    primaryHref: "https://apps.apple.com/us/app/travelpass-explore-plan-book/id1621360650",
+    secondaryHref: "https://travelpass.com",
   }
   const overview = {
     overview: "Travelpass is a website and app designed for travelers. It serves as a hub for creating and viewing destination guides, finding travel inspiration, and booking activities and hotels.",
@@ -461,7 +463,7 @@ const Project3: React.FC = () => {
           <div
             className="absolute inset-0 w-full bg-repeat-y bg-fixed"
             style={{
-              backgroundImage: "url('/images/background-texture-dots.png')",
+              backgroundImage: "url('/images/bg-texture-dots.webp')",
               backgroundSize: "auto", // Ensures image doesn't scale but repeats naturally
             }}
           ></div>
@@ -476,7 +478,8 @@ const Project3: React.FC = () => {
             problem={sprint.problem}
             approach={sprint.approach}
             chartData={chartData}
-
+            insights={sprint.insights}
+            opportunity={sprint.opportunity}
           />
           <div className="bg-transparent mx-auto max-w-300 relative z-32 h-300 md:h-80 pt-12 pb-16 px-6 sm:px-6 md:px-14 lg:px-32 grid grid-cols-1 md:grid-cols-4 grid-flow-row items-start gap-8">
             {painPoints.map((point, index) => (

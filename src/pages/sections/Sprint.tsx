@@ -18,9 +18,11 @@ interface SprintProps {
     caption: string;
     legend: { label: string; color: string }[];
   };
+  insights: string;
+  opportunity: string[];
 }
 
-const SprintImg: React.FC<SprintProps> = ({ imageSM, imageMD, imageLG, problem, approach, chartData,
+const SprintImg: React.FC<SprintProps> = ({ imageSM, imageMD, imageLG, problem, approach, chartData, insights, opportunity,
 }) => (
   <div className="bg-transparent mx-auto max-w-300 relative z-32 px-6 sm:px-6 md:px-14 lg:px-32">
     <div className="py-12">
@@ -84,16 +86,13 @@ const SprintImg: React.FC<SprintProps> = ({ imageSM, imageMD, imageLG, problem, 
 
       <div className="flex flex-col w-full md:w-1/2 gap-12">
         <p className="m-0 p-0 font-gilroy text-grey-600 col-start-5 col-span-4 text-left font-300 text-6 leading-relaxed">
-          52.5% of users were satisfied with the app.
+          {insights}
         </p>
-        <p className="m-0 p-0 font-gilroy text-grey-600 col-start-5 col-span-4 text-left font-300 text-6 leading-relaxed">
-
-          Common pain points:<br />
-          - The UI is difficult to navigate.<br />
-          - Difficult to sort through reports and inventory summaries <br />
-          - Hard to fix problems without requesting support <br />
-          - Not a lot of automation or bulk action capabilities
-        </p>
+        <ul className="list-disc m-0 p-0 font-gilroy text-grey-600 col-start-5 col-span-4 text-left font-300 text-6 leading-relaxed decoration-none">
+          {opportunity.map((point, idx) => (
+            <li key={idx}>{point}</li>
+          ))}
+        </ul>
 
       </div>
     </div>
