@@ -1,112 +1,62 @@
-import React, { useState } from "react";
+import { Link } from "react-router-dom";
+import { Icon } from "../components/Icon/index";
 
-const ContactForm = () => {
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    subject: "",
-    message: "",
-  });
+import ContactForm from "../components/Form/ContactForm";
+import SocialLinks from "../components/common/SocialLinks";
 
-  const [loading, setLoading] = useState(false);
-  const [toastMessage, setToastMessage] = useState<string | null>(null);
-
-  const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
-  ) => {
-    const { name, value } = e.target;
-    setFormData((prev) => ({ ...prev, [name]: value }));
-  };
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setLoading(true);
-
-    try {
-      const res = await fetch("/api/contact", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formData),
-      });
-
-      const result = await res.json();
-
-      if (res.ok) {
-        setToastMessage("Message sent successfully! 🎉");
-        setFormData({ name: "", email: "", subject: "", message: "" });
-      } else {
-        setToastMessage(result.error || "Something went wrong.");
-      }
-    } catch (err) {
-      setToastMessage("Failed to send. Try again later.");
-    }
-
-    setLoading(false);
-    setTimeout(() => setToastMessage(null), 4000);
-  };
-
+const Contact = () => {
   return (
-    <>
-      {toastMessage && (
-        <div className="fixed top-4 right-4 bg-green-600 text-white px-4 py-2 rounded shadow-lg z-50">
-          {toastMessage}
-        </div>
-      )}
-
-      <form
-        onSubmit={handleSubmit}
-        className="space-y-6 w-full max-w-lg bg-white/10 backdrop-blur p-6 rounded-lg border border-gray-200"
-      >
-        {["name", "email", "subject"].map((field) => (
-          <div key={field}>
-            <label
-              htmlFor={field}
-              className="block text-sm font-medium text-white mb-1 capitalize"
-            >
-              {field}
-            </label>
-            <input
-              type={field === "email" ? "email" : "text"}
-              id={field}
-              name={field}
-              required
-              className="w-full p-3 rounded bg-white text-black"
-              value={(formData as any)[field]}
-              onChange={handleChange}
-              placeholder={`Enter your ${field}`}
-            />
-          </div>
-        ))}
-
-        <div>
-          <label
-            htmlFor="message"
-            className="block text-sm font-medium text-white mb-1"
-          >
-            Message
-          </label>
-          <textarea
-            id="message"
-            name="message"
-            rows={4}
-            required
-            className="w-full p-3 rounded bg-white text-black resize-none"
-            value={formData.message}
-            onChange={handleChange}
-            placeholder="Your message..."
-          />
-        </div>
-
-        <button
-          type="submit"
-          disabled={loading}
-          className="w-full bg-black text-white py-3 px-4 rounded hover:bg-gray-900 disabled:opacity-50"
+    <div className="page-transition min-h-screen py-16 px-4 md:px-8">
+      <div className="max-w-6xl mx-auto flex flex-col items-start gap-12">
+        {/* Back Link */}
+        <Link
+          to="/"
+          className="link text-5 b-b-0 font-medium flex gap-2 items-center -pl-2"
         >
-          {loading ? "Sending..." : "Send Message"}
-        </button>
-      </form>
-    </>
+          <Icon name="backArrow" size="large" />
+          back to home
+        </Link>
+
+        <div className="flex flex-col md:flex-row gap-4">
+          {/* Left Column */}
+          <div className="md:w-1/2">
+            <div className="sticky top-24 flex flex-col items-start">
+              <h1 className="mb-2 hover:drop-shadow-sm relative text-balance font-gilroy text-6 sm:text-6 md:text-7 lg:text-8 font-300 tracking-tight text-green">
+                get in touch
+              </h1>
+              <h1 className="mt-0 mb-6 md:mb-8 text-9 sm:text-9 md:text-14 lg:text-16 font-gilroy font-700 leading-10 text-left md:leading-16 text-blue">
+
+                let's work<br />together
+              </h1>
+              <p className="text-lg text-gray-600 mb-8 max-w-md text-left">
+                I'm currently available for freelance work and collaborations.
+                Feel free to reach out if you have a project in mind or just
+                want to say hello.
+              </p>
+
+              <div className="glass-panel p-6 border-l-solid border-blue mb-8 max-w-md flex flex-col items-start">
+                <h3 className="text-lg font-medium mb-3 text-left">Response Time</h3>
+                <p className="text-gray-600 text-left">
+                  I typically respond to all inquiries within 24–48 hours. For
+                  urgent matters, please indicate that in your message.
+                </p>
+              </div>
+
+              <SocialLinks />
+            </div>
+          </div>
+
+          {/* Right Column */}
+          <div className="md:w-1/2 md:pl-12">
+            <div className="glass-panel p-8 rounded-xl">
+              <h2 className="text-2xl font-bold mb-6">Send me a message</h2>
+              <ContactForm />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   );
 };
 
-export default ContactForm;
+export default Contact;
