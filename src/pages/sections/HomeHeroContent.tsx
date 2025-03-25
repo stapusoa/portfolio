@@ -20,10 +20,10 @@ const HomeHeroContent: React.FC<HomeHeroContentProps> = ({ roles, currentRole })
           not just pixels.
         </h1>
         <div className="flex flex-col md:flex-row gap-3 w-full md:w-min items-left justify-left md:gap-x-4">
-          <a href="#" className="btn-primary md:w-16">
-            projects
+          <a href="https://www.figma.com/@tapt" className="btn-primary md:w-16">
+            figma
           </a>
-          <a href="#" className="btn-outline md:w-16">
+          <a href="https://github.com/stapusoa" className="btn-outline md:w-16">
             github
           </a>
         </div>

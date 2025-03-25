@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 
 const navigation = [
-  { name: 'work', href: '/' },
+  { name: 'resume', href: '/resume.pdf', download: true },
   { name: 'about', href: '/about' },
   { name: 'contact', href: '/contact' },
 ]
@@ -26,15 +26,26 @@ const Navbar = () => {
 
           {/* Desktop Navigation */}
           <div className="hidden lg:flex gap-x-12">
-            {navigation.map((item) => (
-              <Link
-                key={item.name}
-                to={item.href}
-                className="navlink cursor-pointer"
-              >
-                {item.name}
-              </Link>
-            ))}
+            {navigation.map((item) =>
+              item.download ? (
+                <a
+                  key={item.name}
+                  href={item.href}
+                  download
+                  className="navlink cursor-pointer"
+                >
+                  {item.name}
+                </a>
+              ) : (
+                <Link
+                  key={item.name}
+                  to={item.href}
+                  className="navlink cursor-pointer"
+                >
+                  {item.name}
+                </Link>
+              )
+            )}
           </div>
 
           {/* Mobile Menu Button */}
@@ -89,16 +100,27 @@ const Navbar = () => {
         {mobileMenuOpen && (
           <div className="absolute mt-3 w-full border-t-2 border-x-0 border-b-0 border-solid border-green flex lg:hidden bg-white/20 backdrop-blur-2xl" id="mobile-menu">
             <div className="space-y-6 pb-full w-full pt-8">
-              {navigation.map((item) => (
-                <Link
-                  key={item.name}
-                  to={item.href}
-                  onClick={() => setMobileMenuOpen(false)} // Close menu on link click
-                  className="block border-l-4 w-full border-transparent text-align-left decoration-none py-2 px-6 sm:px-6 md:px-14 lg:px-32 font-gilroy text-7 font-medium text-gray-500 hover:border-green active:border-green hover:bg-grey-200 active:bg-grey-200 hover:text-green active:text-green"
-                >
-                  {item.name}
-                </Link>
-              ))}
+              {navigation.map((item) =>
+                item.download ? (
+                  <a
+                    key={item.name}
+                    href={item.href}
+                    download
+                    className="navlink cursor-pointer"
+                  >
+                    {item.name}
+                  </a>
+                ) : (
+                  <Link
+                    key={item.name}
+                    to={item.href}
+                    onClick={() => setMobileMenuOpen(false)} // Close menu on link click
+                    className="block border-l-4 w-full border-transparent text-align-left decoration-none py-2 px-6 sm:px-6 md:px-14 lg:px-32 font-gilroy text-7 font-medium text-gray-500 hover:border-green active:border-green hover:bg-grey-200 active:bg-grey-200 hover:text-green active:text-green"
+                  >
+                    {item.name}
+                  </Link>
+                )
+              )}
             </div>
 
           </div>

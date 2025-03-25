@@ -14,8 +14,8 @@ const Project1: React.FC = () => {
     tagline: "simplifying inventory management in the warehouse and in the office.",
     primary: "prototype",
     secondary: "website",
-    primaryHref: "https://stapusoa.github.io/inventory/",
-    secondaryHref: "https://stapusoa.github.io/inventory/",
+    primaryHref: "https://www.figma.com/proto/4kDPcFnJKZqZydpwmQooGF/Fishbowl-Go?page-id=1215%3A276282&node-id=1306-375587&p=f&viewport=517%2C1353%2C0.02&t=POweTBMudVHg23Kn-1&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=1302%3A361007",
+    secondaryHref: "https://www.fishbowlinventory.com/drive-fishbowl", // https://stapusoa.github.io/inventory/
   }
   const overview = {
     overview: "Fishbowl Go is an app designed for inventory management. It streamlines processes like sales orders, manufacture orders, and other inventory tasks, helping workers complete jobs in the warehouse more efficiently. Many users switch from competitors like NetSuite or QuickBooks after finding those tools either too complex or unable to meet their needs.",
