@@ -1,5 +1,6 @@
 
 import '../App.css'
+import { BackgroundImages } from './sections/index'
 
 const socialMediaLinks = [
   {
@@ -54,29 +55,22 @@ const socialMediaLinks = [
     )
   },
 ];
+const images = {
+  imageSM: '/images/bg-about-hero_sm.webp',
+  imageMD: '/images/bg-about-hero_md.webp',
+  imageLG: '/images/bg-about-hero_lg.webp',
+};
 
 const About = () => {
   console.log('Home component is rendering');
 
   return (
     <>
-   
+
       <div className="relative w-full h-screen">
-        <img
-          alt="Background image for About page"
-          src="/images/lg_bg-about-hero.jpg" // Default (large screen)
-          className="w-full h-full object-cover object-center-right fixed p-0 m-0 z-[-1] inset-0 hidden lg:block"
-        />
-        <img
-          alt="Background image for About page - tablet"
-          src="/images/md_bg-about-hero.jpg" // Tablet
-          className="w-full h-full object-cover object-top-right fixed p-0 m-0 z-[-1] inset-0 hidden md:block lg:hidden"
-        />
-        <img
-          alt="Background image for About page - mobile"
-          src="/images/sm_bg-about-hero.jpg" // Mobile
-          className="w-full h-full object-cover object-top-right  fixed p-0 m-0 z-[-1] inset-0 block md:hidden"
-        />
+        <BackgroundImages imageSM={images.imageSM}
+          imageMD={images.imageMD}
+          imageLG={images.imageLG} />
         <div className="relative isolate px-6 pt-14 lg:px-8 h-screen">
           <div className="left max-w-2xl px-32 py-28 sm:py-36 lg:py-48">
 
@@ -194,16 +188,16 @@ const About = () => {
                 </div>
 
                 <div className="flex flex-col items-start gap-8 text-left w-full">
-                 <p className='m-0 font-gilroy font-500 text-8 leading-relaxed text-grey-900'>
-                 My approach to user-centered design begins with deep competitive research and a clear understanding of the problem. I start by identifying common pain points, formulating a problem statement, and then diving into the UX process—whether that’s a design sprint or another structured approach. Every UX journey, for me, centers on the user’s goals and challenges.
-                 </p>
-                 <p className='m-0 font-gilroy font-500 text-8 leading-relaxed text-grey-900'>
-                 Since UX is an ever-evolving, iterative process, research and testing are essential. Without these, we can’t truly understand what’s working (and what’s not) for our users, nor can we accurately define the problem. This clarity is the foundation of my work.
-                 </p>
-                 <p className='m-0 font-gilroy font-500 text-8 leading-relaxed text-grey-900'>
-                 In my design philosophy, aesthetics are important, but I’m pragmatic. My first priority is always: “Does this solution solve the problem?” Once I’m confident it does, I focus on refining the UI, but without altering core functionality. Too much focus on visual style can sometimes introduce new issues; after all, UI is often subjective.
-                 </p>
-                  
+                  <p className='m-0 font-gilroy font-500 text-8 leading-relaxed text-grey-900'>
+                    My approach to user-centered design begins with deep competitive research and a clear understanding of the problem. I start by identifying common pain points, formulating a problem statement, and then diving into the UX process—whether that’s a design sprint or another structured approach. Every UX journey, for me, centers on the user’s goals and challenges.
+                  </p>
+                  <p className='m-0 font-gilroy font-500 text-8 leading-relaxed text-grey-900'>
+                    Since UX is an ever-evolving, iterative process, research and testing are essential. Without these, we can’t truly understand what’s working (and what’s not) for our users, nor can we accurately define the problem. This clarity is the foundation of my work.
+                  </p>
+                  <p className='m-0 font-gilroy font-500 text-8 leading-relaxed text-grey-900'>
+                    In my design philosophy, aesthetics are important, but I’m pragmatic. My first priority is always: “Does this solution solve the problem?” Once I’m confident it does, I focus on refining the UI, but without altering core functionality. Too much focus on visual style can sometimes introduce new issues; after all, UI is often subjective.
+                  </p>
+
                 </div>
               </div>
             </div>
@@ -214,13 +208,13 @@ const About = () => {
                 </div>
 
                 <div className="flex flex-col items-start gap-8 text-left w-full">
-                 <p className='m-0 font-gilroy font-500 text-8 leading-relaxed text-grey-900'>
-                 My journey into UX began, like many, with graphic design. But designing purely for aesthetics didn’t feel like enough of a challenge. I was drawn to UX for its focus on research, problem-solving, and iteration. Yet, even UX alone didn’t feel like the full picture—I wanted to complete the puzzle, and that’s what led me to learn to code and eventually discover my love for building design systems.                 </p>
-                 <p className='m-0 font-gilroy font-500 text-8 leading-relaxed text-grey-900'>
-                 Today, while I still enjoy UI, UX design, and research, my true passion lies in creating cohesive design systems. I’m dedicated to developing frameworks that empower teams to design with consistency and flexibility, making every user interaction meaningful and intentional.                 </p>
-                 <p className='m-0 font-gilroy font-500 text-8 leading-relaxed text-grey-900'>
-                 When balancing user needs with business goals, I keep the focus on impact. At the end of the day, it’s about aligning design decisions with both user value and business success—a balance I achieve through close collaboration with stakeholders.                 </p>
-                  
+                  <p className='m-0 font-gilroy font-500 text-8 leading-relaxed text-grey-900'>
+                    My journey into UX began, like many, with graphic design. But designing purely for aesthetics didn’t feel like enough of a challenge. I was drawn to UX for its focus on research, problem-solving, and iteration. Yet, even UX alone didn’t feel like the full picture—I wanted to complete the puzzle, and that’s what led me to learn to code and eventually discover my love for building design systems.                 </p>
+                  <p className='m-0 font-gilroy font-500 text-8 leading-relaxed text-grey-900'>
+                    Today, while I still enjoy UI, UX design, and research, my true passion lies in creating cohesive design systems. I’m dedicated to developing frameworks that empower teams to design with consistency and flexibility, making every user interaction meaningful and intentional.                 </p>
+                  <p className='m-0 font-gilroy font-500 text-8 leading-relaxed text-grey-900'>
+                    When balancing user needs with business goals, I keep the focus on impact. At the end of the day, it’s about aligning design decisions with both user value and business success—a balance I achieve through close collaboration with stakeholders.                 </p>
+
                 </div>
               </div>
             </div>
@@ -231,13 +225,13 @@ const About = () => {
                 </div>
 
                 <div className="flex flex-col items-start gap-8 text-left w-full">
-                 <p className='m-0 font-gilroy font-500 text-8 leading-relaxed text-grey-900'>
-                 Beyond design and development, I’m passionate about puzzles and problem-solving. This mindset fuels my approach to UX, but it’s also at the heart of other interests, like climbing—especially bouldering. Although I’ve taken a break since having two little ones, I’m motivated to get back into shape for climbing soon.                  </p>
-                 <p className='m-0 font-gilroy font-500 text-8 leading-relaxed text-grey-900'>
-                 I’m also a gamer at heart, whether it’s video games, board games, card games, or a round of poker or blackjack. In addition, I play a few instruments and enjoy watching anime (but I’m not a “weeaboo,” as friends joke!). I’m part Japanese, though you wouldn’t guess by looking at me—fun fact: my husband, daughters, and I are all the same amount of Japanese.                 </p>
-                 <p className='m-0 font-gilroy font-500 text-8 leading-relaxed text-grey-900'>
-                 I speak Malay and a bit of Japanese, though English is technically my native language, despite often misusing it! My friends once gave me the nickname “Goldfish” for my memory. Thankfully, technology, especially Apple and Google Maps, keeps me on track. Without them, I’d be getting lost all the time.                  </p>
-                  
+                  <p className='m-0 font-gilroy font-500 text-8 leading-relaxed text-grey-900'>
+                    Beyond design and development, I’m passionate about puzzles and problem-solving. This mindset fuels my approach to UX, but it’s also at the heart of other interests, like climbing—especially bouldering. Although I’ve taken a break since having two little ones, I’m motivated to get back into shape for climbing soon.                  </p>
+                  <p className='m-0 font-gilroy font-500 text-8 leading-relaxed text-grey-900'>
+                    I’m also a gamer at heart, whether it’s video games, board games, card games, or a round of poker or blackjack. In addition, I play a few instruments and enjoy watching anime (but I’m not a “weeaboo,” as friends joke!). I’m part Japanese, though you wouldn’t guess by looking at me—fun fact: my husband, daughters, and I are all the same amount of Japanese.                 </p>
+                  <p className='m-0 font-gilroy font-500 text-8 leading-relaxed text-grey-900'>
+                    I speak Malay and a bit of Japanese, though English is technically my native language, despite often misusing it! My friends once gave me the nickname “Goldfish” for my memory. Thankfully, technology, especially Apple and Google Maps, keeps me on track. Without them, I’d be getting lost all the time.                  </p>
+
                 </div>
               </div>
             </div>
