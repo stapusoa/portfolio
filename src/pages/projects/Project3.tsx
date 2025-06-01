@@ -9,8 +9,8 @@ const Project3: React.FC = () => {
     {
       image:
         "/images/cheyenne.webp",
-      title: "Jennifer G",
-      job: "Purchasing Manager",
+      title: "Veronica M",
+      job: "The Average Traveler",
       quote: "Efficiency is key!",
       bio: "A passionate manager with a knack for problem solving.",
       age: "29, MBA, San Francisco",
@@ -20,8 +20,8 @@ const Project3: React.FC = () => {
     {
       image:
         "/images/ammon.webp",
-      title: "Kai T",
-      job: "Sales Rep",
+      title: "Michael T",
+      job: "The Business Traveler",
       quote: "Efficiency is key!",
       bio: "A passionate manager with a knack for problem solving.",
       age: "34, High School, Denver",
@@ -31,8 +31,8 @@ const Project3: React.FC = () => {
     {
       image:
         "/images/ana.webp",
-      title: "Ana M",
-      job: "Warehouse Worker",
+      title: "Priya S",
+      job: "The Spontaneous Traveler",
       quote: "Efficiency is key!",
       bio: "A passionate manager with a knack for problem solving.",
       age: "42, BS, Atlanta",
@@ -42,8 +42,8 @@ const Project3: React.FC = () => {
     {
       image:
         "/images/tan.webp",
-      title: "Darien T",
-      job: "Administrator",
+      title: "Carlos R",
+      job: "The Family Traveler",
       quote: "Efficiency is key!",
       bio: "A passionate manager with a knack for problem solving.",
       age: "56, MBA, Portland",
@@ -156,23 +156,23 @@ const Project3: React.FC = () => {
   ];
   const painPoints = [
     {
-      problem: "Errors",
-      description: "Manual methods and desktop-bound software contribute to data inaccuracies and operational inefficiencies, especially in real-time inventory tracking.",
+      problem: "Cognitive Overload",
+      description: "Planning a trip feels mentally exhausting and high-stakes, leaving users anxious they’ll miss something important.",
       number: "1"
     },
     {
-      problem: "Limited Access",
-      description: "The inability to access and manage inventory data on the move hinders effective remote work, causing delays and decision-making challenges.",
+      problem: "Availability",
+      description: "Users struggle to find inventory—especially international—due to restrictions or poor discoverability.",
       number: "2"
     },
     {
-      problem: "Inaccuracy",
-      description: "Managing inventory across various locations is cumbersome with traditional methods, leading to issues in synchronization and record accuracy.",
+      problem: "Irrelevant Results",
+      description: "Search experiences feel off when autocomplete or sort order fails, leading to frustration and drop-off.",
       number: "3"
     },
     {
-      problem: "Simplicity",
-      description: "There's a significant demand for a user-friendly, mobile platform that integrates with existing systems, allowing efficient and flexible management of inventory tasks.",
+      problem: "Post-Trip Blues",
+      description: "After a trip, users emotionally disengage. Tools fail to support users through this recovery phase.",
       number: "4"
     }
 
@@ -470,7 +470,7 @@ const Project3: React.FC = () => {
           {/* Content */}
           <div className="relative z-30"></div>
           <Overview {...overview} />
-          <Problem problem="Through competitor analysis and usability evaluation, we identified an industry-wide struggle to adapt inventory management tools for mobile use. Many business owners rely on desktop-only software, which creates inefficiencies when managing tasks remotely. Existing mobile apps primarily focus on warehouse activities, leaving a gap for administrative tasks like reviewing inventory, managing orders, and accessing data." />
+          <Problem problem="be guided and inspired in my travels, with a platform that helps me discover new" />
           <SprintImg
             imageSM={sprint.imageSM}
             imageMD={sprint.imageMD}
@@ -491,7 +491,7 @@ const Project3: React.FC = () => {
               />
             ))}
           </div>
-          <Understand user="User research revealed that accountants and business owners primarily depend on traditional, often manual methods for inventory management, such as desktop software, spreadsheets, and paper records. This reliance leads to several pain points:" />
+          <Understand user="Based on our research, users experience high levels of stress and emotional fatigue throughout the travel journey—especially during the planning and post-trip phases. They expect seamless, mobile-first experiences with smart, personalized search and clear inventory access. These travelers are often overwhelmed, time-constrained, and looking for tools that reduce friction, not add to it." />
           {/* Meet Users */}
           <div className="bg-transparent mx-auto max-w-300 h-fit overflow-visible relative z-32 py-12 pl-6 sm:pl-6 md:px-14 lg:px-32 grid grid-cols-8 grid-flow-row items-start gap-8">
             <div className="col-start-1 col-span-full py-2 text-left">
