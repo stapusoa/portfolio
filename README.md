@@ -1,50 +1,83 @@
-# React + TypeScript + Vite
+# Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Personal portfolio for [saratapusoa.com](https://saratapusoa.com) — a single-page React app. Frontend only; there is no backend, database, or CMS in this repo.
 
-Currently, two official plugins are available:
+## Tech stack
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **React 19** + **TypeScript** + **Vite 8**
+- **Tailwind CSS v4** — config-free; design tokens and component utilities live in [`src/index.css`](src/index.css) via `@theme` / `@utility`
+- **shadcn/ui** (Base UI + `class-variance-authority`) with the `cn` helper in [`src/lib/utils.ts`](src/lib/utils.ts)
+- **React Router 7** for client-side routing
+- **Storybook 10** + **Chromatic** for component development and visual regression testing
+- **Web3Forms** for the contact form (serverless — no backend)
+- Deployed on **Vercel**
 
-## Expanding the ESLint configuration
+## Getting started
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
-
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+```bash
+pnpm install
+cp .env.example .env   # then fill in the values below
+pnpm dev
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+The dev server runs at http://localhost:5173.
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+## Environment variables
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
+| Variable | Required | Purpose |
+| --- | --- | --- |
+| `VITE_WEB3FORMS_KEY` | for the contact form | Public [Web3Forms](https://web3forms.com) access key. Create a free key and paste it in `.env`. |
+| `CHROMATIC_PROJECT_TOKEN` | for `pnpm chromatic` | Chromatic project token (set in your shell or CI, not in `.env`). |
+
+`.env` is git-ignored; commit changes to `.env.example` instead.
+
+## Scripts
+
+| Script | Description |
+| --- | --- |
+| `pnpm dev` | Start the Vite dev server |
+| `pnpm build` | Production build to `dist/` |
+| `pnpm preview` | Preview the production build locally |
+| `pnpm typecheck` | Type-check with `tsc` |
+| `pnpm lint` | Run ESLint |
+| `pnpm storybook` | Run Storybook at http://localhost:6006 |
+| `pnpm build-storybook` | Build the static Storybook |
+| `pnpm chromatic` | Publish to Chromatic for visual review |
+
+## Project structure
+
 ```
+portfolio/
+├── public/            # Static assets (fonts, images, resume.pdf)
+├── src/
+│   ├── components/    # UI components (+ Storybook stories) and shadcn/ui in components/ui
+│   ├── pages/         # Route pages (Home, About, Contact, projects/)
+│   │   └── sections/  # Page sections (Hero, Roles, CaseStudies, …)
+│   ├── helpers/       # Small helpers (ScrollToTop, etc.)
+│   ├── lib/           # cn() utility
+│   ├── index.css      # Tailwind entry: @theme tokens + @utility shortcuts + fonts
+│   └── main.tsx       # App entry
+├── .storybook/        # Storybook config
+├── components.json    # shadcn/ui config
+└── vercel.json        # SPA rewrites for client-side routing
+```
+
+## Styling
+
+Tailwind v4 is used without a `tailwind.config.*` file. All design tokens (colors, font
+sizes, weights, fonts, shadows) and the reusable component utilities (`btn-primary`,
+`h1`–`h4`, `page`, `navlink`, …) are defined in [`src/index.css`](src/index.css) using
+`@theme` and `@utility`. Add shadcn/ui components with:
+
+```bash
+pnpm dlx shadcn@latest add <component>
+```
+
+## Deployment
+
+Deployed on **Vercel** with the Vite framework preset. [`vercel.json`](vercel.json)
+rewrites all routes to `index.html` so client-side routing works on refresh/deep links.
+The custom domain `saratapusoa.com` is configured in the Vercel dashboard.
+
+- Push to `main` → Vercel builds and deploys automatically.
+- Set `VITE_WEB3FORMS_KEY` in the Vercel project's environment variables.

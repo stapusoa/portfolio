@@ -29,15 +29,22 @@ const ContactForm = () => {
     setLoading(true);
 
     try {
-      const res = await fetch(`${import.meta.env.VITE_API_URL}/api/contact`, {
+      const res = await fetch("https://api.web3forms.com/submit", {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formData),
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify({
+          access_key: import.meta.env.VITE_WEB3FORMS_KEY,
+          from_name: formData.name,
+          ...formData,
+        }),
       });
 
       const result = await res.json();
 
-      if (res.ok) {
+      if (res.ok && result.success) {
         showToast({
           title: "Message sent",
           description: "Thank you for your message. I'll get back to you soon.",
@@ -53,11 +60,11 @@ const ContactForm = () => {
       } else {
         showToast({
           title: "Error",
-          description: result.error || "Something went wrong.",
+          description: result.message || "Something went wrong.",
           variant: "destructive",
         });
       }
-    } catch (err) {
+    } catch {
       showToast({
         title: "Failed to send",
         description: "Please try again later.",

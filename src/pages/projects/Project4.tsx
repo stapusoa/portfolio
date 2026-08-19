@@ -476,7 +476,8 @@ const Project4: React.FC = () => {
             problem={sprint.problem}
             approach={sprint.approach}
             chartData={chartData}
-
+            insights=""
+            opportunity={[]}
           />
           <div className="bg-transparent mx-auto max-w-300 relative z-32 h-300 md:h-80 pt-12 pb-16 px-6 sm:px-6 md:px-14 lg:px-32 grid grid-cols-1 md:grid-cols-4 grid-flow-row items-start gap-8">
             {painPoints.map((point, index) => (

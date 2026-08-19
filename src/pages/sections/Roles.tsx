@@ -25,7 +25,7 @@ const Roles: React.FC = () => {
 
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isTransitioning, setIsTransitioning] = useState(false);
-  const slideInterval = useRef<NodeJS.Timeout | null>(null);
+  const slideInterval = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   const changeSlide = useCallback(
     (newIndex: number) => {
@@ -75,12 +75,6 @@ const Roles: React.FC = () => {
     }
   };
 
-  // Auto-slide functionality
-  useEffect(() => {
-    startAutoSlide();
-    return () => stopAutoSlide();
-  }, [nextSlide]);
-
   const startAutoSlide = () => {
     stopAutoSlide();
     slideInterval.current = setInterval(() => {
@@ -94,6 +88,12 @@ const Roles: React.FC = () => {
       slideInterval.current = null;
     }
   };
+
+  // Auto-slide functionality
+  useEffect(() => {
+    startAutoSlide();
+    return () => stopAutoSlide();
+  }, [nextSlide]);
 
   const resetTimer = useCallback(() => {
     stopAutoSlide();

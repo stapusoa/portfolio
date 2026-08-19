@@ -1,5 +1,4 @@
 import React from "react";
-import '../App.css'
 import { BackgroundImages, CaseStudies, HomeHeroContent, Roles } from './sections/index'
 
 const socialMediaLinks = [

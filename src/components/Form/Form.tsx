@@ -1,6 +1,6 @@
 import React from "react";
 
-interface FormProps extends React.FormHTMLAttributes<HTMLFormElement> {}
+type FormProps = React.FormHTMLAttributes<HTMLFormElement>
 
 const Form: React.FC<FormProps> = ({ children, ...props }) => {
   return (

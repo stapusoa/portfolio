@@ -1,0 +1,464 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+
+@custom-variant dark (&:is(.dark *));
+
+/* ------------------------------------------------------------------ */
+/*  Design tokens                                                      */
+/*  Ported 1:1 from the former UnoCSS theme (src/theme/*).             */
+/*  Tailwind v4's dynamic spacing already matches UnoCSS's numeric     */
+/*  scale (max-w-300, px-10, leading-8, gap-4 …), so only font sizes,  */
+/*  font weights, fonts, line-heights, tracking, shadows and colors    */
+/*  need explicit tokens here.                                         */
+/* ------------------------------------------------------------------ */
+@theme {
+  /* Fonts */
+  --font-gilroy: "Gilroy", sans-serif;
+  --font-area: "Area Normal", sans-serif;
+
+  /* Font sizes — UnoCSS numeric scale (N × 0.25rem) */
+  --text-2: 0.5rem;
+  --text-3: 0.75rem;
+  --text-4: 1rem;
+  --text-5: 1.25rem;
+  --text-6: 1.5rem;
+  --text-7: 1.75rem;
+  --text-8: 2rem;
+  --text-9: 2.25rem;
+  --text-10: 2.5rem;
+  --text-12: 3rem;
+  --text-14: 3.5rem;
+  --text-16: 4rem;
+
+  /* Font weights — enables font-300 … font-700 */
+  --font-weight-300: 300;
+  --font-weight-400: 400;
+  --font-weight-500: 500;
+  --font-weight-600: 600;
+  --font-weight-700: 700;
+
+  /* Line heights */
+  --leading-cozy: 1.08;
+  --leading-tighter: 1.15;
+
+  /* Letter spacing */
+  --tracking-ultra-wide: 0.12em;
+  --tracking-mega-wide: 0.335em;
+
+  /* Shadows */
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.1);
+  --shadow-md: 0 3px 12px rgba(0, 0, 0, 0.08);
+  --shadow-lg: 0 10px 20px rgba(0, 0, 0, 0.1);
+
+  /* Colors — resolved from src/theme/colors.ts.
+     NOTE: mainColors were spread last, so they win over accentColors:
+     `blue` = #3D405B (not the accent #2582E2) and `red` = #DE5B3E.
+     Tailwind's default palette (gray-*, red-*, blue-500 …) is untouched
+     and still available alongside these. */
+
+  /* Button colors */
+  --color-primary: #35343c;
+  --color-secondary: #007bff;
+  --color-warning: #ff9500;
+  --color-success: #34c759;
+  --color-error: #ff3b30;
+  --color-info: #30b0c7;
+
+  /* Button hover colors */
+  --color-primaryHover: #757575;
+  --color-secondaryHover: #32ade6;
+  --color-warningHover: #b86b00;
+  --color-successHover: #269241;
+  --color-purpleHover: #7242c1;
+  --color-errorHover: #e00b00;
+  --color-infoHover: #00c7be;
+  --color-greyHover: #8b8c95;
+
+  /* Accent colors */
+  --color-blueLight: #80cfff;
+  --color-blueMedium: #0441a3;
+  --color-blueDark: #00246b;
+  --color-orange: #ffa614;
+  --color-orangeLight: #ffecb6;
+  --color-orangeMedium: #d86c00;
+  --color-orangeDark: #9e4000;
+  --color-purple: #9e67ec;
+  --color-purpleLight: #d2bbff;
+  --color-purpleMedium: #581ec6;
+  --color-purpleDark: #31007f;
+  --color-teal: #6fd5e4;
+  --color-tealLight: #b3fdff;
+  --color-tealMedium: #058ead;
+  --color-tealDark: #00536d;
+  --color-redLight: #ffa1a1;
+  --color-redMedium: #d11915;
+  --color-redDark: #7c0000;
+
+  /* Main colors (override accent blue/red) */
+  --color-green: #81b29a;
+  --color-slate: #5f797b;
+  --color-blue: #3d405b;
+  --color-red: #de5b3e;
+  --color-sunset: #f2cc8f;
+  --color-champagne: #ecd7c8;
+  --color-melon: #e8ab91;
+  --color-beach: #fffaf3;
+  --color-canyon: #d9b59b;
+  --color-mint: #f0f6f7;
+  --color-mintLight: #e8f3f2;
+
+  /* Greys */
+  --color-grey-100: #f1f5f9;
+  --color-grey-200: #e4e4e7;
+  --color-grey-300: #d4d4d4;
+  --color-grey-400: #a6aab1;
+  --color-grey-500: #6b7280;
+  --color-grey-600: #52525b;
+  --color-grey-700: #3f3f46;
+  --color-grey-800: #353535;
+  --color-grey-900: #18181b;
+
+  /* Misc */
+  --color-body: #464648;
+  --color-light: #f0f0f0;
+  --color-textDisabled: #8b8c95;
+  --color-disabled: rgba(0, 0, 0, 0.12);
+  --color-warmGrey: #f9f7f7;
+}
+
+/* ------------------------------------------------------------------ */
+/*  Component utilities                                                */
+/*  Ported from the former UnoCSS `shortcuts` (src/theme/unoShortcuts).*/
+/*  UnoCSS-isms translated: decoration-none → no-underline,            */
+/*  font-not-oblique → not-italic, outline-3 → outline-[3px].          */
+/* ------------------------------------------------------------------ */
+
+/* Page containers */
+@utility page {
+  @apply max-w-392 mx-auto px-4 md:px-6 lg:px-8;
+}
+@utility page-wide {
+  @apply max-w-452 mx-auto px-4 md:px-6;
+}
+@utility page-tight {
+  @apply max-w-300 mx-auto px-4 md:px-6 lg:px-8;
+}
+@utility page-tighter {
+  @apply max-w-4xl mx-auto px-4 md:px-6 lg:px-8;
+}
+@utility page-full {
+  @apply max-w-full;
+}
+
+/* Buttons & links */
+@utility btn-primary {
+  @apply rounded-full bg-green px-10 py-2 flex justify-center items-center no-underline font-gilroy font-400 text-4 leading-8 text-white shadow-sm hover:bg-blue focus-visible:outline focus-visible:outline-[3px] focus-visible:outline-offset-[3px] focus-visible:outline-melon disabled:opacity-50 disabled:cursor-not-allowed;
+}
+@utility btn-outline {
+  @apply ring-2 ring-inset ring-green rounded-full bg-transparent px-10 py-2 flex justify-center items-center no-underline font-gilroy font-400 text-4 leading-8 text-green hover:border-blue;
+}
+@utility link {
+  @apply flex justify-center items-center py-1.5 no-underline font-gilroy font-700 text-6 leading-8 border-solid border-x-0 border-t-0 border-b-2 border-green text-green hover:text-blue hover:border-blue;
+}
+@utility navlink {
+  @apply font-gilroy text-blue font-medium text-5 no-underline hover:text-green;
+}
+
+/* Typography */
+@utility header-base-styles {
+  @apply m-0 font-gilroy not-italic font-700;
+}
+@utility h1 {
+  @apply m-0 font-gilroy not-italic font-700 text-16 leading-none text-blue;
+}
+@utility h2 {
+  @apply m-0 font-gilroy not-italic font-700 text-12 leading-tight text-grey-700;
+}
+@utility h3 {
+  @apply m-0 font-gilroy not-italic font-700 text-10 leading-cozy text-grey-700;
+}
+@utility h4 {
+  @apply m-0 font-gilroy not-italic font-700 text-8 leading-tight;
+}
+@utility body-semibold {
+  @apply m-0 font-gilroy text-7 font-600;
+}
+@utility body {
+  @apply m-0 font-gilroy leading-tight;
+}
+@utility body-large {
+  @apply text-7 font-400;
+}
+@utility body-2 {
+  @apply m-0 font-gilroy leading-tight text-5;
+}
+
+/* Object position (former uno.config.ts custom rules) */
+@utility object-top-right {
+  object-position: right top;
+}
+@utility object-center-right {
+  object-position: right center;
+}
+
+/* Sitemap / org-chart helpers */
+@utility administration {
+  @apply list-none p-0 m-0;
+}
+@utility director {
+  @apply mx-auto w-1/2;
+}
+@utility department {
+  @apply float-left w-[18%] ml-[2%] mb-6;
+}
+@utility hoverable {
+  @apply transition-all hover:shadow-lg;
+}
+@utility node {
+  @apply bg-[#81B29A] text-white text-center font-bold rounded-lg py-2 px-4 shadow-md hover:shadow-lg transition;
+}
+@utility section {
+  @apply bg-white text-gray-700 text-center font-semibold rounded-lg py-2 px-4 shadow-md hover:shadow-lg transition;
+}
+@utility department-a {
+  @apply bg-[#FFD600] text-gray-800;
+}
+@utility department-b {
+  @apply bg-[#AAD4E7] text-gray-800;
+}
+@utility department-c {
+  @apply bg-[#FDB0FD] text-gray-800;
+}
+@utility department-d {
+  @apply bg-[#A3A2A2] text-gray-800;
+}
+@utility department-e {
+  @apply bg-[#f0f0f0] text-gray-800;
+}
+@utility connector {
+  @apply absolute w-[2px] bg-white;
+}
+@utility subdirector-after {
+  @apply relative after:content-[''] after:block after:w-0 after:h-[130px] after:bg-red-500 after:border-[4px] after:border-white after:left-[45.45%] after:relative;
+}
+
+/* ------------------------------------------------------------------ */
+/*  Base globals & @font-face (formerly src/App.css)                   */
+/* ------------------------------------------------------------------ */
+@font-face {
+  font-family: "Gilroy";
+  src: url("/fonts/gilroy/Gilroy-Black.woff2") format("woff2");
+  font-weight: 900;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Gilroy";
+  src: url("/fonts/gilroy/Gilroy-BlackItalic.woff2") format("woff2");
+  font-weight: 900;
+  font-style: italic;
+}
+@font-face {
+  font-family: "Gilroy";
+  src: url("/fonts/gilroy/Gilroy-Bold.woff2") format("woff2");
+  font-weight: bold;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Gilroy";
+  src: url("/fonts/gilroy/Gilroy-BoldItalic.woff2") format("woff2");
+  font-weight: bold;
+  font-style: italic;
+}
+@font-face {
+  font-family: "Gilroy";
+  src: url("/fonts/gilroy/Gilroy-Light.woff2") format("woff2");
+  font-weight: 300;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Gilroy";
+  src: url("/fonts/gilroy/Gilroy-LightItalic.woff2") format("woff2");
+  font-weight: 300;
+  font-style: italic;
+}
+@font-face {
+  font-family: "Gilroy";
+  src: url("/fonts/gilroy/Gilroy-Medium.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Gilroy";
+  src: url("/fonts/gilroy/Gilroy-MediumItalic.woff2") format("woff2");
+  font-weight: 500;
+  font-style: italic;
+}
+@font-face {
+  font-family: "Gilroy";
+  src: url("/fonts/gilroy/Gilroy-Regular.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Gilroy";
+  src: url("/fonts/gilroy/Gilroy-RegularItalic.woff2") format("woff2");
+  font-weight: 400;
+  font-style: italic;
+}
+@font-face {
+  font-family: "Gilroy";
+  src: url("/fonts/gilroy/Gilroy-SemiBold.woff2") format("woff2");
+  font-weight: 600;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Gilroy";
+  src: url("/fonts/gilroy/Gilroy-SemiBoldItalic.woff2") format("woff2");
+  font-weight: 600;
+  font-style: italic;
+}
+@font-face {
+  font-family: "Gilroy";
+  src: url("/fonts/gilroy/Gilroy-Thin.woff2") format("woff2");
+  font-weight: 200;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Gilroy";
+  src: url("/fonts/gilroy/Gilroy-ThinItalic.woff2") format("woff2");
+  font-weight: 200;
+  font-style: italic;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#root {
+  margin: 0 auto;
+  padding: 0;
+  text-align: center;
+  width: 100%;
+}
+
+@theme inline {
+  --font-heading: var(--font-sans);
+  --font-sans: "Gilroy", sans-serif;
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+  --color-chart-5: var(--chart-5);
+  --color-chart-4: var(--chart-4);
+  --color-chart-3: var(--chart-3);
+  --color-chart-2: var(--chart-2);
+  --color-chart-1: var(--chart-1);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --color-foreground: var(--foreground);
+  --color-background: var(--background);
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+  --radius-2xl: calc(var(--radius) * 1.8);
+  --radius-3xl: calc(var(--radius) * 2.2);
+  --radius-4xl: calc(var(--radius) * 2.6);
+}
+
+:root {
+  --background: oklch(1 0 0);
+  --foreground: oklch(0.145 0 0);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.145 0 0);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.145 0 0);
+  --primary: oklch(0.205 0 0);
+  --primary-foreground: oklch(0.985 0 0);
+  --secondary: oklch(0.97 0 0);
+  --secondary-foreground: oklch(0.205 0 0);
+  --muted: oklch(0.97 0 0);
+  --muted-foreground: oklch(0.556 0 0);
+  --accent: oklch(0.97 0 0);
+  --accent-foreground: oklch(0.205 0 0);
+  --destructive: oklch(0.577 0.245 27.325);
+  --border: oklch(0.922 0 0);
+  --input: oklch(0.922 0 0);
+  --ring: oklch(0.708 0 0);
+  --chart-1: oklch(0.87 0 0);
+  --chart-2: oklch(0.556 0 0);
+  --chart-3: oklch(0.439 0 0);
+  --chart-4: oklch(0.371 0 0);
+  --chart-5: oklch(0.269 0 0);
+  --radius: 0.625rem;
+  --sidebar: oklch(0.985 0 0);
+  --sidebar-foreground: oklch(0.145 0 0);
+  --sidebar-primary: oklch(0.205 0 0);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.97 0 0);
+  --sidebar-accent-foreground: oklch(0.205 0 0);
+  --sidebar-border: oklch(0.922 0 0);
+  --sidebar-ring: oklch(0.708 0 0);
+}
+
+.dark {
+  --background: oklch(0.145 0 0);
+  --foreground: oklch(0.985 0 0);
+  --card: oklch(0.205 0 0);
+  --card-foreground: oklch(0.985 0 0);
+  --popover: oklch(0.205 0 0);
+  --popover-foreground: oklch(0.985 0 0);
+  --primary: oklch(0.922 0 0);
+  --primary-foreground: oklch(0.205 0 0);
+  --secondary: oklch(0.269 0 0);
+  --secondary-foreground: oklch(0.985 0 0);
+  --muted: oklch(0.269 0 0);
+  --muted-foreground: oklch(0.708 0 0);
+  --accent: oklch(0.269 0 0);
+  --accent-foreground: oklch(0.985 0 0);
+  --destructive: oklch(0.704 0.191 22.216);
+  --border: oklch(1 0 0 / 10%);
+  --input: oklch(1 0 0 / 15%);
+  --ring: oklch(0.556 0 0);
+  --chart-1: oklch(0.87 0 0);
+  --chart-2: oklch(0.556 0 0);
+  --chart-3: oklch(0.439 0 0);
+  --chart-4: oklch(0.371 0 0);
+  --chart-5: oklch(0.269 0 0);
+  --sidebar: oklch(0.205 0 0);
+  --sidebar-foreground: oklch(0.985 0 0);
+  --sidebar-primary: oklch(0.488 0.243 264.376);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.269 0 0);
+  --sidebar-accent-foreground: oklch(0.985 0 0);
+  --sidebar-border: oklch(1 0 0 / 10%);
+  --sidebar-ring: oklch(0.556 0 0);
+}
+
+/* shadcn design tokens above are available to shadcn/ui components.
+   The default shadcn `@layer base` (which forces `body { bg-background;
+   text-foreground }` and `html { font-sans }`) is intentionally omitted so
+   the existing site design, fonts and hero backgrounds are preserved.
+   shadcn/ui components set their own colors explicitly, so they render
+   correctly without it. */

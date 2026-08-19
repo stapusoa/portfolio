@@ -8,7 +8,7 @@ interface IconProps {
   size?: IconSize
 }
 
-export const Icon = ({ name, size = 'medium' }: IconProps): JSX.Element => {
+export const Icon = ({ name, size = 'medium' }: IconProps) => {
   return (
     <i aria-hidden='true' className={iconCss(size)}>
       {IconMapping[name]}

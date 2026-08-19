@@ -1,5 +1,4 @@
 
-import '../App.css'
 import { BackgroundImages } from './sections/index'
 
 const socialMediaLinks = [
