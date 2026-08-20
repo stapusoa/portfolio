@@ -1,5 +1,5 @@
 import React from "react";
-import BarChart from "../common/Data/BarChart";
+import BarChart from "./Data/BarChart";
 import '../common/Data/BarChart.css'
 
 interface SprintProps {

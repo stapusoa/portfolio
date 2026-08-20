@@ -7,12 +7,12 @@ import Project1 from './pages/case-studies/Project1';
 import Project2 from './pages/case-studies/Project2';
 import Project3 from './pages/case-studies/Project3';
 import { Navbar } from './components/index';
-import ScrollToTop from './helpers/ScrollToTop';
+import ScrollManager from '../src/lib/hooks/useScrollToTop';
 
 const App: React.FC = () => {
   return (
     <Router>
-      <ScrollToTop />
+      <ScrollManager />
       <>
         <Navbar />
         <Routes>

@@ -1,5 +1,5 @@
 import React from "react";
-import { BackgroundImages, CaseStudies, HomeHeroContent, Roles } from '../../components/layout/index'
+import { PageBackground, CaseStudies, HomeHeroContent, Roles } from '../../components/index'
 
 const socialMediaLinks = [
   {
@@ -56,9 +56,9 @@ const socialMediaLinks = [
 ];
 
 const images = {
-  imageSM: '/images/bg-home-hero_sm.webp',
-  imageMD: '/images/bg-home-hero_md.webp',
-  imageLG: '/images/bg-home-hero_lg.webp',
+  mobileSrc: '/images/bg-home-hero_sm.webp',
+  tabletSrc: '/images/bg-home-hero_md.webp',
+  desktopSrc: '/images/bg-home-hero_lg.webp',
 };
 const roles = ['designer', 'engineer', 'architect'];
 const currentRole = 0;
@@ -66,9 +66,9 @@ const currentRole = 0;
 const Home: React.FC = () => {
   return (
       <div className="relative w-full h-screen">
-        <BackgroundImages imageSM={images.imageSM}
-          imageMD={images.imageMD}
-          imageLG={images.imageLG} />
+        <PageBackground src={images.mobileSrc}
+          tabletSrc={images.tabletSrc}
+          desktopSrc={images.desktopSrc} />
         <HomeHeroContent roles={roles} currentRole={currentRole} />
         <div className="relative w-full z-20">
           <img

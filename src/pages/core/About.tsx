@@ -1,5 +1,5 @@
 
-import { BackgroundImages } from '../../components/layout/index'
+import { PageBackground } from '../../components/index'
 
 const socialMediaLinks = [
   {
@@ -55,9 +55,9 @@ const socialMediaLinks = [
   },
 ];
 const images = {
-  imageSM: '/images/bg-about-hero_sm.webp',
-  imageMD: '/images/bg-about-hero_md.webp',
-  imageLG: '/images/bg-about-hero_lg.webp',
+  mobileSrc: '/images/bg-about-hero_sm.webp',
+  tabletSrc: '/images/bg-about-hero_md.webp',
+  desktopSrc: '/images/bg-about-hero_lg.webp',
 };
 
 const About = () => {
@@ -67,9 +67,9 @@ const About = () => {
     <>
 
       <div className="relative w-full h-screen">
-        <BackgroundImages imageSM={images.imageSM}
-          imageMD={images.imageMD}
-          imageLG={images.imageLG} />
+        <PageBackground src={images.mobileSrc}
+          tabletSrc={images.tabletSrc}
+          desktopSrc={images.desktopSrc} />
         <div className="relative isolate px-6 pt-14 lg:px-8 h-screen">
           <div className="left max-w-2xl px-32 py-28 sm:py-36 lg:py-48">
 

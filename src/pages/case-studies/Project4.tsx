@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Card, AnimationSequence } from '../../components/index';
-import { BackgroundImages, Hero, Goal, Overview, BlogCard, Problem, Insights, Understand, PainPoints, Journey, SiteMap, Outcomes, SprintImg } from "../../components/layout/index";
+import { PageBackground, Hero, Goal, Overview, BlogCard, Problem, Insights, Understand, PainPoints, Journey, SiteMap, Outcomes, SprintImg } from "../../components/index";
 import '../../components/common/Data/BarChart.css'
 
 const Project4: React.FC = () => {
@@ -74,9 +74,9 @@ const Project4: React.FC = () => {
     },
   ]
   const images = {
-    imageSM: "/images/sm_bg-proj2-hero.webp",
-    imageMD: "/images/md_bg-proj2-hero.webp",
-    imageLG: "/images/lg_bg-proj2-hero.webp",
+    mobileSrc: "/images/sm_bg-proj2-hero.webp",
+    tabletSrc: "/images/md_bg-proj2-hero.webp",
+    desktopSrc: "/images/lg_bg-proj2-hero.webp",
   };
   const sprint = {
     imageSM: "/images/fbgo-sprint-sm.jpg",
@@ -451,9 +451,9 @@ const Project4: React.FC = () => {
   return (
     <>
       <div className="relative w-full h-screen">
-        <BackgroundImages imageSM={images.imageSM}
-          imageMD={images.imageMD}
-          imageLG={images.imageLG} />
+        <PageBackground src={images.mobileSrc}
+          tabletSrc={images.tabletSrc}
+          desktopSrc={images.desktopSrc} />
         <Hero {...hero} />
         {/* Overlay */}
         <div className="relative w-full z-20">

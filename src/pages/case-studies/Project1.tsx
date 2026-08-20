@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from "react";
 import { Card, AnimationSequence } from '../../components/index';
-import { BackgroundImages, Hero, Goal, Overview, BlogCard, Problem, Insights, Understand, PainPoints, Journey, SiteMap, Outcomes, SprintImg } from "../../components/layout/index";
+import { PageBackground, Hero, Goal, Overview, BlogCard, Problem, Insights, Understand, PainPoints, Journey, SiteMap, Outcomes, SprintImg } from "../../components/index";
 import '../../components/common/Data/BarChart.css'
 
 const Project1: React.FC = () => {
   const images = {
-    imageSM: "/images/bg-proj1-hero_sm.webp",
-    imageMD: "/images/bg-proj1-hero_md.webp",
-    imageLG: "/images/bg-proj1-hero_lg.webp",
+    mobileSrc: "/images/bg-proj1-hero_sm.webp",
+    tabletSrc: "/images/bg-proj1-hero_md.webp",
+    desktopSrc: "/images/bg-proj1-hero_lg.webp",
   };
   const hero = {
     product: "fishbowl go",
@@ -456,9 +456,9 @@ const Project1: React.FC = () => {
   return (
     <>
       <div className="relative w-full h-screen">
-        <BackgroundImages imageSM={images.imageSM}
-          imageMD={images.imageMD}
-          imageLG={images.imageLG} />
+        <PageBackground src={images.mobileSrc}
+          tabletSrc={images.tabletSrc}
+          desktopSrc={images.desktopSrc} />
         <Hero {...hero} />
         {/* Overlay */}
         <div className="relative w-full z-20">

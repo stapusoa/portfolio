@@ -1,5 +1,5 @@
 import React from 'react';
-import { Section } from "../../helpers/index";
+import { Section } from "../../lib/types/index";
 
 interface Point {
   label: string;
