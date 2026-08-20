@@ -1,4 +1,4 @@
-export { default as Navbar } from './ui/Navbar/Navbar';
+export { Navigation } from './ui/Navigation/NavigationMenu';
 export { default as Link } from './ui/Link/Link';
 export { default as Header } from './ui/Header/Header';
 export { default as Card } from './ui/Card/card';
