@@ -1,5 +1,5 @@
 
-import { BackgroundImages } from './sections/index'
+import { BackgroundImages } from '../../components/layout/index'
 
 const socialMediaLinks = [
   {

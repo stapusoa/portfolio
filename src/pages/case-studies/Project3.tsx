@@ -1,16 +1,16 @@
 import React, { useState, useEffect } from "react";
 import { Card, AnimationSequence } from '../../components/index';
-import { BackgroundImages, Hero, Goal, Overview, BlogCard, Problem, Insights, Understand, PainPoints, Journey, SiteMap, Outcomes, SprintImg } from "../sections/index";
-import '../../components/Data/BarChart.css'
+import { BackgroundImages, Hero, Goal, Overview, BlogCard, Problem, Insights, Understand, PainPoints, Journey, SiteMap, Outcomes, SprintImg } from "../../components/layout/index";
+import '../../components/common/Data/BarChart.css'
 
-const Project2: React.FC = () => {
+const Project3: React.FC = () => {
   console.log('Home component is rendering');
   const cards = [
     {
       image:
         "/images/cheyenne.webp",
-      title: "Jennifer G",
-      job: "Purchasing Manager",
+      title: "Veronica M",
+      job: "The Average Traveler",
       quote: "Efficiency is key!",
       bio: "A passionate manager with a knack for problem solving.",
       age: "29, MBA, San Francisco",
@@ -20,8 +20,8 @@ const Project2: React.FC = () => {
     {
       image:
         "/images/ammon.webp",
-      title: "Kai T",
-      job: "Sales Rep",
+      title: "Michael T",
+      job: "The Business Traveler",
       quote: "Efficiency is key!",
       bio: "A passionate manager with a knack for problem solving.",
       age: "34, High School, Denver",
@@ -31,8 +31,8 @@ const Project2: React.FC = () => {
     {
       image:
         "/images/ana.webp",
-      title: "Ana M",
-      job: "Warehouse Worker",
+      title: "Priya S",
+      job: "The Spontaneous Traveler",
       quote: "Efficiency is key!",
       bio: "A passionate manager with a knack for problem solving.",
       age: "42, BS, Atlanta",
@@ -42,8 +42,8 @@ const Project2: React.FC = () => {
     {
       image:
         "/images/tan.webp",
-      title: "Darien T",
-      job: "Administrator",
+      title: "Carlos R",
+      job: "The Family Traveler",
       quote: "Efficiency is key!",
       bio: "A passionate manager with a knack for problem solving.",
       age: "56, MBA, Portland",
@@ -74,43 +74,46 @@ const Project2: React.FC = () => {
     },
   ]
   const images = {
-    imageSM: "/images/bg-proj2-hero_sm.webp",
-    imageMD: "/images/bg-proj2-hero_md.webp",
-    imageLG: "/images/bg-proj2-hero_lg.webp",
+    imageSM: "/images/bg-proj3-hero_sm.webp",
+    imageMD: "/images/bg-proj3-hero_md.webp",
+    imageLG: "/images/bg-proj3-hero_lg.webp",
   };
   const sprint = {
-    imageSM: "/images/sprint-proj2.jpg",
-    imageMD: "/images/sprint-proj2.jpg",
-    imageLG: "/images/sprint-proj2.jpg",
-    problem: "The project followed an iterative and exploratory approach rather than strict agile sprints due to its nature as a side project. Here’s a simplified breakdown modeled on sprint structure:",
-    approach: "We started out with interviewing and surveying therapists and clients to understand their pain points and needs. This research phase helped us identify key areas for improvement and informed the design process. After mapping out key user flows and wireframing the platform, we conducted usability testing to gather feedback and refine the design.",
-    insights: "",
-    opportunity: [""]
+    imageSM: "/images/sprint-proj3.jpg",
+    imageMD: "/images/sprint-proj3.jpg",
+    imageLG: "/images/sprint-proj3.jpg",
+    problem: "",
+    approach: "",
+    insights: "Users are overwhelmed when choosing where to go; our team saw an opportunity to inspire through curated guides.",
+    opportunity: ["46% want to spend more on travel.", "36% want better inspiration tools.", "Including guides in marketing emails increased engagement in guide creation and views."]
   };
   const chartData = {
     data: [
-      { id: "1", label: "vagaro", height: 183, color: "#5E89DC" },
-      { id: "2", label: "booksy", height: 98, color: "#E8AB91" },
-      { id: "3", label: "fresha", height: 72, color: "#81B29A" },
+      { id: "1", label: "add photo", height: 86, color: "#5E89DC" },
+      { id: "2", label: "add bio", height: 82, color: "#E8AB91" },
+      { id: "3", label: "add events", height: 69, color: "#81B29A" },
     ],
-    caption: "# of pain points",
+    caption: "% of engaged users",
     legend: [
-      { label: "vagaro", color: "#5E89DC" },
-      { label: "booksy", color: "#E8AB91" },
-      { label: "fresha", color: "#81B29A" },
+      { label: "add photo", color: "#5E89DC" },
+      { label: "add bio", color: "#E8AB91" },
+      { label: "add events", color: "#81B29A" },
     ],
   };
   const hero = {
-    product: "haven massage",
-    tagline: "providing professional therapeutic services through easy booking.",
-    wip: true
+    product: "travelpass",
+    tagline: "providing the explorer at heart unforgettable adventures.",
+    primary: "app",
+    secondary: "website",
+    primaryHref: "https://apps.apple.com/us/app/travelpass-explore-plan-book/id1621360650",
+    secondaryHref: "https://travelpass.com",
   }
   const overview = {
-    overview: "Haven Massage is a booking platform designed to streamline the scheduling process for massage therapists and clients. It simplifies appointment management, reduces no-shows, and enhances the client experience with an intuitive and user-friendly interface. The platform provides easy access to availability and automated reminders, ensuring a seamless booking process.",
-    duration: "The project began in 2020 during an apprenticeship in massage therapy, where the need for a better booking solution became apparent after using multiple existing apps. Since then, it has remained a side project focused on research and ideation, refining the concept to create a more effective and user-friendly experience.",
+    overview: "Travelpass is a website and app designed for travelers. It serves as a hub for creating and viewing destination guides, finding travel inspiration, and booking activities and hotels.",
+    duration: "I’ve been working on Travelpass since July 2021, starting as one of two designers handling design, research, and product management. As the team grew into a full Product department, my focus shifted to the native app and design systems, where I specialize in creating and documenting reusable components and collaborating with engineers to build and implement them in code.",
     product: "/images/hm-project-img.png",
-    role: ["Project Lead & Owner", "Marketing Specialist", "User Researcher", "User Experience Designer", "Frontend Engineer", "Design Systems Manager"],
-    deliverables: ["Market research", "Personas", "User journeys & site maps", "Design system", "Branding"
+    role: ["User Researcher", "User Experience Designer", "User Interface Designer", "Frontend Engineer", "Design Systems Manager"],
+    deliverables: ["User surveys & user tests", "Personas", "User journeys & site maps", "Design system", "High-fidelity prototype"
     ],
     specs: ["Ongoing", "Figma", "Userbrain", "Google Forms", "React"]
   }
@@ -153,23 +156,23 @@ const Project2: React.FC = () => {
   ];
   const painPoints = [
     {
-      problem: "Availability",
-      description: "Users get frustrated when they can’t see up-to-date appointment slots.",
+      problem: "Cognitive Overload",
+      description: "Planning a trip feels mentally exhausting and high-stakes, leaving users anxious they’ll miss something important.",
       number: "1"
     },
     {
-      problem: "Complicated",
-      description: "Multi-step forms, unclear navigation, and slow loading deter users.",
+      problem: "Availability",
+      description: "Users struggle to find inventory—especially international—due to restrictions or poor discoverability.",
       number: "2"
     },
     {
-      problem: "Clarity",
-      description: "Vague or inconsistent info on services creates confusion and mistrust.",
+      problem: "Irrelevant Results",
+      description: "Search experiences feel off when autocomplete or sort order fails, leading to frustration and drop-off.",
       number: "3"
     },
     {
-      problem: "No Shows",
-      description: "Missed appointments disrupt therapists’ income and schedules.",
+      problem: "Post-Trip Blues",
+      description: "After a trip, users emotionally disengage. Tools fail to support users through this recovery phase.",
       number: "4"
     }
 
@@ -467,7 +470,7 @@ const Project2: React.FC = () => {
           {/* Content */}
           <div className="relative z-30"></div>
           <Overview {...overview} />
-          <Problem problem="Clients and therapists often face friction when booking massages due to outdated or disjointed systems. Common issues include lack of real-time availability, complex booking steps, and frequent no-shows. Haven Massage aims to provide a seamless, intuitive platform that makes scheduling efficient, reliable, and user-centric." />
+          <Problem problem="be guided and inspired in my travels, with a platform that helps me discover new" />
           <SprintImg
             imageSM={sprint.imageSM}
             imageMD={sprint.imageMD}
@@ -488,7 +491,7 @@ const Project2: React.FC = () => {
               />
             ))}
           </div>
-          <Understand user="Users value simplicity, transparency, and reliability. Interviews showed a preference for platforms that “just work”—with minimal clicks, clear communication, and confidence that their appointment is confirmed and remembered." />
+          <Understand user="Based on our research, users experience high levels of stress and emotional fatigue throughout the travel journey—especially during the planning and post-trip phases. They expect seamless, mobile-first experiences with smart, personalized search and clear inventory access. These travelers are often overwhelmed, time-constrained, and looking for tools that reduce friction, not add to it." />
           {/* Meet Users */}
           <div className="bg-transparent mx-auto max-w-300 h-fit overflow-visible relative z-32 py-12 pl-6 sm:pl-6 md:px-14 lg:px-32 grid grid-cols-8 grid-flow-row items-start gap-8">
             <div className="col-start-1 col-span-full py-2 text-left">
@@ -524,11 +527,11 @@ const Project2: React.FC = () => {
             <div className="col-span-full md:col-span-4 gap-8 pr-6 sm:pr-6 order-1 md:order-3 grid grid-auto-flow-row h-fit">
               <p className="m-0 p-0 w-full h-fit text-left font-gilroy font-300 text-6 text-grey-800 tracking-wide">user story</p>
               <p className="m-0 p-0 w-full h-fit text-left font-gilroy font-300 text-6 text-grey-900 leading-relaxed">
-              As a busy professional, I want to quickly find a massage therapist’s availability and book an appointment in under 2 minutes, so I can take care of my health without hassle.
+                As a business owner who often works outside of the office, I need a way to easily review detailed inventory information on my phone or tablet so that I can make timely decisions without having to wait until I return to my desk, avoiding costly delays and frustration.
               </p>
               <p className="m-0 p-0 w-full h-fit text-left font-gilroy font-300 text-6 text-grey-800 tracking-wide">hypothesis</p>
               <p className="m-0 p-0 w-full h-fit text-left font-gilroy font-300 text-6 text-grey-900 leading-relaxed">
-              If we simplify the booking process and provide automated reminders, then users will be more likely to complete bookings and show up on time, leading to higher satisfaction and reduced therapist stress.
+                We believe enhancing mobile inventory management will help business owners when they are on-the-go.
               </p>
             </div>
             {/* Horizontally Scrollable Cards - Moves below on mobile */}
@@ -546,7 +549,7 @@ const Project2: React.FC = () => {
             </div>
           </div>
           <Goal
-            statement="Design a streamlined, user-friendly platform for massage therapy bookings that benefits both clients and therapists by reducing friction, improving communication, and preventing missed appointments."
+            statement="To successfully launch Fishbowl Go, a user-friendly iPad/tablet app, designed to bridge the gap in mobile inventory management for small to medium-sized businesses. Our aim was to simplify administrative tasks, making inventory management as efficient on tablets as it is on desktops. The goal was to enhance operational efficiency by at least 20% and improve user satisfaction, targeting a 15% increase in Fishbowl Inventory's client base within the first six months after launch."
             image={[
               "/images/fbgo-sticky1.png",
               "/images/fbgo-sticky2.png",
@@ -626,4 +629,4 @@ const Project2: React.FC = () => {
   )
 }
 
-export default Project2
+export default Project3

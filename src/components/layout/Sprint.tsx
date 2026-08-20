@@ -1,6 +1,6 @@
 import React from "react";
-import { BarChart } from "../../components";
-import '../../components/Data/BarChart.css'
+import BarChart from "../common/Data/BarChart";
+import '../common/Data/BarChart.css'
 
 interface SprintProps {
   imageSM: string;

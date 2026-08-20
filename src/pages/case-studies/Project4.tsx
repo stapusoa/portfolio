@@ -1,44 +1,89 @@
 import React, { useState, useEffect } from "react";
 import { Card, AnimationSequence } from '../../components/index';
-import { BackgroundImages, Hero, Goal, Overview, BlogCard, Problem, Insights, Understand, PainPoints, Journey, SiteMap, Outcomes, SprintImg } from "../sections/index";
-import '../../components/Data/BarChart.css'
+import { BackgroundImages, Hero, Goal, Overview, BlogCard, Problem, Insights, Understand, PainPoints, Journey, SiteMap, Outcomes, SprintImg } from "../../components/layout/index";
+import '../../components/common/Data/BarChart.css'
 
-const Project1: React.FC = () => {
+const Project4: React.FC = () => {
+  console.log('Home component is rendering');
+  const cards = [
+    {
+      image:
+        "/images/cheyenne.webp",
+      title: "Jennifer G",
+      job: "Purchasing Manager",
+      quote: "Efficiency is key!",
+      bio: "A passionate manager with a knack for problem solving.",
+      age: "29, MBA, San Francisco",
+      frustrations: ["Lack of efficient tools", "Time-consuming processes"],
+      motivations: ["Quality control at best prices", "Optimize inventory"]
+    },
+    {
+      image:
+        "/images/ammon.webp",
+      title: "Kai T",
+      job: "Sales Rep",
+      quote: "Efficiency is key!",
+      bio: "A passionate manager with a knack for problem solving.",
+      age: "34, High School, Denver",
+      frustrations: ["Lack of efficient tools", "Time-consuming processes"],
+      motivations: ["Quality control at best prices", "Optimize inventory"]
+    },
+    {
+      image:
+        "/images/ana.webp",
+      title: "Ana M",
+      job: "Warehouse Worker",
+      quote: "Efficiency is key!",
+      bio: "A passionate manager with a knack for problem solving.",
+      age: "42, BS, Atlanta",
+      frustrations: ["Lack of efficient tools", "Time-consuming processes"],
+      motivations: ["Quality control at best prices", "Optimize inventory"]
+    },
+    {
+      image:
+        "/images/tan.webp",
+      title: "Darien T",
+      job: "Administrator",
+      quote: "Efficiency is key!",
+      bio: "A passionate manager with a knack for problem solving.",
+      age: "56, MBA, Portland",
+      frustrations: ["Lack of efficient tools", "Time-consuming processes"],
+      motivations: ["Quality control at best prices", "Optimize inventory"]
+    },
+  ];
+  const questionCards = [
+    {
+      image: "/images/whoCard.jpg",
+      title: "Who is experiencing the problem?",
+      job: "The average business owners",
+    },
+    {
+      image: "/images/whereCard.jpg",
+      title: "Where does the user experience the problem?",
+      job: "Outside of the office",
+    },
+    {
+      image: "/images/whenCard.jpg",
+      title: "When does the problem occur?",
+      job: "No access to a desktop and on-the-go",
+    },
+    {
+      image: "/images/whyCard.jpg",
+      title: "Why does the problem matter?",
+      job: "Affects productivity and efficiency",
+    },
+  ]
   const images = {
-    imageSM: "/images/bg-proj1-hero_sm.webp",
-    imageMD: "/images/bg-proj1-hero_md.webp",
-    imageLG: "/images/bg-proj1-hero_lg.webp",
+    imageSM: "/images/sm_bg-proj2-hero.webp",
+    imageMD: "/images/md_bg-proj2-hero.webp",
+    imageLG: "/images/lg_bg-proj2-hero.webp",
   };
-  const hero = {
-    product: "fishbowl go",
-    tagline: "simplifying inventory management in the warehouse and in the office.",
-    primary: "prototype",
-    secondary: "website",
-    primaryHref: "https://www.figma.com/proto/4kDPcFnJKZqZydpwmQooGF/Fishbowl-Go?page-id=1215%3A276282&node-id=1306-375587&p=f&viewport=517%2C1353%2C0.02&t=POweTBMudVHg23Kn-1&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=1302%3A361007",
-    secondaryHref: "https://www.fishbowlinventory.com/drive-fishbowl", // https://stapusoa.github.io/inventory/
-  }
-  const overview = {
-    overview: "Fishbowl Go is an app designed for inventory management. It streamlines processes like sales orders, manufacture orders, and other inventory tasks, helping workers complete jobs in the warehouse more efficiently. Many users switch from competitors like NetSuite or QuickBooks after finding those tools either too complex or unable to meet their needs.",
-    duration: "Originally, the project was roadmapped for a month reskinning of the mobile native app. Through research and brainstorming, the project specs changed. We worked on it from January 2021 to September 2021.",
-    product: "/images/overview-proj1.webp",
-    role: ["Project Lead", "User Researcher", "User Experience Designer", "User Interface Designer", "Interaction Designer"],
-    deliverables: ["User surveys & user tests", "Personas", "User journeys & site maps", "High-fidelity prototype", "Usability tests & findings"
-    ],
-    specs: ["8 months", "Figma", "Userbrain", "Miro"]
-  }
   const sprint = {
-    imageSM: "/images/sprint-proj1_sm.webp",
-    imageMD: "/images/sprint-proj1_md.webp",
-    imageLG: "/images/sprint-proj1_lg.webp",
+    imageSM: "/images/fbgo-sprint-sm.jpg",
+    imageMD: "/images/fbgo-sprint-md.jpg",
+    imageLG: "/images/fbgo-sprint-lg.jpg",
     problem: "Fishbowl Inventory clients specifically need a tablet-compatible solution that integrates seamlessly with their existing systems. This would enable them to manage tasks efficiently while on the go. Competitor solutions, while informative, often appeared over-engineered and introduced complexity that alienates non-technical users.",
-    approach: "Our approach prioritized simplicity and alignment with the desktop client’s functionality, ensuring users could manage tasks intuitively while still benefiting from automation features. This focus aimed to empower users without overwhelming them, creating a solution that bridges the gap between desktop and mobile inventory management.",
-    insights: "52.5% of users were satisfied with the app.",
-    opportunity: [
-      "The UI is difficult to navigate.",
-      "Difficult to sort through reports and inventory summaries.",
-      "Hard to fix problems without requesting support.",
-      "Not a lot of automation or bulk action capabilities."
-    ]
+    approach: "Our approach prioritized simplicity and alignment with the desktop client’s functionality, ensuring users could manage tasks intuitively while still benefiting from automation features. This focus aimed to empower users without overwhelming them, creating a solution that bridges the gap between desktop and mobile inventory management."
   };
   const chartData = {
     data: [
@@ -53,6 +98,60 @@ const Project1: React.FC = () => {
       { label: "netsuite", color: "#81B29A" },
     ],
   };
+  const hero = {
+    product: "spectacle",
+    tagline: "optimizing dev handoff and design workflow",
+    primary: "prototype",
+    secondary: "website",
+    primaryHref: "https://stapusoa.github.io/inventory/",
+    secondaryHref: "https://stapusoa.github.io/inventory/",
+  }
+  const overview = {
+    overview: "Haven Massage is a booking platform designed to streamline the scheduling process for massage therapists and clients. It simplifies appointment management, reduces no-shows, and enhances the client experience with an intuitive and user-friendly interface. The platform provides easy access to availability and automated reminders, ensuring a seamless booking process.",
+    duration: "The project began in 2020 during an apprenticeship in massage therapy, where the need for a better booking solution became apparent after using multiple existing apps. Since then, it has remained a side project focused on research and ideation, refining the concept to create a more effective and user-friendly experience.",
+    product: "/images/hm-project-img.png",
+    role: ["Project Lead & Owner", "Marketing Specialist", "User Researcher", "User Experience Designer", "Frontend Engineer", "Design Systems Manager"],
+    deliverables: ["Market research", "Personas", "User journeys & site maps", "Design system", "Branding"
+    ],
+    specs: ["Ongoing", "Figma", "Userbrain", "Google Forms", "React"]
+  }
+  const insights = {
+    description: "During the Fishbowl Go project, we identified a crucial user experience issue: several actions within the app were ambiguous regarding their completion status. Users frequently expressed uncertainty about whether their actions, such as inventory updates or order processing, were successfully executed. To enhance clarity and user confidence, we propose integrating more explicit feedback mechanisms into the app's workflow. This approach includes the implementation of toast messages and clear visual indicators to affirm that an action has been successfully completed. These additions are aimed at reducing user frustration and improving the overall efficiency and user satisfaction with the app.",
+    point1: "implement toast messages",
+    note1: "Introduce toast notifications for immediate feedback after an action is completed, providing users with clear confirmation and peace of mind.",
+    point2: "visual confirmation indicators",
+    note2: "Develop visual cues, such as checkmarks or color changes, to indicate successful completion of tasks like inventory updates or data entry.",
+    point3: "enhanced feedback loop",
+    note3: "Strengthen the app’s feedback loop by providing distinct auditory or haptic feedback for completed actions, enhancing the user experience for those relying on different sensory inputs.",
+  }
+  const blogData = [
+    {
+      image: "/images/project-image-tpg.jpg",
+      link: "/projects/Project3",
+      product: "Travelpass",
+      type: "booking",
+      date: "July 17, 2022 - Current",
+      description:
+        "A platform offering curated travel guides and tools to help users plan trips.",
+    },
+    {
+      image: "/images/spectacle.jpg",
+      link: "/projects/Project4",
+      product: "Spectacle",
+      type: "plugins",
+      date: "July 7, 2024",
+      description:
+        "A Figma plugin that streamlines design documentation, enhancing collaboration.",
+    },
+    {
+      image: "/images/project-image-hm.jpg", // Example placeholder image
+      link: "/projects/Project2",
+      product: "Haven Massage",
+      type: "tooling",
+      date: "August 15, 2024",
+      description: "An exciting new tool for improving team productivity.",
+    },
+  ];
   const painPoints = [
     {
       problem: "Errors",
@@ -76,52 +175,6 @@ const Project1: React.FC = () => {
     }
 
   ]
-  const cards = [
-    {
-      image:
-        "/images/user-cheyenne.webp",
-      title: "Jennifer G",
-      job: "Purchasing Manager",
-      quote: "Efficiency is key!",
-      bio: "A passionate manager with a knack for problem solving.",
-      age: "29, MBA, San Francisco",
-      frustrations: ["Lack of efficient tools", "Time-consuming processes"],
-      motivations: ["Quality control at best prices", "Optimize inventory"]
-    },
-    {
-      image:
-        "/images/user-ammon.webp",
-      title: "Kai T",
-      job: "Sales Rep",
-      quote: "Efficiency is key!",
-      bio: "A passionate manager with a knack for problem solving.",
-      age: "34, High School, Denver",
-      frustrations: ["Lack of efficient tools", "Time-consuming processes"],
-      motivations: ["Quality control at best prices", "Optimize inventory"]
-    },
-    {
-      image:
-        "/images/user-ana.webp",
-      title: "Ana M",
-      job: "Warehouse Worker",
-      quote: "Efficiency is key!",
-      bio: "A passionate manager with a knack for problem solving.",
-      age: "42, BS, Atlanta",
-      frustrations: ["Lack of efficient tools", "Time-consuming processes"],
-      motivations: ["Quality control at best prices", "Optimize inventory"]
-    },
-    {
-      image:
-        "/images/user-tan.webp",
-      title: "Darien T",
-      job: "Administrator",
-      quote: "Efficiency is key!",
-      bio: "A passionate manager with a knack for problem solving.",
-      age: "56, MBA, Portland",
-      frustrations: ["Lack of efficient tools", "Time-consuming processes"],
-      motivations: ["Quality control at best prices", "Optimize inventory"]
-    },
-  ];
   const journey = [
     {
       user: "Jennifer G",
@@ -132,37 +185,6 @@ const Project1: React.FC = () => {
       feedback: ["Simplify login process and training", "Improve dashboard clarity", "Streamline the integration process", "Continuous improvement based on user feedback, focusing on usability enhancements", "Develop a structured system for collecting and prioritizing user suggestions"]
     },
   ]
-  const questionCards = [
-    {
-      image: "/images/whoCard-sierra.webp",
-      title: "Who is experiencing the problem?",
-      job: "The average business owners",
-    },
-    {
-      image: "/images/whereCard-john.webp",
-      title: "Where does the user experience the problem?",
-      job: "Outside of the office",
-    },
-    {
-      image: "/images/whenCard-bret.webp",
-      title: "When does the problem occur?",
-      job: "No access to a desktop and on-the-go",
-    },
-    {
-      image: "/images/whyCard-jonah.webp",
-      title: "Why does the problem matter?",
-      job: "Affects productivity and efficiency",
-    },
-  ]
-  const insights = {
-    description: "During the Fishbowl Go project, we identified a crucial user experience issue: several actions within the app were ambiguous regarding their completion status. Users frequently expressed uncertainty about whether their actions, such as inventory updates or order processing, were successfully executed. To enhance clarity and user confidence, we propose integrating more explicit feedback mechanisms into the app's workflow. This approach includes the implementation of toast messages and clear visual indicators to affirm that an action has been successfully completed. These additions are aimed at reducing user frustration and improving the overall efficiency and user satisfaction with the app.",
-    point1: "implement toast messages",
-    note1: "Introduce toast notifications for immediate feedback after an action is completed, providing users with clear confirmation and peace of mind.",
-    point2: "visual confirmation indicators",
-    note2: "Develop visual cues, such as checkmarks or color changes, to indicate successful completion of tasks like inventory updates or data entry.",
-    point3: "enhanced feedback loop",
-    note3: "Strengthen the app’s feedback loop by providing distinct auditory or haptic feedback for completed actions, enhancing the user experience for those relying on different sensory inputs.",
-  }
   const sitemap = [
     {
       page: "Home",
@@ -207,6 +229,20 @@ const Project1: React.FC = () => {
       ]
     }
   ]
+  const outcomes = [
+    {
+      description: "Usability testing of the Fishbowl Go prototype was a pivotal phase in our project, yielding crucial insights. The testing showed that our redesigned prototype markedly enhanced the existing app, significantly improving user-friendliness and efficiency, thereby addressing key user challenges. However, as we were preparing for the development phase, unforeseen organizational changes occurred. The acquisition of Fishbowl Inventory by another company led to a realignment of priorities and the eventual departure of our development team. This resulted in the project being shelved, despite the prototype&#39s demonstrated potential to meet and exceed user needs.",
+      link: "",
+      linkLabel: "prototype",
+      image: "/images/fishbowl.png",
+      points: [
+        { label: "process and development", details: "Over the course of the project, our team worked diligently to understand and integrate user feedback into a comprehensive redesign of the Fishbowl Go app. My role involved closely collaborating with the development team, the Head of Product, and the UX Director to ensure that the new design addressed user needs effectively." },
+        { label: "impact", details: "Though the redesigned Fishbowl Go app did not see the light of day in its intended form, the project left an indelible mark. It demonstrated the value of listening to user feedback and the need for continuous evolution in software design to meet changing user requirements. The insights gained from this project can serve as a valuable reference for future endeavors in similar domains." },
+        { label: "considerations", details: "Following these developments, I made the decision to leave Fishbowl. Despite the project not reaching its final stages of development and deployment, the journey was filled with learning experiences and professional growth. The process underscored the importance of user-centered design and the impact it can have on product development." },
+      ]
+    }
+  ]
+
   const annotationAnimation = [
     {
       page: "Scanning inventory",
@@ -372,72 +408,31 @@ const Project1: React.FC = () => {
 
   const animationSteps = [
     {
-      image: "/images/wireframe1-proj1.webp",
+      image: "/images/fb-wireframe-1.png",
       step: "1/5",
       description: "Navigation, quick actions and searching through inventory were essential features we needed to refine.",
       zoomPosition: { x: "60%", y: "30%", scale: 1.5 },
     },
     {
-      image: "/images/wireframe1-proj1.webp",
+      image: "/images/fb-wireframe-1.png",
       step: "2/5",
       description: "Review part details (e.g. product image, product number, location, tracking info, status, etc).",
       zoomPosition: { x: "18%", y: "30%", scale: 1.25 },    },
     {
-      image: "/images/wireframe1-proj1.webp",
+      image: "/images/fb-wireframe-1.png",
       step: "3/5",
       description: "Part information is default view only. Tap on Edit to modify any editable details.",
       zoomPosition: { x: "-20%", y: "30%", scale: 1.25 },    },
     {
-      image: "/images/wireframe2-proj1.webp",
+      image: "/images/fb-wireframe-2.png",
       step: "4/5",
       description: "Initial view of module is of a table with all basic information. Back button is needed to view this table again.",
       zoomPosition: { x: "60%", y: "30%", scale: 1.5 },    },
     {
-      image: "/images/wireframe1-proj1.webp",
+      image: "/images/fb-wireframe-1.png",
       step: "5/5",
       description: "Tap on FAB to access actions (e.g. move part, delete, etc)",
       zoomPosition: { x: "15%", y: "-30%", scale: 1.5 },    },
-  ];
-  const outcomes = [
-    {
-      description: "Usability testing of the Fishbowl Go prototype was a pivotal phase in our project, yielding crucial insights. The testing showed that our redesigned prototype markedly enhanced the existing app, significantly improving user-friendliness and efficiency, thereby addressing key user challenges. However, as we were preparing for the development phase, unforeseen organizational changes occurred. The acquisition of Fishbowl Inventory by another company led to a realignment of priorities and the eventual departure of our development team. This resulted in the project being shelved, despite the prototype&#39s demonstrated potential to meet and exceed user needs.",
-      link: "",
-      linkLabel: "prototype",
-      image: "/images/fishbowl.png",
-      points: [
-        { label: "process and development", details: "Over the course of the project, our team worked diligently to understand and integrate user feedback into a comprehensive redesign of the Fishbowl Go app. My role involved closely collaborating with the development team, the Head of Product, and the UX Director to ensure that the new design addressed user needs effectively." },
-        { label: "impact", details: "Though the redesigned Fishbowl Go app did not see the light of day in its intended form, the project left an indelible mark. It demonstrated the value of listening to user feedback and the need for continuous evolution in software design to meet changing user requirements. The insights gained from this project can serve as a valuable reference for future endeavors in similar domains." },
-        { label: "considerations", details: "Following these developments, I made the decision to leave Fishbowl. Despite the project not reaching its final stages of development and deployment, the journey was filled with learning experiences and professional growth. The process underscored the importance of user-centered design and the impact it can have on product development." },
-      ]
-    }
-  ]
-  const blogData = [
-    {
-      image: "/images/product-proj3.webp",
-      link: "/projects/Project3",
-      product: "Travelpass",
-      type: "booking",
-      date: "July 17, 2022 - Current",
-      description:
-        "A platform offering curated travel guides and tools to help users plan trips.",
-    },
-    {
-      image: "/images/product-proj4.webp",
-      link: "/projects/Project4",
-      product: "Spectacle",
-      type: "plugins",
-      date: "July 7, 2024",
-      description:
-        "A Figma plugin that streamlines design documentation, enhancing collaboration.",
-    },
-    {
-      image: "/images/product-proj2.webp", // Example placeholder image
-      link: "/projects/Project2",
-      product: "Haven Massage",
-      type: "tooling",
-      date: "August 15, 2024",
-      description: "An exciting new tool for improving team productivity.",
-    },
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -466,7 +461,7 @@ const Project1: React.FC = () => {
           <div
             className="absolute inset-0 w-full bg-repeat-y bg-fixed"
             style={{
-              backgroundImage: "url('/images/bg-texture-dots.webp')",
+              backgroundImage: "url('/images/background-texture-dots.png')",
               backgroundSize: "auto", // Ensures image doesn't scale but repeats naturally
             }}
           ></div>
@@ -481,8 +476,8 @@ const Project1: React.FC = () => {
             problem={sprint.problem}
             approach={sprint.approach}
             chartData={chartData}
-            insights={sprint.insights}
-            opportunity={sprint.opportunity}
+            insights=""
+            opportunity={[]}
           />
           <div className="bg-transparent mx-auto max-w-300 relative z-32 h-300 md:h-80 pt-12 pb-16 px-6 sm:px-6 md:px-14 lg:px-32 grid grid-cols-1 md:grid-cols-4 grid-flow-row items-start gap-8">
             {painPoints.map((point, index) => (
@@ -554,12 +549,12 @@ const Project1: React.FC = () => {
           <Goal
             statement="To successfully launch Fishbowl Go, a user-friendly iPad/tablet app, designed to bridge the gap in mobile inventory management for small to medium-sized businesses. Our aim was to simplify administrative tasks, making inventory management as efficient on tablets as it is on desktops. The goal was to enhance operational efficiency by at least 20% and improve user satisfaction, targeting a 15% increase in Fishbowl Inventory's client base within the first six months after launch."
             image={[
-              "/images/sticky1-proj1.webp",
-              "/images/sticky2-proj1.webp",
-              "/images/sticky3-proj1.webp",
-              "/images/sticky4-proj1.webp",
-              "/images/sticky5-proj1.webp",
-              "/images/sticky6-proj1.webp",
+              "/images/fbgo-sticky1.png",
+              "/images/fbgo-sticky2.png",
+              "/images/fbgo-sticky3.png",
+              "/images/fbgo-sticky4.png",
+              "/images/fbgo-sticky5.png",
+              "/images/fbgo-sticky6.png",
             ]}
             columns={3}
           />
@@ -578,7 +573,7 @@ const Project1: React.FC = () => {
           <div className="bg-transparent mx-auto max-w-300 relative z-32 pt-12 pb-16 px-6 sm:px-6 md:px-14 lg:px-32 grid grid-cols-8 grid-flow-row items-start">
             <img
               alt=""
-              src="/images/sketches-proj1.webp"
+              src="/images/fbgo-sketches-long.jpg"
               className="col-start-1 col-span-8 w-full"
             />
           </div>
@@ -608,40 +603,15 @@ const Project1: React.FC = () => {
             <div className='m-0 p-0 font-gilroy text-grey-600 col-start-1 col-span-8 md:col-start-5 md:col-span-4 text-left font-300 text-6 leading-relaxed'>
               After several iterations of the scope of the project, layout, and features it was decided that we would focus on creating an iPad/tablet app geared toward administrative tasks - separate from the mobile app that is geared toward warehouse tasks.              </div>
           </div>
-          <div className="bg-transparent mx-auto max-w-300 relative z-32 pt-12 pb-16 px-6 sm:px-6 md:px-14 lg:px-32 grid grid-cols-6 gap-8 grid-flow-row items-start">
+          <div className="bg-transparent mx-auto max-w-300 relative z-32 pt-12 pb-16 px-6 sm:px-6 md:px-14 lg:px-32 grid grid-cols-8 grid-flow-row items-start">
             <img
               alt=""
-              src="/images/mockup1-proj1.webp"
-              className="col-start-1 col-span-6 md:col-span-3 lg:col-span-2 w-full shadow-sm border-solid border-4 border-grey-200 rounded-4"
-            />
-            <img
-              alt=""
-              src="/images/mockup2-proj1.webp"
-              className="col-start-1 col-span-6 md:col-span-3 lg:col-span-2 w-full shadow-sm border-solid border-4 border-grey-200 rounded-4"
-            />
-            <img
-              alt=""
-              src="/images/mockup3-proj1.webp"
-              className="col-start-1 col-span-6 md:col-span-3 lg:col-span-2 w-full shadow-sm border-solid border-4 border-grey-200 rounded-4"
-            />
-            <img
-              alt=""
-              src="/images/mockup4-proj1.webp"
-              className="col-start-1 col-span-6 md:col-span-3 lg:col-span-2 w-full shadow-sm border-solid border-4 border-grey-200 rounded-4"
-            />
-            <img
-              alt=""
-              src="/images/mockup5-proj1.webp"
-              className="col-start-1 col-span-6 md:col-span-3 lg:col-span-2 w-full shadow-sm border-solid border-4 border-grey-200 rounded-4"
-            />
-            <img
-              alt=""
-              src="/images/mockup6-proj1.webp"
-              className="col-start-1 col-span-6 md:col-span-3 lg:col-span-2 w-full shadow-sm border-solid border-4 border-grey-200 rounded-4"
+              src="/images/mockup-fb.webp"
+              className="col-start-1 col-span-8 w-full"
             />
           </div>
           <Outcomes sections={outcomes} />
-          <div className="bg-transparent mx-auto max-w-300 relative z-32 pt-16 pb-12 pl-6 sm:pl-6 md:px-14 lg:px-32 grid grid-cols-6 grid-flow-row items-start gap-8">
+          <div className="bg-transparent mx-auto max-w-300 relative z-32 pt-16 pb-12 pl-6 sm:pl-6 md:px-14 lg:px-32 grid grid-cols-8 grid-flow-row items-start gap-8">
             <div className="py-2 text-left col-start-1 col-span-8 md:col-span-4 items-start gap-2">
               <h5 className="h3 pb-8 font-600 tracking-wide">more work</h5>
             </div>
@@ -657,4 +627,4 @@ const Project1: React.FC = () => {
   )
 }
 
-export default Project1
+export default Project4

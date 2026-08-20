@@ -1,5 +1,5 @@
 
-import { Button } from '../index';
+import { Button } from '../../index';
 
 type User = {
   name: string;

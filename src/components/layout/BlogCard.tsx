@@ -1,5 +1,5 @@
 import React from "react";
-import { ComingSoon } from "../../components/ComingSoon/ComingSoon";
+import { ComingSoon } from "../ui/ComingSoon/ComingSoon";
 
 interface BlogCardProps {
   image?: string;

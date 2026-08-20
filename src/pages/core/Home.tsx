@@ -1,5 +1,5 @@
 import React from "react";
-import { BackgroundImages, CaseStudies, HomeHeroContent, Roles } from './sections/index'
+import { BackgroundImages, CaseStudies, HomeHeroContent, Roles } from '../../components/layout/index'
 
 const socialMediaLinks = [
   {

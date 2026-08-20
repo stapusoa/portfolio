@@ -1,5 +1,5 @@
 import React from "react";
-import { WhenIllustration, WhereIllustration, WhoIllustration, WhyIllustration } from "../../components/illustrations/index";
+import { WhenIllustration, WhereIllustration, WhoIllustration, WhyIllustration } from "../ui/illustrations/index";
 
 const Illustrations = {
   who: <WhoIllustration />, // These are JSX elements

@@ -1,5 +1,5 @@
 
-import {Icon} from '../Icon';
+import {Icon} from '../ui/Icon';
 
 const SocialLinks = () => {
   const links = [

@@ -1,8 +1,8 @@
 import { Link } from "react-router-dom";
-import { Icon } from "../components/Icon/index";
+import { Icon } from "../../components/ui/Icon/index";
 
-import ContactForm from "../components/Form/ContactForm";
-import SocialLinks from "../components/common/SocialLinks";
+import ContactForm from "../../components/ui/Form/ContactForm";
+import SocialLinks from "../../components/common/SocialLinks";
 
 const Contact = () => {
   return (
