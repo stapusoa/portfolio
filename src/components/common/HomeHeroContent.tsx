@@ -3,16 +3,8 @@ import { useRef } from 'react'
 import { motion, useScroll, useTransform } from 'framer-motion'
 import { ArrowRight } from 'lucide-react'
 
-const roles = [
-  'designer',
-  'engineer',
-  'strategist',
-] as const;
-
-const currentRole = 0;
-
 function HomeHeroContent() {
-    const ref = useRef<HTMLElement>(null)
+  const ref = useRef<HTMLElement>(null)
   const { scrollYProgress } = useScroll({
     target: ref,
     offset: ['start start', 'end start'],
@@ -29,7 +21,6 @@ function HomeHeroContent() {
       ref={ref}
       className="bg-transparent relative overflow-hidden pt-28 pb-20 md:pt-36 md:pb-28"
     >
-      {/* floating accent shape, parallaxed */}
       <motion.div
         aria-hidden
         style={{ y: blobY }}
@@ -37,7 +28,7 @@ function HomeHeroContent() {
       />
 
       <div className="relative mx-auto grid max-w-6xl gap-10 px-5 md:grid-cols-2 md:px-8 justify-start align-start shrink-0">
-        <motion.div style={{ y: copyY, opacity: fade}} className='flex flex-col justify-start shrink-0'>
+        <motion.div style={{ y: copyY, opacity: fade }} className='flex flex-col justify-start shrink-0'>
           <motion.span
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
