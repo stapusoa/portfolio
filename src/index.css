@@ -344,6 +344,12 @@ body {
   width: 100%;
 }
 
+html,
+body,
+#root {
+  min-height: 100%;
+}
+
 @theme inline {
   --font-heading: var(--font-sans);
   --font-sans: "Gilroy", sans-serif;

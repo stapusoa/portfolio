@@ -5,13 +5,13 @@ import { Footer } from './Footer';
 
 export function AppLayout() {
   return (
-    <>
+    <div className="flex min-h-screen flex-col">
       <ScrollManager />
       <Header />
-      <main>
+      <main className="relative flex-1 pt-16">
         <Outlet />
       </main>
       <Footer />
-    </>
+    </div>
   );
 }

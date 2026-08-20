@@ -65,7 +65,7 @@ const currentRole = 0;
 
 const Home: React.FC = () => {
   return (
-      <div className="relative w-full h-screen">
+      <div className="relative w-full min-h-screen">
         <PageBackground src={images.mobileSrc}
           tabletSrc={images.tabletSrc}
           desktopSrc={images.desktopSrc} />
@@ -78,7 +78,7 @@ const Home: React.FC = () => {
           />
           <Roles />
           <CaseStudies />
-          <div className='bg-transparent relative z-35 py-16 mx-auto max-w-300 py-16 px-6 sm:px-6 md:px-14 lg:px-32flex flex-row items-center justify-center'>
+          <div className='bg-transparent relative z-35 py-16 mx-auto max-w-300 px-6 sm:px-6 md:px-14 lg:px-32 flex flex-row items-center justify-center'>
             <form>
               <div className='flex flex-col gap-2'>
                 <div className='py-2'>

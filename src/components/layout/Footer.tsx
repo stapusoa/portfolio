@@ -8,7 +8,7 @@ export function Footer() {
   const [sent, setSent] = useState(false)
 
   return (
-    <footer id="contact" className="border-t border-border bg-background">
+    <footer id="contact" className="relative z-100 border-t border-border bg-background">
       <div className="mx-auto max-w-6xl px-5 py-20 md:px-8 md:py-28">
         <div className="grid gap-12 md:grid-cols-2 md:gap-16">
           <Reveal>
