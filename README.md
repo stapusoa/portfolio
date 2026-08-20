@@ -48,19 +48,80 @@ The dev server runs at http://localhost:5173.
 
 ```
 portfolio/
-├── public/            # Static assets (fonts, images, resume.pdf)
+├── public/                             # Static assets
+│   ├── fonts/
+│   ├── images/
+│   ├── resume.pdf
+│   └── icon.svg
+│
 ├── src/
-│   ├── components/    # UI components (+ Storybook stories) and shadcn/ui in components/ui
-│   ├── pages/         # Route pages (Home, About, Contact, projects/)
-│   │   └── sections/  # Page sections (Hero, Roles, CaseStudies, …)
-│   ├── helpers/       # Small helpers (ScrollToTop, etc.)
-│   ├── lib/           # cn() utility
-│   ├── index.css      # Tailwind entry: @theme tokens + @utility shortcuts + fonts
-│   └── main.tsx       # App entry
-├── .storybook/        # Storybook config
-├── components.json    # shadcn/ui config
-└── vercel.json        # SPA rewrites for client-side routing
+│   ├── components/                     # UI components + stories
+│   │   ├── ui/                         # Primitives / shadcn components
+│   │   ├── common/                     # Reusable composed components
+│   │   └── layout/                     # Structural / page composition components
+│   │
+│   ├── pages/                          # Route pages
+│   │   ├── core/                       # Home, About, Contact, etc.
+│   │   ├── case-studies/
+│   │   ├── services/
+│   │   └── resources/
+│   │
+│   ├── lib/
+│   │   ├── accessibility/
+│   │   ├── hooks/
+│   │   ├── utils/
+│   │   ├── types/                      # project.ts, case-studies.ts, resource.ts
+│   │   ├── constants/                  # routes.ts, breakpoints.ts, accessibility.ts 
+│   │   └── config/                     # navigation.ts, site.ts, cms.ts, seo.ts
+│   │
+│   ├── styles/
+│   │   ├── globals.css
+│   │   ├── utilities.css
+│   │   └── ...
+│   │
+│   ├── App.tsx
+│   ├── index.css
+│   └── index.tsx
+│
+├── .storybook/
+├── .env
+├── .env.example
+├── .gitignore
+├── components.json
+├── eslint.config.js
+├── index.html
+├── package.json
+├── pnpm-lock.yaml
+├── README.md
+├── tsconfig.app.json
+├── tsconfig.json
+├── tsconfig.node.json
+├── vercel.json
+└── vite.config.ts
 ```
+
+# lib/ structure
+
+lib/
+├── config/                               # how is this application set up?
+│   ├── navigation.ts
+│   ├── site.ts
+│   ├── cms.ts
+│   └── seo.ts
+│
+├── types/                                # what shape does our data/code have?
+│   ├── case-study.ts
+│   ├── project.ts
+│   ├── resource.ts
+│   └── service.ts
+│
+├── constants/                            # what fixed values does the code rely on?
+│   ├── breakpoints.ts
+│   ├── accessibility.ts
+│   └── routes.ts
+│
+└── hooks/
+
 
 ## Styling
 
