@@ -1,0 +1,21 @@
+import { useEffect } from 'react'
+import { useLocation } from 'react-router-dom'
+
+// react-router does not restore scroll on navigation. Scroll to a hash target
+export default function ScrollManager() {
+  const { pathname, hash } = useLocation()
+
+  useEffect(() => {
+    console.log("ScrollToTop triggered for:", pathname)
+    if (hash) {
+      const el = document.getElementById(hash.slice(1))
+      if (el) {
+        el.scrollIntoView()
+        return
+      }
+    }
+    window.scrollTo(0, 0)
+  }, [pathname, hash])
+
+  return null
+}
