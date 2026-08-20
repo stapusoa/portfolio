@@ -55,8 +55,6 @@ const socialMediaLinks = [
   },
 ];
 
-const roles = ['designer', 'engineer', 'architect'];
-const currentRole = 0;
 
 const Home: React.FC = () => {
   return (
