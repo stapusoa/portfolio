@@ -55,21 +55,14 @@ const socialMediaLinks = [
   },
 ];
 
-const images = {
-  mobileSrc: '/images/bg-home-hero_sm.webp',
-  tabletSrc: '/images/bg-home-hero_md.webp',
-  desktopSrc: '/images/bg-home-hero_lg.webp',
-};
 const roles = ['designer', 'engineer', 'architect'];
 const currentRole = 0;
 
 const Home: React.FC = () => {
   return (
       <div className="relative w-full min-h-screen">
-        <PageBackground src={images.mobileSrc}
-          tabletSrc={images.tabletSrc}
-          desktopSrc={images.desktopSrc} />
-        <HomeHeroContent roles={roles} currentRole={currentRole} />
+        <PageBackground src="/images/bg-home-texture.webp" />
+        <HomeHeroContent />
         <div className="relative w-full z-20">
           <img
             src='/images/bg-texture-dots.webp'
