@@ -4,16 +4,8 @@ import type { NavigationItem } from '@/components/ui/Navigation/types';
 
 export const navigation: NavigationItem[] = [
   {
-    type: 'link',
-    name: 'About',
-    href: '/about',
-    hash: false,
-    download: false,
-  },
-
-  {
     type: 'menu',
-    name: 'Work',
+    name: 'work',
     items: [
       {
         type: 'link',
@@ -29,9 +21,33 @@ export const navigation: NavigationItem[] = [
   },
 
   {
+    type: 'menu',
+    name: 'resources',
+    items: [
+      {
+        type: 'link',
+        name: 'UX Engineering',
+        href: '/work/ux-engineering',
+      },
+      {
+        type: 'link',
+        name: 'Design Systems',
+        href: '/work/design-systems',
+      },
+    ],
+  },
+    {
     type: 'link',
-    name: 'Resume',
-    href: '/resume.pdf',
-    download: true,
+    name: 'learning',
+    href: '/about',
+    hash: false,
+    download: false,
+  },
+    {
+    type: 'link',
+    name: 'contact',
+    href: '/about',
+    hash: false,
+    download: false,
   },
 ];

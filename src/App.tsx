@@ -1,4 +1,3 @@
-import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import ScrollManager from '../src/lib/hooks/useScrollToTop';
 import { AppLayout } from './components/layout/AppLayout';
