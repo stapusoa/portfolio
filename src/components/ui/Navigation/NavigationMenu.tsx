@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { ChevronDown, Menu, X } from 'lucide-react';
+import { ChevronDown, Menu, Search, User, X } from 'lucide-react';
 import { NavLink } from 'react-router-dom';
 
 import { navigation } from '@/lib/constants/routes';
@@ -239,6 +239,60 @@ export function Navigation() {
                 )}
               </li>
             ))}
+          </ul>
+
+          {/*
+            Actions that live in the header's action cluster on desktop
+            (hidden below lg). They're surfaced here so they stay reachable
+            on mobile.
+          */}
+          <ul className="space-y-2 border-t border-border py-8">
+            <li>
+              <a
+                href="/resume.pdf"
+                download
+                onClick={closeMobileMenu}
+                className={mobileNavigationLinkStyles()}
+              >
+                download resume
+              </a>
+            </li>
+
+            <li>
+              <button
+                type="button"
+                onClick={closeMobileMenu}
+                className={mobileNavigationLinkStyles()}
+              >
+                <span className="flex items-center gap-2">
+                  <Search
+                    aria-hidden="true"
+                    className="size-5"
+                  />
+                  Search
+                </span>
+              </button>
+            </li>
+
+            <li>
+              <NavLink
+                to="/about"
+                onClick={closeMobileMenu}
+                className={({ isActive }) =>
+                  mobileNavigationLinkStyles({
+                    active: isActive,
+                  })
+                }
+              >
+                <span className="flex items-center gap-2">
+                  <User
+                    aria-hidden="true"
+                    className="size-5"
+                  />
+                  About
+                </span>
+              </NavLink>
+            </li>
           </ul>
         </nav>
       )}

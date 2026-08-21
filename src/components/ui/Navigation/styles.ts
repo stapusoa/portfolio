@@ -2,9 +2,16 @@ import { cva } from 'class-variance-authority';
 
 export const navigationLinkStyles = cva(
   [
-    'inline-flex items-center',
+    'relative inline-flex items-center',
     'font-medium',
     'transition-colors',
+    // Animated underline: a full-width bar under the link that scales in from
+    // the left. transform-based so it animates on the GPU, and it collapses
+    // to no transition when the user prefers reduced motion.
+    'after:absolute after:inset-x-0 after:-bottom-1 after:h-[2px]',
+    'after:origin-left after:scale-x-0 after:bg-green',
+    'after:transition-transform after:duration-300 after:ease-out',
+    'motion-reduce:after:transition-none',
     'focus-visible:outline-none',
     'focus-visible:ring-2',
     'focus-visible:ring-offset-2',
@@ -12,8 +19,8 @@ export const navigationLinkStyles = cva(
   {
     variants: {
       active: {
-        true: 'text-green',
-        false: 'text-gray-500 hover:text-green',
+        true: 'text-green after:scale-x-100',
+        false: 'text-gray-500 hover:text-green hover:after:scale-x-100',
       },
     },
     defaultVariants: {
@@ -48,11 +55,17 @@ export const mobileNavigationLinkStyles = cva(
 );
 
 export const menuTriggerStyles = cva([
-  'inline-flex items-center gap-1',
+  'relative inline-flex items-center gap-1',
   'font-medium',
   'text-gray-500',
   'transition-colors',
   'hover:text-green',
+  // Match the navlink animated underline so the whole top row behaves alike.
+  'after:absolute after:inset-x-0 after:-bottom-1 after:h-[2px]',
+  'after:origin-left after:scale-x-0 after:bg-green',
+  'after:transition-transform after:duration-300 after:ease-out',
+  'hover:after:scale-x-100',
+  'motion-reduce:after:transition-none',
   'focus-visible:outline-none',
   'focus-visible:ring-2',
   'focus-visible:ring-offset-2',
