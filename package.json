@@ -11,7 +11,10 @@
     "lint": "eslint .",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
-    "chromatic": "chromatic --exit-zero-on-changes"
+    "chromatic": "chromatic --exit-zero-on-changes",
+    "snapshots": "playwright test capture.spec.ts",
+    "test:e2e": "playwright test snapshots.spec.ts",
+    "test:e2e:update": "playwright test snapshots.spec.ts --update-snapshots"
   },
   "dependencies": {
     "@base-ui/react": "^1.7.0",
@@ -33,6 +36,7 @@
   "devDependencies": {
     "@chromatic-com/storybook": "^5.3.0",
     "@eslint/js": "^10.0.1",
+    "@playwright/test": "^1.62.1",
     "@storybook/addon-a11y": "^10.5.9",
     "@storybook/react": "^10.5.9",
     "@storybook/react-vite": "^10.5.9",

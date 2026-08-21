@@ -21,6 +21,14 @@ storybook-static
 .env.*
 !.env.example
 
+# Playwright: generated review PNGs + run artifacts (baselines under
+# e2e/*-snapshots/ ARE committed and must stay tracked).
+screenshots
+test-results
+playwright-report
+/blob-report
+/.playwright
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
