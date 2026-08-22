@@ -9,13 +9,23 @@ export const navigation: NavigationItem[] = [
     items: [
       {
         type: 'link',
-        name: 'UX Engineering',
-        href: '/work/ux-engineering',
+        name: 'Fishbowl Go',
+        href: '/work/fishbowlgo',
       },
       {
         type: 'link',
-        name: 'Design Systems',
-        href: '/work/design-systems',
+        name: 'Travelpass',
+        href: '/work/travelpass',
+      },
+      {
+        type: 'link',
+        name: 'AlignedWest',
+        href: '/work/alignwest',
+      },
+      {
+        type: 'link',
+        name: 'Domo',
+        href: '/work/domo',
       },
     ],
   },
@@ -27,12 +37,12 @@ export const navigation: NavigationItem[] = [
       {
         type: 'link',
         name: 'UX Engineering',
-        href: '/work/ux-engineering',
+        href: '/work/domo',
       },
       {
         type: 'link',
         name: 'Design Systems',
-        href: '/work/design-systems',
+        href: '/work/alignwest',
       },
     ],
   },

@@ -7,6 +7,7 @@ import Contact from './pages/core/Contact';
 import Project1 from './pages/case-studies/Project1';
 import Project2 from './pages/case-studies/Project2';
 import Project3 from './pages/case-studies/Project3';
+import Project4 from './pages/case-studies/Project4';
 
 function App() {
   return (
@@ -17,9 +18,10 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />
-            <Route path="/projects/project1" element={<Project1 />} />
-            <Route path="/projects/project2" element={<Project2 />} />
-            <Route path="/projects/project3" element={<Project3 />} />
+            <Route path="/work/fishbowlgo" element={<Project1 />} />
+            <Route path="/work/travelpass" element={<Project2 />} />
+            <Route path="/work/alignwest" element={<Project3 />} />
+            <Route path="/work/domo" element={<Project4 />} />
           </Route>
         </Routes>
     </Router>
