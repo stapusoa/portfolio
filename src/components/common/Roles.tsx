@@ -130,7 +130,7 @@ const Roles: React.FC = () => {
                   </h6>
                 </div>
                 <div className="py-2">
-                  <h6 className="font-serif font-semibold text-subtitle text-default leading-cozy m-0">
+                  <h6 className="font-serif font-regular text-subtitle text-default leading-cozy m-0">
                     {role.description}
                   </h6>
                 </div>

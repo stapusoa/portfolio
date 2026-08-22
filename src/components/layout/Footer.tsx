@@ -11,11 +11,11 @@ export function Footer() {
     <footer id="contact" className="relative z-100 border-t border-border bg-background">
       <div className="mx-auto max-w-6xl px-5 py-20 md:px-8 md:py-28">
         <div className="grid gap-12 md:grid-cols-2 md:gap-16">
-          <Reveal>
-            <p className="text-sm font-medium uppercase tracking-widest text-muted-foreground">
+          <Reveal className="flex flex-col justify-start">
+            <p className="text-sm font-sans font-medium text-left lowercase tracking-widest text-muted-foreground">
               let&apos;s work together
             </p>
-            <h2 className="mt-3 max-w-md font-serif text-3xl font-semibold leading-tight text-balance md:text-4xl">
+            <h2 className="mt-3 max-w-md font-serif text-3xl text-left text-default font-semibold leading-tight text-balance md:text-4xl">
               Reach out if you&apos;d like to collaborate on your next big idea.
             </h2>
             <div className="mt-8 flex items-center gap-4">
