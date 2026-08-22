@@ -1,5 +1,5 @@
 import React from "react";
-import { PageBackground, CaseStudies, HomeHeroContent, Roles } from '../../components/index'
+import { PageBackground, CaseStudies, HomeHero, Roles } from '../../components/index'
 
 const socialMediaLinks = [
   {
@@ -60,7 +60,7 @@ const Home: React.FC = () => {
   return (
       <div className="relative w-full min-h-screen">
         <PageBackground src="/images/bg-home-texture.webp" />
-        <HomeHeroContent />
+        <HomeHero />
         <div className="relative w-full z-20">
           <img
             src='/images/bg-texture-dots.webp'

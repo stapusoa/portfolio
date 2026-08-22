@@ -2,8 +2,9 @@
 import { useRef } from 'react'
 import { motion, useScroll, useTransform } from 'framer-motion'
 import { ArrowRight } from 'lucide-react'
+import { Badge } from '@/components/ui/badge.tsx'
 
-function HomeHeroContent() {
+function HomeHero() {
   const ref = useRef<HTMLElement>(null)
   const { scrollYProgress } = useScroll({
     target: ref,
@@ -29,20 +30,24 @@ function HomeHeroContent() {
 
       <div className="relative mx-auto grid max-w-6xl gap-10 px-5 md:grid-cols-2 md:px-8 justify-start align-start shrink-0">
         <motion.div style={{ y: copyY, opacity: fade }} className='flex flex-col justify-start shrink-0'>
-          <motion.span
-            initial={{ opacity: 0, y: 16 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            className="inline-flex self-center md:self-start rounded-full bg-foreground px-3 py-1 text-xs font-semibold uppercase tracking-widest text-background justify-center"
+          <Badge
+            variant="secondary"
+              render={
+                <motion.span
+                  initial={{ opacity: 0, y: 16 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5 }}
+                />
+              }
           >
             UX Engineer
-          </motion.span>
+          </Badge>
 
           <motion.h1
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.08 }}
-            className="mt-5 font-serif text-4xl font-semibold leading-[1.05] tracking-tight text-balance sm:text-5xl md:text-6xl text-center md:text-left"
+            className="mt-5 font-serif text-4xl font-semibold leading-[1.05] tracking-tight text-default text-balance sm:text-5xl md:text-6xl text-center md:text-left"
           >
             designing for users,{' '}
             <span className="text-primary">not just pixels.</span>
@@ -52,7 +57,7 @@ function HomeHeroContent() {
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.16 }}
-            className="mt-6 max-w-md text-base leading-relaxed text-muted-foreground text-center md:text-left"
+            className="mt-6 max-w-md text-base leading-relaxed text-default text-center md:text-left"
           >
             6+ years designing and developing user-centered solutions for inventory
             management, travel, real estate, healthcare, and enterprise software. Based in
@@ -67,14 +72,14 @@ function HomeHeroContent() {
           >
             <a
               href="#work"
-              className="group inline-flex items-center gap-2 rounded-lg bg-foreground px-6 py-3.5 text-sm font-semibold text-background transition-transform hover:-translate-y-0.5"
+              className="group inline-flex items-center gap-2 rounded-lg bg-default px-6 py-3.5 text-sm font-semibold text-background transition-transform hover:-translate-y-0.5"
             >
               View my work
               <ArrowRight className="size-4 transition-transform group-hover:translate-x-1" />
             </a>
             <a
               href="#contact"
-              className="inline-flex items-center gap-2 rounded-lg bg-primary px-6 py-3.5 text-sm font-semibold text-primary-foreground transition-transform hover:-translate-y-0.5"
+              className="inline-flex items-center gap-2 rounded-lg bg-primary px-6 py-3.5 text-sm font-semibold text-contrast transition-transform hover:-translate-y-0.5"
             >
               Learn more
             </a>
@@ -110,4 +115,4 @@ function HomeHeroContent() {
   );
 }
 
-export default HomeHeroContent;
+export default HomeHero;

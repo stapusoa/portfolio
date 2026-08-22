@@ -1,0 +1,86 @@
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Manrope:wght@200..800&display=swap');
+
+@theme {
+    --font-serif: "Fraunces", serif;
+    --font-sans: "Manrope", sans-serif;
+    --font-mono: "Roboto Mono", mono;
+    --font-primary: "Fraunces", serif;
+    --font-secondary: "Manrope", sans-serif;
+    --font-code: "Roboto Mono", mono;
+    --font-alt: "Inter", sans-serif;
+    --font-fraunces: "Fraunces", serif;
+    --font-manrope: "Manrope", sans-serif;
+    --font-inter: "Inter", sans-serif;
+
+    --leading-cozy: 1.08;
+    --leading-tighter: 1.15;
+
+    --tracking-ultra-wide: 0.12em;
+    --tracking-mega-wide: 0.335em;
+}
+
+@theme {
+    /* Fluid steps — clamp(min, preferred, max), no breakpoints needed. */
+    --text-hero: clamp(2.25rem, 1.4rem + 4.25vw, 4rem);
+    /* 36 - 64 px */
+    --text-hero--font-family: var(--font-serif);
+    --text-hero--font-weight: var(--font-bold);
+    --text-hero--line-height: var(--leading-cozy);
+    /* 1.08 */
+
+    --text-title: clamp(2rem, 1.4rem + 3vw, 3.25rem);
+    /* 32 - 52 px */
+    --text-title--font-family: var(--font-serif);
+    --text-title--font-weight: var(--font-bold);
+    --text-title--line-height: var(--leading-tighter);
+    /* 1.15 */
+
+    --text-subtitle: clamp(1.5rem, 1.05rem + 2.25vw, 3rem);
+    /* 24 - 48 px */
+    --text-subtitle--font-family: var(--font-sans);
+    --text-subtitle--font-weight: var(--font-regular);
+    --text-subtitle--line-height: 1.2;
+
+    --text-header: clamp(1.5rem, 1.2rem + 1.5vw, 3rem);
+    /* 24 - 48 px */
+    --text-header--font-family: var(--font-serif);
+    --text-header--font-weight: var(--font-bold);
+    --text-header--line-height: var(--leading-tighter);
+
+    --text-subheader: clamp(1.25rem, 1.1rem + 0.75vw, 2rem);
+    /* 20 - 32 px */
+    --text-subheader--font-family: var(--font-sans);
+    --text-subheader--font-weight: var(--font-regular);
+    --text-subheader--line-height: 1.2;
+
+    --text-label: clamp(1.125rem, 1rem + 0.625vw, 1.75rem);
+    /* 18 - 28 px */
+    --text-label--font-family: var(--font-sans);
+    --text-label--font-weight: var(--font-semibold);
+    --text-label--line-height: var(--leading-cozy);
+
+    --text-body1: 1rem;
+    --text-body1--font-family: var(--font-sans);
+    --text-body1--font-weight: var(--font-regular);
+    --text-body1--line-height: 1.2;
+
+    --text-body2: 0.875rem;
+    --text-body2--font-family: var(--font-sans);
+    --text-body2--font-weight: var(--font-regular);
+    --text-body2--line-height: 1.2;
+
+    --text-code1: 1rem;
+    --text-code1--font-family: var(--font-mono);
+    --text-code1--font-weight: var(--font-regular);
+    --text-code1--line-height: 1;
+
+    --text-code2: 0.875rem;
+    --text-code2--font-family: var(--font-mono);
+    --text-code2--font-weight: var(--font-regular);
+    --text-code2--line-height: 1;
+
+    --text-caption: 0.75rem;
+    --text-caption--font-family: var(--font-sans);
+    --text-caption--font-weight: var(--font-regular);
+    --text-caption--line-height: 1;
+}

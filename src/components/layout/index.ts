@@ -1,7 +1,7 @@
-export { default as Hero } from './Hero';
+export { default as Hero } from '../common/Hero';
 export { default as Goal } from '../common/Goal';
 export { default as CaseStudies } from '../common/CaseStudies';
-export { default as HomeHeroContent } from '../common/HomeHeroContent';
+export { default as HomeHeroContent } from './HomeHero';
 export { default as Roles } from '../common/Roles';
 export { default as Overview } from '../common/Overview';
 export { default as BlogCard } from '../common/BlogCard';

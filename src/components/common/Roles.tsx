@@ -125,12 +125,12 @@ const Roles: React.FC = () => {
               </div>
               <div className="gap-2 text-center">
                 <div className="py-2">
-                  <h6 className="font-gilroy font-300 tracking-wide text-grey-800 text-7 m-0">
+                  <h6 className="font-sans font-regular text-label text-text tracking-wide m-0">
                     {role.title}
                   </h6>
                 </div>
                 <div className="py-2">
-                  <h6 className="font-gilroy font-500 text-10 text-grey-900 leading-cozy m-0">
+                  <h6 className="font-serif font-semibold text-subtitle text-default leading-cozy m-0">
                     {role.description}
                   </h6>
                 </div>
