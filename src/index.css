@@ -25,6 +25,12 @@
   --tracking-widest: calc(var(--tracking-normal) + 0.1em);
 }
 
+@theme {
+  --spacing-8xl: 90rem; /* 1440px */
+  --spacing-9xl: 100rem; /* 1600px */
+  --spacing-10xl: 112.5rem; /* 1800px */
+}
+
 @layer base {
   * {
     @apply border-border outline-ring/50;

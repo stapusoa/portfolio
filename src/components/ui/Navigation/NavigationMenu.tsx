@@ -130,7 +130,7 @@ export function Navigation() {
         aria-expanded={isMobileOpen}
         aria-controls="mobile-navigation"
         onClick={() => setIsMobileOpen((open) => !open)}
-        className="inline-flex items-center justify-center rounded-md p-2 lg:hidden"
+        className="inline-flex items-center text-primary justify-center rounded-md p-2 lg:hidden"
       >
         {isMobileOpen ? (
           <X

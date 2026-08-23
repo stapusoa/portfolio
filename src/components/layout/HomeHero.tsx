@@ -20,7 +20,7 @@ function HomeHero() {
   return (
     <section
       ref={ref}
-      className="bg-transparent relative overflow-hidden pt-28 pb-20 md:pt-36 md:pb-28"
+      className="bg-transparent relative overflow-hidden pt-44 pb-20 md:pt-20 lg:pt-32 md:pb-28"
     >
       <motion.div
         aria-hidden
@@ -28,8 +28,8 @@ function HomeHero() {
         className="pointer-events-none absolute -right-24 top-10 -z-0 size-72 rounded-full bg-primary/10 blur-3xl"
       />
 
-      <div className="relative mx-auto grid max-w-6xl gap-10 px-5 md:grid-cols-2 md:px-8 justify-start align-start shrink-0">
-        <motion.div style={{ y: copyY, opacity: fade }} className='flex flex-col justify-start shrink-0'>
+      <div className="relative mx-auto grid w-full lg:max-w-8xl px-6 md:grid-cols-2 md:px-14 lg:px-30">
+        <motion.div style={{ y: copyY, opacity: fade }} className='relative z-40 flex flex-col w-full lg:w-fit pb-4 md:pb-0'>
           <Badge
             variant="secondary"
               render={
@@ -47,9 +47,9 @@ function HomeHero() {
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.08 }}
-            className="mt-5 font-serif text-4xl font-semibold leading-[1.05] tracking-tight text-default text-balance sm:text-5xl md:text-6xl text-center md:text-left"
+            className="mt-5 font-serif text-4xl font-semibold leading-[1.05] tracking-tight text-accent text-balance text-shadow-md sm:text-5xl md:text-6xl text-left"
           >
-            designing for users,{' '}
+            designing for users,{' '}<br />
             <span className="text-primary">not just pixels.</span>
           </motion.h1>
 
@@ -57,7 +57,7 @@ function HomeHero() {
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.16 }}
-            className="mt-6 max-w-md text-base leading-relaxed text-default text-center md:text-left"
+            className="mt-6 max-w-md text-base leading-relaxed text-default text-left"
           >
             6+ years designing and developing user-centered solutions for inventory
             management, travel, real estate, healthcare, and enterprise software. Based in
@@ -68,35 +68,35 @@ function HomeHero() {
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.24 }}
-            className="mt-8 flex flex-wrap items-center gap-3"
+            className="mt-8 flex flex-wrap items-center w-full md:w-fit gap-3"
           >
             <a
               href="#work"
-              className="group inline-flex items-center gap-2 rounded-lg bg-default px-6 py-3.5 text-sm font-semibold text-background transition-transform hover:-translate-y-0.5"
+              className="group inline-flex w-full md:w-fit justify-center items-center gap-2 rounded-xl bg-default px-7 py-3.5 lowercase font-sans text-base font-medium text-background transition-transform hover:-translate-y-0.5"
             >
               View my work
               <ArrowRight className="size-4 transition-transform group-hover:translate-x-1" />
             </a>
             <a
               href="#contact"
-              className="inline-flex items-center gap-2 rounded-lg bg-primary px-6 py-3.5 text-sm font-semibold text-contrast transition-transform hover:-translate-y-0.5"
+              className="inline-flex justify-center items-center w-full md:w-fit gap-2 rounded-xl bg-primary px-7 py-3.5 lowercase font-sans text-base font-medium text-contrast transition-transform hover:-translate-y-0.5"
             >
               Learn more
             </a>
           </motion.div>
         </motion.div>
 
-        <motion.div style={{ y: artY, scale: artScale }} className="relative">
+        <motion.div style={{ y: artY, scale: artScale }} className="absolute -right-12 top-0 md:static md:right-0 -mt-24 md:-mt-8 lg:-mt-18">
           <motion.div
             initial={{ opacity: 0, scale: 0.94 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, delay: 0.1 }}
-            className="relative mx-auto aspect-square w-full max-w-md"
+            className="relative mx-auto aspect-square w-full max-w-6xl min-w-xs md:min-w-lg overflow-hidden"
           >
             <img
               src="/images/bg-home.webp"
               alt="Hand-drawn sketch of a rocket launching from a computer, surrounded by lightbulbs, gears and creative tools"
-              className="absolute inset-0 h-full w-full object-contain mix-blend-multiply"
+              className="absolute inset-0 size-full object-cover mask-l-from-25% mask-l-to-90% md:mask-none scale-110 mix-blend-multiply"
             />
           </motion.div>
         </motion.div>

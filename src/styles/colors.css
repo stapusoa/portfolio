@@ -57,9 +57,11 @@
   --color-neutral-1000: oklch(0.3012 0 0);
   --color-white: oklch(1 0 0);
   --color-black: oklch(0.2285 0.0036 282.8);
+
+  
 }
 
-@theme {
+@theme inline {
   --color-default: var(--color-black);
   --color-contrast: var(--color-white);
   --color-primary: var(--color-cherry-600);
@@ -119,6 +121,11 @@
   --color-popover-foreground: var(--color-neutral-900);
   --popover-foreground: var(--color-popover-foreground);
 
+  --color-input-border: var(--color-neutral-400);
+  --color-input: var(--color-neutral-300);
+  --color-input-foreground: var(--color-neutral-1000);
+  --color-input-placeholder: var(--color-neutral-700);
+
   --primary-foreground: var(--color-white);
   --secondary-foreground: var(--color-white);
   --muted-foreground: var(--color-neutral-900);
@@ -133,9 +140,10 @@
   --sidebar-border: var(--color-border);
   --sidebar-ring: var(--color-ring);
 
-  --input: var(--color-neutral-100);
-  --input-foreground: var(--color-neutral-1000);
-  --input-placeholder: var(--color-neutral-700);
+  --input: var(--color-input);
+  --input-border: var(--color-input-border);
+  --input-foreground: var(--color-input-foreground);
+  --input-placeholder: var(--color-input-placeholder);
 
   --chart-1: oklch(0.5858 0.222 17.58);
   --chart-2: oklch(0.6448 0.1403 155.24);
@@ -146,9 +154,6 @@
   --color-muted-foreground: var(--muted-foreground);
   --color-accent-foreground: var(--accent-foreground);
   --color-destructive-foreground: var(--destructive-foreground);
-  --color-input: var(--input);
-  --color-input-foreground: var(--input-foreground);
-  --color-input-placeholder: var(--input-placeholder);
   --color-ring: var(--ring);
   --color-chart-1: var(--chart-1);
   --color-chart-2: var(--chart-2);
@@ -225,6 +230,9 @@
   --color-popover-foreground: var(--color-neutral-50);
   --popover-foreground: var(--color-popover-foreground);
 
+  --color-input: var(--color-neutral-700);
+  --color-input-border: var(--color-neutral-800);
+
   --primary-foreground: var(--color-white);
   --secondary-foreground: var(--color-white);
   --muted-foreground: var(--color-white);
@@ -239,7 +247,8 @@
   --sidebar-border: var(--color-border);
   --sidebar-ring: var(--color-ring);
 
-  --input: var(--color-neutral-900);
+  --input: var(--color-input);
+  --input-border: var(--color-input-border);
   --input-foreground: var(--color-neutral-50);
   --input-placeholder: var(--color-neutral-400);
 
@@ -252,9 +261,8 @@
   --color-muted-foreground: var(--muted-foreground);
   --color-accent-foreground: var(--accent-foreground);
   --color-destructive-foreground: var(--destructive-foreground);
-  --color-input: var(--input);
-  --color-input-foreground: var(--input-foreground);
-  --color-input-placeholder: var(--input-placeholder);
+  --color-input-foreground: var(--color-neutral-50);
+  --color-input-placeholder: var(--color-neutral-400);
   --color-ring: var(--ring);
   --color-chart-1: var(--chart-1);
   --color-chart-2: var(--chart-2);

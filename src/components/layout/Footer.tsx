@@ -12,7 +12,7 @@ export function Footer() {
       <div className="mx-auto max-w-6xl px-5 py-20 md:px-8 md:py-28">
         <div className="grid gap-12 md:grid-cols-2 md:gap-16">
           <Reveal className="flex flex-col justify-start">
-            <p className="text-sm font-sans font-medium text-left lowercase tracking-widest text-muted-foreground">
+            <p className="text-label font-sans font-regular text-left lowercase tracking-widest text-muted-foreground">
               let&apos;s work together
             </p>
             <h2 className="mt-3 max-w-md font-serif text-3xl text-left text-default font-semibold leading-tight text-balance md:text-4xl">
@@ -44,22 +44,22 @@ export function Footer() {
                 required
                 type="text"
                 placeholder="Name"
-                className="w-full rounded-lg border border-border bg-card px-4 py-3.5 text-sm outline-none transition-colors focus:border-primary"
+                className="w-full rounded-lg border border-input bg-input text-default px-4 py-3.5 text-base placeholder:text-input-placeholder outline-none transition-colors focus:border-primary"
               />
               <input
                 required
                 type="email"
                 placeholder="Email"
-                className="w-full rounded-lg border border-border bg-card px-4 py-3.5 text-sm outline-none transition-colors focus:border-primary"
+                className="w-full rounded-lg border border-input bg-input text-default px-4 py-3.5 text-base placeholder:text-input-placeholder outline-none transition-colors focus:border-primary"
               />
               <textarea
                 rows={4}
                 placeholder="Tell me about your project"
-                className="w-full resize-none rounded-lg border border-border bg-card px-4 py-3.5 text-sm outline-none transition-colors focus:border-primary"
+                className="w-full resize-none rounded-lg border border-input bg-input text-default placeholder:text-input-placeholder px-4 py-3.5 text-base outline-none transition-colors focus:border-primary"
               />
               <button
                 type="submit"
-                className="w-fit rounded-lg bg-primary px-7 py-3 text-sm font-semibold text-primary-foreground transition-transform hover:-translate-y-0.5"
+                className="w-fit rounded-lg bg-primary px-7 py-3 text-sm font-semibold text-white transition-transform hover:-translate-y-0.5"
               >
                 {sent ? 'Thanks — I’ll be in touch!' : 'Submit'}
               </button>

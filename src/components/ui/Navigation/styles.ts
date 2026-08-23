@@ -9,18 +9,19 @@ export const navigationLinkStyles = cva(
     // the left. transform-based so it animates on the GPU, and it collapses
     // to no transition when the user prefers reduced motion.
     'after:absolute after:inset-x-0 after:-bottom-1 after:h-[2px]',
-    'after:origin-left after:scale-x-0 after:bg-green',
+    'after:origin-left after:scale-x-0 after:bg-primary',
     'after:transition-transform after:duration-300 after:ease-out',
     'motion-reduce:after:transition-none',
     'focus-visible:outline-none',
     'focus-visible:ring-2',
-    'focus-visible:ring-offset-2',
+    'focus-visible:ring-default',
+    'focus-visible:ring-offset-2 rounded',
   ],
   {
     variants: {
       active: {
-        true: 'text-green after:scale-x-100',
-        false: 'text-gray-500 hover:text-green hover:after:scale-x-100',
+        true: 'text-primary after:scale-x-100',
+        false: 'text-default hover:text-primary hover:after:scale-x-100',
       },
     },
     defaultVariants: {
@@ -34,18 +35,19 @@ export const mobileNavigationLinkStyles = cva(
     'block w-full',
     'border-l-4 border-transparent',
     'px-6 py-2 md:px-14',
-    'font-medium',
+    'font-medium text-primary',
     'transition-colors',
-    'hover:border-green hover:bg-grey-200 hover:text-green',
+    'hover:border-primary hover:bg-default hover:text-primary',
     'focus-visible:outline-none',
     'focus-visible:ring-2',
-    'focus-visible:ring-inset',
+    'focus-visible:ring-default',
+    'focus-visible:ring-offset-2 rounded',
   ],
   {
     variants: {
       active: {
-        true: 'border-green text-green',
-        false: 'text-gray-500',
+        true: 'border-primary text-primary',
+        false: 'text-default',
       },
     },
     defaultVariants: {
@@ -57,16 +59,17 @@ export const mobileNavigationLinkStyles = cva(
 export const menuTriggerStyles = cva([
   'relative inline-flex items-center gap-1',
   'font-medium',
-  'text-gray-500',
+  'text-default',
   'transition-colors',
-  'hover:text-green',
+  'hover:text-primary',
   // Match the navlink animated underline so the whole top row behaves alike.
   'after:absolute after:inset-x-0 after:-bottom-1 after:h-[2px]',
-  'after:origin-left after:scale-x-0 after:bg-green',
+  'after:origin-left after:scale-x-0 after:bg-primary',
   'after:transition-transform after:duration-300 after:ease-out',
   'hover:after:scale-x-100',
   'motion-reduce:after:transition-none',
   'focus-visible:outline-none',
   'focus-visible:ring-2',
-  'focus-visible:ring-offset-2',
+  'focus-visible:ring-default',
+  'focus-visible:ring-offset-2 rounded',
 ]);

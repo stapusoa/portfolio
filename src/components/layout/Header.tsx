@@ -56,10 +56,10 @@ export function Header({ heroHeight = 600 }: HeaderProps) {
           : 'border-b border-transparent',
       )}
     >
-      <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-5 md:px-8">
+      <div className="mx-auto flex h-16 max-w-8xl items-center justify-between px-6 md:px-14 lg:px-30">
         <Link
           to="/"
-          className="flex items-center gap-2 font-serif text-lg font-semibold tracking-tight"
+          className="flex items-center gap-2 font-serif text-lg font-semibold tracking-tight focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-default focus-visible:ring-offset-2 rounded"
         >
           <img
             src={showPrimaryLogo ? LOGO : LOGO_SECONDARY}
@@ -81,7 +81,7 @@ export function Header({ heroHeight = 600 }: HeaderProps) {
             <a
               href="/resume.pdf"
               download
-              className="rounded-md px-3 py-2 text-sm font-semibold text-primary transition-opacity hover:opacity-80"
+              className="rounded-md px-3 py-2 font-medium text-primary transition-opacity hover:text-primary/70 transition-transform hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-default focus-visible:ring-offset-2"
             >
               download resume
             </a>
@@ -89,7 +89,7 @@ export function Header({ heroHeight = 600 }: HeaderProps) {
             <button
               type="button"
               aria-label="Search"
-              className="text-foreground/70 transition-colors hover:text-foreground"
+              className="text-default transition-colors hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-default focus-visible:ring-offset-2 rounded"
             >
               <Search aria-hidden="true" className="size-5" />
             </button>
@@ -97,7 +97,7 @@ export function Header({ heroHeight = 600 }: HeaderProps) {
             <Link
               to="/about"
               aria-label="About Sara"
-              className="text-foreground/70 transition-colors hover:text-foreground"
+              className="text-default transition-colors hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-default focus-visible:ring-offset-2 rounded"
             >
               <User aria-hidden="true" className="size-5" />
             </Link>

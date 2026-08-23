@@ -20,7 +20,7 @@ export const navigation: NavigationItem[] = [
       {
         type: 'link',
         name: 'AlignedWest',
-        href: '/work/alignwest',
+        href: '/work/alignedwest',
       },
       {
         type: 'link',
@@ -37,26 +37,19 @@ export const navigation: NavigationItem[] = [
       {
         type: 'link',
         name: 'UX Engineering',
-        href: '/work/domo',
+        href: '/work/uxe',
       },
       {
         type: 'link',
         name: 'Design Systems',
-        href: '/work/alignwest',
+        href: '/work/designsystems',
       },
     ],
   },
-    {
-    type: 'link',
-    name: 'learning',
-    href: '/about',
-    hash: false,
-    download: false,
-  },
-    {
+  {
     type: 'link',
     name: 'contact',
-    href: '/about',
+    href: '/contact',
     hash: false,
     download: false,
   },

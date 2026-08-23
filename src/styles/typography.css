@@ -14,7 +14,10 @@
 
     --leading-cozy: 1.08;
     --leading-tighter: 1.15;
-
+    
+    --tracking-wide: 0.025em;
+    --tracking-wider: 0.05em;
+    --tracking-widest: 0.1em;
     --tracking-ultra-wide: 0.12em;
     --tracking-mega-wide: 0.335em;
 }
@@ -83,4 +86,19 @@
     --text-caption--font-family: var(--font-sans);
     --text-caption--font-weight: var(--font-regular);
     --text-caption--line-height: 1;
+}
+
+@layer components {
+    .typography {
+        p {
+            font-size: var(--text-base);
+            color: var(--color-default);
+        }
+
+        a {
+            font-size: var(--text-base);
+            font-weight: var(--font-semibold);
+            color: var(--color-primary);
+        }
+    }
 }
