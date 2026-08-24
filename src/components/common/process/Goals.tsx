@@ -1,4 +1,4 @@
-import SprintCard from "@/lib/dontknow/helpers/cards/SprintCard" // ✅ default import
+import SprintCard from "@/components/common/cards/SprintCard" // ✅ default import
 
 interface GoalProps {
   sticky: string[]; // ✅ array of image URLs

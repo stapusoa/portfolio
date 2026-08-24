@@ -122,7 +122,7 @@
   --popover-foreground: var(--color-popover-foreground);
 
   --color-input-border: var(--color-neutral-400);
-  --color-input: var(--color-neutral-300);
+  --color-input: var(--color-neutral-200);
   --color-input-foreground: var(--color-neutral-1000);
   --color-input-placeholder: var(--color-neutral-700);
 

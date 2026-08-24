@@ -64,7 +64,7 @@ export function Header({ heroHeight = 600 }: HeaderProps) {
           <img
             src={showPrimaryLogo ? LOGO : LOGO_SECONDARY}
             alt="Sara Tapusoa — home"
-            className="h-6 w-auto"
+            className="h-5 w-auto"
           />
         </Link>
 

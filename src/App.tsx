@@ -4,10 +4,8 @@ import { AppLayout } from './components/layout/AppLayout';
 import Home from './pages/core/Home';
 import About from './pages/core/About';
 import Contact from './pages/core/Contact';
-import Project1 from './pages/case-studies/Project1';
-import Project2 from './pages/case-studies/Project2';
-import Project3 from './pages/case-studies/Project3';
-import Project4 from './pages/case-studies/Project4';
+import Work from './pages/work/Work';
+import { CaseStudy } from './pages/work/CaseStudy';
 
 function App() {
   return (
@@ -18,10 +16,8 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />
-            <Route path="/work/fishbowlgo" element={<Project1 />} />
-            <Route path="/work/travelpass" element={<Project2 />} />
-            <Route path="/work/alignwest" element={<Project3 />} />
-            <Route path="/work/domo" element={<Project4 />} />
+            <Route path="/work" element={<Work />} />
+            <Route path="/work/:id" element={<CaseStudy />} />
           </Route>
         </Routes>
     </Router>

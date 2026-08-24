@@ -1,4 +1,4 @@
-import SprintCard from "@/lib/dontknow/helpers/cards/SprintCard"
+import SprintCard from "@/components/common/cards/SprintCard"
 import clsx from "clsx"
 
 interface WhiteboardProps {

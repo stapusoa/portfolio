@@ -7,7 +7,7 @@ const CaseStudies: React.FC = () => {
       description:
         "Simplifying inventory management in the warehouse and in the office.",
       image: "/images/product-proj1.webp",
-      link: "/projects/project1",
+      link: "/work/fishbowlgo",
       align: "left",
     },
     {
@@ -15,7 +15,7 @@ const CaseStudies: React.FC = () => {
       description:
         "Providing professional therapeutic services through easy booking.",
       image: "/images/product-proj2.webp",
-      link: "/projects/project2",
+      link: "/work/project2",
       align: "right",
     },
     {
@@ -23,7 +23,7 @@ const CaseStudies: React.FC = () => {
       description:
         "Providing the explorer at heart unforgettable adventures.",
       image: "/images/product-proj3.webp",
-      link: "/projects/project3",
+      link: "/work/travelpass",
       align: "left",
     },
   ];
