@@ -1,7 +1,7 @@
 import classNames from 'classnames'
-import type { AvailableIcons } from './IconMapping'
-import { IconMapping } from './IconMapping'
-import type { IconSize } from './iconConstants'
+import type { AvailableIcons } from '@/components/ui/Icon/IconMapping'
+import { IconMapping } from '@/components/ui/Icon/IconMapping'
+import type { IconSize } from '@/components/ui/Icon/iconConstants'
 
 interface IconProps {
   name: AvailableIcons

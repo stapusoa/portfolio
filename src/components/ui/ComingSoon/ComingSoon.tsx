@@ -59,15 +59,15 @@ export const ComingSoon: React.FC<ComingSoonProps> = ({
         <div className="flex justify-center mb-4">
           {icon || <CodingIcon />}
         </div>
-        <h2 className="text-2xl font-bold text-gray-800 dark:text-white tracking-tight">
+        <h2 className="text-2xl font-bold text-neutral-800 dark:text-white tracking-tight">
           {title}
         </h2>
-        <p className="text-gray-600 dark:text-gray-300 max-w-md mx-auto">
+        <p className="text-neutral-600 dark:text-neutral-300 max-w-md mx-auto">
           {description}
         </p>
         <div className="flex justify-center items-center space-x-2">
           <Spinner />
-          <span className="text-sm text-gray-500 dark:text-gray-400">
+          <span className="text-sm text-neutral-500 dark:text-neutral-400">
             Coming Soon
           </span>
         </div>

@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react'
-import { Icon } from './Icon'
-import { IconMapping } from './IconMapping'
-import type { AvailableIcons } from './IconMapping'
+import { Icon } from '@/components/ui/Icon/Icon'
+import { IconMapping } from '@/components/ui/Icon/IconMapping'
+import type { AvailableIcons } from '@/components/ui/Icon/IconMapping'
 
 export default {
   title: 'Iconography',
@@ -21,7 +21,7 @@ export const Iconography: Story = {
       {availableIcons.map(iconName => (
         <button
           key={iconName}
-          className='border-1 border-grey-300 flex flex-col items-center gap-2 rounded border-solid bg-transparent p-2 hover:cursor-pointer hover:shadow'
+          className='border-1 border-neutral-300 flex flex-col items-center gap-2 rounded border-solid bg-transparent p-2 hover:cursor-pointer hover:shadow'
           onDoubleClick={async () => {
             const code = `<Icon name="${iconName}" />`
             try {
@@ -32,7 +32,7 @@ export const Iconography: Story = {
           }}
         >
           <Icon key={iconName} {...args} name={iconName} />
-          <span className='text-grey-700 line-clamp-1 w-full'>{iconName}</span>
+          <span className='text-neutral-700 line-clamp-1 w-full'>{iconName}</span>
         </button>
       ))}
     </div>

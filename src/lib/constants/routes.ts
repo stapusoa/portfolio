@@ -1,5 +1,10 @@
 // Route links use react-router <Link>; hash targets on the home page use a
 // plain <a> so the browser handles anchor scrolling (incl. cross-page).
+//
+// Every `href` below must resolve to a route declared in `src/App.tsx`. Case
+// study hrefs must match an `id` in `src/features/case-study/data/case-studies.tsx`
+// — this list previously advertised five case studies that did not exist, so
+// most of the nav dead-ended on "Project not found".
 import type { NavigationItem } from '@/components/ui/Navigation/types';
 
 export const navigation: NavigationItem[] = [
@@ -10,41 +15,31 @@ export const navigation: NavigationItem[] = [
       {
         type: 'link',
         name: 'Fishbowl Go',
-        href: '/work/fishbowlgo',
+        href: '/work/fishbowl-go',
       },
       {
         type: 'link',
-        name: 'Travelpass',
-        href: '/work/travelpass',
+        name: 'Travelpass Web',
+        href: '/work/travelpass-web',
       },
       {
         type: 'link',
-        name: 'AlignedWest',
-        href: '/work/alignedwest',
+        name: 'Travelpass Products',
+        href: '/work/travelpass-products',
       },
       {
         type: 'link',
-        name: 'Domo',
-        href: '/work/domo',
+        name: 'All work',
+        href: '/work',
       },
     ],
   },
-
   {
-    type: 'menu',
-    name: 'resources',
-    items: [
-      {
-        type: 'link',
-        name: 'UX Engineering',
-        href: '/work/uxe',
-      },
-      {
-        type: 'link',
-        name: 'Design Systems',
-        href: '/work/designsystems',
-      },
-    ],
+    type: 'link',
+    name: 'about',
+    href: '/about',
+    hash: false,
+    download: false,
   },
   {
     type: 'link',

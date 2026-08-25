@@ -6,7 +6,6 @@ export default function ScrollManager() {
   const { pathname, hash } = useLocation()
 
   useEffect(() => {
-    console.log("ScrollToTop triggered for:", pathname)
     if (hash) {
       const el = document.getElementById(hash.slice(1))
       if (el) {

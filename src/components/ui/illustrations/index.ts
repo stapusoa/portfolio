@@ -1,4 +1,4 @@
-export { WhenIllustration } from './WhenIllustration'
-export { WhereIllustration } from './WhereIllustration'
-export { WhoIllustration } from './WhoIllustration'
-export { WhyIllustration } from './WhyIllustration'
+export { WhenIllustration } from '@/components/ui/illustrations/WhenIllustration'
+export { WhereIllustration } from '@/components/ui/illustrations/WhereIllustration'
+export { WhoIllustration } from '@/components/ui/illustrations/WhoIllustration'
+export { WhyIllustration } from '@/components/ui/illustrations/WhyIllustration'

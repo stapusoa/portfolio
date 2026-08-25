@@ -1,0 +1,5 @@
+export { CodepenIcon } from './CodepenIcon'
+export { GitHubIcon } from './GitHubIcon'
+export { DribbbleIcon } from './DribbbleIcon'
+export { LinkedInIcon } from './LinkedInIcon'
+export { BehanceIcon } from './BehanceIcon'

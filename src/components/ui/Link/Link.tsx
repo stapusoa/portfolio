@@ -1,6 +1,6 @@
 import classNames from 'classnames'
-import type { AvailableIcons } from '../Icon/index'
-import { Icon } from '../Icon/Icon'
+import type { AvailableIcons } from '@/components/ui/Icon/index'
+import { Icon } from '@/components/ui/Icon/Icon'
 
 type NativeButton = React.ButtonHTMLAttributes<HTMLButtonElement>
 
@@ -79,6 +79,6 @@ const underlineClasses = 'b-b-1 b-b-solid b-valley'
 const hoverUnderlineClasses = 'hover:b-b-1 hover:b-b-solid'
 
 const baseLinkClasses =
-  'type-link-desktop inline-flex flex-row gap-1 items-center fw-700 h-[22px] md:h-6 bg-transparent b-none c-forest box-border p-0 pb-1 decoration-none w-fit cursor-pointer disabled:cursor-default disabled:opacity-60 hover:c-newForest transition-all duration-200 focus:outline-1 focus:outline-offset-3 focus:outline-valley [&>*]:hover:b-newForest!'
+  'type-link-desktop inline-flex flex-row gap-1 items-center fw-700 h-[22px] md:h-6 bg-transparent b-none c-forest box-border p-0 pb-1 no-underline w-fit cursor-pointer disabled:cursor-default disabled:opacity-60 hover:c-newForest transition-all duration-200 focus:outline-1 focus:outline-offset-3 focus:outline-valley [&>*]:hover:b-newForest!'
 
   export default Link;

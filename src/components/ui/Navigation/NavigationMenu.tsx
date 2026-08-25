@@ -8,9 +8,9 @@ import {
   menuTriggerStyles,
   mobileNavigationLinkStyles,
   navigationLinkStyles,
-} from './styles';
+} from '@/components/ui/Navigation/styles';
 
-import type { NavigationItem } from './types';
+import type { NavigationItem } from '@/components/ui/Navigation/types';
 
 export function Navigation() {
   const [isMobileOpen, setIsMobileOpen] = useState(false);

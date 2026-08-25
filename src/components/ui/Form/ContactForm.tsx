@@ -1,9 +1,9 @@
 import React, { useState } from "react";
-import Form from "./Form";
-import FormField from "./FormField";
-import Input from "../Input/Input";
-import Textarea from "../Input/TextArea";
-import { useToast } from "../Toast/ToastProvider";
+import Form from "@/components/ui/Form/Form";
+import FormField from "@/components/ui/Form/FormField";
+import Input from "@/components/ui/Input/Input";
+import Textarea from "@/components/ui/Input/TextArea";
+import { useToast } from "@/components/ui/Toast/ToastProvider";
 
 const ContactForm = () => {
   const { showToast } = useToast();
@@ -76,7 +76,7 @@ const ContactForm = () => {
   };
 
   return (
-    <Form onSubmit={handleSubmit} className="space-y-6 w-full max-w-lg bg-white/10 backdrop-blur p-6 rounded-lg border border-gray-200">
+    <Form onSubmit={handleSubmit} className="space-y-6 w-full max-w-lg bg-white/10 backdrop-blur p-6 rounded-lg border border-neutral-200">
       <FormField label="Name">
         <Input
           type="text"
@@ -124,7 +124,7 @@ const ContactForm = () => {
       <button
         type="submit"
         disabled={loading}
-        className="w-full bg-black text-white py-3 px-4 rounded hover:bg-gray-900 disabled:opacity-50"
+        className="w-full bg-black text-white py-3 px-4 rounded hover:bg-neutral-900 disabled:opacity-50"
       >
         {loading ? "Sending..." : "Send Message"}
       </button>
