@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from "react";
-import './BarChart.css'
+import '@/components/ui/Data/BarChart.css'
 
 interface BarData {
   id: string;

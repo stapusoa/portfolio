@@ -50,13 +50,16 @@ const Annotation: React.FC<AnnotationProps> = ({
       { threshold: 0.5 }
     );
 
-    if (containerRef.current) {
-      observer.observe(containerRef.current);
+    // Captured now: by the time cleanup runs, containerRef.current may already
+    // point somewhere else (or be null), so unobserve would target the wrong node.
+    const element = containerRef.current;
+    if (element) {
+      observer.observe(element);
     }
 
     return () => {
-      if (containerRef.current) {
-        observer.unobserve(containerRef.current);
+      if (element) {
+        observer.unobserve(element);
       }
     };
   }, []);
@@ -67,10 +70,12 @@ const Annotation: React.FC<AnnotationProps> = ({
   return (
     <div
       ref={containerRef}
-      className={`relative bg-grey-300 border-solid border-4 border-grey-300 rounded-8 w-300 h-220 flex items-center justify-center delay-${delay} overflow-hidden`}
+      className={`relative bg-neutral-300 border-solid border-4 border-neutral-300 rounded-[2rem] w-300 h-220 flex items-center justify-center delay-${delay} overflow-hidden`}
 
    >
       <img
+        loading="lazy"
+        decoding="async"
         alt={`Wireframe: ${page}`}
         src={image}
         className="w-250 transition-transform duration-1000 delay-2000 ease-in-out"
@@ -86,10 +91,10 @@ const Annotation: React.FC<AnnotationProps> = ({
           shouldAnimate ? "translate-x-120" : "-translate-x-[150px]"
         }`}
       >
-        <div className="font-gilroy font-300 text-green text-6 leading-relaxed">
+        <div className="font-sans font-light text-mint-600 text-2xl leading-relaxed">
           {step}
         </div>
-        <div className="font-gilroy font-300 text-grey-800 text-6 leading-relaxed">
+        <div className="font-sans font-light text-neutral-800 text-2xl leading-relaxed">
           {explanation}
 
         </div>
@@ -105,7 +110,7 @@ const Annotation: React.FC<AnnotationProps> = ({
           style={{
             width: `${ringWidth}px`,
             height: `${ringHeight}px` }}
-            className={`relative ring-green/50 ring-10 ring-offset-0 rounded-xl ${
+            className={`relative ring-mint-600/50 ring-10 ring-offset-0 rounded-xl ${
               shouldAnimate ? "opacity-100 scale-100 ring-pulse-animation" : "opacity-0 scale-0"
             }`}
              />
@@ -115,7 +120,7 @@ const Annotation: React.FC<AnnotationProps> = ({
             viewBox={`0 0 ${svgWidth} ${svgHeight}`}
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
-            className={`absolute bg-white rounded-2xl border-solid border-4 border-green duration-1000 ${
+            className={`absolute bg-white rounded-2xl border-solid border-4 border-mint-600 duration-1000 ${
               shouldAnimate ? "opacity-100 scale-100" : "opacity-0 scale-80"
             }`}
             dangerouslySetInnerHTML={{ __html: svgPath }}

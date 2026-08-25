@@ -8,7 +8,6 @@ function Tabs({
   className,
   ...props
 }: React.ComponentProps<typeof TabsPrimitive.Root>) {
-  console.log("🧪 Alert rendered");
   return (
     <TabsPrimitive.Root
       data-slot="tabs"
@@ -22,7 +21,6 @@ function TabsList({
   className,
   ...props
 }: React.ComponentProps<typeof TabsPrimitive.List>) {
-  console.log("🧪 Alert rendered");
   return (
     <TabsPrimitive.List
       data-slot="tabs-list"
@@ -39,7 +37,6 @@ function TabsTrigger({
   className,
   ...props
 }: React.ComponentProps<typeof TabsPrimitive.Trigger>) {
-  console.log("🧪 Alert rendered");
   return (
     <TabsPrimitive.Trigger
       data-slot="tabs-trigger"
@@ -56,7 +53,6 @@ function TabsContent({
   className,
   ...props
 }: React.ComponentProps<typeof TabsPrimitive.Content>) {
-  console.log("🧪 Alert rendered");
   return (
     <TabsPrimitive.Content
       data-slot="tabs-content"

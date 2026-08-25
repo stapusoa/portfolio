@@ -104,16 +104,43 @@
   @apply relative after:content-[''] after:block after:w-0 after:h-[130px] after:bg-cherry-500 after:border-[4px] after:border-white after:left-[45.45%] after:relative;
 }
 
+/*
+ * Referenced across the app but never defined, so they rendered as no-ops.
+ * Kept as utilities rather than deleted from the markup because each one
+ * carries real design intent.
+ */
+@utility glass-panel {
+  @apply rounded-xl border border-border/60 bg-background/60 shadow-md backdrop-blur-md;
+}
+@utility button-hover {
+  @apply transition-transform duration-200 ease-out hover:-translate-y-0.5;
+}
+@utility page-transition {
+  @apply motion-safe:animate-in motion-safe:fade-in motion-safe:duration-300;
+}
+/* Scroll without a visible scrollbar — used by the horizontal persona rail. */
+@utility scrollbar-hide {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
 body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+/*
+ * No `text-align: center` here. It used to be set globally, which is why ~80
+ * `text-left` utilities existed purely to undo it; alignment now belongs to
+ * whichever component actually wants it.
+ */
 #root {
   margin: 0 auto;
   padding: 0;
-  text-align: center;
   width: 100%;
 }
 

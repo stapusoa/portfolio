@@ -10,14 +10,24 @@ export type Area = {
   path: string;
 };
 
-/** Every routed page in App.tsx. Keep in sync when routes change. */
+/**
+ * Every routed page in App.tsx. Keep in sync when routes change.
+ *
+ * The three `/projects/projectN` entries this list used to carry were never
+ * routes — the app serves `/work/:id` — so those 18 committed baselines were
+ * screenshots of an empty page and guarded nothing. Case-study paths must match
+ * an `id` in `src/features/case-study/data/case-studies.tsx`.
+ */
 export const AREAS: Area[] = [
   { name: 'home', path: '/' },
   { name: 'about', path: '/about' },
   { name: 'contact', path: '/contact' },
-  { name: 'projects-project1', path: '/projects/project1' },
-  { name: 'projects-project2', path: '/projects/project2' },
-  { name: 'projects-project3', path: '/projects/project3' },
+  { name: 'work', path: '/work' },
+  { name: 'case-fishbowl-go', path: '/work/fishbowl-go' },
+  { name: 'case-travelpass-web', path: '/work/travelpass-web' },
+  { name: 'case-travelpass-products', path: '/work/travelpass-products' },
+  // Guards the catch-all route, which previously did not exist at all.
+  { name: 'not-found', path: '/no-such-page' },
 ];
 
 export type Viewport = {

@@ -49,6 +49,8 @@ const AnimationSequence: React.FC<AnimationSequenceProps> = ({ steps }) => {
       {/* Main Frame */}
       <div className="w-full h-full">
         <img
+          loading="lazy"
+          decoding="async"
           src={steps[currentStep]?.image}
           alt={`Step ${currentStep + 1}`}
           className="w-full h-full object-contain md:object-cover"
@@ -65,10 +67,10 @@ const AnimationSequence: React.FC<AnimationSequenceProps> = ({ steps }) => {
       >
         {steps[currentStep] && (
           <div className="p-6 md:p-8 space-y-4">
-            <p className="font-gilroy text-[24px] md:text-[28px] leading-[125%] text-[#3F3F46] font-normal">
+            <p className="font-sans text-[24px] md:text-[28px] leading-[125%] text-[#3F3F46] font-normal">
               {steps[currentStep].step}
             </p>
-            <p className="font-gilroy text-[28px] md:text-[32px] leading-[125%] text-black font-normal">
+            <p className="font-sans text-[28px] md:text-[32px] leading-[125%] text-black font-normal">
               {steps[currentStep].description}
             </p>
           </div>

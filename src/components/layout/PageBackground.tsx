@@ -26,13 +26,20 @@ export function PageBackground({
       <img
         src={src}
         alt={alt}
+        /*
+         * This is the largest contentful paint on every page that uses it, so
+         * it must not be lazy or deprioritised behind other requests.
+         */
+        loading="eager"
+        fetchPriority="high"
+        decoding="async"
         className={`fixed inset-0 z-0 h-full w-full object-cover ${className}`}
       />
     </picture>
   );
 }
 
-{/* 
+/*
 Usage:
 
 For one image with different cropping:
@@ -59,4 +66,4 @@ And you can mix them too:
   className="object-center lg:object-top"
 />
 
-  */}
+*/

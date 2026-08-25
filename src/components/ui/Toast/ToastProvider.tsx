@@ -1,5 +1,5 @@
 import React, { createContext, useContext, useState } from "react";
-import Toast from "./Toast"; // this is the Toast component we wrote earlier
+import Toast from "@/components/ui/Toast/Toast"; // this is the Toast component we wrote earlier
 
 type ToastType = {
   id: string;

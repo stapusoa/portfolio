@@ -8,7 +8,7 @@ import {
   BackArrowIcon,
   LinkedinIcon,
   GithubIcon,
-} from '../icons'
+} from '@/components/ui/icons'
 
 const IconMapping = {
   accessible: <AccessibleIcon />,
