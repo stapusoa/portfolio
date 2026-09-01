@@ -75,14 +75,6 @@ const Roles: React.FC = () => {
     }
   };
 
-  /*
-   * These were plain functions rebuilt on every render, so `resetTimer` — a
-   * useCallback with an empty dep array — captured the very first render's
-   * `startAutoSlide`, and through it the first render's `nextSlide`. After a
-   * swipe or wheel gesture the restarted timer advanced from a stale index.
-   * Memoising them with honest dependencies keeps the timer pointing at the
-   * current slide.
-   */
   const stopAutoSlide = useCallback(() => {
     if (slideInterval.current) {
       clearInterval(slideInterval.current);
@@ -102,7 +94,7 @@ const Roles: React.FC = () => {
     return () => stopAutoSlide();
   }, [startAutoSlide, stopAutoSlide]);
 
-  // startAutoSlide already clears any running interval first.
+  // startAutoSlide already clears any running interval first
   const resetTimer = useCallback(() => {
     startAutoSlide();
   }, [startAutoSlide]);
@@ -156,8 +148,8 @@ const Roles: React.FC = () => {
               changeSlide(index);
               resetTimer();
             }}
-            className={`h-3 border-0 rounded-full transition-all duration-300 ease-in-out ${
-              currentSlide === index ? "border-0 bg-mint-600 w-10 rounded-full" : "border-0 w-3 bg-green/50 rounded-full"
+            className={`h-3 border-0 rounded-full focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-default focus-visible:ring-offset-2 transition-all duration-300 ease-in-out ${
+              currentSlide === index ? "border-0 bg-primary w-10 rounded-full" : "border-0 w-3 bg-primary/50 rounded-full"
             }`}
           />
         ))}

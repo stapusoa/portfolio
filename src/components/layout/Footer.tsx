@@ -8,7 +8,7 @@ import { useContactForm } from '@/lib/hooks/useContactForm'
 const LOGO = '/logo.svg'
 
 const FIELD_CLASS =
-  'w-full rounded-lg border border-input bg-input px-4 py-3.5 text-base text-default outline-none transition-colors placeholder:text-input-placeholder focus:border-primary'
+  'w-full rounded-lg border border-input bg-input px-4 py-3.5 text-base text-default outline-none transition-colors placeholder:text-input-placeholder focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2'
 
 export function Footer() {
   const { submit, status, error, isSending } = useContactForm()
@@ -88,7 +88,7 @@ export function Footer() {
               <button
                 type="submit"
                 disabled={isSending}
-                className="w-fit rounded-lg bg-primary px-7 py-3 text-sm font-semibold text-primary-foreground transition-transform hover:-translate-y-0.5 disabled:cursor-not-allowed disabled:opacity-50"
+                className="w-fit rounded-lg bg-primary px-7 py-3 text-sm font-semibold text-primary-foreground transition-transform hover:-translate-y-0.5 disabled:cursor-not-allowed disabled:opacity-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-default focus-visible:ring-offset-2"
               >
                 {isSending ? 'Sending…' : 'Submit'}
               </button>
@@ -107,7 +107,7 @@ export function Footer() {
 
       <div className="border-t border-border">
         <div className="mx-auto flex w-full max-w-8xl flex-col gap-4 px-6 py-6 text-sm text-muted-foreground md:flex-row md:items-center md:justify-between md:px-14 lg:px-30">
-          <Link to="/" className="flex items-center gap-2 font-serif font-semibold text-foreground">
+          <Link to="/" className="flex items-center gap-2 font-serif font-semibold text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-default focus-visible:ring-offset-4 rounded">
             <img
               src={LOGO}
               alt="Sara Tapusoa — home"
@@ -120,10 +120,10 @@ export function Footer() {
           </Link>
           <p>© 2026 Sara Tapusoa. All rights reserved.</p>
           <nav className="flex items-center gap-6" aria-label="Footer">
-            <Link to="/about" className="transition-colors hover:text-foreground">
+            <Link to="/about" className="transition-colors hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-default focus-visible:ring-offset-2 rounded">
               about
             </Link>
-            <Link to="/work" className="transition-colors hover:text-foreground">
+            <Link to="/work" className="transition-colors hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-default focus-visible:ring-offset-2 rounded">
               work
             </Link>
           </nav>

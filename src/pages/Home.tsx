@@ -5,16 +5,9 @@ export default function Home() {
   return (
     <div className="relative w-full min-h-screen">
       <PageBackground src="/images/bg-home-texture.webp" />
-
       <HomeHero />
-
       <div className="relative mt-12 w-full z-20">
         <PaperSeparator />
-
-        {/*
-          Decorative texture: empty alt + aria-hidden so screen readers skip it
-          instead of announcing "Background pattern for content".
-        */}
         <img
           src="/images/bg-texture-dots.webp"
           alt=""

@@ -73,14 +73,14 @@ function HomeHero() {
             >
               <a
                 href="#work"
-                className="group inline-flex w-full md:w-fit justify-center items-center gap-2 rounded-xl bg-default px-7 py-3.5 lowercase font-sans text-base font-medium text-background transition-transform hover:-translate-y-0.5"
+                className="group inline-flex w-full md:w-fit justify-center items-center gap-2 rounded-xl bg-default px-7 py-3.5 lowercase font-sans text-base font-medium text-background transition-transform hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-default focus-visible:ring-offset-2"
               >
                 View my work
                 <ArrowRight className="size-4 transition-transform group-hover:translate-x-1" />
               </a>
               <a
                 href="#contact"
-                className="inline-flex justify-center items-center w-full md:w-fit gap-2 rounded-xl bg-primary px-7 py-3.5 lowercase font-sans text-base font-medium text-contrast transition-transform hover:-translate-y-0.5"
+                className="inline-flex justify-center items-center w-full md:w-fit gap-2 rounded-xl bg-primary px-7 py-3.5 lowercase font-sans text-base font-medium text-contrast transition-transform hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-default focus-visible:ring-offset-2"
               >
                 Learn more
               </a>
