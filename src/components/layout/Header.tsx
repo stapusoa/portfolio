@@ -81,7 +81,7 @@ export function Header({ heroHeight = 600 }: HeaderProps) {
             <a
               href="/resume.pdf"
               download
-              className="rounded py-2 focus-visible:py-0 font-medium text-primary transition-opacity hover:text-primary/70 transition-transform hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-default focus-visible:ring-offset-2"
+              className="rounded py-2 mx-4 focus-visible:py-0 font-medium text-primary transition-opacity hover:text-primary/70 transition-transform hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-default focus-visible:ring-offset-2"
             >
               download resume
             </a>
