@@ -59,7 +59,7 @@ export function Header({ heroHeight = 600 }: HeaderProps) {
       <div className="mx-auto flex h-16 max-w-8xl items-center justify-between px-6 md:px-14 lg:px-30">
         <Link
           to="/"
-          className="flex items-center gap-2 font-serif text-lg font-semibold tracking-tight focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-default focus-visible:ring-offset-2 rounded"
+          className="flex items-center gap-2 pt-1 font-serif text-lg font-semibold tracking-tight focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-default focus-visible:ring-offset-2 rounded"
         >
           <img
             src={showPrimaryLogo ? LOGO : LOGO_SECONDARY}
@@ -81,7 +81,7 @@ export function Header({ heroHeight = 600 }: HeaderProps) {
             <a
               href="/resume.pdf"
               download
-              className="rounded-md px-3 py-2 font-medium text-primary transition-opacity hover:text-primary/70 transition-transform hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-default focus-visible:ring-offset-2"
+              className="rounded py-2 mx-4 focus-visible:py-0 font-medium text-primary transition-opacity hover:text-primary/70 transition-transform hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-default focus-visible:ring-offset-2"
             >
               download resume
             </a>

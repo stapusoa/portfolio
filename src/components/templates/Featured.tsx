@@ -1,32 +1,7 @@
 import { Link } from "react-router-dom";
+import { caseStudies } from "./AllCaseStudies";
 
 const CaseStudies: React.FC = () => {
-  const caseStudies = [
-    {
-      title: "fishbowl go",
-      description:
-        "Simplifying inventory management in the warehouse and in the office.",
-      image: "/images/product-proj1.webp",
-      link: "/work/fishbowlgo",
-      align: "left",
-    },
-    {
-      title: "haven massage",
-      description:
-        "Providing professional therapeutic services through easy booking.",
-      image: "/images/product-proj2.webp",
-      link: "/work/project2",
-      align: "right",
-    },
-    {
-      title: "travelpass",
-      description:
-        "Providing the explorer at heart unforgettable adventures.",
-      image: "/images/product-proj3.webp",
-      link: "/work/travelpass",
-      align: "left",
-    },
-  ];
 
   return (
     <>
@@ -62,7 +37,7 @@ const CaseStudies: React.FC = () => {
               }>
                 <Link
                   to={caseStudy.link}
-                  className="link hover:text-ocean-500 hover:border-ocean-500"
+                  className="link hover:text-primary/60 hover:border-primary/60 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-default focus-visible:ring-offset-2 focus-visible:rounded"
                 >
                   case study
                 </Link>
@@ -71,7 +46,7 @@ const CaseStudies: React.FC = () => {
                   {[0, 0.3, 0.6].map((delay) => (
                     <svg
                       key={delay}
-                      className="text-mint-600 group-hover:text-ocean-500 animate-pulse"
+                      className="text-primary group-hover:text-primary/60 animate-pulse"
                       style={{ animationDelay: `${delay}s` }}
                       width="16"
                       height="16"
@@ -99,7 +74,7 @@ const CaseStudies: React.FC = () => {
                 className="object-cover w-full h-full"
               />
               {/* Inner Overlay */}
-              <div className="absolute inset-3 p-3 border-solid border-3 border-mint-600 opacity-40 rounded-3xl"></div>
+              <div className="absolute inset-3 p-3 border-solid border-3 border-primary opacity-40 rounded-3xl"></div>
             </div>
           </div>
         );

@@ -1,5 +1,5 @@
 import React from 'react';
-import Section from "@/features/case-study/components/Section";
+import Section from "@/components/templates/case-study/Section";
 
 interface Point {
   label: string;

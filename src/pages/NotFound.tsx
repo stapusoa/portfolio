@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
 
-import { buttonVariants } from '@/components/ui/button'
+import { buttonVariants } from '@/components/ui/button/button'
 
 /**
  * Catch-all route. Reached by any URL that matches no route, including the
@@ -23,7 +23,7 @@ export default function NotFound() {
         <Link to="/work" className={buttonVariants({ size: 'lg' })}>
           View the work
         </Link>
-        <Link to="/" className={buttonVariants({ variant: 'outline', size: 'lg' })}>
+        <Link to="/" className={buttonVariants({ variant: 'outlined', size: 'lg' })}>
           Back home
         </Link>
       </div>
