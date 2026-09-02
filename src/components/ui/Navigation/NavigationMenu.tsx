@@ -5,6 +5,8 @@ import { NavLink } from 'react-router-dom';
 import { navigation } from '@/lib/constants/routes';
 
 import {
+  menuPopupItemStyles,
+  menuPopupStyles,
   menuTriggerStyles,
   mobileNavigationLinkStyles,
   navigationLinkStyles,
@@ -45,19 +47,24 @@ export function Navigation() {
                     aria-controls={`navigation-menu-${item.name}`}
                     onClick={() => toggleMenu(item.name)}
                     className={menuTriggerStyles()}
+                    data-popup-open={
+                      openMenu === item.name ? '' : undefined
+                    }
                   >
                     {item.name}
 
                     <ChevronDown
                       aria-hidden="true"
-                      className="size-4"
+                      className={`size-4 transition-transform duration-200 ${
+                        openMenu === item.name ? 'rotate-180' : ''
+                      }`}
                     />
                   </button>
 
                   {openMenu === item.name && (
                     <ul
                       id={`navigation-menu-${item.name}`}
-                      className="absolute top-full left-0 mt-2 min-w-40 rounded-md bg-white p-2 shadow-lg"
+                      className={`${menuPopupStyles()} absolute left-0 top-full mt-3`}
                     >
                       {item.items.map((subItem) => (
                         <li key={subItem.name}>
@@ -66,7 +73,7 @@ export function Navigation() {
                               href={subItem.href}
                               download
                               onClick={() => setOpenMenu(null)}
-                              className={navigationLinkStyles()}
+                              className={menuPopupItemStyles()}
                             >
                               {subItem.name}
                             </a>
@@ -75,7 +82,7 @@ export function Navigation() {
                               to={subItem.href}
                               onClick={() => setOpenMenu(null)}
                               className={({ isActive }) =>
-                                navigationLinkStyles({
+                                menuPopupItemStyles({
                                   active: isActive,
                                 })
                               }
@@ -130,7 +137,7 @@ export function Navigation() {
         aria-expanded={isMobileOpen}
         aria-controls="mobile-navigation"
         onClick={() => setIsMobileOpen((open) => !open)}
-        className="inline-flex items-center text-primary justify-center rounded-md p-2 lg:hidden"
+        className="inline-flex items-center justify-center rounded-lg p-2 text-primary transition-colors hover:bg-primary/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-default lg:hidden"
       >
         {isMobileOpen ? (
           <X
@@ -149,151 +156,150 @@ export function Navigation() {
         <nav
           id="mobile-navigation"
           aria-label="Mobile navigation"
-          className="absolute inset-x-0 top-full border-t border-border bg-background/95 backdrop-blur-md lg:hidden"
+          className="absolute inset-x-0 top-full z-50 border-t border-default/10 bg-background/95 shadow-lg backdrop-blur-md lg:hidden"
         >
-          <ul className="space-y-2 py-8">
-            {navigation.map((item: NavigationItem) => (
-              <li key={item.name}>
-                {item.type === 'menu' ? (
-                  <>
-                    <button
-                      type="button"
-                      aria-expanded={openMenu === item.name}
-                      aria-controls={`mobile-navigation-menu-${item.name}`}
-                      onClick={() => toggleMenu(item.name)}
+          <div className="mx-auto max-w-7xl">
+            <ul className="space-y-1 py-4">
+              {navigation.map((item: NavigationItem) => (
+                <li key={item.name}>
+                  {item.type === 'menu' ? (
+                    <>
+                      <button
+                        type="button"
+                        aria-expanded={openMenu === item.name}
+                        aria-controls={`mobile-navigation-menu-${item.name}`}
+                        onClick={() => toggleMenu(item.name)}
+                        className={mobileNavigationLinkStyles()}
+                      >
+                        <span className="flex w-full items-center justify-between">
+                          {item.name}
+
+                          <ChevronDown
+                            aria-hidden="true"
+                            className={`size-4 transition-transform duration-200 ${
+                              openMenu === item.name ? 'rotate-180' : ''
+                            }`}
+                          />
+                        </span>
+                      </button>
+
+                      {openMenu === item.name && (
+                        <ul
+                          id={`mobile-navigation-menu-${item.name}`}
+                          className="space-y-1 pb-2 pl-4"
+                        >
+                          {item.items.map((subItem) => (
+                            <li key={subItem.name}>
+                              {subItem.download ? (
+                                <a
+                                  href={subItem.href}
+                                  download
+                                  onClick={closeMobileMenu}
+                                  className={mobileNavigationLinkStyles()}
+                                >
+                                  {subItem.name}
+                                </a>
+                              ) : (
+                                <NavLink
+                                  to={subItem.href}
+                                  onClick={closeMobileMenu}
+                                  className={({ isActive }) =>
+                                    mobileNavigationLinkStyles({
+                                      active: isActive,
+                                    })
+                                  }
+                                >
+                                  {subItem.name}
+                                </NavLink>
+                              )}
+                            </li>
+                          ))}
+                        </ul>
+                      )}
+                    </>
+                  ) : item.hash ? (
+                    <a
+                      href={item.href}
+                      onClick={closeMobileMenu}
                       className={mobileNavigationLinkStyles()}
                     >
-                      <span className="flex items-center gap-1">
-                        {item.name}
+                      {item.name}
+                    </a>
+                  ) : item.download ? (
+                    <a
+                      href={item.href}
+                      download
+                      onClick={closeMobileMenu}
+                      className={mobileNavigationLinkStyles()}
+                    >
+                      {item.name}
+                    </a>
+                  ) : (
+                    <NavLink
+                      to={item.href}
+                      onClick={closeMobileMenu}
+                      className={({ isActive }) =>
+                        mobileNavigationLinkStyles({
+                          active: isActive,
+                        })
+                      }
+                    >
+                      {item.name}
+                    </NavLink>
+                  )}
+                </li>
+              ))}
+            </ul>
 
-                        <ChevronDown
-                          aria-hidden="true"
-                          className="size-4"
-                        />
-                      </span>
-                    </button>
-
-                    {openMenu === item.name && (
-                      <ul
-                        id={`mobile-navigation-menu-${item.name}`}
-                        className="pl-6"
-                      >
-                        {item.items.map((subItem) => (
-                          <li key={subItem.name}>
-                            {subItem.download ? (
-                              <a
-                                href={subItem.href}
-                                download
-                                onClick={closeMobileMenu}
-                                className={mobileNavigationLinkStyles()}
-                              >
-                                {subItem.name}
-                              </a>
-                            ) : (
-                              <NavLink
-                                to={subItem.href}
-                                onClick={closeMobileMenu}
-                                className={({ isActive }) =>
-                                  mobileNavigationLinkStyles({
-                                    active: isActive,
-                                  })
-                                }
-                              >
-                                {subItem.name}
-                              </NavLink>
-                            )}
-                          </li>
-                        ))}
-                      </ul>
-                    )}
-                  </>
-                ) : item.hash ? (
-                  <a
-                    href={item.href}
-                    onClick={closeMobileMenu}
-                    className={mobileNavigationLinkStyles()}
-                  >
-                    {item.name}
-                  </a>
-                ) : item.download ? (
-                  <a
-                    href={item.href}
-                    download
-                    onClick={closeMobileMenu}
-                    className={mobileNavigationLinkStyles()}
-                  >
-                    {item.name}
-                  </a>
-                ) : (
-                  <NavLink
-                    to={item.href}
-                    onClick={closeMobileMenu}
-                    className={({ isActive }) =>
-                      mobileNavigationLinkStyles({
-                        active: isActive,
-                      })
-                    }
-                  >
-                    {item.name}
-                  </NavLink>
-                )}
+            <ul className="space-y-1 border-t border-default/10 py-4">
+              <li>
+                <a
+                  href="/resume.pdf"
+                  download
+                  onClick={closeMobileMenu}
+                  className={mobileNavigationLinkStyles()}
+                >
+                  download resume
+                </a>
               </li>
-            ))}
-          </ul>
 
-          {/*
-            Actions that live in the header's action cluster on desktop
-            (hidden below lg). They're surfaced here so they stay reachable
-            on mobile.
-          */}
-          <ul className="space-y-2 border-t border-border py-8">
-            <li>
-              <a
-                href="/resume.pdf"
-                download
-                onClick={closeMobileMenu}
-                className={mobileNavigationLinkStyles()}
-              >
-                download resume
-              </a>
-            </li>
+              <li>
+                <button
+                  type="button"
+                  onClick={closeMobileMenu}
+                  className={mobileNavigationLinkStyles()}
+                >
+                  <span className="flex items-center gap-2">
+                    <Search
+                      aria-hidden="true"
+                      className="size-5"
+                    />
+                    Search
+                  </span>
+                </button>
+              </li>
 
-            <li>
-              <button
-                type="button"
-                onClick={closeMobileMenu}
-                className={mobileNavigationLinkStyles()}
-              >
-                <span className="flex items-center gap-2">
-                  <Search
-                    aria-hidden="true"
-                    className="size-5"
-                  />
-                  Search
-                </span>
-              </button>
-            </li>
-
-            <li>
-              <NavLink
-                to="/about"
-                onClick={closeMobileMenu}
-                className={({ isActive }) =>
-                  mobileNavigationLinkStyles({
-                    active: isActive,
-                  })
-                }
-              >
-                <span className="flex items-center gap-2">
-                  <User
-                    aria-hidden="true"
-                    className="size-5"
-                  />
-                  About
-                </span>
-              </NavLink>
-            </li>
-          </ul>
+              <li>
+                <NavLink
+                  to="/about"
+                  onClick={closeMobileMenu}
+                  className={({ isActive }) =>
+                    mobileNavigationLinkStyles({
+                      active: isActive,
+                    })
+                  }
+                >
+                  <span className="flex items-center gap-2">
+                    <User
+                      aria-hidden="true"
+                      className="size-5"
+                    />
+                    About
+                  </span>
+                </NavLink>
+              </li>
+            </ul>
+          </div>
         </nav>
       )}
     </>

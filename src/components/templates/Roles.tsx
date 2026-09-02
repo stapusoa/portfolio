@@ -106,7 +106,7 @@ const Roles: React.FC = () => {
       className="relative lg:max-w-300 mx-auto bg-transparent z-30 pt-28 pb-16 px-6 md:px-14 lg:px-32 overflow-hidden"
     >
       {/* Slide Container */}
-      <div className="relative h-150 md:h-96 flex items-center justify-center">
+      <div className="relative h-100 md:h-112 flex items-center justify-center">
         {roles.map((role, index) => (
           <div
             key={index}
