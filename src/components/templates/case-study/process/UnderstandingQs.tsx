@@ -1,5 +1,5 @@
-import QuestionCard from "@/features/case-study/components/cards/QuestionCard"
-import type { CardProps } from "@/features/case-study/components/cards/QuestionCard"
+import QuestionCard from "@/components/templates/case-study/cards/QuestionCard"
+import type { CardProps } from "@/components/templates/case-study/cards/QuestionCard"
 
 interface Questions {
   cards: CardProps[];

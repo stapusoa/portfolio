@@ -1,4 +1,4 @@
-import SprintCard from "@/features/case-study/components/cards/SprintCard"
+import SprintCard from "@/components/templates/case-study/cards/SprintCard"
 import clsx from "clsx"
 
 interface WhiteboardProps {

@@ -1,6 +1,6 @@
 import React from "react";
 import { useNavigate } from 'react-router-dom'
-import { Button } from '@/components/ui/button'
+import { Button } from '@/components/ui/button/button'
 import { Badge } from '@/components/ui/badge'
 import { ArrowLeft } from 'lucide-react'
 
@@ -90,12 +90,12 @@ const Hero: React.FC<HeroProps> = ({
             {hasActions ? (
               <>
                 {onNext && (
-                  <Button variant="default" size="lg" onClick={onNext}>
+                  <Button size="lg" onClick={onNext}>
                     {nextLabel}
                   </Button>
                 )}
                 {onBack && (
-                  <Button variant="outline" size="lg" onClick={onBack}>
+                  <Button variant="outlined" size="lg" onClick={onBack}>
                     {backLabel}
                   </Button>
                 )}

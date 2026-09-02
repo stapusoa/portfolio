@@ -6,8 +6,8 @@
  * lets the feature stay lazy-loadable — see the route split in `src/App.tsx`.
  */
 
-export { caseStudies } from './data/case-studies'
-export type * from './types'
+export { caseStudies } from '../../../data/case-studies'
+export type * from '../types'
 
 // Page-level sections
 export { default as Hero } from '@/components/templates/Hero'

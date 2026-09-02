@@ -1,4 +1,4 @@
-import SprintCard from "@/features/case-study/components/cards/SprintCard" // ✅ default import
+import SprintCard from "@/components/templates/case-study/cards/SprintCard" // ✅ default import
 
 interface GoalProps {
   sticky: string[]; // ✅ array of image URLs

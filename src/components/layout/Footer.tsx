@@ -1,7 +1,8 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
-
+import { Button } from '@/components/ui/button'
 import SocialLinks from '@/components/ui/SocialLinks/SocialLinks'
+import { Send } from 'lucide-react'
 import { Reveal } from '@/components/ui/Reveal'
 import { useContactForm } from '@/lib/hooks/useContactForm'
 
@@ -85,13 +86,34 @@ export function Footer() {
                 className={`${FIELD_CLASS} resize-none`}
               />
 
-              <button
+              <Button
                 type="submit"
                 disabled={isSending}
-                className="w-fit rounded-lg bg-primary px-7 py-3 text-sm font-semibold text-primary-foreground transition-transform hover:-translate-y-0.5 disabled:cursor-not-allowed disabled:opacity-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-default focus-visible:ring-offset-2"
+                motion={{
+                  initial: { opacity: 0, y: 24 },
+                  animate: { opacity: 1, y: 0 },
+                  transition: {
+                    duration: 0.6,
+                    delay: 0.24,
+                  },
+                }}
+                variant="filled"
+                color="primary"
+                size="md"
+                className="w-fit disabled:cursor-not-allowed disabled:opacity-50"
               >
                 {isSending ? 'Sending…' : 'Submit'}
-              </button>
+                <Send className="
+                  size-4  
+                  transition-all
+                  duration-300
+                  ease-in
+                  group-hover:translate-x-1
+                  group-hover:-translate-y-1
+                  group-hover:-rotate-12
+                  group-hover:opacity-60" 
+                />
+              </Button>
 
               {/* Announced when it appears, not just shown. */}
               <p role="status" aria-live="polite" className="min-h-5 text-sm">

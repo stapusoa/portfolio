@@ -1,32 +1,7 @@
 import { Link } from "react-router-dom";
+import { caseStudies } from "./AllCaseStudies";
 
 const CaseStudies: React.FC = () => {
-  const caseStudies = [
-    {
-      title: "fishbowl go",
-      description:
-        "Simplifying inventory management in the warehouse and in the office.",
-      image: "/images/product-proj1.webp",
-      link: "/work/fishbowlgo",
-      align: "left",
-    },
-    {
-      title: "haven massage",
-      description:
-        "Providing professional therapeutic services through easy booking.",
-      image: "/images/product-proj2.webp",
-      link: "/work/project2",
-      align: "right",
-    },
-    {
-      title: "travelpass",
-      description:
-        "Providing the explorer at heart unforgettable adventures.",
-      image: "/images/product-proj3.webp",
-      link: "/work/travelpass",
-      align: "left",
-    },
-  ];
 
   return (
     <>

@@ -45,20 +45,26 @@ export interface CaseStudyProcess {
   children?: React.ReactNode
 }
 
-export interface CaseStudy {
-  /** URL slug. Must match the `href` used in `lib/constants/routes.ts`. */
+export interface CaseStudySummary {
   id: string
   title: string
-  subtitle: string
-  category: string
-  tag: string
+  description: string
+  image: string
+  href: string
+  category?: string
+  align?: "right" | "left" | "center"
+}
+
+export interface CaseStudy {
+  /** URL slug. Must match the `href` used in `lib/constants/routes.ts`. */
+  summary: CaseStudySummary
+  duration: string
   team: string[] | React.ReactNode
   role: string[] | React.ReactNode
-  duration: string
   challenge: string
   solution: string
   impact: string[]
-  image: string
+  tag?: string
   process: CaseStudyProcess[]
   designSystem?: CaseStudyDesignSystem
   designSystemLink: string

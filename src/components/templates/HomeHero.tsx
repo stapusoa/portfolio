@@ -3,6 +3,8 @@ import { useRef } from 'react'
 import { motion, useScroll, useTransform } from 'framer-motion'
 import { ArrowRight } from 'lucide-react'
 import { Badge } from '@/components/ui/badge.tsx'
+import { buttonVariants } from "@/components/ui/button"
+import { cn } from "@/lib/cn"
 
 function HomeHero() {
   const ref = useRef<HTMLElement>(null)
@@ -73,14 +75,20 @@ function HomeHero() {
             >
               <a
                 href="#work"
-                className="group inline-flex w-full md:w-fit justify-center items-center gap-2 rounded-xl bg-default px-7 py-3.5 lowercase font-sans text-base font-medium text-background transition-transform hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-default focus-visible:ring-offset-2"
+                className={cn(
+                  buttonVariants({ variant: "filled", color: "primary", size: "lg" }),
+                  "w-full md:w-fit transition-transform hover:-translate-y-0.5"
+                )}
               >
                 View my work
                 <ArrowRight className="size-4 transition-transform group-hover:translate-x-1" />
               </a>
               <a
                 href="#contact"
-                className="inline-flex justify-center items-center w-full md:w-fit gap-2 rounded-xl bg-primary px-7 py-3.5 lowercase font-sans text-base font-medium text-contrast transition-transform hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-default focus-visible:ring-offset-2"
+                className={cn(
+                  buttonVariants({ variant: "filled", color: "secondary", size: "lg" }),
+                  "w-full md:w-fit transition-transform hover:-translate-y-0.5"
+                )}
               >
                 Learn more
               </a>

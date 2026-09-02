@@ -19,13 +19,23 @@ export const navigation: NavigationItem[] = [
       },
       {
         type: 'link',
-        name: 'Travelpass Web',
-        href: '/work/travelpass-web',
+        name: 'Travelpass',
+        href: '/work/travelpass',
       },
       {
         type: 'link',
-        name: 'Travelpass Products',
-        href: '/work/travelpass-products',
+        name: 'AlignedWest Chiropractic',
+        href: '/work/alignedwest-chiropractic',
+      },
+      {
+        type: 'link',
+        name: 'TruBalance Bodywork',
+        href: '/work/trubalance',
+      },
+      {
+        type: 'link',
+        name: 'Domo',
+        href: '/work/domo',
       },
       {
         type: 'link',

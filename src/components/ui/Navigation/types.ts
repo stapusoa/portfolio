@@ -22,26 +22,11 @@ export type PageType =
   | 'home'
   | 'about'
   | 'featured'
-  | 'shop'
   | 'services'
-  | 'product-details'
-  | 'blog'
   | 'contact'
-  | 'sell'
-  | 'cart'
-  | 'checkout'
-  | 'account'
-  | 'dashboard'
-  | 'settings'
-  | 'help'
-  | 'branding'
-  | 'profile'
   | 'work'
   | 'resources'
   | 'search'
-  | 'privacy'
-  | 'terms'
-  | 'policies';
 
 export interface NavigationProps {
   currentPage: PageType;

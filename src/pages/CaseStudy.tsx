@@ -1,9 +1,10 @@
 import { useParams, useNavigate } from 'react-router-dom'
 import { useState } from 'react'
-import { caseStudies, PhaseCard } from '@/components/templates/case-study'
+import { PhaseCard } from '@/components/templates/case-study'
+import { caseStudies } from '@/data/case-studies'
 import Hero from '@/components/templates/Hero'
 import NotFound from '@/pages/NotFound'
-import { Button } from '@/components/ui/button'
+import { Button } from '@/components/ui/button/button'
 import { Badge } from '@/components/ui/badge'
 import { Tabs, TabsList, TabsTrigger, TabsContent } from '@/components/ui/tabs'
 import { Card } from '@/components/ui/card'
@@ -14,7 +15,7 @@ export function CaseStudy() {
   const { id } = useParams<{ id: string }>()
   const navigate = useNavigate()
   const [copiedCode, setCopiedCode] = useState<string | null>(null)
-  const project = caseStudies.find((p) => p.id === id)
+  const project = caseStudies.find((p) => p.summary.id === id)
 
   // An unknown :id is a missing page, not an empty case study — render the same
   // 404 the catch-all route uses rather than a bare paragraph.
@@ -27,9 +28,14 @@ export function CaseStudy() {
   }
 
   const handleNextProject = () => {
-    const currentIndex = caseStudies.findIndex((p) => p.id === project.id)
-    const nextProject = caseStudies[(currentIndex + 1) % caseStudies.length]
-    navigate(`/work/${nextProject.id}`)
+    const currentIndex = caseStudies.findIndex(
+      (p) => p.summary.id === project.summary.id
+    )
+
+    const nextProject =
+      caseStudies[(currentIndex + 1) % caseStudies.length]
+
+    navigate(`/work/${nextProject.summary.id}`)
     window.scrollTo({ top: 0, behavior: "smooth" })
   }
 
@@ -62,7 +68,7 @@ export function CaseStudy() {
                 Color Palette
               </h3>
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-                {project.designSystem.colors.map((color, index) => (
+                {project.designSystem?.colors.map((color, index) => (
                   <Card key={index} className="p-4">
                     <div
                       className="w-full h-20 rounded-lg mb-3 border border-border"
@@ -87,7 +93,7 @@ export function CaseStudy() {
                 Typography Scale
               </h3>
               <div className="space-y-4">
-                {project.designSystem.typography.map((type, index) => (
+                {project.designSystem?.typography.map((type, index) => (
                   <Card key={index} className="p-6">
                     <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
                       <div className="lg:col-span-1">
@@ -118,11 +124,11 @@ export function CaseStudy() {
             </div>
 
             {/* Spacing System (if available) */}
-            {project.designSystem.spacing && (
+            {project.designSystem?.spacing && (
               <div className="mb-12">
                 <h3 className="mb-4">Spacing System</h3>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-                  {project.designSystem.spacing.map((space, index) => (
+                  {project.designSystem?.spacing?.map((space, index) => (
                     <Card key={index} className="p-4">
                       <div className="mb-3">
                         <div className="bg-primary h-8" style={{ width: space.value }} />
@@ -151,14 +157,14 @@ export function CaseStudy() {
             </p>
 
             <div className="space-y-8">
-              {project.designSystem.components.map((component, index) => (
+              {project.designSystem?.components.map((component, index) => (
                 <Card key={index} className="p-6">
                   <div className="space-y-6">
                     {/* Component Header */}
                     <div>
                       <div className="flex items-start justify-between mb-2">
                         <h3 className="text-xl">{component.name}</h3>
-                        <Badge variant="outline">{project.category}</Badge>
+                        <Badge variant="outline">{project.summary.category}</Badge>
                       </div>
                       <p className="text-muted-foreground">{component.description}</p>
                     </div>
@@ -287,10 +293,10 @@ export function CaseStudy() {
   return (
     <div className="relative w-full min-h-screen">
       <Hero
-        product={project.title}
-        tagline={project.subtitle}
-        image={project.image}
-        category={project.category}
+        product={project.summary.title}
+        tagline={project.summary.description}
+        image={project.summary.image}
+        category={project.summary.category}
         onNext={handleNextProject}
         onBack={handleBackToProjects}
       />
@@ -412,7 +418,7 @@ export function CaseStudy() {
 
           {/* Navigation */}
           <div className="flex justify-between pt-8 border-t">
-            <Button variant="outline"               onClick={handleBackToProjects}
+            <Button variant="outlined"               onClick={handleBackToProjects}
 
             >
               <ArrowLeft className="mr-2" size={16} />

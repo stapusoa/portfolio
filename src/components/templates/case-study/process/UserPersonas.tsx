@@ -1,5 +1,5 @@
-import PersonaCard from "@/features/case-study/components/cards/PersonaCard"
-import type { CardProps } from "@/features/case-study/components/cards/PersonaCard"
+import PersonaCard from "@/components/templates/case-study/cards/PersonaCard"
+import type { CardProps } from "@/components/templates/case-study/cards/PersonaCard"
 
 interface UserPersonasProps {
   cards: CardProps[];

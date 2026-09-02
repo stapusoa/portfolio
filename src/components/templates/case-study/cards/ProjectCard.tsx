@@ -3,7 +3,7 @@ import { Badge } from '@/components/ui/badge'
 import { useNavigate } from 'react-router-dom' // or next/router if using Next.js
 import { ArrowRight } from 'lucide-react'
 import type { ProjectCardProps } from '@/features/case-study/types'
-import { Button } from '@/components/ui/button'
+import { Button } from '@/components/ui/button/button'
 
 /**
  * Class presets for this card. These lived in a top-level `lib/styles.ts`

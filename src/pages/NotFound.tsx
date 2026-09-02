@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
 
-import { buttonVariants } from '@/components/ui/button'
+import { buttonVariants } from '@/components/ui/button/button'
 
 /**
  * Catch-all route. Reached by any URL that matches no route, including the
