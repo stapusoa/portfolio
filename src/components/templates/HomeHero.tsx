@@ -1,6 +1,6 @@
 
 import { useRef } from 'react'
-import { motion, useScroll, useTransform } from 'framer-motion'
+import { motion, useScroll, useTransform } from 'motion/react'
 import { ArrowRight } from 'lucide-react'
 import { Badge } from '@/components/ui/badge.tsx'
 import { buttonVariants } from "@/components/ui/button"
