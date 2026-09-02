@@ -1,6 +1,7 @@
 import { useParams, useNavigate } from 'react-router-dom'
 import { useState } from 'react'
-import { caseStudies, PhaseCard } from '@/features/case-study'
+import { caseStudies, PhaseCard } from '@/components/templates/case-study'
+import Hero from '@/components/templates/Hero'
 import NotFound from '@/pages/NotFound'
 import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
@@ -285,43 +286,14 @@ export function CaseStudy() {
 
   return (
     <div className="relative w-full min-h-screen">
-      <img alt={project.title} src={project.image} className="fixed inset-0 w-full h-full object-cover object-top-right hidden lg:block z-0"></img>
-      <div className="relative isolate pt-20 h-screen">
-        <div className="left mx-auto max-w-300 px-6 sm:px-6 md:px-14 lg:px-32 py-28 sm:py-36 lg:pt-58 lg:pb-20">
-          <div className="text-left">
-            {/* Back Button */}
-            <Button
-              variant="ghost"
-              onClick={handleBackToProjects}
-              className="mb-8 p-0 h-auto"
-            >
-              <ArrowLeft className="mr-2" size={16} />
-              Back to Projects
-            </Button>
-
-            {/* Project Header */}
-            <div className="mb-12 typography">
-              <Badge variant="default" color="neutral" className="mb-4">{project.category}</Badge>
-              <h1 className="text-title text-primary font-thin lowercase">{project.title}</h1>
-              <h2 className="text-hero text-ocean-900 font-bold lowercase mb-8">{project.subtitle}</h2>
-              <div className="flex items-start justify-start gap-x-4">
-                {/*
-                  The "View prototype" button used to navigate to
-                  /prototype/{prototypeId}, a route that was never declared, so
-                  it dead-ended. `prototypeId` is still carried in the data and
-                  the button can come back once a prototype page exists.
-                */}
-                <Button variant="default" size="lg" onClick={handleNextProject}>
-                  Next case study
-                </Button>
-                <Button variant="outline" size="lg" onClick={handleBackToProjects}>
-                  All case studies
-                </Button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+      <Hero
+        product={project.title}
+        tagline={project.subtitle}
+        image={project.image}
+        category={project.category}
+        onNext={handleNextProject}
+        onBack={handleBackToProjects}
+      />
       <div className="relative w-full z-20 bg-white">
         <div className="max-w-7xl mx-auto px-6 sm:px-6 md:px-14 lg:px-32 py-12 sm:py-16 lg:py-20">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">

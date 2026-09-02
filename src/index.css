@@ -149,3 +149,7 @@ body,
 #root {
   min-height: 100%;
 }
+
+.header-height {
+  height: 60px;
+}

@@ -1,5 +1,5 @@
 import { PageBackground, PaperSeparator } from '@/components/layout'
-import { HomeHero, Roles, FeaturedCaseStudies } from '@/features/home'
+import { HomeHero, Roles, FeaturedCaseStudies } from '@/components/templates/index'
 
 export default function Home() {
   return (
